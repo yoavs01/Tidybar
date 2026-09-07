@@ -224,7 +224,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         guard
             let urlString = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue,
             let url = URL(string: urlString),
-            url.scheme?.lowercased() == "thaw"
+            url.scheme?.lowercased() == "tidybar"
         else { return }
 
         // Extract sender bundle ID from the Apple Event

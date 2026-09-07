@@ -22364,7 +22364,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "예시: bash 사전 훅 `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` 를 통해 iStat Menus와 Thaw를 동기화할 수 있습니다."
+            "value" : "예시: bash 사전 훅 `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` 를 통해 iStat Menus와 Tidybar를 동기화할 수 있습니다."
           }
         },
         "nl" : {
@@ -60248,13 +60248,13 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thawへようこそ"
+            "value" : "Tidybarへようこそ"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw에 오신 것을 환영합니다"
+            "value" : "Tidybar에 오신 것을 환영합니다"
           }
         },
         "nl" : {
@@ -60617,7 +60617,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "앱이 설정을 변경하기 위해 tidybar:// URL을 전송하면, Thaw는 해당 앱이 화이트리스트에 있는지 확인합니다."
+            "value" : "앱이 설정을 변경하기 위해 tidybar:// URL을 전송하면, Tidybar는 해당 앱이 화이트리스트에 있는지 확인합니다."
           }
         },
         "nl" : {
