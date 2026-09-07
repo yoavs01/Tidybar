@@ -1555,6 +1555,12 @@ extension MenuBarItemManager {
         // nobody asked for, which the saveSectionOrder gate must not treat
         // as an order of record (#900).
         var unenactedMoveCount = 0
+        // The subset of `unenactedMoveCount` refused by a preflight
+        // guard, before any event was posted. Withheld from the saved
+        // order like any unenacted move, but kept out of the circuit
+        // breaker's streak, which measures whether the bar accepts
+        // drags and so can only be informed by drags actually tried.
+        var deferredMoveCount = 0
 
         /// Automatic saved-layout restores and profile re-sorts report only
         /// definitive failures. User-invoked profile applies already have
@@ -1591,7 +1597,10 @@ extension MenuBarItemManager {
                     "applyProfileLayout: \(reason); abandoning the remaining apply"
                 )
             }
-            recordBulkApplyOutcome(unenactedMoveCount: unenactedMoveCount)
+            recordBulkApplyOutcome(
+                unenactedMoveCount: unenactedMoveCount,
+                deferredMoveCount: deferredMoveCount
+            )
             clearProfileState(source: source, items: items)
             scheduleDeferredCacheRefresh()
         }
@@ -1885,6 +1894,7 @@ extension MenuBarItemManager {
                             // per-item LCS pass below repositions items without
                             // needing the divider to travel.
                             unenactedMoveCount += 1
+                            deferredMoveCount += 1
                             MenuBarItemManager.diagLog.warning(
                                 "Profile layout: H_ctrl is parked offscreen (minX=\(hItem.bounds.minX)), skipping the boundary move"
                             )
@@ -1895,6 +1905,7 @@ extension MenuBarItemManager {
                             // every few seconds, for as long as the mismatch stands.
                             // In #899 that ran until the user killed the app.
                             unenactedMoveCount += 1
+                            deferredMoveCount += 1
                             MenuBarItemManager.diagLog.warning(
                                 "Profile layout: H_ctrl under move-failure backoff, skipping"
                             )
@@ -1974,6 +1985,7 @@ extension MenuBarItemManager {
                 // above rebuilds the divider once the mismatch persists; until
                 // then the LCS pass is the one that can make progress.
                 unenactedMoveCount += 1
+                deferredMoveCount += 1
                 MenuBarItemManager.diagLog.warning(
                     "Profile layout: H_ctrl is parked offscreen (minX=\(freshControl.hidden.bounds.minX)), skipping the per-item boundary moves"
                 )
@@ -2025,6 +2037,7 @@ extension MenuBarItemManager {
                     }
                     guard !failureLedger.isUnderBackoff(for: item) else {
                         unenactedMoveCount += 1
+                        deferredMoveCount += 1
                         MenuBarItemManager.diagLog.debug(
                             "Profile layout: \(item.logString) under move-failure backoff, skipping the boundary move"
                         )
@@ -2555,7 +2568,10 @@ extension MenuBarItemManager {
             // pass has nothing left to plan: the divider is the boundary
             // that decides which section every item is in, so the sections
             // the cache reads back are not the ones this apply intended.
-            recordBulkApplyOutcome(unenactedMoveCount: unenactedMoveCount)
+            recordBulkApplyOutcome(
+                unenactedMoveCount: unenactedMoveCount,
+                deferredMoveCount: deferredMoveCount
+            )
             concludeProfileApplyWithoutMoves(source: source, items: items)
             scheduleDeferredCacheRefresh()
             return
@@ -2577,6 +2593,7 @@ extension MenuBarItemManager {
 
             if failureLedger.isUnderBackoff(key: planned.uid) {
                 unenactedMoveCount += 1
+                deferredMoveCount += 1
                 MenuBarItemManager.diagLog.warning(
                     "Profile layout: \(planned.uid) under move-failure backoff, skipping"
                 )
@@ -2653,6 +2670,7 @@ extension MenuBarItemManager {
                 let screenFrames = NSScreen.screens.map { CGDisplayBounds($0.displayID) }
                 if dest.wouldLandOffScreen(screenFrames: screenFrames) {
                     unenactedMoveCount += 1
+                    deferredMoveCount += 1
                     MenuBarItemManager.diagLog.warning(
                         "Profile layout: skipping the visible-bound move of \(planned.uid), its anchor \(dest.logString) is parked offscreen (minX=\(dest.targetItem.bounds.minX)); the drop would strand it"
                     )
@@ -2717,7 +2735,10 @@ extension MenuBarItemManager {
 
         MenuBarItemManager.diagLog.info("Profile layout: completed with \(movedCount) move(s)")
 
-        recordBulkApplyOutcome(unenactedMoveCount: unenactedMoveCount)
+        recordBulkApplyOutcome(
+            unenactedMoveCount: unenactedMoveCount,
+            deferredMoveCount: deferredMoveCount
+        )
 
         // Last move has landed; nothing below touches the cursor.
         restoreCursor()
@@ -3381,6 +3402,12 @@ extension MenuBarItemManager {
     /// per confirmed divergence, which is unbounded when the divergence
     /// is the failed batches' own.
     ///
+    /// The hard cap does not stop dispatch, it widens the ration: a bar that
+    /// has failed six batches in a row is retested every quarter hour rather
+    /// than every minute. Refusing outright is self-sealing, because the
+    /// streak clears only on an apply that enacts every planned move and the
+    /// gate is what stops that apply from running.
+    ///
     /// User-initiated applies (a profile switch) do not consult this gate:
     /// an explicit request is worth a fresh attempt regardless of history.
     /// They still feed the streak through `recordBulkApplyOutcome`, so a
@@ -3392,18 +3419,25 @@ extension MenuBarItemManager {
         now: ContinuousClock.Instant,
         maxConsecutive: Int = 2,
         cooldown: Duration = .seconds(60),
-        hardCap: Int = 6
+        hardCap: Int = 6,
+        hardCapCooldown: Duration = .seconds(900)
     ) -> Bool {
         if consecutiveUnfinishedBatches < maxConsecutive {
             return true
         }
-        if consecutiveUnfinishedBatches >= hardCap {
-            return false
-        }
         guard let lastUnfinishedBatchAt else {
             return true
         }
-        return now - lastUnfinishedBatchAt >= cooldown
+        // Past the hard cap the ration drops from one attempt per minute to
+        // one per quarter hour, but it does not stop. An unconditional
+        // `false` here made the cap absorbing: the streak only clears on an
+        // apply that enacts every planned move, and the gate is what stops
+        // that apply from running, so nothing could ever clear it. Whatever
+        // made the batches fail — a menu held open, an owner relaunching, a
+        // display that came and went — the bar is entitled to be retested
+        // eventually rather than written off for the life of the process.
+        let interval = consecutiveUnfinishedBatches >= hardCap ? hardCapCooldown : cooldown
+        return now - lastUnfinishedBatchAt >= interval
     }
 
     /// Whether a move batch should abandon its remaining moves after a run

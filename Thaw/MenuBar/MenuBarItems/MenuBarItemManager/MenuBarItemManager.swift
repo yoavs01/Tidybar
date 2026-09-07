@@ -572,7 +572,22 @@ final class MenuBarItemManager {
     ///
     /// - Parameter isCompletedApply: whether this is a real bulk apply
     ///   finishing, as opposed to a user move borrowing the same latch.
-    func recordBulkApplyOutcome(unenactedMoveCount: Int, isCompletedApply: Bool = true) {
+    /// - Parameter deferredMoveCount: how many of the unenacted moves were
+    ///   refused by a preflight guard rather than attempted and failed.
+    ///   Both kinds withhold the arrangement from the saved order — the bar
+    ///   is partial either way — but only an attempted failure is evidence
+    ///   about the bar, and the circuit breaker exists to stop attempts.
+    ///   A guard that returns before posting a single event has burned no
+    ///   drag budget and hidden no cursor, so counting it toward the streak
+    ///   makes a standing refusal escalate itself: the guard refuses, the
+    ///   streak climbs, and at the hard cap the refusal spreads to every
+    ///   other caller. A menu bar whose divider is parked for an hour would
+    ///   lock out applies that have nothing to do with the divider.
+    func recordBulkApplyOutcome(
+        unenactedMoveCount: Int,
+        deferredMoveCount: Int = 0,
+        isCompletedApply: Bool = true
+    ) {
         bulkApplyOutcomeGeneration += 1
         if isCompletedApply {
             bulkApplyCompletionGeneration += 1
@@ -590,10 +605,42 @@ final class MenuBarItemManager {
             return
         }
         unfinishedMoveBatchObservedAt = .now
+        let attemptedFailures = unenactedMoveCount - deferredMoveCount
+        guard attemptedFailures > 0 else {
+            // Every unenacted move was a preflight refusal. Withhold the
+            // arrangement, but leave the streak alone: nothing was posted,
+            // so this apply says nothing about whether the bar accepts
+            // synthetic drags. Not a reset either — no move succeeded.
+            MenuBarItemManager.diagLog.warning(
+                "Profile layout: \(unenactedMoveCount) planned move(s) deferred by preflight guards; withholding the current arrangement from the saved order (streak held at \(consecutiveUnfinishedBulkApplies))"
+            )
+            return
+        }
         consecutiveUnfinishedBulkApplies += 1
         MenuBarItemManager.diagLog.warning(
-            "Profile layout: \(unenactedMoveCount) planned move(s) left unenacted; withholding the current arrangement from the saved order (streak: \(consecutiveUnfinishedBulkApplies))"
+            "Profile layout: \(unenactedMoveCount) planned move(s) left unenacted, \(attemptedFailures) attempted; withholding the current arrangement from the saved order (streak: \(consecutiveUnfinishedBulkApplies))"
         )
+    }
+
+    /// Clears the bulk-apply circuit breaker after a display reconfiguration.
+    ///
+    /// The streak is evidence that this bar refuses synthetic drags. A
+    /// display arriving or leaving rebuilds the bar, and every reading the
+    /// streak was accumulated from describes a geometry that no longer
+    /// exists — item frames, the selected display, and which items are even
+    /// hosted all change. Carrying the count across that boundary lets a
+    /// flapping external display ratchet the breaker to its hard cap
+    /// (observed: streak 1 to 6 in seven minutes, then no automatic apply
+    /// for the remaining 78 minutes of the session).
+    func resetBulkApplyCircuitBreakerForDisplayChange() {
+        guard consecutiveUnfinishedBulkApplies > 0 else {
+            return
+        }
+        MenuBarItemManager.diagLog.debug(
+            "Clearing the bulk-apply streak (was \(consecutiveUnfinishedBulkApplies)); the display configuration changed under it"
+        )
+        consecutiveUnfinishedBulkApplies = 0
+        unfinishedMoveBatchObservedAt = nil
     }
 
     /// Whether the latest bulk apply left a partial arrangement that must not

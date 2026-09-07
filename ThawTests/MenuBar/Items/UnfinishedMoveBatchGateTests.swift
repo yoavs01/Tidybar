@@ -80,4 +80,62 @@ struct UnfinishedMoveBatchGateTests {
 
         #expect(!manager.hasUnfinishedMoveBatch)
     }
+
+    /// A preflight guard that returns before posting an event has burned no
+    /// drag budget and hidden no cursor, so it is no evidence about whether
+    /// this bar accepts synthetic drags — which is the only thing the circuit
+    /// breaker measures. Counting guard refusals let a standing refusal
+    /// escalate itself all the way to the hard cap, at which point applies
+    /// with nothing to do with the guard were refused too.
+    @Test("Deferred-only applies withhold the save without arming the breaker")
+    @MainActor
+    func deferredOnlyAppliesDoNotArmTheBreaker() {
+        let manager = MenuBarItemManager()
+        for _ in 0 ..< 10 {
+            manager.recordBulkApplyOutcome(unenactedMoveCount: 2, deferredMoveCount: 2)
+        }
+
+        #expect(manager.hasUnfinishedMoveBatch)
+        #expect(manager.isAutomaticBulkApplyPermitted(caller: #function, quietly: true))
+    }
+
+    /// The counterpart: moves that were actually attempted and failed are
+    /// exactly what the breaker exists for, and still ration dispatch.
+    @Test("Attempted failures still arm the breaker")
+    @MainActor
+    func attemptedFailuresArmTheBreaker() {
+        let manager = MenuBarItemManager()
+        manager.recordBulkApplyOutcome(unenactedMoveCount: 1)
+        manager.recordBulkApplyOutcome(unenactedMoveCount: 1)
+
+        #expect(!manager.isAutomaticBulkApplyPermitted(caller: #function, quietly: true))
+    }
+
+    /// A batch may both defer and fail. Only the failures count.
+    @Test("A mixed apply arms the breaker once for its attempted failures")
+    @MainActor
+    func mixedApplyCountsOnlyAttemptedFailures() {
+        let manager = MenuBarItemManager()
+        manager.recordBulkApplyOutcome(unenactedMoveCount: 5, deferredMoveCount: 4)
+        manager.recordBulkApplyOutcome(unenactedMoveCount: 5, deferredMoveCount: 4)
+
+        #expect(!manager.isAutomaticBulkApplyPermitted(caller: #function, quietly: true))
+    }
+
+    /// Every reading the streak was built from describes a geometry that a
+    /// display arriving or leaving has since replaced. A flapping external
+    /// display would otherwise ratchet the breaker to its cap without any one
+    /// arrangement having been given a fair attempt.
+    @Test("A display change clears the breaker but not the save withhold")
+    @MainActor
+    func displayChangeClearsTheBreaker() {
+        let manager = MenuBarItemManager()
+        manager.recordBulkApplyOutcome(unenactedMoveCount: 1)
+        manager.recordBulkApplyOutcome(unenactedMoveCount: 1)
+        #expect(!manager.isAutomaticBulkApplyPermitted(caller: #function, quietly: true))
+
+        manager.resetBulkApplyCircuitBreakerForDisplayChange()
+
+        #expect(manager.isAutomaticBulkApplyPermitted(caller: #function, quietly: true))
+    }
 }

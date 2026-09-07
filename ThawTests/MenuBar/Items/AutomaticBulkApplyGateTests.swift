@@ -105,22 +105,52 @@ struct AutomaticBulkApplyGateTests {
         )
     }
 
-    /// After the hard cap, the gate stops dispatching entirely — even past
-    /// the cooldown. The cooldown only spaces out attempts; it never
-    /// terminates. Without a cap, a bar that systematically refuses drags
-    /// re-fires a full cursor-hijacking batch every 60 s for the rest of
-    /// the session (#881 logged streaks 1–6 over an hour). The cap is
-    /// cleared only by a successful batch (manual profile switch).
-    @Test("The hard cap blocks dispatch permanently, even after the cooldown")
-    func hardCapBlocksAfterCooldown() {
+    /// Past the hard cap the ration widens from one attempt per minute to
+    /// one per quarter hour. It does not stop. Without a cap, a bar that
+    /// systematically refuses drags re-fires a full cursor-hijacking batch
+    /// every 60 s for the rest of the session (#881 logged streaks 1–6 over
+    /// an hour), so the cap still has to bite — but it used to refuse
+    /// outright, and that made it absorbing: the streak clears only on an
+    /// apply that enacts every planned move, and the gate is what stops that
+    /// apply from running. One reporter's log reached the cap seven minutes
+    /// into a session, on a false parked-divider reading from a flapping
+    /// external display, and dispatched nothing for the remaining 78
+    /// minutes.
+    @Test("The hard cap widens the ration rather than blocking forever")
+    func hardCapRationsRatherThanBlocks() {
         let failedAt = clock.now
-        let wayPast = failedAt.advanced(by: .seconds(3600))
         #expect(
             !MenuBarItemManager.automaticBulkApplyPermitted(
                 consecutiveUnfinishedBatches: 6,
                 lastUnfinishedBatchAt: failedAt,
-                now: wayPast,
-                cooldown: .seconds(60)
+                now: failedAt.advanced(by: .seconds(3600)),
+                cooldown: .seconds(60),
+                hardCapCooldown: .seconds(7200)
+            )
+        )
+        #expect(
+            MenuBarItemManager.automaticBulkApplyPermitted(
+                consecutiveUnfinishedBatches: 6,
+                lastUnfinishedBatchAt: failedAt,
+                now: failedAt.advanced(by: .seconds(7200)),
+                cooldown: .seconds(60),
+                hardCapCooldown: .seconds(7200)
+            )
+        )
+    }
+
+    /// The ordinary cooldown must not let a capped bar through early: at the
+    /// cap the gate reads `hardCapCooldown`, not `cooldown`.
+    @Test("Past the hard cap the ordinary cooldown is not enough")
+    func hardCapIgnoresOrdinaryCooldown() {
+        let failedAt = clock.now
+        #expect(
+            !MenuBarItemManager.automaticBulkApplyPermitted(
+                consecutiveUnfinishedBatches: 6,
+                lastUnfinishedBatchAt: failedAt,
+                now: failedAt.advanced(by: .seconds(61)),
+                cooldown: .seconds(60),
+                hardCapCooldown: .seconds(900)
             )
         )
     }

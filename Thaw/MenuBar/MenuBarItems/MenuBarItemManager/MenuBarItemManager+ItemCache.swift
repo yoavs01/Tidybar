@@ -1115,6 +1115,16 @@ extension MenuBarItemManager {
             false
         }
 
+        // The streak the bulk-apply breaker rations dispatch by was measured
+        // against the old display's geometry, and the bar has since been
+        // rebuilt on another one. Keeping the count would let a display that
+        // connects and disconnects repeatedly ratchet the breaker to its hard
+        // cap without any single arrangement ever having been given a fair
+        // attempt.
+        if menuBarDisplayChanged {
+            resetBulkApplyCircuitBreakerForDisplayChange()
+        }
+
         // The bar after a batch that gave up partway is the batch's own
         // wreckage, not a layout anyone chose. Recording it hands the next
         // pass a target it just moved, which is how a failed apply turns
