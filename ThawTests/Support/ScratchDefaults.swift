@@ -9,7 +9,7 @@
 import Foundation
 import os.lock
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Serializes installation of a scratch store across the whole process.
 ///
@@ -70,7 +70,7 @@ private let scratchDefaultsMutex = ScratchDefaultsMutex()
 /// Anything that persists a setting -- `ProfileManager.applySnapshot`,
 /// `MenuBarItem.customName`, `MigrationManager`, `HookScript.saveGlobal` --
 /// writes through the `Defaults` facade. Without a scratch store those writes
-/// land in the real `com.stonerl.Thaw` domain and mutate the defaults of
+/// land in the real `com.yoavsror.tidybar` domain and mutate the defaults of
 /// whoever runs the suite.
 ///
 /// This replaces the per-key snapshot/restore that `GeneralSettingsTests` and
@@ -91,7 +91,7 @@ func withScratchDefaults<Result>(
     sourceLocation: SourceLocation = #_sourceLocation,
     _ body: (UserDefaults) throws -> Result
 ) throws -> Result {
-    let suiteName = "com.stonerl.ThawTests.\(UUID().uuidString)"
+    let suiteName = "com.yoavsror.tidybarTests.\(UUID().uuidString)"
     let suite = try #require(
         UserDefaults(suiteName: suiteName),
         "could not open a scratch defaults suite",
@@ -124,7 +124,7 @@ func withScratchDefaults<Result>(
     sourceLocation: SourceLocation = #_sourceLocation,
     _ body: (UserDefaults) async throws -> Result
 ) async throws -> Result {
-    let suiteName = "com.stonerl.ThawTests.\(UUID().uuidString)"
+    let suiteName = "com.yoavsror.tidybarTests.\(UUID().uuidString)"
     let suite = try #require(
         UserDefaults(suiteName: suiteName),
         "could not open a scratch defaults suite",

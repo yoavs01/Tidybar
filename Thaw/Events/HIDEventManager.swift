@@ -870,7 +870,7 @@ extension HIDEventManager {
         // applications whose windows aren't reported in the standard menu bar
         // items query but visually occupy menu bar space. The AX hit-test
         // resolves the actual UI element at the cursor, so clicks that land
-        // on a widget's icon don't also trigger Thaw's show-on-click reveal.
+        // on a widget's icon don't also trigger Tidybar's show-on-click reveal.
         if isCursorOverForeignWidgetUIElement() {
             Self.diagLog.debug("handleShowOnClick: suppressing, cursor over foreign UI element")
             return
@@ -906,8 +906,8 @@ extension HIDEventManager {
             if let hiddenSection = appState.menuBarManager.section(withName: .hidden),
                hiddenSection.isEnabled
             {
-                // If the always-hidden section is currently showing via the Thaw
-                // Bar, a plain click should close it rather than switch the Thaw
+                // If the always-hidden section is currently showing via the Tidybar
+                // Bar, a plain click should close it rather than switch the Tidybar
                 // Bar to the hidden section.
                 if appState.menuBarManager.iceBarPanel.currentSection == .alwaysHidden,
                    let alwaysHiddenSection = appState.menuBarManager.section(withName: .alwaysHidden)
@@ -1071,7 +1071,7 @@ extension HIDEventManager {
             }
         }
 
-        // Only continue if the click is not inside the Thaw Bar, at
+        // Only continue if the click is not inside the Tidybar Bar, at
         // least one section is visible, and the mouse is not inside
         // the menu bar.
         guard
@@ -1187,11 +1187,11 @@ extension HIDEventManager {
 
     /// Returns whether the cursor sits on a UI element owned by a foreign
     /// third-party menu bar widget such as a notch overlay application,
-    /// using the system-wide accessibility hit-test. Excludes Thaw's own
+    /// using the system-wide accessibility hit-test. Excludes Tidybar's own
     /// elements, the Window Server (which owns the menu bar background), and
     /// elements with a menu-bar / menu / menu-item role (the front app's
     /// File/Edit/View region returns the app's PID but a menu-bar-class
-    /// role). When the helper returns true, Thaw defers to the widget under
+    /// role). When the helper returns true, Tidybar defers to the widget under
     /// the cursor even if the widget didn't open its own pop-up menu in
     /// response to the click.
     private func isCursorOverForeignWidgetUIElement() -> Bool {
@@ -1248,12 +1248,12 @@ extension HIDEventManager {
         return String(data: Data(procName), encoding: .utf8) == "WindowServer"
     }
 
-    /// Returns whether any non-Thaw window at the pop-up-menu window level is
+    /// Returns whether any non-Tidybar window at the pop-up-menu window level is
     /// currently on-screen. Right-click menus (NSMenu and equivalents) render
     /// at kCGPopUpMenuWindowLevel, while persistent overlay windows from
     /// notch overlay applications sit a level below. Filtering to the exact
     /// pop-up level distinguishes an actually open menu from a widget's idle
-    /// overlay, which is needed to avoid showing Thaw's secondary context
+    /// overlay, which is needed to avoid showing Tidybar's secondary context
     /// menu after a click that landed on a foreign widget that opened its own
     /// menu.
     private func isForeignPopUpMenuOpen() -> Bool {
@@ -1490,7 +1490,7 @@ extension HIDEventManager {
             pendingHoverAction = .hide
             let taskToken = UUID()
             hoverTaskToken = taskToken
-            // When the Thaw Bar (Ice Bar) is the active presentation, the
+            // When the Tidybar Bar (Ice Bar) is the active presentation, the
             // rehide interval — not the hover delay — should govern how
             // long the panel stays open after the cursor leaves. The start
             // rehide checks already use rehideInterval; a 0.2 s hover
@@ -1870,14 +1870,14 @@ extension HIDEventManager {
     }
 
     /// A Boolean value that indicates whether the mouse pointer is within
-    /// the bounds of the Thaw Bar panel.
+    /// the bounds of the Tidybar Bar panel.
     func isMouseInsideIceBar(appState: AppState) -> Bool {
         guard let mouseLocation = MouseHelpers.locationAppKit else {
             return false
         }
         let panel = appState.menuBarManager.iceBarPanel
         // Pad the frame to be more forgiving if the user accidentally
-        // moves their mouse outside of the Thaw Bar.
+        // moves their mouse outside of the Tidybar Bar.
         let paddedFrame = panel.frame.insetBy(dx: -15, dy: -15)
         return paddedFrame.contains(mouseLocation)
     }

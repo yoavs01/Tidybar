@@ -17,7 +17,7 @@ struct HookScript: Codable, Hashable {
     /// Absolute path to the script file on disk.
     var path: String
 
-    /// Maximum wall-clock seconds the hook may run before Thaw terminates it.
+    /// Maximum wall-clock seconds the hook may run before Tidybar terminates it.
     /// Clamped to [1, 300] at run time; storing the raw value keeps the
     /// Stepper binding straightforward.
     var timeoutSeconds: Double

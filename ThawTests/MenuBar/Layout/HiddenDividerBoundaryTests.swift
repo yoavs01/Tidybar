@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the hidden-divider boundary check that applyProfileLayout's
 /// Phase 1 runs before the always-hidden divider placement.
@@ -185,7 +185,7 @@ struct HiddenDividerBoundaryTests {
         /// The 28 items the log reported in the visible section, in the
         /// order it reported them (index 0 rightmost).
         static let currentVisible = [
-            "com.stonerl.Thaw:Thaw.ControlItem.Visible",
+            "com.yoavsror.tidybar:Tidybar.ControlItem.Visible",
             "com.robinlu.mac.Tooth-Fairy:Item-0",
             "com.bjango.istatmenus.status:com.bjango.istatmenus.network",
             "com.bjango.istatmenus.status:com.bjango.istatmenus.cpu",
@@ -263,7 +263,7 @@ struct HiddenDividerBoundaryTests {
             "com.bjango.istatmenus.status:com.bjango.istatmenus.time",
             "com.robinlu.mac.Tooth-Fairy:Item-0",
             "com.rogueamoeba.soundsource:SSMainAppMenuIcon",
-            "com.stonerl.Thaw:Thaw.ControlItem.Visible",
+            "com.yoavsror.tidybar:Tidybar.ControlItem.Visible",
             "com.techsmith.snagit.capturehelper:Item-0",
         ]
 
@@ -353,24 +353,24 @@ struct HiddenDividerBoundaryTests {
     }
 }
 
-/// Pins the refusal that keeps the H_ctrl boundary move off Thaw's own
+/// Pins the refusal that keeps the H_ctrl boundary move off Tidybar's own
 /// chevron (#958).
 ///
 /// The candidate set the caller hands the planner is already filtered to
-/// items that are movable and on screen. Thaw's control items pass both on
+/// items that are movable and on screen. Tidybar's control items pass both on
 /// every pass, so on a bar where the profile's items have been dragged to
 /// the wrong side of the divider and parked there, the chevron is the only
 /// candidate left standing — and it is the one anchor that must not be
 /// used. Dragging H_ctrl up to it sweeps the section it was restoring
 /// across with it.
 ///
-/// #958's reporter imported a known-good plist with Thaw quit, confirmed it
+/// #958's reporter imported a known-good plist with Tidybar quit, confirmed it
 /// live, and watched the first apply after relaunch undo it:
 ///
 /// ```
 /// Profile layout Phase 1: hiddenBoundaryMismatch=11
 /// Profile layout: 11 item(s) on the wrong side of H_ctrl, moving H_ctrl to the boundary
-/// Profile layout: moving H_ctrl -> left of <com.stonerl.Thaw:Thaw.ControlItem.Visible>
+/// Profile layout: moving H_ctrl -> left of <com.yoavsror.tidybar:Tidybar.ControlItem.Visible>
 /// post-H_ctrl classification crossSectionMoves=0, totalSectionMismatch=0
 /// ```
 ///
@@ -378,10 +378,10 @@ struct HiddenDividerBoundaryTests {
 /// attached to the same issue, in profile order — index 0 rightmost. The
 /// chevron sits at index 11 with four items to its left, none of which are
 /// movable, which is what leaves it as the last candidate the search finds.
-@Suite("Boundary anchor refuses Thaw's own items")
+@Suite("Boundary anchor refuses Tidybar's own items")
 struct BoundaryAnchorControlItemRefusalTests {
-    private static let chevron = "com.stonerl.Thaw:Thaw.ControlItem.Visible"
-    private static let hiddenDivider = "com.stonerl.Thaw:Thaw.ControlItem.Hidden"
+    private static let chevron = "com.yoavsror.tidybar:Tidybar.ControlItem.Visible"
+    private static let hiddenDivider = "com.yoavsror.tidybar:Tidybar.ControlItem.Hidden"
 
     private static let desiredVisible = [
         "leits.MeetingBar:Item-0",

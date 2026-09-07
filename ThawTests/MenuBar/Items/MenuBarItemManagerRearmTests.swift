@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Verifies the cache-refresh contract of rearmActiveProfileLayout, the half
 /// of the fix that lives in MenuBarItemManager.

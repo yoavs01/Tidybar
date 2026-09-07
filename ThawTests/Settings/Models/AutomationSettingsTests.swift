@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``AutomationSettings``' whitelist bookkeeping — the part of the
 /// Settings URI automation surface that is real logic rather than view code.

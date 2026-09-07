@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the parts of ``ProfileManager`` that survive a process restart:
 /// the on-disk manifest, the per-profile JSON files, and the menu bar
@@ -115,7 +115,7 @@ struct ProfileManagerPersistenceTests {
     func managerCreatesItsProfilesDirectory() throws {
         try withTemporaryDirectory { tmp in
             let nested = tmp
-                .appendingPathComponent("Thaw", isDirectory: true)
+                .appendingPathComponent("Tidybar", isDirectory: true)
                 .appendingPathComponent("Profiles", isDirectory: true)
             let manager = ProfileManager(profilesDirectory: nested)
 

@@ -9,12 +9,12 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutSolver.planLeftmostMove.
 ///
 /// Pins down the four-branch cascade used by relocateNewLeftmostItems:
-/// (1) Thaw icon, (2) non-hideable system item, (3) new hideable item,
+/// (1) Tidybar icon, (2) non-hideable system item, (3) new hideable item,
 /// (4) noop. Each scenario layouts the inputs at the planner boundary so
 /// no Bridging or instance state is involved.
 ///
@@ -47,9 +47,9 @@ struct PlanLeftmostMoveTests {
 
     // MARK: - Scenarios
 
-    /// The Thaw visible-control icon left of the divider triggers the
-    /// Thaw-icon recovery branch.
-    @Test("The Thaw icon left of the divider takes the Thaw-icon branch")
+    /// The Tidybar visible-control icon left of the divider triggers the
+    /// Tidybar-icon recovery branch.
+    @Test("The Tidybar icon left of the divider takes the Tidybar-icon branch")
     func thawIconLeftOfDividerTriggersThawIconBranch() {
         let thaw = leftmostItem(
             tag: .visibleControlItem,
@@ -505,7 +505,7 @@ struct PlanLeftmostMoveTests {
     }
 
     /// The Control Center namespace is the shared fallback for every widget
-    /// macOS hosts but Thaw cannot yet attribute, so a saved entry under it
+    /// macOS hosts but Tidybar cannot yet attribute, so a saved entry under it
     /// says nothing about which item is which. It is excluded from the
     /// namespace fallback even when the counts happen to line up.
     @Test("The Control Center namespace is excluded from the namespace fallback")
@@ -537,12 +537,12 @@ struct PlanLeftmostMoveTests {
         }
     }
 
-    // MARK: - Thaw icon, standalone
+    // MARK: - Tidybar icon, standalone
 
     /// planThawIconMove is what the startup-settling path calls, before the
     /// other items' namespace tags are trustworthy. It must agree with the
-    /// Thaw-icon branch of the full planner.
-    @Test("planThawIconMove finds the Thaw icon left of the divider")
+    /// Tidybar-icon branch of the full planner.
+    @Test("planThawIconMove finds the Tidybar icon left of the divider")
     func planThawIconMoveFindsIconLeftOfDivider() {
         let thaw = leftmostItem(tag: .visibleControlItem, x: 100, windowID: 700)
 
@@ -553,7 +553,7 @@ struct PlanLeftmostMoveTests {
 
     /// Once the icon sits right of the divider it is on screen, so repeated
     /// settling polls must not keep moving it.
-    @Test("planThawIconMove returns nil when the Thaw icon is already placed")
+    @Test("planThawIconMove returns nil when the Tidybar icon is already placed")
     func planThawIconMoveIgnoresIconRightOfDivider() {
         let thaw = leftmostItem(tag: .visibleControlItem, x: 500, windowID: 700)
 
@@ -562,10 +562,10 @@ struct PlanLeftmostMoveTests {
         #expect(icon == nil)
     }
 
-    /// The settling path must act on the Thaw icon only. Third-party items
+    /// The settling path must act on the Tidybar icon only. Third-party items
     /// left of the divider are the ones whose tags aren't settled yet, and
     /// deferring them is the whole point of the settling guard.
-    @Test("planThawIconMove ignores non-Thaw items left of the divider")
+    @Test("planThawIconMove ignores non-Tidybar items left of the divider")
     func planThawIconMoveIgnoresOtherLeftmostItems() {
         let other = leftmostItem(tag: appTag("com.example.app", "Item"), x: 100, windowID: 710)
         let unresolved = leftmostItem(

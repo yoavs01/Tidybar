@@ -39,7 +39,7 @@ nonisolated enum MarkerPairResolver {
         let size: CGSize
         let title: String
         /// CG-layer kCGWindowOwnerPID. Preferred PID source when it
-        /// resolves to a bundle ID that is not Control Center or Thaw.
+        /// resolves to a bundle ID that is not Control Center or Tidybar.
         let owningPID: pid_t?
     }
 
@@ -64,7 +64,7 @@ nonisolated enum MarkerPairResolver {
     /// resolves each icon to a sourcePID via the marker. The pairing
     /// must be unique in *both* directions: a width matching more than
     /// one marker is ambiguous, and so is a width shared by more than
-    /// one unresolved icon. Thaw and Control Center are excluded from
+    /// one unresolved icon. Tidybar and Control Center are excluded from
     /// the resolution paths so a marker hosted by either does not
     /// collapse the resolution back to those PIDs.
     ///
@@ -84,9 +84,9 @@ nonisolated enum MarkerPairResolver {
     ///     title is bundle-ID-shaped (contains a dot) are skipped so
     ///     two markers cannot pair with each other.
     ///   - markers: bundle-ID-titled marker windows extracted from the
-    ///     items-only list. Callers are expected to pre-filter Thaw
-    ///     control items and the Thaw self-registration window.
-    ///   - thawBundleID: Thaw's own bundle identifier; excluded from
+    ///     items-only list. Callers are expected to pre-filter Tidybar
+    ///     control items and the Tidybar self-registration window.
+    ///   - thawBundleID: Tidybar's own bundle identifier; excluded from
     ///     both resolution paths.
     ///   - ccBundleID: Control Center's bundle identifier; excluded
     ///     from the marker's owning-PID resolution path.
@@ -175,8 +175,8 @@ nonisolated enum MarkerPairResolver {
 
     /// Extracts marker candidates from raw items-only windows. A
     /// window qualifies as a marker if its title contains a dot
-    /// (bundle-identifier shape), is not a Thaw control item, and is
-    /// not the Thaw self-registration window.
+    /// (bundle-identifier shape), is not a Tidybar control item, and is
+    /// not the Tidybar self-registration window.
     static func extractMarkers(
         from windows: [(windowID: CGWindowID, title: String?, size: CGSize, owningPID: pid_t?)],
         thawControlItemPrefix: String,

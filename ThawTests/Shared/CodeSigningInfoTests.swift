@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `CodeSigningInfo.processTeamIdentifier`, the value both the XPC
 /// service's `Listener` and the app's `MenuBarItemServiceConnection` consult

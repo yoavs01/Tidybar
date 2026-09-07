@@ -8,11 +8,11 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the on-disk half of ``DiagnosticLogger``: attaching to a file,
 /// appending instead of truncating, closing, and the five-file rotation that
-/// keeps a user's `~/Library/Logs/Thaw` directory from growing without bound.
+/// keeps a user's `~/Library/Logs/Tidybar` directory from growing without bound.
 ///
 /// This is the mechanism behind user-submitted diagnostics and it is shared
 /// verbatim with the MenuBarItemService XPC target, so the rotation and
@@ -23,7 +23,7 @@ import Testing
 /// directory. Nothing in this file writes to the real log directory: the
 /// fresh-mint `openLogFile()` path and everything reached through
 /// `isEnabled = true` are deliberately left uncovered because they would mint a
-/// file in the developer's own `~/Library/Logs/Thaw`. `logDirectory`,
+/// file in the developer's own `~/Library/Logs/Tidybar`. `logDirectory`,
 /// `latestLogFile` and `hasLogFiles` are likewise hard-wired to that path and
 /// are only read here, never written through.
 ///
@@ -61,7 +61,7 @@ struct DiagnosticLoggerFileTests {
             // The header is written on the calling thread, not the write
             // queue, so it is observable without waiting.
             let text = contents(of: file)
-            #expect(text.contains("Thaw Diagnostic Log"))
+            #expect(text.contains("Tidybar Diagnostic Log"))
             #expect(text.contains("Process: \(ProcessInfo.processInfo.processName)"))
             #expect(text.contains("macOS: \(ProcessInfo.processInfo.operatingSystemVersionString)"))
         }
@@ -78,7 +78,7 @@ struct DiagnosticLoggerFileTests {
             // Two processes share one file, so the second open must not lose
             // what the first one wrote.
             let text = contents(of: file)
-            #expect(occurrences(of: "Thaw Diagnostic Log", in: text) == 2)
+            #expect(occurrences(of: "Tidybar Diagnostic Log", in: text) == 2)
             #expect(occurrences(of: "Diagnostic logging stopped", in: text) == 1)
         }
     }
@@ -94,7 +94,7 @@ struct DiagnosticLoggerFileTests {
 
             #expect(DiagnosticLogger.shared.currentLogFile == second)
             #expect(contents(of: first).contains("Diagnostic logging stopped"))
-            #expect(contents(of: second).contains("Thaw Diagnostic Log"))
+            #expect(contents(of: second).contains("Tidybar Diagnostic Log"))
             #expect(!contents(of: second).contains("Diagnostic logging stopped"))
         }
     }
@@ -299,11 +299,11 @@ struct DiagnosticLoggerFileTests {
 
     // MARK: Log directory
 
-    @Test("The log directory is Library/Logs/Thaw inside the user's home")
+    @Test("The log directory is Library/Logs/Tidybar inside the user's home")
     func logDirectoryIsUnderTheUserLibrary() {
         let directory = DiagnosticLogger.shared.logDirectory
 
-        #expect(directory.lastPathComponent == "Thaw")
+        #expect(directory.lastPathComponent == "Tidybar")
         #expect(directory.deletingLastPathComponent().lastPathComponent == "Logs")
         #expect(directory.path.hasPrefix(FileManager.default.homeDirectoryForCurrentUser.path))
     }

@@ -10,7 +10,7 @@
 /// storm started.
 ///
 /// Reporter: single notched 14" MacBook Pro (1728×1117, notch 771…956,
-/// right boundary 1538), macOS 26.6 build 25G72, Thaw 2.0.0-rc.2 (48),
+/// right boundary 1538), macOS 26.6 build 25G72, Tidybar 2.0.0-rc.2 (48),
 /// log `thaw_2026-08-05_04-41-41.log` cycle `04:46:26`.
 ///
 /// LM Studio had just launched. Its item attached at x=1066 — left of Sound
@@ -33,7 +33,7 @@ enum LayoutStormLog {
         "com.google.drivefs:Item-0",
         "com.adobe.acc.AdobeCreativeCloud:Item-0",
         "com.displaylink.DisplayLinkUserAgent:Item-0",
-        "com.stonerl.Thaw:Thaw.ControlItem.Visible",
+        "com.yoavsror.tidybar:Tidybar.ControlItem.Visible",
         "com.if.Amphetamine:Amphetamine",
         "com.ameba.TRex:Item-1",
         "com.apple.TextInputMenuAgent:Item-0",
@@ -63,7 +63,7 @@ enum LayoutStormLog {
         "ai.elementlabs.lmstudio:Item-0",
         "com.adobe.acc.AdobeCreativeCloud:Item-0",
         "com.displaylink.DisplayLinkUserAgent:Item-0",
-        "com.stonerl.Thaw:Thaw.ControlItem.Visible",
+        "com.yoavsror.tidybar:Tidybar.ControlItem.Visible",
         "com.if.Amphetamine:Amphetamine",
         "com.ameba.TRex:Item-1",
         "com.apple.TextInputMenuAgent:Item-0",
@@ -79,7 +79,7 @@ enum LayoutStormLog {
         "ai.elementlabs.lmstudio:Item-0",
         "com.adobe.acc.AdobeCreativeCloud:Item-0",
         "com.displaylink.DisplayLinkUserAgent:Item-0",
-        "com.stonerl.Thaw:Thaw.ControlItem.Visible",
+        "com.yoavsror.tidybar:Tidybar.ControlItem.Visible",
         "com.if.Amphetamine:Amphetamine",
         "com.ameba.TRex:Item-1",
         "com.apple.TextInputMenuAgent:Item-0",

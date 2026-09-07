@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``HookScript``'s model surface and its global-hook persistence.
 ///

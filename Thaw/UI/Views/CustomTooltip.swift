@@ -60,7 +60,7 @@ final class CustomTooltipPanel: NSPanel {
         backgroundColor = .clear
         hasShadow = true
         // Must stay above IceBarPanel (`.mainMenu + 1`, see IceBar.swift) so
-        // Thaw Bar grid items can't obscure tooltips (#782); pinned by
+        // Tidybar Bar grid items can't obscure tooltips (#782); pinned by
         // CustomTooltipPanelTests.
         level = .mainMenu + 2
         ignoresMouseEvents = true

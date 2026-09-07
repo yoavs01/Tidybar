@@ -207,12 +207,12 @@ final class MenuBarItemManager {
     /// Timestamp of the most recent menu bar item move operation.
     var lastMoveOperationTimestamp: ContinuousClock.Instant?
 
-    /// When the user last moved an item themselves, as opposed to Thaw
+    /// When the user last moved an item themselves, as opposed to Tidybar
     /// moving one on their behalf.
     ///
     /// Both kinds stamp ``lastMoveOperationTimestamp``, and for the restore
     /// cooldown that is right — a bar that just moved should be left alone
-    /// whoever moved it. The save gate needs to tell them apart. Thaw's own
+    /// whoever moved it. The save gate needs to tell them apart. Tidybar's own
     /// moves mean the bar is mid-restore and must not be written down; a
     /// user's move is the one thing that *must* be written down, and
     /// promptly, because the restore will otherwise revert it on the next
@@ -662,7 +662,7 @@ final class MenuBarItemManager {
     ///
     /// Observed on a live bar: an anchor at minX 1682 driven to 1650 over
     /// five attempts (−5, −13, −11, −3) while the moved item sat at 1683
-    /// throughout. When the anchor is one of Thaw's own dividers, repeating
+    /// throughout. When the anchor is one of Tidybar's own dividers, repeating
     /// that across cycles walks it offscreen until the hidden section reads
     /// as zero width, at which point saves and applies are both refused and
     /// the layout stops persisting entirely (#924, #927).
@@ -991,7 +991,7 @@ final class MenuBarItemManager {
     ///
     /// Filter and merge:
     ///   - control items are excluded except the visibleControlItem
-    ///     (Thaw chevron); its position within the visible section is
+    ///     (Tidybar chevron); its position within the visible section is
     ///     persisted so the LCS planner can detect when macOS placed
     ///     an app item on the wrong side of the chevron;
     ///   - non-control items without a resolved sourcePID are
@@ -1018,9 +1018,9 @@ final class MenuBarItemManager {
 
         // Predicate: items eligible for persistence in savedSectionOrder.
         // Profile-tracked app items (non-control with resolved sourcePID)
-        // are the typical case. The visibleControlItem (Thaw chevron) is
+        // are the typical case. The visibleControlItem (Tidybar chevron) is
         // also persisted so its user-chosen position within the visible
-        // section survives Thaw restarts: without it, savedSectionOrder
+        // section survives Tidybar restarts: without it, savedSectionOrder
         // describes profile-item order but not where the chevron sits
         // relative to them, and on restart the LCS planner can't detect
         // when macOS placed an app item on the wrong side of the chevron.
@@ -2000,7 +2000,7 @@ final class MenuBarItemManager {
     /// a user move at T0 followed by an automatic move at T+3 leaves both
     /// timestamps inside the five-second window, and an exemption keyed on
     /// "a user move happened recently" would disable the cooldown for an
-    /// arrangement Thaw generated itself, letting the next cache cycle
+    /// arrangement Tidybar generated itself, letting the next cache cycle
     /// persist it.
     ///
     /// Pure over its inputs.

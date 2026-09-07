@@ -9,10 +9,10 @@
 import AppIntents
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``ThawFocusFilter`` and ``ProfileEntityQuery``, the App Intents
-/// surface that lets a macOS Focus mode switch Thaw's menu bar profile.
+/// surface that lets a macOS Focus mode switch Tidybar's menu bar profile.
 ///
 /// `ProfileEntityTests` already covers ``ProfileEntity``'s identity and type
 /// display representation. What was untested is everything the system actually
@@ -35,14 +35,14 @@ import Testing
 ///
 /// Deliberate gap: `ProfileEntityQuery.allProfiles()` hardcodes
 /// `FileManager.default.urls(for: .applicationSupportDirectory, …)` plus
-/// `"Thaw/Profiles/profiles.json"` and offers no injection point, unlike
+/// `"Tidybar/Profiles/profiles.json"` and offers no injection point, unlike
 /// `ProfileManager(profilesDirectory:)`. Its result therefore depends on
-/// whether the machine running the tests has real Thaw profiles, and seeding
+/// whether the machine running the tests has real Tidybar profiles, and seeding
 /// them would mean writing into the developer's own Application Support. The
 /// cases below only assert invariants that hold for both an empty and a
 /// populated manifest; a seam is needed to do better.
 @MainActor
-@Suite("Thaw Focus Filter intent", .serialized)
+@Suite("Tidybar Focus Filter intent", .serialized)
 struct FocusFilterIntentTests {
     /// The `UserDefaults` key the filter hands to `ProfileManager`. Pinned as a
     /// literal because it is a cross-process contract: the intent runs in the
@@ -181,7 +181,7 @@ struct FocusFilterIntentTests {
         let description: IntentDescription = try #require(ThawFocusFilter.description)
         #expect(
             String(localized: description.descriptionText)
-                == String(localized: "Apply a Thaw menu bar profile when this Focus activates.")
+                == String(localized: "Apply a Tidybar menu bar profile when this Focus activates.")
         )
         let categoryName = try #require(description.categoryName)
         #expect(String(localized: categoryName) == String(localized: "Profiles"))

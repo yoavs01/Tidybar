@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pins what carries across launches about which applications have an extras
 /// menu bar, and — more importantly — what does not.

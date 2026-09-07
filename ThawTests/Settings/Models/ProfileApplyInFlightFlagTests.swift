@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the in-flight profile flag teardown on the no-moves exit of a
 /// profile apply.

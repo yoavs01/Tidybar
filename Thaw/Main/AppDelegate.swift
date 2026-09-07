@@ -47,13 +47,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // seconds — the delay behind #767. Healthy calls return in well under
         // 100 ms, so a one second ceiling costs nothing and lets the fallback
         // paths run while the user is still watching. Override with:
-        //   defaults write com.stonerl.Thaw axMessagingTimeout -float <seconds>
+        //   defaults write com.yoavsror.tidybar axMessagingTimeout -float <seconds>
         UIElement.defaultMessagingTimeout = Float(
             max(0, (Defaults.object(forKey: .axMessagingTimeout) as? Double) ?? Defaults.DefaultValue.axMessagingTimeout)
         )
 
         // A direct launch (for example from Xcode) can bypass the usual
-        // single-instance behavior. Two live Thaw instances each register
+        // single-instance behavior. Two live Tidybar instances each register
         // control items and then fight to restore their own saved layouts.
         // Let the newly launched instance win so restart and update flows
         // remain reliable.
@@ -63,8 +63,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         NSSplitViewItem.swizzle()
         MigrationManager().migrateAll()
 
-        // Register thaw:// URL events early so external tools (e.g. Raycast)
-        // can trigger actions even when Thaw is not currently in the foreground;
+        // Register tidybar:// URL events early so external tools (e.g. Raycast)
+        // can trigger actions even when Tidybar is not currently in the foreground;
         // depending on the action, the app may still be activated as needed.
         NSAppleEventManager.shared().setEventHandler(
             self,
@@ -216,7 +216,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    /// Handles `kAEGetURL` Apple Events and forwards `thaw://` URLs to `handleURL(_:senderBundleId:)`.
+    /// Handles `kAEGetURL` Apple Events and forwards `tidybar://` URLs to `handleURL(_:senderBundleId:)`.
     @objc private func handleURLAppleEvent(
         _ event: NSAppleEventDescriptor,
         withReplyEvent _: NSAppleEventDescriptor
@@ -276,19 +276,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return app.bundleIdentifier
     }
 
-    /// Dispatches an incoming `thaw://` URL to the appropriate action.
+    /// Dispatches an incoming `tidybar://` URL to the appropriate action.
     ///
     /// Supported Action URLs:
-    /// - `thaw://toggle-hidden` — toggle the hidden menu bar section
-    /// - `thaw://toggle-always-hidden` — toggle the always-hidden menu bar section
-    /// - `thaw://search` — open the menu bar item search panel
-    /// - `thaw://toggle-thawbar` — toggle the IceBar on the active display
-    /// - `thaw://toggle-application-menus` — toggle application menus
-    /// - `thaw://open-settings` — open the Thaw settings window
+    /// - `tidybar://toggle-hidden` — toggle the hidden menu bar section
+    /// - `tidybar://toggle-always-hidden` — toggle the always-hidden menu bar section
+    /// - `tidybar://search` — open the menu bar item search panel
+    /// - `tidybar://toggle-thawbar` — toggle the IceBar on the active display
+    /// - `tidybar://toggle-application-menus` — toggle application menus
+    /// - `tidybar://open-settings` — open the Tidybar settings window
     ///
     /// Supported Settings URLs (requires whitelist authorization):
-    /// - `thaw://set?key=X&value=Y` — set a boolean setting
-    /// - `thaw://toggle?key=X` — toggle a boolean setting
+    /// - `tidybar://set?key=X&value=Y` — set a boolean setting
+    /// - `tidybar://toggle?key=X` — toggle a boolean setting
     private func handleURL(_ url: URL, senderBundleId: String? = nil) {
         let request = SettingsURIParser.parse(url)
 
@@ -304,11 +304,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 "Settings URI \(host): missing required parameters in \(url.absoluteString)"
             )
         case .unrecognized:
-            appState.diagLog.warning("Received unrecognized thaw:// URL: \(url.absoluteString)")
+            appState.diagLog.warning("Received unrecognized tidybar:// URL: \(url.absoluteString)")
         }
     }
 
-    /// Performs a parameterless `thaw://` action.
+    /// Performs a parameterless `tidybar://` action.
     private func perform(_ action: SettingsURIAction) {
         switch action {
         case .toggleHidden:
@@ -440,7 +440,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         sender.reply(toApplicationShouldTerminate: true)
     }
 
-    /// Handles `thaw://get?key=X&callback=Y`.
+    /// Handles `tidybar://get?key=X&callback=Y`.
     private func handleGet(_ request: SettingsURIRequest) {
         guard case let .get(key, displayUUID, callback, broadcast, requestId) = request.route else {
             return

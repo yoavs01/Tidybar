@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Layout reset errors")
 struct LayoutResetErrorTests {

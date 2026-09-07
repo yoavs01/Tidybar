@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the terminal escape hatch for a bar that comes back wrecked on
 /// every launch (#899): a parked divider persists as an `NSStatusItem
@@ -38,7 +38,7 @@ struct LayoutResetCommandTests {
 
     @Test("The flag selects the command")
     func flagSelectsTheCommand() {
-        #expect(LayoutResetCommand.isRequested(arguments: ["/path/Thaw", "--reset-layout"]))
+        #expect(LayoutResetCommand.isRequested(arguments: ["/path/Tidybar", "--reset-layout"]))
     }
 
     /// macOS passes its own arguments to a launched app, so the check has to
@@ -46,20 +46,20 @@ struct LayoutResetCommandTests {
     @Test("The flag is found among other arguments")
     func flagIsFoundAmongOtherArguments() {
         #expect(LayoutResetCommand.isRequested(
-            arguments: ["/path/Thaw", "-NSDocumentRevisionsDebugMode", "YES", "--reset-layout"]
+            arguments: ["/path/Tidybar", "-NSDocumentRevisionsDebugMode", "YES", "--reset-layout"]
         ))
     }
 
     @Test("A normal launch does not select the command")
     func normalLaunchDoesNotSelectTheCommand() {
-        #expect(!LayoutResetCommand.isRequested(arguments: ["/path/Thaw"]))
+        #expect(!LayoutResetCommand.isRequested(arguments: ["/path/Tidybar"]))
     }
 
     /// A near miss must not wipe someone's layout.
     @Test("A similar-looking argument does not select the command")
     func similarArgumentDoesNotSelectTheCommand() {
-        #expect(!LayoutResetCommand.isRequested(arguments: ["/path/Thaw", "--reset-layout-please"]))
-        #expect(!LayoutResetCommand.isRequested(arguments: ["/path/Thaw", "reset-layout"]))
+        #expect(!LayoutResetCommand.isRequested(arguments: ["/path/Tidybar", "--reset-layout-please"]))
+        #expect(!LayoutResetCommand.isRequested(arguments: ["/path/Tidybar", "reset-layout"]))
     }
 
     // MARK: - The reset itself
@@ -150,7 +150,7 @@ struct LayoutResetCommandTests {
             suite.set(["stale"], forKey: "MenuBarItemManager.savedSectionOrder")
 
             let ran = LayoutResetCommand.runIfRequested(
-                arguments: ["/path/Thaw", LayoutResetCommand.flag]
+                arguments: ["/path/Tidybar", LayoutResetCommand.flag]
             )
 
             #expect(ran)
@@ -165,7 +165,7 @@ struct LayoutResetCommandTests {
         withDefaults { suite in
             suite.set(["kept"], forKey: "MenuBarItemManager.savedSectionOrder")
 
-            let ran = LayoutResetCommand.runIfRequested(arguments: ["/path/Thaw"])
+            let ran = LayoutResetCommand.runIfRequested(arguments: ["/path/Tidybar"])
 
             #expect(!ran)
             #expect(suite.array(forKey: "MenuBarItemManager.savedSectionOrder") as? [String] == ["kept"])

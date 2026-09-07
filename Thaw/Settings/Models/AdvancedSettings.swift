@@ -108,7 +108,7 @@ final class AdvancedSettings {
         }
     }
 
-    /// The interval between icon image refreshes in panels (Thaw Bar, search, layout).
+    /// The interval between icon image refreshes in panels (Tidybar Bar, search, layout).
     ///
     /// Always held on the discrete grid the "Icon refresh rate" slider can
     /// express: `0` (Off) or `1/n` for `n` in `1...maxIconRefreshRate`. Writes
@@ -164,7 +164,7 @@ final class AdvancedSettings {
         }
     }
 
-    /// A Boolean value that controls whether Thaw rearranges the menu bar on
+    /// A Boolean value that controls whether Tidybar rearranges the menu bar on
     /// its own initiative.
     ///
     /// The escape hatch for bars where the automatic paths misbehave. When
@@ -181,13 +181,13 @@ final class AdvancedSettings {
         }
     }
 
-    /// A Boolean value that controls whether the Thaw Bar is used to reveal
+    /// A Boolean value that controls whether the Tidybar Bar is used to reveal
     /// hidden items while notch overflow has items ejected.
     ///
     /// Expanding the hidden section inline cannot show items that overflow
     /// ejected: they were ejected precisely because the visible row had no room
     /// left beside the notch. When this is on, a display with ejected items
-    /// reveals through the Thaw Bar regardless of its per-display Thaw Bar
+    /// reveals through the Tidybar Bar regardless of its per-display Tidybar Bar
     /// setting. Only affects displays that currently have ejected items.
     var useThawBarOnNotchOverflow = Defaults.DefaultValue.useThawBarOnNotchOverflow {
         didSet {
@@ -249,7 +249,7 @@ final class AdvancedSettings {
     /// A Boolean value that indicates whether the mouse pointer is moved to a
     /// menu bar item that was opened from the search panel.
     ///
-    /// Only the search panel warps the pointer. Opening an item from the Thaw
+    /// Only the search panel warps the pointer. Opening an item from the Tidybar
     /// Bar means the pointer is already there, so moving it would only take it
     /// somewhere the user did not put it.
     var moveCursorToRevealedItem = Defaults.DefaultValue.moveCursorToRevealedItem {

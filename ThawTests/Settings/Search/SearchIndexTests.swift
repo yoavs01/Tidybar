@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the rules applied around the settings search index: the pane
 /// filter, the relevance sort, the disclosure mapping that decides which

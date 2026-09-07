@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// The parked-divider recovery's stranded test (#978).
 ///
@@ -125,7 +125,7 @@ struct StrandedHiddenDividerTests {
 /// `ControlItem.Hidden` while H_ctrl sat at `minX=-3596`, the drag walked
 /// H_ctrl to `-9322`, and the pair came out inverted with the hidden section
 /// reading zero width. Anchoring a drag beside a parked item is what strands
-/// the item being dragged, which is the same reasoning the Thaw-icon
+/// the item being dragged, which is the same reasoning the Tidybar-icon
 /// relocation guard already carried.
 ///
 /// The guard reads the leading edge, not both edges. A drag anchor is

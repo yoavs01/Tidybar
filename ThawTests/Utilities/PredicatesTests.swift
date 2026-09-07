@@ -8,7 +8,7 @@
 
 import AppKit
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``Predicates``, the namespace the app uses to name closures that
 /// would otherwise be anonymous at the call site.

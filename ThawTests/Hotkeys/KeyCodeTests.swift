@@ -9,7 +9,7 @@
 import Carbon.HIToolbox
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``KeyCode``'s Carbon raw values, its `Hashable`/`Codable`
 /// conformances, and the string the hotkey recorder renders for a key.

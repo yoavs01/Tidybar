@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``MenuBarItemManager/layoutDivergesFromSaved(candidates:sectionLookup:hiddenBounds:alwaysHiddenBounds:overflowExemptUIDs:activelyShownTags:)``,
 /// the second of `applySavedLayout`'s two triggers and the one that fires on
@@ -98,11 +98,11 @@ struct LayoutDivergenceTests {
 
     // MARK: Temporarily shown items (#924)
 
-    /// The regression. Thaw moved this item into the visible section itself in
+    /// The regression. Tidybar moved this item into the visible section itself in
     /// order to show it, so its position is not drift — it is the feature
     /// working. Reporting it dispatches a bulk apply that drags the item home
     /// under the menu the user just opened.
-    @Test("An item Thaw is temporarily showing does not diverge")
+    @Test("An item Tidybar is temporarily showing does not diverge")
     func temporarilyShownItemDoesNotDiverge() {
         #expect(
             !diverges(

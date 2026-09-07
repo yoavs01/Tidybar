@@ -254,7 +254,7 @@ final class MenuBarItemImageCache: @unchecked Sendable {
     /// The slider ceiling and the SCK capture floor are the same number so
     /// they cannot drift apart: the UI never promises a rate the engine will
     /// not deliver. 30 matches the historical slider top. Higher rates pin a
-    /// core while Search / Layout / Thaw Bar stay open (composite SCK +
+    /// core while Search / Layout / Tidybar Bar stay open (composite SCK +
     /// per-item crop); leave the SkyLight offscreen floor at 1 s separately.
     nonisolated static let maxIconRefreshRate: Double = 30
 
@@ -961,7 +961,7 @@ final class MenuBarItemImageCache: @unchecked Sendable {
             return result
         }
 
-        // The capture backend picks the pixel scale, not Thaw: SCK captures
+        // The capture backend picks the pixel scale, not Tidybar: SCK captures
         // at best resolution for whichever display owns the filter, and on a
         // mixed-scale setup that need not be the display whose
         // backingScaleFactor was handed in (#990: a 1.0x external beside a
@@ -1057,7 +1057,7 @@ final class MenuBarItemImageCache: @unchecked Sendable {
     /// The scale a captured image was actually taken at, or `nil` when the
     /// image cannot be trusted at any scale.
     ///
-    /// `expected` is the scale of the display Thaw resolved for the menu
+    /// `expected` is the scale of the display Tidybar resolved for the menu
     /// bar; the image's pixel width divided by the item's point width is the
     /// scale the window server actually captured at. Normally they agree.
     /// When they do not, the captured value is the truthful one — it is
@@ -1146,7 +1146,7 @@ final class MenuBarItemImageCache: @unchecked Sendable {
                 continue
             }
 
-            // `scale` comes from the display Thaw believes owns the menu
+            // `scale` comes from the display Tidybar believes owns the menu
             // bar, but ScreenCaptureKit captures at the scale of whichever
             // display it selects by frame intersection. On a mixed-scale
             // multi-display setup those disagree, and caching an image under
@@ -1193,7 +1193,7 @@ final class MenuBarItemImageCache: @unchecked Sendable {
         scale: CGFloat,
         appState: AppState
     ) async -> CaptureResult {
-        // Thaw's own control items always capture as transparent via
+        // Tidybar's own control items always capture as transparent via
         // CGWindowListCreateImage, so skip them to avoid the perpetual
         // fail -> blacklist -> cooldown -> retry cycle.
         let capturable = items.filter { !$0.isControlItem }

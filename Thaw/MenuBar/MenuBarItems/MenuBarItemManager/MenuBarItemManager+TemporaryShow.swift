@@ -607,7 +607,7 @@ extension MenuBarItemManager {
             return .showFailed
         }
 
-        // Prefer inserting to the left of the Thaw/visible control item so the icon appears
+        // Prefer inserting to the left of the Tidybar/visible control item so the icon appears
         // where users expect. If it's missing, fall back to the first non-control item.
         let visibleControl = items.first(matching: .visibleControlItem)
         let targetItem = visibleControl ?? items.first(where: { !$0.isControlItem && $0.canBeHidden }) ?? items.first

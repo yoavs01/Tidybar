@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `MouseHelpers.cursorPoint(overItemWithBounds:displayBounds:)`, the
 /// point the search panel warps to after revealing an item.
@@ -47,7 +47,7 @@ struct MouseHelpersCursorPointTests {
         #expect(point == CGPoint(x: -485, y: 12))
     }
 
-    /// The offscreen parking spot Thaw uses for items it has hidden.
+    /// The offscreen parking spot Tidybar uses for items it has hidden.
     @Test("An offscreen item resolves to no point")
     func offscreenItemResolvesToNoPoint() {
         let bounds = CGRect(x: -25000, y: 0, width: 30, height: 24)

@@ -7,13 +7,13 @@
 //  Licensed under the GNU GPLv3
 
 import Foundation
-@testable import Thaw
+@testable import Tidybar
 
 /// Instantiated once by the test runner (`NSPrincipalClass`) before any
 /// test in the bundle executes.
 ///
 /// Points the process-wide `Defaults` facade at a scratch suite so no
-/// suite can write to the real `com.stonerl.Thaw` domain of whoever is
+/// suite can write to the real `com.yoavsror.tidybar` domain of whoever is
 /// running the tests. Suites using `withScratchDefaults` compose with
 /// this unchanged: they swap in their own per-test suite and restore the
 /// previous store, which is now this scratch base rather than
@@ -28,7 +28,7 @@ import Foundation
 final class TestBootstrap: NSObject {
     override init() {
         super.init()
-        let suiteName = "com.stonerl.ThawTests.processScratch"
+        let suiteName = "com.yoavsror.tidybarTests.processScratch"
         guard let suite = UserDefaults(suiteName: suiteName) else {
             return
         }

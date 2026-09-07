@@ -12,8 +12,8 @@ import Foundation
 /// the current format.
 ///
 /// Migrations for Ice's `0.8.0` through `0.11.13.1` releases used to live here.
-/// Thaw has only ever read its own defaults domain, `com.stonerl.Thaw`, and no
-/// Thaw release wrote those older formats into it, so none of them could run.
+/// Tidybar has only ever read its own defaults domain, `com.yoavsror.tidybar`, and no
+/// Tidybar release wrote those older formats into it, so none of them could run.
 /// Settings that do come from Ice arrive through ``IceSettingsImporter``, which
 /// converts them as it reads them.
 @MainActor
@@ -43,10 +43,10 @@ extension MigrationManager {
     }
 }
 
-// MARK: - Migrate Per-Display Thaw Bar
+// MARK: - Migrate Per-Display Tidybar Bar
 
 extension MigrationManager {
-    /// Migrates legacy global Thaw Bar settings to per-display configurations.
+    /// Migrates legacy global Tidybar Bar settings to per-display configurations.
     private func migratePerDisplayIceBar() -> MigrationResult {
         guard !Defaults.bool(forKey: .hasMigratedPerDisplayIceBar) else {
             return .success
@@ -57,10 +57,10 @@ extension MigrationManager {
         let iceBarLocationRaw = Defaults.integer(forKey: .iceBarLocation)
         let iceBarLocation = IceBarLocation(rawValue: iceBarLocationRaw) ?? .dynamic
 
-        // Only create per-display configs if the user had Thaw Bar enabled.
+        // Only create per-display configs if the user had Tidybar Bar enabled.
         guard useIceBar else {
             Defaults.set(true, forKey: .hasMigratedPerDisplayIceBar)
-            diagLog.info("Per-display Thaw Bar migration: Thaw Bar was disabled, nothing to migrate")
+            diagLog.info("Per-display Tidybar Bar migration: Tidybar Bar was disabled, nothing to migrate")
             return .success
         }
 
@@ -73,7 +73,7 @@ extension MigrationManager {
             let data = try encoder.encode(configs)
             Defaults.set(data, forKey: .displayIceBarConfigurations)
             Defaults.set(true, forKey: .hasMigratedPerDisplayIceBar)
-            diagLog.info("Per-display Thaw Bar migration: migrated \(configs.count) display(s)")
+            diagLog.info("Per-display Tidybar Bar migration: migrated \(configs.count) display(s)")
         } catch {
             return .failureAndLogError(.perDisplayIceBarMigrationError(error))
         }
@@ -100,7 +100,7 @@ extension MigrationManager {
         var description: String {
             switch self {
             case let .perDisplayIceBarMigrationError(error):
-                "Error migrating per-display Thaw Bar configuration: \(error)"
+                "Error migrating per-display Tidybar Bar configuration: \(error)"
             }
         }
     }

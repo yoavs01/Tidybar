@@ -165,8 +165,8 @@ enum HookRunner {
         // from the last explicit step.
         //
         // `createSession` is not optional here. Without it the hook stays in
-        // Thaw's own process group, and a group-targeted signal would be
-        // delivered to Thaw as well.
+        // Tidybar's own process group, and a group-targeted signal would be
+        // delivered to Tidybar as well.
         //
         // The signal is SIGTERM rather than SIGINT because a non-interactive
         // `sh` starts background jobs with SIGINT ignored: `sleep 30 &`

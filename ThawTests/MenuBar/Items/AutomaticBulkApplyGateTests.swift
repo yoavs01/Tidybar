@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the gate that rations automatic bulk applies once batches
 /// stop completing.

@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the read side of ``DisplaySettingsManager``'s inheritance rule: a
 /// display with no stored entry resolves through ``globalConfiguration``.

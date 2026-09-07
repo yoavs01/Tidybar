@@ -74,29 +74,29 @@ final class ThawCtlEngine {
     }
 
     func sendSet(key: String, value: String, display: String = "") {
-        var url = "thaw://set?key=\(key)&value=\(value)"
+        var url = "tidybar://set?key=\(key)&value=\(value)"
         if !display.isEmpty { url += "&display=\(display)" }
         send(url: url)
     }
 
     func sendToggle(key: String, display: String = "") {
-        var url = "thaw://toggle?key=\(key)"
+        var url = "tidybar://toggle?key=\(key)"
         if !display.isEmpty { url += "&display=\(display)" }
         send(url: url)
     }
 
     func sendGet(key: String, display: String = "") {
         let callback = "thawctl://response"
-        var url = "thaw://get?key=\(key)&callback=\(callback)"
+        var url = "tidybar://get?key=\(key)&callback=\(callback)"
         if !display.isEmpty { url += "&display=\(display)" }
         send(url: url)
     }
 
     func sendAuthorize() {
-        send(url: "thaw://authorize")
+        send(url: "tidybar://authorize")
     }
 
     func sendAction(_ action: String) {
-        send(url: "thaw://\(action)")
+        send(url: "tidybar://\(action)")
     }
 }

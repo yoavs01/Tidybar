@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Menu bar item tags")
 struct MenuBarItemTagTests {
@@ -125,7 +125,7 @@ struct MenuBarItemTagTests {
 
         // MARK: - Static Constants Tests
 
-        @Test("The Thaw namespace is Thaw's bundle identifier")
+        @Test("The Tidybar namespace is Tidybar's bundle identifier")
         func thawNamespace() {
             let thaw = MenuBarItemTag.Namespace.thaw
             #expect(thaw.isString)
@@ -278,7 +278,7 @@ struct MenuBarItemTagTests {
             #expect(tag.isSystemItem)
         }
 
-        @Test("A Thaw item is a system item")
+        @Test("A Tidybar item is a system item")
         func isSystemItemForThaw() {
             let tag = MenuBarItemTag(
                 namespace: .thaw,

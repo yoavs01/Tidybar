@@ -8,12 +8,12 @@
 
 import Cocoa
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the per-display half of the Ice import: when the source domain has
 /// `UseIceBar` enabled, the importer must synthesize a
 /// `DisplayIceBarConfiguration` for every connected display so the migrated
-/// setting actually takes effect in Thaw's per-display model.
+/// setting actually takes effect in Tidybar's per-display model.
 ///
 /// `buildConfigurations` walks the real `NSScreen` list, which hosted tests
 /// have at least one of, so the generated dictionary is asserted non-empty
@@ -91,7 +91,7 @@ struct IceSettingsImporterPerDisplayTests {
     private func makeSource(
         _ values: [String: Any]
     ) throws -> (defaults: UserDefaults, domainName: String) {
-        let domainName = "com.stonerl.ThawTests.IceSettingsImporter.\(UUID().uuidString)"
+        let domainName = "com.yoavsror.tidybarTests.IceSettingsImporter.\(UUID().uuidString)"
         let defaults = try #require(UserDefaults(suiteName: domainName))
         for (key, value) in values {
             defaults.set(value, forKey: key)

@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the parts of ``IceSettingsImporter`` that ``IceSettingsImporterTests``
 /// leaves alone: it only exercises the V1 appearance conversion, so the general,
@@ -17,7 +17,7 @@ import Testing
 ///
 /// This code reads a *foreign* app's `UserDefaults` domain. Every value in it
 /// was written by a different binary, possibly a much older one, and nothing
-/// validates it before it is copied into Thaw's own domain — so absent keys,
+/// validates it before it is copied into Tidybar's own domain — so absent keys,
 /// wrong types and empty containers are the cases that matter, not the happy
 /// path.
 ///
@@ -31,7 +31,7 @@ import Testing
 ///   `DisplayIceBarConfiguration.buildConfigurations`, which walks
 ///   `NSScreen.screens`. Its result — and therefore whether the `configs.isEmpty`
 ///   guard fires — depends on what displays are attached to the machine running
-///   the tests, so only the deterministic "no Thaw Bar to convert" side is
+///   the tests, so only the deterministic "no Tidybar Bar to convert" side is
 ///   covered here.
 /// - `importPerDisplayIceBarSettings`' `diagLog.error` arm is unreachable:
 ///   `JSONEncoder` cannot fail on `[String: DisplayIceBarConfiguration]`.
@@ -63,11 +63,11 @@ struct IceSettingsImporterTailTests {
     ///
     /// The suite sees its own keys plus the global domain, and nothing this
     /// build writes — the same assumption ``IceSettingsImporterTests`` makes.
-    /// It matters here because Thaw's own `Defaults.Key` raw values are the
+    /// It matters here because Tidybar's own `Defaults.Key` raw values are the
     /// very strings the importer looks up in Ice's domain, so a leak from the
     /// host app's own settings would show up as phantom imports.
     private func makeSource(_ values: [String: Any]) throws -> (defaults: UserDefaults, domainName: String) {
-        let domainName = "com.stonerl.ThawTests.IceSettingsImporterTail.\(UUID().uuidString)"
+        let domainName = "com.yoavsror.tidybarTests.IceSettingsImporterTail.\(UUID().uuidString)"
         let defaults = try #require(UserDefaults(suiteName: domainName))
         for (key, value) in values {
             defaults.set(value, forKey: key)
@@ -226,7 +226,7 @@ struct IceSettingsImporterTailTests {
     }
 
     /// The mapping loop copies whatever object it finds without checking its
-    /// type, so a key Ice stored as a string lands in Thaw's domain as a string
+    /// type, so a key Ice stored as a string lands in Tidybar's domain as a string
     /// under a key the app reads as a `Bool`. Pinned as observed behaviour, not
     /// endorsed: see the report accompanying this suite.
     @Test("A mistyped Ice value is copied verbatim and still counted as imported")
@@ -251,7 +251,7 @@ struct IceSettingsImporterTailTests {
         }
     }
 
-    @Test("A Thaw Bar that Ice had switched off generates no per-display configuration")
+    @Test("A Tidybar Bar that Ice had switched off generates no per-display configuration")
     func disabledIceBarGeneratesNoPerDisplayConfiguration() throws {
         try withScratchDefaults { suite in
             let (source, domainName) = try makeSource([
@@ -333,7 +333,7 @@ struct IceSettingsImporterTailTests {
 
             let result = importer.importIceSettings()
 
-            // Writing an empty dictionary would clear whatever hotkeys Thaw
+            // Writing an empty dictionary would clear whatever hotkeys Tidybar
             // already has, which is worse than importing nothing.
             #expect(result.settingsImported == 0)
             #expect(absent(.hotkeys, from: suite))
@@ -387,7 +387,7 @@ struct IceSettingsImporterTailTests {
 
             #expect(result.settingsImported == 1)
             #expect(writes.count == 1)
-            // Ice's V2 format is Thaw's V2 format, so the importer must not
+            // Ice's V2 format is Tidybar's V2 format, so the importer must not
             // re-encode it: a round trip through this build's model would drop
             // any field Ice wrote that this build does not know.
             #expect(writes.first == appearanceData)

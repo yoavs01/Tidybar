@@ -8,7 +8,7 @@
 
 import AppKit
 
-/// Detects other running menu bar management apps that may conflict with Thaw.
+/// Detects other running menu bar management apps that may conflict with Tidybar.
 enum ConflictingAppDetector {
     /// Known menu bar management app bundle identifiers and their display names.
     private static let knownConflictingApps: [String: String] = [

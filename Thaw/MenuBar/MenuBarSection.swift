@@ -26,7 +26,7 @@ final class MenuBarSection {
     /// The section's diagnostic logger.
     private nonisolated let diagLog = DiagLog(category: "MenuBarSection")
 
-    /// A Boolean value that indicates whether the Thaw Bar should be used
+    /// A Boolean value that indicates whether the Tidybar Bar should be used
     /// on the current active display.
     private var useIceBar: Bool {
         guard let appState else { return false }
@@ -98,7 +98,7 @@ final class MenuBarSection {
         appState?.menuBarManager
     }
 
-    /// The best screen to show the Thaw Bar on.
+    /// The best screen to show the Tidybar Bar on.
     ///
     /// Always returns the screen with the active menu bar so that
     /// clicking icons in the IceBar actually activates their popups.
@@ -243,7 +243,7 @@ final class MenuBarSection {
             return
         }
 
-        // Determine whether we should use the Thaw Bar based on settings.
+        // Determine whether we should use the Tidybar Bar based on settings.
         let shouldUseIceBarBasedOnSettings = useIceBar
 
         var preferredPresentationMode: PresentationMode
@@ -252,10 +252,10 @@ final class MenuBarSection {
         } else if let screen = screenForIceBar {
             preferredPresentationMode = presentationMode(on: screen)
             // Avoid hiding application menus while a fullscreen space is
-            // active. Hiding the application menus activates Thaw
+            // active. Hiding the application menus activates Tidybar
             // (NSApp.activate), and activating inside a fullscreen space
             // makes macOS immediately hide the menu bar (FB13544993). Fall
-            // back to the Thaw Bar instead: its panel is shown via
+            // back to the Tidybar Bar instead: its panel is shown via
             // orderFrontRegardless() without activating. This mirrors the
             // fullscreen guard already present in the reactive sink in
             // MenuBarManager.
@@ -263,7 +263,7 @@ final class MenuBarSection {
                 preferredPresentationMode == .inlineHidingApplicationMenus,
                 appState?.activeSpace.isFullscreen == true
             {
-                diagLog.info("Fullscreen space active; falling back to Thaw Bar instead of hiding application menus")
+                diagLog.info("Fullscreen space active; falling back to Tidybar Bar instead of hiding application menus")
                 preferredPresentationMode = .iceBar
             }
             switch preferredPresentationMode {
@@ -272,13 +272,13 @@ final class MenuBarSection {
             case .inlineHidingApplicationMenus:
                 diagLog.info("Showing items inline by hiding the application menus")
             case .iceBar:
-                diagLog.info("Not enough space to show items inline, falling back to Thaw Bar")
+                diagLog.info("Not enough space to show items inline, falling back to Tidybar Bar")
             }
         } else {
             preferredPresentationMode = .inline
         }
 
-        // Use Ice Thaw if settings say so OR if items still won't fit inline.
+        // Use Ice Tidybar if settings say so OR if items still won't fit inline.
         if preferredPresentationMode == .iceBar {
             // Make sure hidden and always-hidden control items are collapsed.
             // Still update the visible control item (Ice icon) state to show
@@ -314,7 +314,7 @@ final class MenuBarSection {
             return // We're done.
         }
 
-        // If we made it here, we're not using the Thaw Bar.
+        // If we made it here, we're not using the Tidybar Bar.
         // Make sure it's closed.
         menuBarManager.iceBarPanel.close()
 
@@ -344,7 +344,7 @@ final class MenuBarSection {
             return
         }
 
-        menuBarManager.iceBarPanel.close() // Make sure Thaw Bar is always closed.
+        menuBarManager.iceBarPanel.close() // Make sure Tidybar Bar is always closed.
         menuBarManager.showOnHoverAllowed = true
 
         for section in menuBarManager.sections {
@@ -396,7 +396,7 @@ final class MenuBarSection {
             // Smart uses the rehide interval as a fallback to the click-based
             // rehide checks; timed uses it as the rule. The interval itself is
             // never gated, but the hide at its end is: hiding under a cursor
-            // that is still over the bar or the Thaw Bar is the #924 bug, and
+            // that is still over the bar or the Tidybar Bar is the #924 bug, and
             // hiding while a menu bar item's menu is open would yank the menu
             // out from under the user. Both defer by restarting the checks.
             // Task.sleep replaces Timer so cancellation is automatic when the

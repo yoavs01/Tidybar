@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the two rules that decide whether an owner reacted to a click.
 ///

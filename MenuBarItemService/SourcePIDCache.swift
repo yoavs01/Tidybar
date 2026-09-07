@@ -561,7 +561,7 @@ actor SourcePIDCache {
         }
 
         let ccBundleID = "com.apple.controlcenter"
-        let thawBundleID = "com.stonerl.Thaw"
+        let thawBundleID = "com.yoavsror.tidybar"
         var appsChecked = 0
         var appsWithBar = 0
         var appsSkipped = 0
@@ -600,16 +600,16 @@ actor SourcePIDCache {
                     return
                 }
                 appsWithBar += 1
-                // Thaw's own children are never skipped for being disabled.
+                // Tidybar's own children are never skipped for being disabled.
                 // A collapsed section divider is deliberately disabled
                 // (ControlItem sets isEnabled = false in .hideSection so the
                 // spacer stays inert), which is its normal steady state — so
-                // skipping it here leaves Thaw unable to resolve its own
+                // skipping it here leaves Tidybar unable to resolve its own
                 // control items for as long as the section stays collapsed.
                 // That kills both ControlItemPair fallbacks that key off
                 // sourcePID: the tag+PID match, and the AX-frame correlation,
                 // whose candidate predicate requires sourcePID == ourPID.
-                // Thaw then cannot identify its own dividers even with an
+                // Tidybar then cannot identify its own dividers even with an
                 // exact positional match available (#899, and the
                 // "strategies 1 through 3 never fired" report in #895).
                 let isOwnApp = app.bundleIdentifier == thawBundleID
@@ -691,7 +691,7 @@ actor SourcePIDCache {
         // com.microsoft.OneDrive, com.apple.TextInputMenuAgent, us.zoom.xos
         // and seven more, all with a nil source PID in one log).
         //
-        // Thaw and Control Center are excluded: attributing a widget to
+        // Tidybar and Control Center are excluded: attributing a widget to
         // either is the misattribution every other pass is careful to avoid.
         let attributableBundleIDs = apps.compactMap { app -> String? in
             guard let bundleID = app.bundleIdentifier,
@@ -788,11 +788,11 @@ actor SourcePIDCache {
         // bundle-ID-shaped (generic names like "Item-0", or empty),
         // looks for the unique marker window with matching size and
         // synthesizes the sourcePID by either using the marker's
-        // CG-layer owning PID (when it is neither Thaw itself nor
+        // CG-layer owning PID (when it is neither Tidybar itself nor
         // Control Center) or by looking up the running app named by
         // the marker's bundle-ID title. Multi-match cases are skipped
-        // to prevent misattribution. Thaw's own control items and
-        // self-registration windows are excluded so Thaw's PID can
+        // to prevent misattribution. Tidybar's own control items and
+        // self-registration windows are excluded so Tidybar's PID can
         // never be attributed to a third-party widget.
         var markerWindowIDs = Set<CGWindowID>()
         if !unresolvedWindows.isEmpty {
@@ -805,7 +805,7 @@ actor SourcePIDCache {
                         owningPID: win.owningApplication?.processIdentifier
                     )
                 },
-                thawControlItemPrefix: "Thaw.ControlItem.",
+                thawControlItemPrefix: "Tidybar.ControlItem.",
                 thawBundleID: thawBundleID
             )
             markerWindowIDs = Set(markers.map(\.windowID))

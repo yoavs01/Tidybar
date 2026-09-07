@@ -11,7 +11,7 @@ import Dispatch
 import Foundation
 import SwiftUI
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Coverage sweep, part 5: the leftover branches in the planner, tag and
 /// utility code.
@@ -305,16 +305,16 @@ struct CoverageSweep5Tests {
     struct DispatchQueueTests {
         @Test("The queue keeps the label it was given and runs work")
         func targetingGlobalKeepsItsLabel() {
-            let queue = DispatchQueue.targetingGlobal(label: "com.stonerl.ThawTests.sweep")
+            let queue = DispatchQueue.targetingGlobal(label: "com.yoavsror.tidybarTests.sweep")
 
-            #expect(queue.label == "com.stonerl.ThawTests.sweep")
+            #expect(queue.label == "com.yoavsror.tidybarTests.sweep")
             #expect(queue.sync { 6 * 7 } == 42)
         }
 
         @Test("The explicit quality-of-service and attribute overloads are usable")
         func targetingGlobalAcceptsQoSAndAttributes() {
             let queue = DispatchQueue.targetingGlobal(
-                label: "com.stonerl.ThawTests.sweep.concurrent",
+                label: "com.yoavsror.tidybarTests.sweep.concurrent",
                 qos: .utility,
                 attributes: .concurrent
             )
@@ -323,7 +323,7 @@ struct CoverageSweep5Tests {
             queue.sync(flags: .barrier) { total += 1 }
             queue.sync(flags: .barrier) { total += 1 }
 
-            #expect(queue.label == "com.stonerl.ThawTests.sweep.concurrent")
+            #expect(queue.label == "com.yoavsror.tidybarTests.sweep.concurrent")
             #expect(total == 2)
         }
     }

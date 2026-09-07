@@ -10,7 +10,7 @@ import AsyncAlgorithms
 import Cocoa
 import Combine
 
-/// Manages per-display Thaw Bar configuration.
+/// Manages per-display Tidybar Bar configuration.
 ///
 /// Configurations are keyed by display UUID string (via `Bridging.getDisplayUUIDString(for:)`).
 /// Displays without an explicit configuration inherit ``globalConfiguration``.
@@ -73,7 +73,7 @@ final class DisplaySettingsManager {
         }
     }
 
-    /// Whether Thaw asks for confirmation before a spacing change relaunches
+    /// Whether Tidybar asks for confirmation before a spacing change relaunches
     /// menu bar apps. When true, the automatic display-transition path shows
     /// a just-in-time prompt and the Displays pane shows its Apply/global
     /// confirmation alerts. When false, both apply without asking.
@@ -150,7 +150,7 @@ final class DisplaySettingsManager {
     /// Loads saved configurations from Defaults. On a truly first launch
     /// (no persisted per-display configurations) with externally configured
     /// system spacing, adopts the on-disk value as the seed offset for each
-    /// connected display so Thaw does not overwrite a user's manual
+    /// connected display so Tidybar does not overwrite a user's manual
     /// defaults write NSStatusItemSpacing and trigger a startup relaunch
     /// wave. See issue #602.
     private func loadInitialState() {
@@ -414,7 +414,7 @@ final class DisplaySettingsManager {
         if scope == .allNonIceBarDisplays {
             // Update all displays that do NOT have IceBar enabled; on the rest
             // the setting is redundant, since every section already opens in
-            // the Thaw Bar there.
+            // the Tidybar Bar there.
             for screen in NSScreen.screens {
                 guard let uuid = Bridging.getDisplayUUIDString(for: screen.displayID) else { continue }
                 let config = configuration(forUUID: uuid)
@@ -605,23 +605,23 @@ final class DisplaySettingsManager {
         Int(configurationForActiveDisplay().itemSpacingOffset.rounded())
     }
 
-    /// Whether the Thaw Bar is enabled for the given display.
+    /// Whether the Tidybar Bar is enabled for the given display.
     func useIceBar(for displayID: CGDirectDisplayID) -> Bool {
         configuration(for: displayID).useIceBar
     }
 
-    /// Whether the always-hidden section alone opens in the Thaw Bar on the
+    /// Whether the always-hidden section alone opens in the Tidybar Bar on the
     /// given display.
     func useThawBarForAlwaysHidden(for displayID: CGDirectDisplayID) -> Bool {
         configuration(for: displayID).useThawBarForAlwaysHidden
     }
 
-    /// The Thaw Bar location for the given display.
+    /// The Tidybar Bar location for the given display.
     func iceBarLocation(for displayID: CGDirectDisplayID) -> IceBarLocation {
         configuration(for: displayID).iceBarLocation
     }
 
-    /// The Thaw Bar layout for the given display.
+    /// The Tidybar Bar layout for the given display.
     func iceBarLayout(for displayID: CGDirectDisplayID) -> IceBarLayout {
         configuration(for: displayID).iceBarLayout
     }
@@ -636,7 +636,7 @@ final class DisplaySettingsManager {
         configuration(for: displayID).alwaysShowHiddenItems
     }
 
-    /// Whether any connected display has the Thaw Bar enabled.
+    /// Whether any connected display has the Tidybar Bar enabled.
     var isIceBarEnabledOnAnyDisplay: Bool {
         configurations.values.contains { $0.useIceBar }
     }
@@ -680,10 +680,10 @@ final class DisplaySettingsManager {
         return targets
     }
 
-    /// Toggles the Thaw Bar for the display with the active menu bar.
+    /// Toggles the Tidybar Bar for the display with the active menu bar.
     func toggleIceBarForActiveDisplay() {
         guard let uuid = Bridging.getActiveMenuBarDisplayUUID() else {
-            diagLog.warning("Cannot toggle Thaw Bar — no active menu bar display UUID")
+            diagLog.warning("Cannot toggle Tidybar Bar — no active menu bar display UUID")
             return
         }
         updateConfiguration(forDisplayUUID: uuid) { config in

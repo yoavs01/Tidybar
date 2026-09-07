@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// The importer writes through the `Defaults` facade, so every case runs
 /// inside `withScratchDefaults` and the suite is `.serialized`:
@@ -86,7 +86,7 @@ struct IceSettingsImporterTests {
         value: Any,
         forKey key: String
     ) throws -> (defaults: UserDefaults, domainName: String) {
-        let domainName = "com.stonerl.ThawTests.IceSettingsImporter.\(UUID().uuidString)"
+        let domainName = "com.yoavsror.tidybarTests.IceSettingsImporter.\(UUID().uuidString)"
         let defaults = try #require(UserDefaults(suiteName: domainName))
         defaults.set(value, forKey: key)
         return (defaults, domainName)

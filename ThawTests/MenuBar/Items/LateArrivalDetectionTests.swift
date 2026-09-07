@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pins the identity-quality filter on late-arrival detection.
 ///
@@ -100,7 +100,7 @@ struct LateArrivalDetectionTests {
 
     // MARK: - What must still be detected
 
-    /// The behaviour the detector exists for: an app launches after Thaw, its
+    /// The behaviour the detector exists for: an app launches after Tidybar, its
     /// item resolves cleanly, and it is in the profile but not yet sorted.
     @Test("A resolved, unsorted profile item is a late arrival")
     func resolvedUnsortedProfileItemIsALateArrival() {
@@ -156,14 +156,14 @@ struct LateArrivalDetectionTests {
         #expect(arrivals.isEmpty)
     }
 
-    /// Control items are Thaw's own dividers, not profile members, and are
+    /// Control items are Tidybar's own dividers, not profile members, and are
     /// excluded regardless of whether their PID resolved.
     @Test("Control items are never late arrivals")
     func controlItemsAreNeverLateArrivals() {
         let divider = MenuBarItem.fixture(
             tag: MenuBarItemTag(
-                namespace: .string("com.stonerl.Thaw"),
-                title: "Thaw.ControlItem.Hidden"
+                namespace: .string("com.yoavsror.tidybar"),
+                title: "Tidybar.ControlItem.Hidden"
             ),
             windowID: 27481,
             sourcePID: 4321

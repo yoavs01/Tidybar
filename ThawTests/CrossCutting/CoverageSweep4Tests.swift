@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Coverage sweep, part 4: the settings models whose *load* path — the code
 /// that runs once at `init`, before any UI exists — has no dedicated suite.
@@ -25,7 +25,7 @@ import Testing
 /// - `AutomationSettings.addCurrentApp`, the "whitelist this app" button.
 ///
 /// Every test routes through ``withScratchDefaults(sourceLocation:_:)``, so
-/// nothing here writes to the real `com.stonerl.Thaw` domain, and the suite
+/// nothing here writes to the real `com.yoavsror.tidybar` domain, and the suite
 /// is `.serialized` because that store is process-wide.
 ///
 /// Deliberate gaps: `HotkeysSettings.performSetup(with:)` and the encode

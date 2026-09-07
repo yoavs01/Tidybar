@@ -158,7 +158,7 @@ extension MenuBarItemManager {
         // and a very short window lets warps slip through the micro-gaps between a user's own mouse
         // moves when a churny app keeps changing its menu-bar items (see #750, #723, #736). The
         // default preserves the previous 50 ms behaviour; override with:
-        //   defaults write com.stonerl.Thaw inputPauseThresholdMs -int <milliseconds>
+        //   defaults write com.yoavsror.tidybar inputPauseThresholdMs -int <milliseconds>
         let pauseMs = max(
             0,
             (Defaults.object(forKey: .inputPauseThresholdMs) as? Int) ?? Defaults.DefaultValue.inputPauseThresholdMs
@@ -199,7 +199,7 @@ extension MenuBarItemManager {
     /// the caller re-checks `Task.isCancelled` immediately afterwards.
     ///
     /// On by default at 300 ms; disable with:
-    ///   defaults write com.stonerl.Thaw bulkApplyIdleThresholdMs -int 0
+    ///   defaults write com.yoavsror.tidybar bulkApplyIdleThresholdMs -int 0
     nonisolated func waitForBulkApplyIdleWindow() async {
         let thresholdMs = (Defaults.object(forKey: .bulkApplyIdleThresholdMs) as? Int)
             ?? Defaults.DefaultValue.bulkApplyIdleThresholdMs
@@ -488,7 +488,7 @@ extension MenuBarItemManager {
     /// misdirected — an echo whose window fields still match is passed
     /// through untouched, so the scromble handshake is unaffected. Kill
     /// switch, should it ever misfire:
-    ///   defaults write com.stonerl.Thaw discardStrayMoveEvents -bool NO
+    ///   defaults write com.yoavsror.tidybar discardStrayMoveEvents -bool NO
     private nonisolated var discardsStrayMoveEvents: Bool {
         (Defaults.object(forKey: .discardStrayMoveEvents) as? Bool) ?? Defaults.DefaultValue.discardStrayMoveEvents
     }
@@ -504,7 +504,7 @@ extension MenuBarItemManager {
     /// top-left/Apple-menu case for items parked off the left edge. Whether
     /// that is *always* unrecoverable is unverified on real hardware, hence
     /// the opt-in. Enable with:
-    ///   defaults write com.stonerl.Thaw failFastOnEventWindowMismatch -bool YES
+    ///   defaults write com.yoavsror.tidybar failFastOnEventWindowMismatch -bool YES
     private nonisolated var failsFastOnEventWindowMismatch: Bool {
         Defaults.bool(forKey: .failFastOnEventWindowMismatch)
     }

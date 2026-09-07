@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// App-specific constants for the main Thaw target.
+/// App-specific constants for the main Tidybar target.
 /// System-framework paths shared with XPC targets live in `SharedConstants`.
 nonisolated enum Constants {
     // swiftlint:disable force_unwrapping

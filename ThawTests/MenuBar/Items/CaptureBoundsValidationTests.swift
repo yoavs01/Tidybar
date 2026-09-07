@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Regression tests for the capture-bounds validation guard added for
 /// issue #759 (degenerate capture rectangles crashing WindowServer).

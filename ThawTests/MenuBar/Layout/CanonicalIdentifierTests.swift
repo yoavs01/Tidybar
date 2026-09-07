@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the migration that rewrites persisted identifiers after an
 /// item is renamed from its helper to the app the user installed.

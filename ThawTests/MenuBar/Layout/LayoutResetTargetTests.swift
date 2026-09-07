@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Layout reset targets")
 struct LayoutResetTargetTests {

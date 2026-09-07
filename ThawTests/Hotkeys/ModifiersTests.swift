@@ -9,7 +9,7 @@
 import Carbon.HIToolbox
 import Cocoa
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - Modifiers Tests
 

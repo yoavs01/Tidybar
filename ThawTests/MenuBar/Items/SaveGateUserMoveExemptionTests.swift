@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the save gate's user-move exemption.
 ///
@@ -17,7 +17,7 @@ import Testing
 /// user's move being the *most recent* move, not merely a recent one: a user
 /// drag at T0 followed by an automatic move at T+3 leaves both timestamps
 /// inside the window, and exempting then would let the next cache cycle
-/// persist an arrangement Thaw generated itself.
+/// persist an arrangement Tidybar generated itself.
 @Suite("Save gate user-move exemption")
 struct SaveGateUserMoveExemptionTests {
     /// Instants far enough apart that ordering is unambiguous without
@@ -40,7 +40,7 @@ struct SaveGateUserMoveExemptionTests {
     }
 
     /// The regression: a user move followed by an automatic move must not
-    /// keep the exemption alive — the latest move is Thaw's, so the cooldown
+    /// keep the exemption alive — the latest move is Tidybar's, so the cooldown
     /// has to hold against the generated intermediate arrangement.
     @Test("An automatic move after the user's move is not exempt")
     func automaticMoveAfterUserMoveIsNotExempt() {

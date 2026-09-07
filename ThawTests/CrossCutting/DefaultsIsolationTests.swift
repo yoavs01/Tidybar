@@ -8,14 +8,14 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Guards the process-wide defaults isolation `TestBootstrap` installs.
 ///
 /// The bootstrap is wired through `NSPrincipalClass` in the test bundle's
 /// generated Info.plist, so nothing in the type system keeps it alive: a
 /// renamed class or a dropped build setting reverts every unscoped
-/// `Defaults.set` in the suite to writing the real `com.stonerl.Thaw`
+/// `Defaults.set` in the suite to writing the real `com.yoavsror.tidybar`
 /// domain of whoever runs the tests — silently. These expectations fail
 /// loudly instead.
 ///

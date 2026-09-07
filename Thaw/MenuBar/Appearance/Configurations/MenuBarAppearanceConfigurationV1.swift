@@ -12,7 +12,7 @@ import Foundation
 /// Configuration for the menu bar's appearance, as Ice stored it before its
 /// `0.11.10` release.
 ///
-/// Thaw never wrote this format. It exists to decode appearance data that
+/// Tidybar never wrote this format. It exists to decode appearance data that
 /// ``IceSettingsImporter`` finds in an old Ice install, which it converts with
 /// ``MenuBarAppearanceConfigurationV2/init(migrating:)``.
 struct MenuBarAppearanceConfigurationV1: Hashable {

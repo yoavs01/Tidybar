@@ -140,7 +140,7 @@ class Permission: Identifiable {
 
 // MARK: - AccessibilityPermission
 
-/// The Accessibility permission, required for Thaw to detect, move, and
+/// The Accessibility permission, required for Tidybar to detect, move, and
 /// interact with menu bar items on the user's behalf.
 final class AccessibilityPermission: Permission {
     init() {
@@ -170,7 +170,7 @@ final class AccessibilityPermission: Permission {
 // MARK: - ScreenRecordingPermission
 
 /// The Screen Recording permission, used for sampling menu bar colors,
-/// previewing menu bar items, and visual search. Optional — Thaw can run in
+/// previewing menu bar items, and visual search. Optional — Tidybar can run in
 /// a limited mode without it.
 final class ScreenRecordingPermission: Permission {
     init() {

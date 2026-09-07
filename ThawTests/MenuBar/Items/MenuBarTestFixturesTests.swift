@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Sanity tests for the synthetic fixture builders in
 /// MenuBarTestFixtures.swift. These pin down that the fixtures produce values

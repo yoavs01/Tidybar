@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes which window bounds may take part in a composite capture.
 ///

@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `HookRunner`, which launches user-supplied profile-apply scripts.
 ///
@@ -321,7 +321,7 @@ final class HookRunnerTests {
         // teardown sequence targets the process group, and the implicit kill
         // that ends it inherits that, so the descendant is terminated rather
         // than left behind. `createSession` is what keeps those signals off
-        // Thaw's own process group.
+        // Tidybar's own process group.
         let pidFile = tempDirectory.appendingPathComponent("descendant.pid").path
         let path = try writeScript("#!/bin/sh\nsleep 30 &\necho $! > \(pidFile)\nwait\n")
         let hook = HookScript(path: path, timeoutSeconds: 0.1)

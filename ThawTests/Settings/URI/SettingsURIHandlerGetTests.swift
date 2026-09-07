@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``SettingsURIHandler``'s *read* surface — the `get` action, the way
 /// it answers, and the per-display lookups both halves of the handler share.
@@ -29,7 +29,7 @@ import Testing
 /// - the in-process notification the per-display lookups post, whose `userInfo`
 ///   carries the scope and value the handler resolved, and
 /// - a direct call into `getSettingValue`, used once to pin the `validValues`
-///   map a `thaw://get?key=iceBarLocation` advertises after it silently
+///   map a `tidybar://get?key=iceBarLocation` advertises after it silently
 ///   dropped two enum cases.
 ///
 /// The response *body* is not asserted through its delivery channels, because
@@ -46,7 +46,7 @@ import Testing
 /// callback validation.
 ///
 /// Every test body runs inside `withScratchDefaults`, so the handler's reads
-/// and writes go to a throwaway store rather than the real `com.stonerl.Thaw`
+/// and writes go to a throwaway store rather than the real `com.yoavsror.tidybar`
 /// domain, and each test starts from an empty store.
 @MainActor
 @Suite("Settings URI handler get", .serialized)
@@ -428,7 +428,7 @@ struct SettingsURIHandlerGetTests {
 
             // The validValues map drifted to three entries when IceBarLocation
             // grew from three to five cases, so leftAligned and rightAligned
-            // could no longer be discovered through thaw://get. Drive the
+            // could no longer be discovered through tidybar://get. Drive the
             // expectation from IceBarLocation itself so a future case can never
             // silently drop out of the advertised set the way these two did.
             let value = try #require(

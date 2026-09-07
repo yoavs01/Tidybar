@@ -10,7 +10,7 @@ import AppKit
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - Fixtures
 
@@ -98,7 +98,7 @@ struct MenuBarItemValueTests {
             let resolved = MenuBarItem.fixture(tag: tag, windowID: 13, sourcePID: 1234)
 
             // An unresolved slot is a system-owned placeholder: dragging it
-            // times out, but nothing stops Thaw from hiding it.
+            // times out, but nothing stops Tidybar from hiding it.
             #expect(!unresolved.isMovable)
             #expect(unresolved.canBeHidden)
             #expect(!unresolved.isTransientControlCenterItem)
@@ -164,7 +164,7 @@ struct MenuBarItemValueTests {
 
         @Test("A spacer window counts as a control item")
         func spacerIsAControlItem() {
-            let item = MenuBarItem.fixture(tag: appTag("Thaw.Spacer.1"), windowID: 20, sourcePID: nil)
+            let item = MenuBarItem.fixture(tag: appTag("Tidybar.Spacer.1"), windowID: 20, sourcePID: nil)
 
             #expect(item.isControlItem)
         }
@@ -352,7 +352,7 @@ struct MenuBarItemValueTests {
 
         @Test("A spacer is named after the app too")
         func spacerShortCircuits() {
-            let item = MenuBarItem.fixture(tag: appTag("Thaw.Spacer.1"), windowID: 31, sourcePID: testRunnerPID)
+            let item = MenuBarItem.fixture(tag: appTag("Tidybar.Spacer.1"), windowID: 31, sourcePID: testRunnerPID)
 
             #expect(item.autoDetectedName == Constants.displayName)
         }

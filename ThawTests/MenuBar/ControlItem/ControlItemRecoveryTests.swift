@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the bounded control-item recovery path for issue #754:
 /// on macOS 26 with multiple displays, after long uptime `ControlItemPair`

@@ -426,7 +426,7 @@ nonisolated extension MenuBarItemTag {
 // MARK: MenuBarItemTag.Namespace Constants
 
 nonisolated extension MenuBarItemTag.Namespace {
-    /// The namespace for the "Thaw" process.
+    /// The namespace for the "Tidybar" process.
     static let thaw = string(Constants.bundleIdentifier)
 
     /// The namespace for the "Control Center" process.

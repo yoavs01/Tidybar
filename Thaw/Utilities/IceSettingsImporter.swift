@@ -18,7 +18,7 @@ struct IceSettingsImporter {
     private static let iceBundleIdentifier = "com.jordanbaird.Ice"
 
     /// Source preferences and the appearance destination are injectable so V1
-    /// conversion can be verified without mutating real Ice or Thaw settings.
+    /// conversion can be verified without mutating real Ice or Tidybar settings.
     private let iceUserDefaults: UserDefaults?
     private let iceDomainName: String
     private let saveAppearanceConfiguration: (Data) -> Void
@@ -84,7 +84,7 @@ struct IceSettingsImporter {
             (.showIceIcon, "ShowIceIcon"),
             (.iceIcon, "IceIcon"),
             (.customIceIconIsTemplate, "CustomIceIconIsTemplate"),
-            // Legacy Thaw Bar keys kept for migration compatibility
+            // Legacy Tidybar Bar keys kept for migration compatibility
             (.useIceBar, "UseIceBar"),
             (.iceBarLocation, "IceBarLocation"),
             (.showOnClick, "ShowOnClick"),
@@ -103,13 +103,13 @@ struct IceSettingsImporter {
             }
         }
 
-        // Generate per-display configurations when importing Thaw Bar settings
+        // Generate per-display configurations when importing Tidybar Bar settings
         imported += importPerDisplayIceBarSettings(from: iceSettings)
 
         return imported
     }
 
-    /// Generates per-display Thaw Bar configurations from imported Ice settings.
+    /// Generates per-display Tidybar Bar configurations from imported Ice settings.
     private func importPerDisplayIceBarSettings(from iceSettings: [String: Any]) -> Int {
         guard let useIceBar = iceSettings["UseIceBar"] as? Bool, useIceBar else {
             return 0
@@ -131,10 +131,10 @@ struct IceSettingsImporter {
             let data = try encoder.encode(configs)
             Defaults.set(data, forKey: .displayIceBarConfigurations)
             Defaults.set(true, forKey: .hasMigratedPerDisplayIceBar)
-            diagLog.info("Generated per-display Thaw Bar configs for \(configs.count) display(s) from Ice import")
+            diagLog.info("Generated per-display Tidybar Bar configs for \(configs.count) display(s) from Ice import")
             return 1
         } catch {
-            diagLog.error("Failed to encode per-display Thaw Bar configs during import: \(error)")
+            diagLog.error("Failed to encode per-display Tidybar Bar configs during import: \(error)")
             return 0
         }
     }

@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``MenuBarItemManager/windowIsOpenInterface(ownerPID:layer:height:interfacePIDs:)``,
 /// the last-resort reading of whether a temporarily shown item's menu is still

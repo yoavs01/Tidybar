@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @MainActor
 @Suite("Settings URI handler keys and parsing", .serialized)

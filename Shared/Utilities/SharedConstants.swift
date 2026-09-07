@@ -10,7 +10,7 @@ import Foundation
 
 /// Constants shared across all targets (main app and XPC services).
 /// Only values that are needed in every target belong here; app-only
-/// constants live in `Constants` (Thaw target).
+/// constants live in `Constants` (Tidybar target).
 nonisolated enum SharedConstants {
     // MARK: - System Framework Paths
 

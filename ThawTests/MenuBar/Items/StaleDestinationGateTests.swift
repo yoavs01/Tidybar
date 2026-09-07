@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the gate that abandons a move whose target has moved out
 /// from under it.
@@ -126,7 +126,7 @@ struct StaleDestinationGateTests {
     /// five attempts while the moved item sat at 1683 the whole time. Every
     /// step is far too small for the display-width staleness threshold, so
     /// the budget was spent walking the anchor across the bar. When the
-    /// anchor is one of Thaw's dividers, repeating that across cycles ends
+    /// anchor is one of Tidybar's dividers, repeating that across cycles ends
     /// in a zero-width hidden section and a layout that stops persisting.
     @Test("An anchor retreating on every attempt is caught")
     func retreatingAnchorIsCaught() {

@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the per-item move-failure backoff the bulk-apply loops use
 /// to stop one persistently unmovable item (a vanished transient Control

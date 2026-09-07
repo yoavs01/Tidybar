@@ -10,7 +10,7 @@ import AppKit
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Builds a clear canvas with a single filled rectangle on it, on top of the
 /// shared `makeCanvas` fixture in `Support/GraphicsTestFixtures.swift`.

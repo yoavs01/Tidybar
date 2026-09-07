@@ -9,7 +9,7 @@
 import CoreGraphics
 import SwiftUI
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Extensions")
 struct ExtensionsTests {

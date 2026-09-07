@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `MenuBarItemImageCache.resolvedScale(imagePixelWidth:boundsWidth:expected:)`,
 /// the check `individualCapture` was missing in #851/#736 and that

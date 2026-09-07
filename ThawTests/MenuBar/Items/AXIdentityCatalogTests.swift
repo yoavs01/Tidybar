@@ -8,7 +8,7 @@
 
 import AppKit
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the pure, non-AX helpers `AXIdentityCatalog` and
 /// `MenuBarItemManager.ControlItemPair` use for frame correlation.
@@ -329,7 +329,7 @@ struct AXIdentityCatalogTests {
 
     // MARK: - MenuBarItemManager.ControlItemPair.shouldRecoverOwnControlItem
 
-    /// Thaw created its control items and holds their windows, so when one
+    /// Tidybar created its control items and holds their windows, so when one
     /// goes missing from the enumerated list it can be rebuilt from its own
     /// window instead of guessed at. The gate is deliberately narrow: an
     /// authoritative ID in hand, and that window absent from the list.

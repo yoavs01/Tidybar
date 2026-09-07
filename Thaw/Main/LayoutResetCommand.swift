@@ -20,10 +20,10 @@ import Foundation
 /// divider persists as an `NSStatusItem Preferred Position` and is restored
 /// on the next launch, so a bar wrecked badly enough comes back wrecked and
 /// starts moving items — and the pointer — before the user can reach
-/// Settings. #899's reporter had to kill Thaw from a terminal; this lets
+/// Settings. #899's reporter had to kill Tidybar from a terminal; this lets
 /// them repair the bar from the same terminal, before starting it again:
 ///
-///     /Applications/Thaw.app/Contents/MacOS/Thaw --reset-layout
+///     /Applications/Tidybar.app/Contents/MacOS/Tidybar --reset-layout
 ///
 /// Only `UserDefaults` is touched, so it is safe to run with the app not
 /// running, and pointless to run while it is (the live manager holds the
@@ -77,7 +77,7 @@ enum LayoutResetCommand {
         }
         resetPersistedLayout()
         Defaults.store.synchronize()
-        print("Thaw: menu bar layout reset. Start Thaw again to rebuild it.")
+        print("Tidybar: menu bar layout reset. Start Tidybar again to rebuild it.")
         return true
     }
 }

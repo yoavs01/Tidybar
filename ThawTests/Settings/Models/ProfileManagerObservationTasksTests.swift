@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `ProfileManager.startObservationTasks()`: the notification
 /// observation wiring that `performSetup(with:)` runs, extracted so it is

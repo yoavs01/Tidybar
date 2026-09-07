@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `MenuBarOverlayPanel.isStranded(panelSpaces:currentSpace:globalActiveSpace:ownsActiveMenuBar:)`,
 /// the pure decision behind the space migration in `show()` (#794). The rest

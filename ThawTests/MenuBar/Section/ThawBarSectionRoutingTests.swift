@@ -7,9 +7,9 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
-/// Tests for the rule that decides which sections present in the Thaw Bar.
+/// Tests for the rule that decides which sections present in the Tidybar Bar.
 ///
 /// The display-wide setting sends every section there. The always-hidden-only
 /// setting sends the always-hidden section alone, so the hidden section still
@@ -19,10 +19,10 @@ import Testing
 ///
 /// Notch overflow can force the bar on top of this, which
 /// `NotchOverflowRevealTests` covers.
-@Suite("Thaw Bar section routing")
+@Suite("Tidybar Bar section routing")
 struct ThawBarSectionRoutingTests {
     @Test(
-        "The display-wide setting sends every section to the Thaw Bar",
+        "The display-wide setting sends every section to the Tidybar Bar",
         arguments: MenuBarSection.Name.allCases
     )
     func displayWideSettingRoutesEverySection(name: MenuBarSection.Name) {
@@ -49,7 +49,7 @@ struct ThawBarSectionRoutingTests {
         )
     }
 
-    @Test("Always-hidden-only sends the always-hidden section to the Thaw Bar")
+    @Test("Always-hidden-only sends the always-hidden section to the Tidybar Bar")
     func alwaysHiddenOnlyRoutesTheAlwaysHiddenSection() {
         #expect(
             MenuBarSection.usesThawBar(

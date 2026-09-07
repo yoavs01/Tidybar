@@ -7,11 +7,11 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - ThawTourSlide Tests
 
-@Suite("Thaw tour slides")
+@Suite("Tidybar tour slides")
 struct ThawTourSlideTests {
     // MARK: - Ordering invariant
 

@@ -9,7 +9,7 @@
 import Combine
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("External settings changes", .serialized)
 @MainActor

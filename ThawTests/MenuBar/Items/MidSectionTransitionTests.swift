@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Tests for the rule that spots a cache pass taken part-way through a
 /// section expand or collapse.

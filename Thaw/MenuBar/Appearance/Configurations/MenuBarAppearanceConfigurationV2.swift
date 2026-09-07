@@ -120,9 +120,9 @@ nonisolated struct MenuBarAppearancePartialConfiguration: Hashable {
     var hasShadow: Bool
     /// Whether the shape border is drawn around the menu bar overlay.
     var borderOnMenuBar: Bool
-    /// Whether the shape border is drawn around the Thaw Bar.
+    /// Whether the shape border is drawn around the Tidybar Bar.
     ///
-    /// The Thaw Bar is the panel in `IceBar.swift`, which still carries the
+    /// The Tidybar Bar is the panel in `IceBar.swift`, which still carries the
     /// `iceBar` prefix from Ice on everything that is persisted under an
     /// existing defaults key. This one is new, so it uses the current name.
     var borderOnThawBar: Bool
@@ -192,7 +192,7 @@ nonisolated extension MenuBarAppearancePartialConfiguration {
 nonisolated extension MenuBarAppearancePartialConfiguration: Codable {
     private enum CodingKeys: CodingKey {
         case hasShadow
-        /// The single border flag that predates the menu bar / Thaw Bar split.
+        /// The single border flag that predates the menu bar / Tidybar Bar split.
         ///
         /// Still written on encode so that settings stay readable if the user
         /// moves back to a build that only knows about this key.
@@ -220,7 +220,7 @@ nonisolated extension MenuBarAppearancePartialConfiguration: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         // Settings written before the split only carry `hasBorder`, which applied
-        // to the menu bar and the Thaw Bar at once, so it seeds both flags.
+        // to the menu bar and the Tidybar Bar at once, so it seeds both flags.
         let legacyHasBorder = try container.decodeIfPresent(Bool.self, forKey: .hasBorder)
         try self.init(
             hasShadow: container.decodeIfPresent(Bool.self, forKey: .hasShadow) ?? Self.defaultConfiguration.hasShadow,

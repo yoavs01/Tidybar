@@ -32,7 +32,7 @@ final class AppSettings {
     /// The model for the app's Hotkeys settings.
     let hotkeys = HotkeysSettings()
 
-    /// The model for per-display Thaw Bar settings.
+    /// The model for per-display Tidybar Bar settings.
     let displaySettings = DisplaySettingsManager()
 
     /// The shared app state.

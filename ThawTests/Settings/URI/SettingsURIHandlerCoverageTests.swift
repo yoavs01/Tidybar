@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Collects the notifications posted on `name` while `body` runs.
 ///
@@ -124,7 +124,7 @@ private let globalReadableKeys: [String] = globalBooleanKeys + doubleKeys + enum
 /// - **The named-display toggle of `alwaysShowHiddenItems`.** `handleToggle`
 ///   has a separate arm for each of the two Boolean per-display keys. Only the
 ///   `useIceBar` one is driven with a display identifier today, so the second
-///   arm — identical in effect, and the one a `thaw://toggle` URL uses to flip
+///   arm — identical in effect, and the one a `tidybar://toggle` URL uses to flip
 ///   "always show" on one monitor — has never run.
 /// - **Reading a per-display key for a display that is not there.**
 ///   `getSettingValue` refuses before it looks at the key when the identifier
@@ -157,7 +157,7 @@ private let globalReadableKeys: [String] = globalBooleanKeys + doubleKeys + enum
 /// no such app is guaranteed to exist on a given Mac.
 ///
 /// Everything that reads or writes a setting runs inside `withScratchDefaults`,
-/// so the suite never touches the real `com.stonerl.Thaw` domain and always
+/// so the suite never touches the real `com.yoavsror.tidybar` domain and always
 /// starts from an empty whitelist.
 @MainActor
 @Suite("Settings URI handler residue", .serialized)
@@ -509,7 +509,7 @@ struct SettingsURIHandlerCoverageTests {
 
         /// A value the enumeration cannot name must not become writable by
         /// accident either: `set` still refuses it, so the only way to reach
-        /// that stored state is from outside Thaw.
+        /// that stored state is from outside Tidybar.
         @Test("A rehideStrategy the enumeration cannot name is still refused on write", arguments: ["99", "-1", "3"])
         func outOfRangeRehideStrategyIsRefusedOnWrite(_ value: String) throws {
             try withScratchDefaults { _ in
@@ -578,7 +578,7 @@ struct SettingsURIHandlerCoverageTests {
     @MainActor
     @Suite("Parser inputs at the edges")
     struct ParserEdges {
-        /// A `thaw://` URL is assembled by whoever sends it, and a stray space
+        /// A `tidybar://` URL is assembled by whoever sends it, and a stray space
         /// around the value is the easiest mistake to make. It has to be
         /// refused rather than trimmed, so the sender learns about it.
         @Test("A Boolean with surrounding whitespace is refused", arguments: [

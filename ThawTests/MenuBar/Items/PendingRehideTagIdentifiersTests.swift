@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutSolver.pendingRehideTagIdentifiers,
 /// the helper saveSectionOrder uses to identify items whose true

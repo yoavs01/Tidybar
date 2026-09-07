@@ -34,7 +34,7 @@ nonisolated enum LayoutSolver {
     /// instance state like newItemsPlacement) and state mutation
     /// (knownItemIdentifiers).
     enum LeftmostMove: Equatable {
-        /// The Thaw visible-control icon is sitting left of the hidden
+        /// The Tidybar visible-control icon is sitting left of the hidden
         /// divider; restore it to the visible section.
         case thawIcon(MenuBarItem)
         /// A non-hideable system item (screen recording / mic / camera
@@ -199,20 +199,20 @@ nonisolated enum LayoutSolver {
     /// planUnmanagedPlacement: items present in the live menu bar that
     /// are neither in the desired sequence (savedSectionOrder for the
     /// .savedOrder path, profile spec for the .profile path) nor any
-    /// of the three Thaw control items.
+    /// of the three Tidybar control items.
     ///
     /// Control items are uniformly excluded because saveSectionOrder
     /// omits them from savedSectionOrder by design (they're not
     /// user-positionable in the same way as third-party items). If any
     /// control item leaks through, planUnmanagedPlacement will route it
     /// through NewItemsPlacement and the LCS planner will emit moves
-    /// that drag the Thaw icon to the user's configured anchor on every
+    /// that drag the Tidybar icon to the user's configured anchor on every
     /// cache cycle. Visible-control-item exclusion was the omission
-    /// that caused the field-reported "Thaw icon keeps moving" bug.
+    /// that caused the field-reported "Tidybar icon keeps moving" bug.
     ///
     /// Unresolved generic Control Center items (uniqueIdentifiers passed in
     /// unresolvedGenericCCUIDs) are also excluded. These are widgets macOS
-    /// hosts under Control Center that Thaw cannot yet attribute to their
+    /// hosts under Control Center that Tidybar cannot yet attribute to their
     /// owning app (e.g. Little Snitch's agent before its marker window
     /// appears): they fall back to the com.apple.controlcenter namespace,
     /// never match a profile entry, and would otherwise be relocated as
@@ -250,7 +250,7 @@ nonisolated enum LayoutSolver {
     /// Computes the next leftmost-relocation decision.
     ///
     /// Walks the cascade implemented by relocateNewLeftmostItems:
-    /// (1) Thaw visible-control icon recovery, (2) non-hideable system
+    /// (1) Tidybar visible-control icon recovery, (2) non-hideable system
     /// item recovery, (3) genuinely new hideable item placement under the
     /// user's new-items section. The fourth path is "no action" with a
     /// typed reason so tests can pin down which branch fired.
@@ -261,7 +261,7 @@ nonisolated enum LayoutSolver {
     /// mutation (knownItemIdentifiers, persistence) and execution
     /// (move()) stay with the orchestrator.
     /// Items sitting left of the hidden divider, ordered so `first` is a
-    /// stable choice. The Thaw icon is a control item but must always be
+    /// stable choice. The Tidybar icon is a control item but must always be
     /// visible, so it is admitted here.
     private static nonisolated func leftmostItems(
         items: [MenuBarItem],
@@ -286,7 +286,7 @@ nonisolated enum LayoutSolver {
         return MenuBarItem.sortByLeadingEdgeThenIdentifier(candidates)
     }
 
-    /// The Thaw-icon relocation decision on its own, for callers that must
+    /// The Tidybar-icon relocation decision on its own, for callers that must
     /// act before the rest of ``planLeftmostMove``'s inputs are trustworthy.
     ///
     /// This decision reads only geometry and our own control item's tag,
@@ -316,7 +316,7 @@ nonisolated enum LayoutSolver {
             return .noop(reason: .noLeftmostItems)
         }
 
-        // Path 1: Thaw icon.
+        // Path 1: Tidybar icon.
         if let thawIcon = leftmostItems.first(where: { $0.tag == .visibleControlItem }) {
             return .thawIcon(thawIcon)
         }
@@ -453,7 +453,7 @@ nonisolated enum LayoutSolver {
     /// means Control Center was reported at a stale off-screen position, which
     /// happens transiently during a display reconnect or Control Center widget
     /// churn. Running the placement and move logic against that geometry
-    /// mis-positions the control items (the Thaw visible icon jumps to the far
+    /// mis-positions the control items (the Tidybar visible icon jumps to the far
     /// left), so the pass must be deferred until the geometry settles.
     static nonisolated func isMenuBarGeometryReady(
         rightBoundary: CGFloat,
@@ -722,7 +722,7 @@ nonisolated enum LayoutSolver {
         // overflowed ones. The visible control item is never in overflowSet, so
         // filtering preserves its saved position instead of forcing it to the
         // front of the visible section. Prepending the chevron relocated the
-        // always-visible Thaw icon to the leftmost slot on every overflow even
+        // always-visible Tidybar icon to the leftmost slot on every overflow even
         // though it was never the item that overflowed.
         let remainingVisible = visibleUIDs.filter { !overflowSet.contains($0) }
 
@@ -911,13 +911,13 @@ nonisolated enum LayoutSolver {
     /// wants on the *other* side of that gap; anchoring there would drag
     /// the divider past an item instead of up to it.
     ///
-    /// Thaw's own control items are what reaches that test. The caller's
+    /// Tidybar's own control items are what reaches that test. The caller's
     /// candidate set is already filtered to items that are movable and on
     /// screen, and the chevron satisfies both whatever the rest of the bar
     /// is doing — which makes it the anchor of last resort in exactly the
     /// passes where every real item on its side has been dragged off the
     /// bar and filtered out. #958's reporter restored a known-good plist
-    /// with Thaw quit and watched the first apply after relaunch collapse
+    /// with Tidybar quit and watched the first apply after relaunch collapse
     /// it again: eleven items the profile assigns to visible were sitting
     /// parked on the hidden side, nothing else visible was live, and the
     /// fallback returned the chevron. Dragging H_ctrl up to it swept the
@@ -1052,7 +1052,7 @@ nonisolated enum LayoutSolver {
     /// cursor is hijacked, the drag is synthesised, the landing is polled.
     /// Spending that on the order of two items parked thousands of points
     /// off-screen buys nothing a user can perceive — the hidden and
-    /// always-hidden sections are revealed through the Thaw Bar, which
+    /// always-hidden sections are revealed through the Tidybar Bar, which
     /// renders from the cache rather than from where the windows sit.
     ///
     /// Membership is still enforced. Only the ordering *within* a relaxed
@@ -1152,7 +1152,7 @@ nonisolated enum LayoutSolver {
 
             // Scan forward for a stable anchor in the same section.
             //
-            // Skips anchors the caller marked unanchorable — Thaw's own
+            // Skips anchors the caller marked unanchorable — Tidybar's own
             // section dividers. They stay in the sequence because their
             // position is part of the layout, but a move that anchors on one
             // and fails pushes it: the bar lays out right to left, so an
@@ -1679,8 +1679,8 @@ nonisolated enum LayoutSolver {
         return String(title[..<separator])
     }
 
-    /// Whether an identifier claims Thaw's own namespace while naming an item
-    /// Thaw does not own.
+    /// Whether an identifier claims Tidybar's own namespace while naming an item
+    /// Tidybar does not own.
     ///
     /// The only items legitimately persisted under this namespace are the
     /// control items and the spacers, which is the same pair
@@ -1701,7 +1701,7 @@ nonisolated enum LayoutSolver {
     /// Whether an identifier's title is a copy of its own namespace.
     ///
     /// `kCGWindowName` occasionally reports an item's title as its owner's
-    /// bundle identifier — for the whole bar at once, Thaw's own control
+    /// bundle identifier — for the whole bar at once, Tidybar's own control
     /// items included. The tag built from that reading is
     /// `com.steipete.codexbar:com.steipete.codexbar`, which carries no more
     /// identity than the namespace alone and does not match the same item's
@@ -1758,8 +1758,8 @@ nonisolated enum LayoutSolver {
     ///
     /// Two signals, either of which is enough:
     ///
-    /// - **A control item lost its name.** Thaw titles its own items
-    ///   `Thaw.ControlItem.*`, so one in our namespace titled with our bundle
+    /// - **A control item lost its name.** Tidybar titles its own items
+    ///   `Tidybar.ControlItem.*`, so one in our namespace titled with our bundle
     ///   identifier can only be a degraded read. This is also the signal with
     ///   consequences of its own — ``MenuBarItem/init(uncheckedItemWindow:instanceIndex:)``
     ///   recognizes control items by that title prefix, so a degraded reading
@@ -1820,8 +1820,8 @@ nonisolated enum LayoutSolver {
     /// would have prevented the churn.
     ///
     /// **Misattributed own-namespace entries (#927).** Source-PID resolution
-    /// occasionally hands a foreign window Thaw's own PID, and the layout then
-    /// holds e.g. `com.stonerl.Thaw:WiFi` for an item Control Center owns.
+    /// occasionally hands a foreign window Tidybar's own PID, and the layout then
+    /// holds e.g. `com.yoavsror.tidybar:WiFi` for an item Control Center owns.
     /// Only the control items and spacers belong under this namespace, so
     /// everything else is dropped.
     ///
@@ -1850,7 +1850,7 @@ nonisolated enum LayoutSolver {
         // and counting it as one is worse than leaving it alone: it makes the
         // provisional-duplicate rule below delete the *genuine* Control Center
         // twin. #927's reporter lost `com.apple.controlcenter:WiFi` that way
-        // and kept `com.stonerl.Thaw:WiFi`, so the live WiFi item was planned
+        // and kept `com.yoavsror.tidybar:WiFi`, so the live WiFi item was planned
         // as unmanaged on every apply.
         var titlesWithRealOwner = Set<String>()
         var controlCenterTitles = Set<String>()
@@ -1921,7 +1921,7 @@ nonisolated enum LayoutSolver {
                 }
                 // A display-name-namespaced ghost is pruned only when its
                 // canonical twin exists: the Control Center entry sharing
-                // its title, Thaw's own control items by their reserved
+                // its title, Tidybar's own control items by their reserved
                 // titles, or a real owner claiming the same non-generic
                 // title (`Control Centre:Alcove` next to
                 // `com.henrikruscon.Alcove:Alcove`). Generic `Item-N`
@@ -1935,7 +1935,7 @@ nonisolated enum LayoutSolver {
                     if controlCenterTitles.contains(title) {
                         return false
                     }
-                    if title.hasPrefix("Thaw.ControlItem.") || title.contains(".Spacer.") {
+                    if title.hasPrefix("Tidybar.ControlItem.") || title.contains(".Spacer.") {
                         return false
                     }
                     let baseTitle = title.replacing(/:\d+$/, with: "")
@@ -2141,7 +2141,7 @@ nonisolated enum LayoutSolver {
     /// hidden item into visible leaves the dividers correctly adjacent, but
     /// the saved order still lists the old hidden entries — and it cannot stop
     /// listing them, because this gate is what blocks the write that would
-    /// clear them. The gate's own effect preserves its trigger, so Thaw goes
+    /// clear them. The gate's own effect preserves its trigger, so Tidybar goes
     /// permanently read-only on that bar: no save, and no apply either, since
     /// `applySavedLayout` consults the same answer. Reinstalling does not help;
     /// the frozen order is on disk.

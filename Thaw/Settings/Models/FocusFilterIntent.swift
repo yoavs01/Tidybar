@@ -8,7 +8,7 @@
 
 import AppIntents
 
-/// An entity representing a Thaw profile, exposed to the system
+/// An entity representing a Tidybar profile, exposed to the system
 /// so users can pick one when configuring a Focus Filter.
 struct ProfileEntity: AppEntity {
     static var typeDisplayRepresentation: TypeDisplayRepresentation {
@@ -44,7 +44,7 @@ struct ProfileEntityQuery: EntityQuery {
             return []
         }
         let manifestURL = appSupport
-            .appendingPathComponent("Thaw/Profiles/profiles.json")
+            .appendingPathComponent("Tidybar/Profiles/profiles.json")
 
         guard let data = try? Data(contentsOf: manifestURL) else { return [] }
 
@@ -60,12 +60,12 @@ struct ProfileEntityQuery: EntityQuery {
     }
 }
 
-/// Focus Filter that applies a Thaw profile when a Focus mode activates.
-/// Appears in System Settings → Focus → [mode] → Focus Filters → Add "Thaw".
+/// Focus Filter that applies a Tidybar profile when a Focus mode activates.
+/// Appears in System Settings → Focus → [mode] → Focus Filters → Add "Tidybar".
 struct ThawFocusFilter: SetFocusFilterIntent {
     static nonisolated(unsafe) var title: LocalizedStringResource = "Set Menu Bar Profile"
     static nonisolated(unsafe) var description: IntentDescription? = IntentDescription(
-        "Apply a Thaw menu bar profile when this Focus activates.",
+        "Apply a Tidybar menu bar profile when this Focus activates.",
         categoryName: "Profiles"
     )
 
@@ -87,7 +87,7 @@ struct ThawFocusFilter: SetFocusFilterIntent {
             // Focus deactivated — clear the stored profile and notify.
             Defaults.removeObject(forKey: .focusFilterRequestedProfileID)
             DistributedNotificationCenter.default().postNotificationName(
-                Notification.Name("com.stonerl.Thaw.focusFilterDeactivated"),
+                Notification.Name("com.yoavsror.tidybar.focusFilterDeactivated"),
                 object: nil,
                 deliverImmediately: true
             )
@@ -96,7 +96,7 @@ struct ThawFocusFilter: SetFocusFilterIntent {
 
         Defaults.set(profile.id, forKey: .focusFilterRequestedProfileID)
         DistributedNotificationCenter.default().postNotificationName(
-            Notification.Name("com.stonerl.Thaw.focusFilterActivated"),
+            Notification.Name("com.yoavsror.tidybar.focusFilterActivated"),
             object: nil,
             userInfo: ["profileID": profile.id],
             deliverImmediately: true

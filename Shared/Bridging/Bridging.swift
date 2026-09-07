@@ -742,7 +742,7 @@ nonisolated extension Bridging {
             // Pick the display holding the largest share of unionBounds. A
             // strict frame.contains check rejected status-item windows whose
             // bounds overshoot NSScreen.frame.maxX by a handful of pixels
-            // (observed on the Clock and Thaw items: bounds = (1029, 0, 443,
+            // (observed on the Clock and Tidybar items: bounds = (1029, 0, 443,
             // 33) on a 1470-wide display), so the SCK capture never happened
             // and the icons disappeared from Settings / Search.
             // Largest-intersection wins the common edge-overshoot case, picks
@@ -890,7 +890,7 @@ nonisolated extension Bridging {
     /// cached under separate `ShareableContentCache` instances (keys) rather
     /// than being coalesced into one fetch. `ShareableContentCache` lives
     /// here (rather than alongside `ScreenCapture.getShareableContent()`)
-    /// because this file is shared between the Thaw and MenuBarItemService
+    /// because this file is shared between the Tidybar and MenuBarItemService
     /// targets, and only the shared file's symbols are visible to both.
     private static func shareableContentIncludingOffscreen(maxAge: Duration = .milliseconds(150)) async throws -> SCShareableContent {
         let snapshot = try await shareableContentIncludingOffscreenCache.content(

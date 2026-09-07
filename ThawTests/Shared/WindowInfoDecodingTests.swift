@@ -10,7 +10,7 @@ import AppKit
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the halves of ``WindowInfo`` that survive without a window server:
 /// the memberwise initializer, the *refusal* side of the synthesized `Codable`

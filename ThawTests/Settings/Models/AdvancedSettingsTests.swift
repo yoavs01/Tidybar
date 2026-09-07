@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``AdvancedSettings``' setup surface: the `Defaults` load performed by
 /// `performSetup(with:)` and the Settings-URI notification it subscribes to.
@@ -19,7 +19,7 @@ import Testing
 /// duplicated, or full of unknown names has to resolve to something usable
 /// rather than leave the search panel with a missing or repeated section.
 /// The notification arrives on behalf of a *third-party app* that sent a
-/// `thaw://` URL, so a key this model does not own, or a payload of the wrong
+/// `tidybar://` URL, so a key this model does not own, or a payload of the wrong
 /// type, must be dropped.
 ///
 /// `SettingsURIHandlerApplyTests` covers the sending side of the same

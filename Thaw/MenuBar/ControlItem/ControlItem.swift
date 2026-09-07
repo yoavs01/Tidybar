@@ -18,11 +18,11 @@ final class ControlItem {
     /// An identifier for a control item.
     nonisolated enum Identifier: String, CaseIterable {
         /// The identifier for the control item for the visible section.
-        case visible = "Thaw.ControlItem.Visible"
+        case visible = "Tidybar.ControlItem.Visible"
         /// The identifier for the control item for the hidden section.
-        case hidden = "Thaw.ControlItem.Hidden"
+        case hidden = "Tidybar.ControlItem.Hidden"
         /// The identifier for the control item for the always-hidden section.
-        case alwaysHidden = "Thaw.ControlItem.AlwaysHidden"
+        case alwaysHidden = "Tidybar.ControlItem.AlwaysHidden"
 
         /// A tag for the control item with this identifier.
         var tag: MenuBarItemTag {
@@ -1126,7 +1126,7 @@ nonisolated enum ControlItemDefaults {
     /// by moving chevrons"). It cannot do that: AppKit writes
     /// `NSStatusItem Preferred Position <autosaveName>` itself when it places
     /// an item, and that write never passes through this type. So the guard
-    /// only ever blocked Thaw's own writes — including the seeding that
+    /// only ever blocked Tidybar's own writes — including the seeding that
     /// `preflightSetup(for:)` and `resetChevronPositions()` exist to perform,
     /// which the same commit introduced and silently disabled (#890).
     ///

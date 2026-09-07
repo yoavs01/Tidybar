@@ -9,7 +9,7 @@
 import Foundation
 import os.lock
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the `Task` timeout helpers: `withTimeout`, the `Task(timeout:)`
 /// initializer, and `Task.detached(timeout:)`.

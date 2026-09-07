@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Regression locks for the always-hidden divider recovery in
 /// `ControlItemPair` (#991).
@@ -40,8 +40,8 @@ import Testing
 @MainActor
 @Suite("ControlItemPair always-hidden recovery")
 struct ControlItemPairAlwaysHiddenRecoveryTests {
-    private let hiddenTitle = "Thaw.ControlItem.Hidden"
-    private let alwaysHiddenTitle = "Thaw.ControlItem.AlwaysHidden"
+    private let hiddenTitle = "Tidybar.ControlItem.Hidden"
+    private let alwaysHiddenTitle = "Tidybar.ControlItem.AlwaysHidden"
 
     /// Fixture window IDs live in the 1_000_000+ range (see
     /// MenuBarTestFixtures), so the real window-server lookup reliably
@@ -103,7 +103,7 @@ struct ControlItemPairAlwaysHiddenRecoveryTests {
 
     @Test("A known-but-absent authoritative window never adopts a lookalike from the list")
     func knownButAbsentAuthoritativeWindowDoesNotAdoptLookalike() {
-        // Duplicate-Thaw hazard: a lookalike divider (other instance, stale
+        // Duplicate-Tidybar hazard: a lookalike divider (other instance, stale
         // cache) shares the tag but not the authoritative window ID. Before
         // the fix the tag path adopted it blind; the fix must return nil and
         // leave the lookalike untouched.

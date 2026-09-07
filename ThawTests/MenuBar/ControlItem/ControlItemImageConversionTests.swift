@@ -8,7 +8,7 @@
 
 import Cocoa
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``ControlItemImage``'s conversion to `NSImage` through the
 /// `nsImage(customIceIconIsTemplate:)` seam — every case except the

@@ -51,7 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7166832A2A767E6A006ABF84 /* Thaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7166832A2A767E6A006ABF84 /* Tidybar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tidybar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7188A6832E27F9ED008F131D /* MenuBarItemService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = MenuBarItemService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2TESTS0012F2C000000001 /* ThawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -146,7 +146,7 @@
 		7166832B2A767E6A006ABF84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7166832A2A767E6A006ABF84 /* Thaw.app */,
+				7166832A2A767E6A006ABF84 /* Tidybar.app */,
 				7188A6832E27F9ED008F131D /* MenuBarItemService.xpc */,
 				E2TESTS0012F2C000000001 /* ThawTests.xctest */,
 			);
@@ -188,7 +188,7 @@
 				F723B15E4E92458CA2A3A2D5 /* Subprocess */,
 			);
 			productName = Ice;
-			productReference = 7166832A2A767E6A006ABF84 /* Thaw.app */;
+			productReference = 7166832A2A767E6A006ABF84 /* Tidybar.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7188A6822E27F9ED008F131D /* MenuBarItemService */ = {
@@ -589,7 +589,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A7CKWF99ML;
@@ -608,9 +608,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = "2.0.1";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stonerl.Thaw;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoavsror.tidybar;
+				PRODUCT_MODULE_NAME = Tidybar;
+				PRODUCT_NAME = Tidybar;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -630,7 +631,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A7CKWF99ML;
@@ -649,9 +650,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = "2.0.1";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stonerl.Thaw;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoavsror.tidybar;
+				PRODUCT_MODULE_NAME = Tidybar;
+				PRODUCT_NAME = Tidybar;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -665,7 +667,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A7CKWF99ML;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -676,8 +678,8 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Toni Förster\nCopyright © 2023–2025 Jordan Baird (Ice) ";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = "2.0.1";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stonerl.Thaw.MenuBarItemService;
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoavsror.tidybar.MenuBarItemService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
@@ -697,7 +699,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A7CKWF99ML;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -708,8 +710,8 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Toni Förster\nCopyright © 2023–2025 Jordan Baird (Ice) ";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = "2.0.1";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stonerl.Thaw.MenuBarItemService;
+				MARKETING_VERSION = "1.0.0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoavsror.tidybar.MenuBarItemService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
@@ -735,13 +737,13 @@
 				INFOPLIST_KEY_NSPrincipalClass = TestBootstrap;
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = "1.3.0-beta.1";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stonerl.ThawTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoavsror.tidybarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thaw.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Thaw";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidybar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidybar";
 			};
 			name = Debug;
 		};
@@ -757,13 +759,13 @@
 				INFOPLIST_KEY_NSPrincipalClass = TestBootstrap;
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = "1.3.0-beta.1";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stonerl.ThawTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoavsror.tidybarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thaw.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Thaw";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidybar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidybar";
 			};
 			name = Release;
 		};

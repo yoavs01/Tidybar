@@ -2,25 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SUFeedURL</key>
-	<string>https://thaw-app.github.io/updates/appcast.xml</string>
-	<key>SUPublicEDKey</key>
-	<string>fQ2kWqCLfAPAxQX1rp8gVNoG9hlAV/Gmm7kMBbxFe+A=</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.stonerl.Thaw</string>
+			<string>com.yoavsror.tidybar</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>thaw</string>
+				<string>tidybar</string>
 			</array>
 		</dict>
 	</array>
 	<key>ThawRepositoryURL</key>
-	<string>https://github.com/thaw-app/Thaw</string>
+	<string>https://github.com/yoavs01/Tidybar</string>
 	<key>ThawDonateURL</key>
-	<string>https://github.com/sponsors/stonerl</string>
+	<string>https://github.com/yoavs01/Tidybar</string>
 	<key>ThawMenuBarItemSpacingExecutableURI</key>
 	<string>file:///usr/bin/defaults</string>
 	<key>ThawSkyLightFrameworkPath</key>

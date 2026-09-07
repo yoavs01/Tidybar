@@ -8,7 +8,7 @@
 
 import AppKit
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pinned to the main actor and serialized: the first case reaches the
 /// `CustomTooltipPanel.shared` singleton and builds a real `IceBarPanel`,
@@ -16,14 +16,14 @@ import Testing
 @MainActor
 @Suite("Custom tooltip panel", .serialized)
 struct CustomTooltipPanelTests {
-    @Test("The tooltip panel sits above the Thaw Bar")
+    @Test("The tooltip panel sits above the Tidybar Bar")
     func tooltipAppearsAboveIceBar() {
         let iceBar = IceBarPanel()
         let tooltip = CustomTooltipPanel.shared
 
         #expect(
             tooltip.level.rawValue > iceBar.level.rawValue,
-            "Tooltips must be above the Thaw Bar so grid items cannot obscure them"
+            "Tooltips must be above the Tidybar Bar so grid items cannot obscure them"
         )
     }
 

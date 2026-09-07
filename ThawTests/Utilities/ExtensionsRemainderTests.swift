@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - Fixtures
 
@@ -183,7 +183,7 @@ private func makeMask(width: Int, height: Int, value: UInt8) throws -> CGImage {
 ///   eight combinations — premultiplied-first little-endian, what a screen
 ///   capture produces — is exercised anywhere else, and it happens to be the
 ///   one every other suite's fixture uses. A transposed row in that table
-///   would make Thaw read a color channel as if it were alpha and silently
+///   would make Tidybar read a color channel as if it were alpha and silently
 ///   throw away, or silently cache, the wrong menu bar item images.
 /// - **The two fallbacks out of the fast path**: a pixel format that is not
 ///   32-bit, and an alpha format with no alpha channel at all.

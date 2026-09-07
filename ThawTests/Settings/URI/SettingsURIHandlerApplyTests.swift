@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``SettingsURIHandler``'s *apply* surface — the `set` and `toggle`
 /// actions and the notifications they post.
@@ -16,12 +16,12 @@ import Testing
 /// `SettingsURIHandlerTests` covers the pure side (key tables, `parseBool`,
 /// `parseDouble`, `PerDisplayScope`). This suite drives the paths that
 /// actually mutate state, which is where the trust boundary lives: these
-/// functions run on behalf of a *third-party app* that sent a `thaw://` URL,
+/// functions run on behalf of a *third-party app* that sent a `tidybar://` URL,
 /// so a malformed key, an out-of-range double, or a non-finite value has to
 /// be refused rather than written through to `Defaults`.
 ///
 /// Every test body runs inside `withScratchDefaults`, so the handler's writes
-/// land in a throwaway store rather than the real `com.stonerl.Thaw` domain,
+/// land in a throwaway store rather than the real `com.yoavsror.tidybar` domain,
 /// and each test starts from an empty store.
 @MainActor
 @Suite("Settings URI handler apply", .serialized)
@@ -297,7 +297,7 @@ struct SettingsURIHandlerApplyTests {
         }
     }
 
-    @Test("alwaysShowHiddenItems defaults to the non-Thaw-Bar displays")
+    @Test("alwaysShowHiddenItems defaults to the non-Tidybar-Bar displays")
     func alwaysShowHiddenItemsScope() throws {
         try withScratchDefaults { _ in
             let posted = notifications(named: .perDisplaySettingsDidChangeViaURI) {

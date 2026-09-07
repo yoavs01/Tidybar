@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the data shaping behind the profile preview popover: identifier
 /// parsing and section assembly, which are split out of the view precisely so

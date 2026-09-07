@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the two section-geometry predicates that feed
 /// `LayoutSolver.shouldPersistSavedOrder`. `hiddenSectionHasRoom`

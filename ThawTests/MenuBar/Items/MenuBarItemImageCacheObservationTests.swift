@@ -10,7 +10,7 @@ import CoreGraphics
 import Observation
 import os.lock
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 struct MenuBarItemImageCacheObservationTests {
     @Test

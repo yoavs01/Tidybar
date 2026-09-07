@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pins the on-screen check that prevents a parked off-screen item from being
 /// used as the H_ctrl drag anchor.

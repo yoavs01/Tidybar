@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Menu bar appearance configuration")
 struct MenuBarAppearanceConfigurationTests {
@@ -104,7 +104,7 @@ struct MenuBarAppearanceConfigurationTests {
     // MARK: - MenuBarAppearanceBorderTests
 
     /// Tests for the border flags on ``MenuBarAppearancePartialConfiguration``,
-    /// which the menu bar and the Thaw Bar read separately.
+    /// which the menu bar and the Tidybar Bar read separately.
     @Suite("Border flags")
     struct MenuBarAppearanceBorderTests {
         private func partialConfiguration(
@@ -200,7 +200,7 @@ struct MenuBarAppearanceConfigurationTests {
     // MARK: - MenuBarAppearanceV1MigrationTests
 
     /// Tests for converting V1 appearance data — the format Ice used before its
-    /// `0.11.10` release — which reaches Thaw only through the Ice importer.
+    /// `0.11.10` release — which reaches Tidybar only through the Ice importer.
     ///
     /// `MenuBarAppearanceConfigurationV1` is main-actor isolated, as is the
     /// importer that reads it, so these tests are too.

@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the gating decision that bounds the perpetual background
 /// capture loop feeding the SkyLight WindowServer leak (#759).
@@ -16,7 +16,7 @@ import Testing
 /// the layout settings pane a single time, it stayed `true` for the process
 /// lifetime, and every space/screen/appearance/item-cache change from then on
 /// triggered a full background capture of all sections — including offscreen
-/// sections through the leaking SkyLight path — even with every Thaw window
+/// sections through the leaking SkyLight path — even with every Tidybar window
 /// closed. `shouldAllowBackgroundCapture` now gates on whether the pane is
 /// *currently* open, bounding the window in which background captures can run.
 @Suite("Menu bar item image cache gating")

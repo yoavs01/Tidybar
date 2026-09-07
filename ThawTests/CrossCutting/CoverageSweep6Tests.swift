@@ -8,7 +8,7 @@
 
 import Cocoa
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Coverage sweep, part 6: the live display and window-server adapters that
 /// earlier sweeps left uncovered because their *values* depend on the machine

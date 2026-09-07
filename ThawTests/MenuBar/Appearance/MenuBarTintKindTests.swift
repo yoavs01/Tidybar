@@ -9,13 +9,13 @@
 import Foundation
 import SwiftUI
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``MenuBarTintKind``, the stored discriminator for how the menu bar
 /// overlay is tinted.
 ///
 /// The raw values are a persisted format: they sit inside every encoded
-/// `MenuBarAppearancePartialConfiguration`, in the Thaw Bar's per-display
+/// `MenuBarAppearancePartialConfiguration`, in the Tidybar Bar's per-display
 /// configurations, and in profiles exported by earlier builds. Reordering the
 /// cases would silently repaint a user's menu bar — `.gradient` becoming
 /// `.glass` costs nothing at compile time — so the raw values are pinned here

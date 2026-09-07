@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `LayoutBarPaddingView.shouldRevealSectionForEditorDrag`, the
 /// decision behind the #988 fix.

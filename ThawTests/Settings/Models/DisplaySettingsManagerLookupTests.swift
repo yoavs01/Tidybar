@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// A display UUID no real display can hold. Seeding `configurations` with it
 /// gives every test below one entry whose fate is the same on a laptop, a
@@ -331,7 +331,7 @@ struct DisplaySettingsManagerLookupTests {
 
         /// Each predicate reads its own field, so the display that turns one of
         /// them on must leave the other off.
-        @Test("One display with the Thaw Bar on answers for the whole set")
+        @Test("One display with the Tidybar Bar on answers for the whole set")
         func oneBarEnabledDisplayIsEnough() throws {
             try withScratchDefaults { _ in
                 let manager = DisplaySettingsManager()

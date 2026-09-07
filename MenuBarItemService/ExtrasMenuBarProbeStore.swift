@@ -13,7 +13,7 @@ import Foundation
 /// The service has no access to the app's `Defaults`, and does not need it:
 /// this memory is written by the process that does the probing and read by
 /// nobody else, so it lives in the service's own defaults domain
-/// (`com.stonerl.Thaw.MenuBarItemService`). Keeping it out of the app's
+/// (`com.yoavsror.tidybar.MenuBarItemService`). Keeping it out of the app's
 /// domain also keeps it out of everything that treats that domain as user
 /// settings — this is a measurement, not a preference, and losing it costs
 /// one slow scan.

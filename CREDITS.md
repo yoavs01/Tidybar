@@ -1,5 +1,11 @@
 # Credits
 
+## Lineage
+
+Tidybar (2026-09-07) is a fork of [Thaw](https://github.com/thaw-app/Thaw) by Toni Foerster, which is a fork of
+[Ice](https://github.com/jordanbaird/Ice) by Jordan Baird. All translations and contributions listed
+below were made to Thaw and are credited unchanged.
+
 Thaw is translated by volunteers on [Crowdin](https://crowdin.com/project/thaw).
 Everyone below has contributed translated strings to the app.
 

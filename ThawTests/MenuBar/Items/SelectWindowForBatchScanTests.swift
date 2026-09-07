@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutSolver.selectWindowForBatchScan,
 /// the helper that pidsBody uses to pick which window to hand to

@@ -330,7 +330,7 @@ nonisolated enum UnresolvedPlaceholderAlias {
     /// widget only publishes its title/help string. A candidate is rejected
     /// when it lacks the bundle-identifier shape (no dot, following the
     /// marker-pair convention in `MarkerPairResolver`), or names one of the
-    /// host processes or Thaw itself.
+    /// host processes or Tidybar itself.
     static nonisolated func appBundleID(
         from identity: AXIdentityCatalog.AXItemIdentity?,
         excluding hostBundleIDs: Set<String>,

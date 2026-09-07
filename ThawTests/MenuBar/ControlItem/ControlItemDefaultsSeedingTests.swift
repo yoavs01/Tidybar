@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the section-divider write guard and the seeding path that
 /// bypasses it (#890).
@@ -16,7 +16,7 @@ import Testing
 /// The guard was added by ff7517f7 to stop a user breaking their menu bar by
 /// dragging a chevron. It cannot do that — AppKit writes
 /// `NSStatusItem Preferred Position <autosaveName>` itself, never through
-/// `ControlItemDefaults` — so it only ever blocked Thaw's own writes,
+/// `ControlItemDefaults` — so it only ever blocked Tidybar's own writes,
 /// including the seeding the very same commit introduced.
 /// Serialized and run against a scratch defaults suite: these cases write
 /// real `NSStatusItem Preferred Position` keys, and `Defaults.store` is
@@ -122,7 +122,7 @@ struct ControlItemDefaultsSeedingTests {
     func keyShapeMatchesAppKit() {
         #expect(
             ControlItemDefaults.Key<CGFloat>.preferredPosition.stringKey(for: Self.hidden)
-                == "NSStatusItem Preferred Position Thaw.ControlItem.Hidden"
+                == "NSStatusItem Preferred Position Tidybar.ControlItem.Hidden"
         )
     }
 }

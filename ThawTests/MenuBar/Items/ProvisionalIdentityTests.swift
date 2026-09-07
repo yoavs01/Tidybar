@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Tests for the provisional-identity predicate and the UID set derived from
 /// it, the pair that keeps an item whose source PID never resolved from being

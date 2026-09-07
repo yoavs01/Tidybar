@@ -7,18 +7,18 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
-/// Tests for the rule that decides whether notch overflow forces the Thaw Bar
+/// Tests for the rule that decides whether notch overflow forces the Tidybar Bar
 /// as the reveal mechanism for hidden items.
 ///
 /// Expanding the hidden section inline cannot show items that overflow ejected
 /// — they were ejected precisely because nothing more fits beside the notch —
-/// so a display with ejected items reveals through the Thaw Bar instead, unless
+/// so a display with ejected items reveals through the Tidybar Bar instead, unless
 /// the user turns that off.
 @Suite("Notch overflow reveal")
 struct NotchOverflowRevealTests {
-    @Test("Ejected items with the preference on force the Thaw Bar")
+    @Test("Ejected items with the preference on force the Tidybar Bar")
     func forcesBarWhenOverflowEnabledPreferenceOnAndItemsEjected() {
         #expect(
             MenuBarSection.forcesIceBarForNotchOverflow(
@@ -29,7 +29,7 @@ struct NotchOverflowRevealTests {
         )
     }
 
-    @Test("Nothing ejected does not force the Thaw Bar")
+    @Test("Nothing ejected does not force the Tidybar Bar")
     func doesNotForceBarWhenNothingIsEjected() {
         #expect(
             !MenuBarSection.forcesIceBarForNotchOverflow(
@@ -40,7 +40,7 @@ struct NotchOverflowRevealTests {
         )
     }
 
-    @Test("The preference turned off does not force the Thaw Bar")
+    @Test("The preference turned off does not force the Tidybar Bar")
     func doesNotForceBarWhenPreferenceIsOff() {
         #expect(
             !MenuBarSection.forcesIceBarForNotchOverflow(
@@ -53,7 +53,7 @@ struct NotchOverflowRevealTests {
 
     /// Stale ejection bookkeeping must not keep forcing the bar after the user
     /// turns overflow off; the items are on their way back to visible.
-    @Test("Overflow disabled does not force the Thaw Bar")
+    @Test("Overflow disabled does not force the Tidybar Bar")
     func doesNotForceBarWhenOverflowIsDisabled() {
         #expect(
             !MenuBarSection.forcesIceBarForNotchOverflow(

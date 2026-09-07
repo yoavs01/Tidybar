@@ -24,7 +24,7 @@ extension MenuBarItemManager {
     }
 
     /// Whether an item participates in the beside-notch budget as a managed
-    /// item — i.e. Thaw can move it out of the way. Everything else (the clock,
+    /// item — i.e. Tidybar can move it out of the way. Everything else (the clock,
     /// immovable system extras) is charged against the budget as fixed
     /// furniture instead.
     static nonisolated func isBudgetedManagedItem(_ item: MenuBarItem) -> Bool {
@@ -61,7 +61,7 @@ extension MenuBarItemManager {
         let userSpacing = CGFloat(max(0, 16 + spacingOffset))
 
         // Subtract the layout footprint of items that occupy the visible area
-        // but that Thaw cannot move: the Clock / date-time display, BentoBox
+        // but that Tidybar cannot move: the Clock / date-time display, BentoBox
         // tray on systems that have it, and any immovable accessibility
         // extras. They take real estate in the same way managed items do but
         // are filtered out of the planner's uid list and would otherwise be

@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Log-replay harness for the SourcePIDCache strict 1pt spatial pass, focused
 /// on the macOS 26 Control-Center-hosted resolution case that this area keeps
@@ -144,11 +144,11 @@ struct ControlCenterHostedMatchLogReplayTests {
 
     /// The check only governs Control Center as the matcher: a generic Item-N
     /// title attributed to any other app (a widget's own extras child like The
-    /// Clock, or Thaw's own items) — or to no known app at all — is never a bare
+    /// Clock, or Tidybar's own items) — or to no known app at all — is never a bare
     /// CC slot.
     @Test("A non-Control-Center matcher is never a slot")
     func nonControlCenterMatcherIsNeverASlot() {
-        for matcher in ["com.fabriceleyne.theclock", "com.stonerl.Thaw"] {
+        for matcher in ["com.fabriceleyne.theclock", "com.yoavsror.tidybar"] {
             #expect(
                 !MarkerPairResolver.isCCHostedGenericSlot(
                     appBundleID: matcher,

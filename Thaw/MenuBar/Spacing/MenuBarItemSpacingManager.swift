@@ -56,7 +56,7 @@ final class MenuBarItemSpacingManager {
         let didRelaunch: Bool
 
         /// Bundle IDs we expect to see re-attach a menu bar item after
-        /// the wave. Excludes apps that failed to relaunch (and Thaw
+        /// the wave. Excludes apps that failed to relaunch (and Tidybar
         /// itself, which is never killed). Empty when didRelaunch is
         /// false. Callers can pass this to a settling task to gate
         /// post-wave layout work on actual reattachment instead of a
@@ -322,7 +322,7 @@ final class MenuBarItemSpacingManager {
         // verification can tell whether each expected app actually came back
         // and the fallback can relaunch via the exact bundleURL that was
         // running. Stored before signalling so resolution doesn't race with
-        // terminate. Thaw itself is excluded: it's never relaunched (we skip
+        // terminate. Tidybar itself is excluded: it's never relaunched (we skip
         // .current during the wave), so its PID is unchanged post-wave,
         // which would otherwise be misread as "didn't come back" and
         // trigger a useless fallback launch of our own bundle.

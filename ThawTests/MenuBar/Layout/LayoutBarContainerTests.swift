@@ -8,7 +8,7 @@
 
 import Cocoa
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @MainActor
 @Suite("Badge-only layout section drops")

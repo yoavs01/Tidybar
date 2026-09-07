@@ -8,13 +8,13 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @MainActor
 @Suite("GhostControlItemWindow")
 struct GhostControlItemWindowTests {
-    private let hiddenTitle = "Thaw.ControlItem.Hidden"
-    private let alwaysHiddenTitle = "Thaw.ControlItem.AlwaysHidden"
+    private let hiddenTitle = "Tidybar.ControlItem.Hidden"
+    private let alwaysHiddenTitle = "Tidybar.ControlItem.AlwaysHidden"
 
     private func item(tag: MenuBarItemTag, windowID: CGWindowID, title: String) -> MenuBarItem {
         MenuBarItem.fixture(tag: tag, windowID: windowID, title: title)
@@ -26,12 +26,12 @@ struct GhostControlItemWindowTests {
             item(tag: .hiddenControlItem, windowID: 364, title: hiddenTitle),
             item(tag: .alwaysHiddenControlItem, windowID: 366, title: alwaysHiddenTitle),
             item(
-                tag: .appItem(bundleID: "com.stonerl.Thaw", title: hiddenTitle, instanceIndex: 1),
+                tag: .appItem(bundleID: "com.yoavsror.tidybar", title: hiddenTitle, instanceIndex: 1),
                 windowID: 21542,
                 title: hiddenTitle
             ),
             item(
-                tag: .appItem(bundleID: "com.stonerl.Thaw", title: alwaysHiddenTitle, instanceIndex: 1),
+                tag: .appItem(bundleID: "com.yoavsror.tidybar", title: alwaysHiddenTitle, instanceIndex: 1),
                 windowID: 21543,
                 title: alwaysHiddenTitle
             ),
@@ -67,7 +67,7 @@ struct GhostControlItemWindowTests {
         var items = [
             item(tag: .alwaysHiddenControlItem, windowID: 366, title: alwaysHiddenTitle),
             item(
-                tag: .appItem(bundleID: "com.stonerl.Thaw", title: hiddenTitle, instanceIndex: 1),
+                tag: .appItem(bundleID: "com.yoavsror.tidybar", title: hiddenTitle, instanceIndex: 1),
                 windowID: 21542,
                 title: hiddenTitle
             ),
@@ -87,7 +87,7 @@ struct GhostControlItemWindowTests {
     func ghostDetectionDropsOnlyForeignControlWindow() {
         let items = [
             item(
-                tag: .appItem(bundleID: "com.stonerl.Thaw", title: hiddenTitle, instanceIndex: 1),
+                tag: .appItem(bundleID: "com.yoavsror.tidybar", title: hiddenTitle, instanceIndex: 1),
                 windowID: 21542,
                 title: hiddenTitle
             ),

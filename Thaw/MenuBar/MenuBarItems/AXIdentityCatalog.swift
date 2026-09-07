@@ -56,7 +56,7 @@ enum AXIdentityCatalog {
     private static nonisolated let minOverlapFraction: CGFloat = 0.5
 
     /// Takes a snapshot of menu-bar-item AX identities from the given host
-    /// applications (e.g. Control Center, SystemUIServer, or Thaw itself).
+    /// applications (e.g. Control Center, SystemUIServer, or Tidybar itself).
     ///
     /// Only elements that publish a frame are included, since frame is the
     /// sole correlation key against CG window bounds.

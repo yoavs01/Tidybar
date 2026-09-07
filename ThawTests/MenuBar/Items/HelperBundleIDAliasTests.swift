@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pins the helper-to-app bundle identifier aliases used when deriving a
 /// menu bar item's namespace.

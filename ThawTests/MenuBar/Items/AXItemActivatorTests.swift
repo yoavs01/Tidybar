@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the pure, non-AX helpers `AXItemActivator` uses to pick a
 /// candidate element and verify its frame. The AX round trip itself

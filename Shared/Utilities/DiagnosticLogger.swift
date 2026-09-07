@@ -13,7 +13,7 @@ import OSLog
 /// when diagnostic logging is enabled. This allows users to capture detailed
 /// debug logs for troubleshooting without requiring a debug build.
 ///
-/// Log files are written to `~/Library/Logs/Thaw/`.
+/// Log files are written to `~/Library/Logs/Tidybar/`.
 final nonisolated class DiagnosticLogger: @unchecked Sendable {
     /// The shared diagnostic logger instance.
     static let shared = DiagnosticLogger()
@@ -51,7 +51,7 @@ final nonisolated class DiagnosticLogger: @unchecked Sendable {
         return home
             .appendingPathComponent("Library", isDirectory: true)
             .appendingPathComponent("Logs", isDirectory: true)
-            .appendingPathComponent("Thaw", isDirectory: true)
+            .appendingPathComponent("Tidybar", isDirectory: true)
     }
 
     /// Returns whether any log files exist in the log directory.
@@ -90,7 +90,7 @@ final nonisolated class DiagnosticLogger: @unchecked Sendable {
 
     /// Internal logger for DiagnosticLogger's own messages.
     private let osLog = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "com.stonerl.Thaw",
+        subsystem: Bundle.main.bundleIdentifier ?? "com.yoavsror.tidybar",
         category: "DiagnosticLogger"
     )
 
@@ -112,7 +112,7 @@ final nonisolated class DiagnosticLogger: @unchecked Sendable {
 
     /// Serial queue for file I/O.
     private let writeQueue = DispatchQueue(
-        label: "com.stonerl.Thaw.DiagnosticLogger.writeQueue",
+        label: "com.yoavsror.tidybar.DiagnosticLogger.writeQueue",
         qos: .utility
     )
 
@@ -216,7 +216,7 @@ final nonisolated class DiagnosticLogger: @unchecked Sendable {
         let sha = Bundle.main.infoDictionary?["GitCommitSHA"] as? String ?? "unknown"
         let header = """
         ========================================
-        Thaw Diagnostic Log
+        Tidybar Diagnostic Log
         Started: \(timestampFormatter.string(from: Date()))
         Process: \(ProcessInfo.processInfo.processName)
         Version: \(version) (\(build)) commit \(sha)
@@ -345,7 +345,7 @@ nonisolated struct DiagLog {
 
     init(category: String) {
         self.osLogger = Logger(
-            subsystem: Bundle.main.bundleIdentifier ?? "com.stonerl.Thaw",
+            subsystem: Bundle.main.bundleIdentifier ?? "com.yoavsror.tidybar",
             category: category
         )
         self.category = category

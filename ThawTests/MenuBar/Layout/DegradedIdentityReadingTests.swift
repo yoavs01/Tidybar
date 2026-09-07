@@ -7,14 +7,14 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``LayoutSolver/liveIdentitiesAreDegraded(_:)``, the gate that stops a
 /// bar-wide `kCGWindowName` degradation from reaching the cache.
 ///
 /// #881's 12:38 log read the live hidden section as
 /// `com.rogueamoeba.soundsource:com.rogueamoeba.soundsource` and ten more of
-/// the same shape, Thaw's own control item among them, two minutes after the
+/// the same shape, Tidybar's own control item among them, two minutes after the
 /// same items had read normally. Caching that reading persists the whole bar
 /// under a second set of identifiers, and every later flip between the two
 /// spellings presents a bar's worth of late arrivals — a re-sort, a bulk apply,
@@ -44,7 +44,7 @@ struct DegradedIdentityReadingTests {
         #expect(LayoutSolver.liveIdentitiesAreDegraded(degraded))
     }
 
-    /// The certain signal. Thaw titles its own items `Thaw.ControlItem.*`, so
+    /// The certain signal. Tidybar titles its own items `Tidybar.ControlItem.*`, so
     /// one in our namespace wearing our bundle identifier cannot be a correct
     /// reading — and it arrives with the dividers unrecognizable, which is why
     /// the same logs report the hidden control item missing.
@@ -66,8 +66,8 @@ struct DegradedIdentityReadingTests {
     func healthyReadingPasses() {
         let own = Constants.bundleIdentifier
         let reading = identities([
-            (own, "Thaw.ControlItem.Visible"),
-            (own, "Thaw.ControlItem.Hidden"),
+            (own, "Tidybar.ControlItem.Visible"),
+            (own, "Tidybar.ControlItem.Hidden"),
             ("com.apple.controlcenter", "WiFi"),
             ("com.apple.controlcenter", "Battery"),
             ("eu.exelban.Stats", "CPU_bar_chart"),

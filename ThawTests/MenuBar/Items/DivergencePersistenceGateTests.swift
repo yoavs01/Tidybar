@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the divergence-persistence gate that decides whether a
 /// divergence observation should trigger a saved-layout re-apply.

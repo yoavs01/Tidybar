@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Verifies `SimpleSemaphore.wait(timeout:)` reconciles a lost-race acquire
 /// against a timeout: a permit won by `wait()` after the timeout has already

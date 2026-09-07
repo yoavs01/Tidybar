@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the display-spread predicate that both the saved-layout apply
 /// and the section-order persist consult before acting.

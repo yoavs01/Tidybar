@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``ObjectStorage``, the Objective-C associated-object wrapper used to
 /// hang extra state off framework classes the app does not own.

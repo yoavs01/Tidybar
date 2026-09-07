@@ -14,7 +14,7 @@ nonisolated enum Defaults {
     ///
     /// Production never assigns this; it stays `.standard` for the life of
     /// the process. It exists so tests can point the whole `Defaults` facade
-    /// at a scratch suite instead of the user's real `com.stonerl.Thaw`
+    /// at a scratch suite instead of the user's real `com.yoavsror.tidybar`
     /// domain. Without it, exercising anything that persists a setting
     /// rewrites the defaults of whoever is running the tests, and the suite
     /// has to defend itself with per-key snapshot/restore that is not safe
@@ -428,7 +428,7 @@ nonisolated extension Defaults {
         /// the cursor is hijacked, a drag is synthesised, the landing is
         /// polled. On a bar with a well-populated hidden section a large
         /// share of a batch can be spent reordering items parked thousands
-        /// of points off-screen, which the Thaw Bar renders from the cache
+        /// of points off-screen, which the Tidybar Bar renders from the cache
         /// anyway. Setting this to false surrenders that ordering and keeps
         /// membership, shortening batches on exactly the bars where long
         /// batches hurt most.
@@ -442,7 +442,7 @@ nonisolated extension Defaults {
         /// Hidden diagnostic flag; not exposed in Settings. Default: false.
         case enforceConcealedSectionOrder = "enforceConcealedSectionOrder"
 
-        /// Whether Thaw rearranges the bar on its own initiative.
+        /// Whether Tidybar rearranges the bar on its own initiative.
         ///
         /// The escape hatch for bars where the automatic paths misbehave in
         /// ways no gate has caught. Set to false and the late-arrival
@@ -463,9 +463,9 @@ nonisolated extension Defaults {
         /// the item's *window* rather than the app that owns the *item*.
         ///
         /// On macOS 26 those are different processes: Control Center hosts
-        /// every status item window, so the CG owner of the window Thaw is
+        /// every status item window, so the CG owner of the window Tidybar is
         /// dragging is Control Center, while `sourcePID` names the app whose
-        /// status item it logically is. Thaw has always preferred
+        /// status item it logically is. Tidybar has always preferred
         /// `sourcePID`, which was right when the owning app really did own
         /// the window, and on 26 targets a process that does not own the
         /// window being dragged.

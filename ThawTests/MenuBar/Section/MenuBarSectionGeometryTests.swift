@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - Table Rows
 
@@ -406,7 +406,7 @@ struct MenuBarSectionGeometryTests {
             // `presentationMode` re-measures with the menus collapsed onto the
             // screen's left edge and assumes the second number is the larger
             // one. If it were not, an item set that already fit could be
-            // pushed into the Thaw Bar.
+            // pushed into the Tidybar Bar.
             for testCase in usableWidthCases {
                 let withoutMenus = MenuBarSection.usableInlineWidth(
                     from: testCase.screenFrameMinX,
@@ -472,7 +472,7 @@ struct MenuBarSectionGeometryTests {
         func equalityFitsInline() {
             // The comparison is `<=`. An item set measured at exactly the
             // usable width is already laid out on the bar, so treating it as
-            // an overflow would flap between inline and the Thaw Bar on every
+            // an overflow would flap between inline and the Tidybar Bar on every
             // measurement.
             let usable = MenuBarSection.usableInlineWidth(
                 from: NotchedScreen.appMenuRightEdge,
@@ -524,7 +524,7 @@ struct MenuBarSectionGeometryTests {
         func modeDegradesMonotonically() {
             // Everything downstream assumes the decision is monotonic in the
             // item width. A non-monotonic rule would let one more item pull the
-            // section back out of the Thaw Bar.
+            // section back out of the Tidybar Bar.
             var previousRank = 0
             for width in stride(from: CGFloat(0), through: 1600, by: 25) {
                 let mode = MenuBarSection.presentationMode(

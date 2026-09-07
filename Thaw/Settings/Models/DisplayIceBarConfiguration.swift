@@ -8,22 +8,22 @@
 
 import AppKit
 
-/// Per-display configuration for the Thaw Bar.
+/// Per-display configuration for the Tidybar Bar.
 nonisolated struct DisplayIceBarConfiguration: Codable, Equatable {
-    /// Whether the Thaw Bar is enabled on this display.
+    /// Whether the Tidybar Bar is enabled on this display.
     let useIceBar: Bool
 
-    /// Whether the always-hidden section alone opens in the Thaw Bar on this
+    /// Whether the always-hidden section alone opens in the Tidybar Bar on this
     /// display, leaving the hidden section to expand inline as usual.
     ///
     /// Only applicable when ``useIceBar`` is `false`, which already routes
-    /// every section to the Thaw Bar. Showing the always-hidden section inline
+    /// every section to the Tidybar Bar. Showing the always-hidden section inline
     /// has to expand the hidden section along with it, because always-hidden
     /// items sit to the left of the hidden control item; this is the way to
     /// reach them without unfurling the rest of the menu bar.
     let useThawBarForAlwaysHidden: Bool
 
-    /// The location where the Thaw Bar appears on this display.
+    /// The location where the Tidybar Bar appears on this display.
     let iceBarLocation: IceBarLocation
 
     /// Whether to always show hidden menu bar items on this display.
@@ -31,10 +31,10 @@ nonisolated struct DisplayIceBarConfiguration: Codable, Equatable {
     /// This setting is only applicable when ``useIceBar`` is `false`.
     let alwaysShowHiddenItems: Bool
 
-    /// The layout mode for the Thaw Bar on this display.
+    /// The layout mode for the Tidybar Bar on this display.
     let iceBarLayout: IceBarLayout
 
-    /// The maximum number of items per row when the Thaw Bar is in grid layout.
+    /// The maximum number of items per row when the Tidybar Bar is in grid layout.
     ///
     /// Valid range is 2 through 10.
     let gridColumns: Int

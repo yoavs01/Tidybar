@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Shared extensions")
 struct SharedExtensionsTests {

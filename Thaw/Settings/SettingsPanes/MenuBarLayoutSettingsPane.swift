@@ -150,16 +150,16 @@ struct MenuBarLayoutSettingsPane: View {
 
     private var useThawBarOnNotchOverflow: some View {
         Toggle(
-            "Use the Thaw Bar while items are overflowed",
+            "Use the Tidybar Bar while items are overflowed",
             isOn: $advancedSettings.useThawBarOnNotchOverflow
         )
         .annotation {
             Text(
                 """
-                Reveal hidden items through the Thaw Bar while overflow has items \
+                Reveal hidden items through the Tidybar Bar while overflow has items \
                 ejected. The visible row has no room left beside the notch at that \
                 point, so expanding the hidden section inline cannot show them. \
-                Disable to always follow the per-display Thaw Bar setting.
+                Disable to always follow the per-display Tidybar Bar setting.
                 """
             )
             .padding(.trailing, 75)

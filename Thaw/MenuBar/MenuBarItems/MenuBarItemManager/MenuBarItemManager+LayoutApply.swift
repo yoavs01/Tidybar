@@ -34,7 +34,7 @@ extension MenuBarItemManager {
     }
 
     /// Resets menu bar layout data to a fresh-install state and moves all
-    /// movable, hideable items (except the Thaw icon) to the
+    /// movable, hideable items (except the Tidybar icon) to the
     /// Hidden section.
     ///
     /// - Returns: The number of items that failed to move.
@@ -42,12 +42,12 @@ extension MenuBarItemManager {
         try await resetLayout(to: .hidden)
     }
 
-    /// Moves every movable, hideable item except the Thaw icon to Visible.
+    /// Moves every movable, hideable item except the Tidybar icon to Visible.
     func resetLayoutToVisible() async throws -> Int {
         try await resetLayout(to: .visible)
     }
 
-    /// Moves every movable, hideable item except the Thaw icon to Always Hidden.
+    /// Moves every movable, hideable item except the Tidybar icon to Always Hidden.
     func resetLayoutToAlwaysHidden() async throws -> Int {
         try await resetLayout(to: .alwaysHidden)
     }
@@ -232,7 +232,7 @@ extension MenuBarItemManager {
             var failed = 0
             for item in items {
                 if item.tag == .visibleControlItem {
-                    continue // Keep the Thaw icon in the visible section if enabled.
+                    continue // Keep the Tidybar icon in the visible section if enabled.
                 }
 
                 guard item.isMovable, item.canBeHidden, !item.isControlItem else {
@@ -826,7 +826,7 @@ extension MenuBarItemManager {
         // interacting. `automatic` is the same distinction
         // `automaticBulkApplyPermitted` already draws at the two dispatch
         // sites: a late-arrival re-sort or a saved-layout restore is
-        // something Thaw decided to do, and it can afford to wait for a
+        // something Tidybar decided to do, and it can afford to wait for a
         // lull. A profile the user just picked cannot — they are watching
         // for it to happen, and their hand is still on the mouse that
         // picked it.
@@ -1126,7 +1126,7 @@ extension MenuBarItemManager {
         let visibleCtrlUID = items.first(where: { $0.tag == .visibleControlItem })?.uniqueIdentifier
         let desiredSet = Set(desiredFiltered)
         // Generic Control Center items (Item-N title) with no resolved source
-        // PID are widgets macOS hosts under Control Center that Thaw cannot yet
+        // PID are widgets macOS hosts under Control Center that Tidybar cannot yet
         // attribute to their owning app (e.g. Little Snitch's agent before its
         // marker window appears). They fall back to the com.apple.controlcenter
         // namespace, never match a profile entry, and so would be relocated as
@@ -1208,7 +1208,7 @@ extension MenuBarItemManager {
         // MARK: Phase 4: notch overflow rebalance
 
         // On notched displays, calculate available visible space and overflow
-        // items that won't fit into the hidden section. The Thaw visible
+        // items that won't fit into the hidden section. The Tidybar visible
         // control icon stays as the last visible item (nearest the hidden divider).
         // Gated by the user-facing "Enable menu bar item overflow" toggle in
         // Advanced Settings; when off, the saved profile layout is honoured
@@ -1264,7 +1264,7 @@ extension MenuBarItemManager {
                 }
             }
 
-            // Find the Thaw visible control icon, which must always stay visible.
+            // Find the Tidybar visible control icon, which must always stay visible.
             let visibleCtrlUID = items.first(where: { $0.tag == .visibleControlItem })?.uniqueIdentifier
 
             var chevronFootprint: CGFloat = 0
@@ -1525,7 +1525,7 @@ extension MenuBarItemManager {
 
         // ...but only when it is the divider that drifted. isProfileItem
         // admits the chevron, so the counts that decide this have to drop
-        // Thaw's own items first, or a collapsed bar always looks like it
+        // Tidybar's own items first, or a collapsed bar always looks like it
         // still has one item on the visible side and never qualifies for
         // the drag that would rescue it.
         let liveControlUIDs = Set(items.lazy.filter(\.isControlItem).map(\.uniqueIdentifier))
@@ -1671,7 +1671,7 @@ extension MenuBarItemManager {
                         return LayoutSolver.isOnScreen(bounds: item.bounds, screenFrames: screenFrames)
                     }.map(\.uniqueIdentifier)
                 )
-                // Thaw's own control items clear both filters above whatever the
+                // Tidybar's own control items clear both filters above whatever the
                 // rest of the bar is doing: they are movable, and they stay on
                 // screen even on a pass where every real item the profile puts on
                 // this side of the divider has been dragged to the other side and
@@ -2023,7 +2023,7 @@ extension MenuBarItemManager {
             // minX=-3596, the drag walked H_ctrl to -9322, and the pair came
             // out inverted with the hidden section reading zero width. The
             // reporter traced their strand to this path rather than to the
-            // visible/hidden boundary repair. Same reasoning as the Thaw-icon
+            // visible/hidden boundary repair. Same reasoning as the Tidybar-icon
             // relocation guard in enforceControlItemOrder, and the same
             // leading-edge test, which is the right one for a drag anchor.
             //
@@ -2252,7 +2252,7 @@ extension MenuBarItemManager {
         // sequences above, but the chevron stays in: its position within
         // visible is part of the layout and is persisted. That also makes it
         // selectable as a move anchor, and anchoring a failing move on one of
-        // Thaw's own dividers is what walks it across the bar (#924, #927).
+        // Tidybar's own dividers is what walks it across the bar (#924, #927).
         // Keep it in the order, bar it from being an anchor.
         let unanchorableUIDs = Set(
             items.lazy.filter(\.isControlItem).map(\.uniqueIdentifier)
@@ -2530,7 +2530,7 @@ extension MenuBarItemManager {
     ///
     /// Both rebuild paths exist to discard a stale autosave position, and both
     /// discard it by writing the seed `preflightSetup` uses on a fresh install.
-    /// That value describes a bar Thaw has never arranged. Writing it onto a
+    /// That value describes a bar Tidybar has never arranged. Writing it onto a
     /// bar that already holds managed items drops the rebuilt divider on one
     /// side of all of them, and the next cache pass reads the entire bar into a
     /// single section — the collapse `preflightSetup` documents for #895,
@@ -2780,8 +2780,8 @@ extension MenuBarItemManager {
     /// - `overflowExemptUIDs` carries the notch-overflow ejections, and is
     ///   empty unless the caller has already established that the feature is
     ///   on and the active display is notched.
-    /// - `activelyShownTags` carries the items Thaw is temporarily showing. One
-    ///   of those sits outside its saved section because Thaw put it there, and
+    /// - `activelyShownTags` carries the items Tidybar is temporarily showing. One
+    ///   of those sits outside its saved section because Tidybar put it there, and
     ///   it stays there until the rehide runs. Reading that as drift arms a
     ///   bulk apply whose only remaining brake is the open-menu probe, and a
     ///   false negative from the probe then drags the item home underneath the
@@ -3114,7 +3114,7 @@ extension MenuBarItemManager {
         bypassMoveCooldown: Bool = false,
         resolvedIdentitiesOnly: Bool = false
     ) async -> Bool {
-        // Each guard logs a distinct reason so a "Thaw stopped
+        // Each guard logs a distinct reason so a "Tidybar stopped
         // restoring my layout" bug report can be diagnosed from the
         // first set of logs. Order is significant: the cheap state
         // checks run first; window-ID/tag inspection runs last so we

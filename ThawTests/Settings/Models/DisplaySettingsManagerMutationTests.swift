@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``DisplaySettingsManager``'s mutation and enumeration surface:
 /// `updateConfiguration`, the typed lookups built on it,

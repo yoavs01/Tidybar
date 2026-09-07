@@ -8,12 +8,12 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``MigrationManager``, which runs once at launch to bring settings
 /// written by an earlier build up to the current format.
 ///
-/// The only surviving migration converts the global Thaw Bar switches into
+/// The only surviving migration converts the global Tidybar Bar switches into
 /// per-display configurations. It is destructive in the sense that matters: it
 /// writes `displayIceBarConfigurations` and then sets a latch so it never runs
 /// again. Two things therefore have to hold. The latch must be set on *every*
@@ -50,10 +50,10 @@ struct MigrationTests {
         }
     }
 
-    /// With the Thaw Bar switched off there is nothing to convert, but the
+    /// With the Tidybar Bar switched off there is nothing to convert, but the
     /// latch still has to be set — otherwise the migration reconsiders the
     /// legacy keys at every launch.
-    @Test("A disabled Thaw Bar writes no configurations but still latches")
+    @Test("A disabled Tidybar Bar writes no configurations but still latches")
     func disabledIceBarWritesNothingButLatches() throws {
         try withScratchDefaults { _ in
             Defaults.set(false, forKey: .useIceBar)
@@ -98,7 +98,7 @@ struct MigrationTests {
 
     // MARK: - Conversion
 
-    @Test("An enabled Thaw Bar writes a decodable configuration payload")
+    @Test("An enabled Tidybar Bar writes a decodable configuration payload")
     func enabledIceBarWritesADecodablePayload() throws {
         try withScratchDefaults { _ in
             Defaults.set(true, forKey: .useIceBar)

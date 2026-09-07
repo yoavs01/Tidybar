@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``AXItemActivator/performFirstEffectiveAction(_:perform:didReact:)``,
 /// the rule that decides when activating an item is allowed to try harder.

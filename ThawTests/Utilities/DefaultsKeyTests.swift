@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pins the raw values of the hidden diagnostic flags that were migrated
 /// from raw `UserDefaults` string-literal reads into `Defaults.Key`.
@@ -46,7 +46,7 @@ struct DefaultsKeyTests {
         // False: ordering moves inside concealed sections are invisible and
         // dominate long batches, so membership alone is restored.
         #expect(Defaults.DefaultValue.enforceConcealedSectionOrder == false)
-        // True keeps Thaw arranging on its own initiative; false is the
+        // True keeps Tidybar arranging on its own initiative; false is the
         // manual-only escape hatch.
         #expect(Defaults.DefaultValue.automaticArrangementEnabled == true)
         // True: on macOS 26 the window's owner is the process that receives

@@ -175,7 +175,7 @@ final class LayoutBarItemView: LayoutBarArrangedView {
     /// Provides an alert to display when the item view is disabled.
     ///
     /// The copy names the gate honestly. "macOS prohibits" is only true for
-    /// the static system items; an unresolved Control Center slot is Thaw's
+    /// the static system items; an unresolved Control Center slot is Tidybar's
     /// own safety gate, and blaming macOS for it sent #905's reporter
     /// chasing the wrong condition. When an AX correlation identified the
     /// hosted slot's real owner, the alert names it instead of the generic

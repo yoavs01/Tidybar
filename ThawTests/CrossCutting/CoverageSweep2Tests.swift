@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Coverage sweep, part 2: the small presentation-facing value types whose
 /// existing suites stopped at raw values and `Codable`.
@@ -18,7 +18,7 @@ import Testing
 ///
 /// - `IceBarLayout` — `id`, `localized`, and the string parser's rejection
 ///   path. The parser accepts both case names and stringified raw values
-///   because it backs the `thaw://` settings URI, so an accepted alias set
+///   because it backs the `tidybar://` settings URI, so an accepted alias set
 ///   is part of that public surface.
 /// - `IceBarLocation.localized` (`IceBarLocationTests` covers everything
 ///   else about the type).
@@ -69,7 +69,7 @@ struct CoverageSweep2Tests {
             }
         }
 
-        /// `fromString` backs `thaw://set?key=iceBarLayout&value=…`, so both
+        /// `fromString` backs `tidybar://set?key=iceBarLayout&value=…`, so both
         /// spellings are an external contract.
         @Test(
             "Both the case name and the raw value parse to the same layout",

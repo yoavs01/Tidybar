@@ -214,7 +214,7 @@ extension MenuBarItemManager {
             alwaysHiddenControlItemWindowID: CGWindowID? = nil
         ) {
             // Primary lookup: match the windows this process created. Duplicate
-            // Thaw instances can produce identical titles; tag assignment then
+            // Tidybar instances can produce identical titles; tag assignment then
             // favors the lowest window ID, which may belong to another process.
             if let hiddenWID = hiddenControlItemWindowID,
                let hiddenIndex = items.firstIndex(where: { $0.windowID == hiddenWID })
@@ -240,9 +240,9 @@ extension MenuBarItemManager {
             // resolved sourcePID — that fail together exactly when the item
             // service's PID resolution degrades, which is the same failure
             // that stranded the window in the first place. That left frame
-            // correlation guessing at Thaw's own dividers (#923, #924, #927).
+            // correlation guessing at Tidybar's own dividers (#923, #924, #927).
             //
-            // Thaw holds these windows, so it does not have to guess. Only
+            // Tidybar holds these windows, so it does not have to guess. Only
             // attempted when the caller supplied an authoritative ID, and
             // only for a window the window server still knows.
             if let hiddenWID = hiddenControlItemWindowID,
@@ -292,12 +292,12 @@ extension MenuBarItemManager {
             }
 
             // Fallback 3 (strategy 4, #754): AX-frame correlation against
-            // Thaw's own AX elements. Thaw's control items are its own
-            // NSStatusItems, so their AX elements (reached via Thaw's own
+            // Tidybar's own AX elements. Tidybar's control items are its own
+            // NSStatusItems, so their AX elements (reached via Tidybar's own
             // process, not any third party) carry frames that can be
             // correlated against the candidate items' CG window bounds even
             // when tag, title, and window ID all fail to match — this is
-            // the only strategy that lets Thaw identify its OWN control
+            // the only strategy that lets Tidybar identify its OWN control
             // items when every CG-side identity channel has degraded.
             if let pair = Self.matchViaAXFrame(items: &items) {
                 self.hidden = pair.hidden
@@ -312,7 +312,7 @@ extension MenuBarItemManager {
             return nil
         }
 
-        /// Whether to rebuild one of Thaw's own control items directly from
+        /// Whether to rebuild one of Tidybar's own control items directly from
         /// its window rather than continuing down the identity fallbacks.
         ///
         /// Only when the caller supplied an authoritative window ID *and*
@@ -336,7 +336,7 @@ extension MenuBarItemManager {
         /// Resolves the always-hidden control item once the hidden divider is
         /// claimed.
         ///
-        /// With an authoritative window ID — Thaw's own `NSStatusItem` window
+        /// With an authoritative window ID — Tidybar's own `NSStatusItem` window
         /// — the item is taken from the enumerated list when present. When
         /// absent, it is recovered from the window server via
         /// `ownControlItem` (#991): the window still exists while it is
@@ -345,7 +345,7 @@ extension MenuBarItemManager {
         /// relaunch, when every profile apply needs it. Tag matching is
         /// deliberately skipped in that case: a known-but-absent
         /// authoritative ID must not adopt a lookalike window from a
-        /// duplicate Thaw instance. Without an authoritative ID, the
+        /// duplicate Tidybar instance. Without an authoritative ID, the
         /// remaining list is tag-matched as before.
         ///
         /// `recovery` is the window-server lookup, a parameter so tests can
@@ -396,7 +396,7 @@ extension MenuBarItemManager {
             return recovered
         }
 
-        /// Strategy 4: correlates Thaw's own AX element frames (from its own
+        /// Strategy 4: correlates Tidybar's own AX element frames (from its own
         /// `extrasMenuBar`, via `NSRunningApplication.current`) against the
         /// candidate items' CG window bounds, using
         /// `AXIdentityCatalog.identity(for:in:)`'s pure correlation. Confident
@@ -411,7 +411,7 @@ extension MenuBarItemManager {
                 let extrasMenuBar = AXHelpers.extrasMenuBar(for: app)
             else {
                 MenuBarItemManager.diagLog.debug(
-                    "ControlItemPair: strategy 4 (AX frame) unavailable — could not resolve Thaw's own extrasMenuBar"
+                    "ControlItemPair: strategy 4 (AX frame) unavailable — could not resolve Tidybar's own extrasMenuBar"
                 )
                 return nil
             }
@@ -432,7 +432,7 @@ extension MenuBarItemManager {
 
             guard !snapshot.isEmpty else {
                 MenuBarItemManager.diagLog.debug(
-                    "ControlItemPair: strategy 4 (AX frame) unavailable — Thaw's extrasMenuBar has no children with frames"
+                    "ControlItemPair: strategy 4 (AX frame) unavailable — Tidybar's extrasMenuBar has no children with frames"
                 )
                 return nil
             }
@@ -506,7 +506,7 @@ extension MenuBarItemManager {
             let index: Int
             let bounds: CGRect
             let isOwnProcess: Bool
-            /// Whether this candidate is Thaw's *visible* control item, which
+            /// Whether this candidate is Tidybar's *visible* control item, which
             /// must never be selected as the hidden or always-hidden divider
             /// however well its frame correlates.
             var isVisibleControlItem = false
@@ -515,7 +515,7 @@ extension MenuBarItemManager {
         /// Pure selection helper: correlates each of our own control items
         /// (`candidates` where `isOwnProcess` is true) against `axFrames` in
         /// AX order (left-to-right in the extras menu bar, matching the
-        /// order Thaw's own status items are enumerated in), so the first
+        /// order Tidybar's own status items are enumerated in), so the first
         /// confidently-correlated own-item becomes the hidden control item
         /// and the second becomes the always-hidden one — the same relative
         /// ordering the tag/title strategies assume, but derived from AX
@@ -1164,7 +1164,7 @@ extension MenuBarItemManager {
         didRecoverParkedHiddenDividerForCurrentMismatch = false
     }
 
-    /// Whether bundleID owns a menu bar item Thaw already tracks: an entry
+    /// Whether bundleID owns a menu bar item Tidybar already tracks: an entry
     /// in identifiers (each formatted "namespace:title") whose namespace is
     /// exactly bundleID. The trailing ":" anchors the match so one bundle ID
     /// can't be a loose prefix of another (org.x.fdm6 must not match
@@ -1397,7 +1397,7 @@ extension MenuBarItemManager {
             items.removeAll(where: \.isSystemClone)
         }
 
-        // A duplicate Thaw process (or windows left by one that crashed) can
+        // A duplicate Tidybar process (or windows left by one that crashed) can
         // expose control-item titles under foreign window IDs. Exclude those
         // windows from every cache decision so they cannot be treated as new
         // unmanaged items or make the normal window-ID comparison churn.
@@ -2044,10 +2044,10 @@ extension MenuBarItemManager {
         }
 
         // Second guard on the same rule as the filter above, against a title
-        // this side can see and a cached item cannot: a duplicate Thaw process
+        // this side can see and a cached item cannot: a duplicate Tidybar process
         // can leave control-item windows behind under foreign window IDs.
         let windows = WindowInfo.createWindows(from: probeWindowIDs)
-            .filter { !($0.title?.hasPrefix("Thaw.ControlItem.") ?? false) }
+            .filter { !($0.title?.hasPrefix("Tidybar.ControlItem.") ?? false) }
         guard !windows.isEmpty else {
             return
         }

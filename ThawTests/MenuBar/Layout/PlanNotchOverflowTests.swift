@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutSolver.planNotchOverflow.
 ///
@@ -439,7 +439,7 @@ struct PlanNotchOverflowTests {
 
     /// The visible control item is never ejected, but it must also keep its
     /// saved position when an overflow rebuild runs. The field layout puts the
-    /// Thaw icon near the end of the visible section (items after it), not at
+    /// Tidybar icon near the end of the visible section (items after it), not at
     /// the front. Here the chevron sits mid-section; when a profile item
     /// overflows, the chevron must stay between its neighbours rather than jump
     /// to index 0. Red before the fix, which prepended the chevron.

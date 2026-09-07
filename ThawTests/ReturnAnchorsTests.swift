@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `LayoutSolver.returnAnchors`, which picks the neighbors a
 /// temporarily shown item is anchored against when it is returned to its

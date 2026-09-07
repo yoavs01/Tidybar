@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Regression lock for `ProfileManager.deleteProfile(id:)` when the
 /// profile's on-disk JSON file is already missing.

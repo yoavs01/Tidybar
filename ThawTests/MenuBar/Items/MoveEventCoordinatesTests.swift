@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Regression tests for the synthetic event coordinates used to move menu bar items.
 @Suite("Move event coordinates")

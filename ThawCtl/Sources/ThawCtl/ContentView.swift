@@ -72,7 +72,7 @@ struct ContentView: View {
     }
 
     private var setSection: some View {
-        GroupBox("Set Setting (thaw://set)") {
+        GroupBox("Set Setting (tidybar://set)") {
             VStack(spacing: 6) {
                 HStack {
                     Text("Key:")
@@ -95,7 +95,7 @@ struct ContentView: View {
     }
 
     private var toggleSection: some View {
-        GroupBox("Toggle Setting (thaw://toggle)") {
+        GroupBox("Toggle Setting (tidybar://toggle)") {
             VStack(spacing: 6) {
                 Picker("Key:", selection: $toggleKey) {
                     Text("Pick a key...").tag("")
@@ -114,7 +114,7 @@ struct ContentView: View {
     }
 
     private var getSection: some View {
-        GroupBox("Get Setting (thaw://get → thawctl://callback)") {
+        GroupBox("Get Setting (tidybar://get → thawctl://callback)") {
             VStack(spacing: 6) {
                 Picker("Key:", selection: $getKey) {
                     Text("Pick a key...").tag("")
@@ -138,7 +138,7 @@ struct ContentView: View {
                 Button("Request Authorization") { engine.sendAuthorize() }
                     .buttonStyle(.bordered)
                     .controlSize(.small)
-                Text("Triggers whitelist dialog in Thaw")
+                Text("Triggers whitelist dialog in Tidybar")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }

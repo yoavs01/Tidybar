@@ -7,7 +7,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pins ``AdvancedSettings.normalizedIconRefreshInterval`` to the discrete
 /// grid the "Icon refresh rate" slider can express: Off, or 1…30 fps.

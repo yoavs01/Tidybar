@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``LocalizedErrorWrapper``, which flattens an arbitrary error into a
 /// value SwiftUI's alert presentation can read.
@@ -107,7 +107,7 @@ struct LocalizedErrorWrapperTests {
     @Test("An NSError's localized description survives the non-localized branch")
     func nsErrorDescriptionSurvives() {
         let error = NSError(
-            domain: "com.stonerl.ThawTests",
+            domain: "com.yoavsror.tidybarTests",
             code: 42,
             userInfo: [
                 NSLocalizedDescriptionKey: "something went wrong",

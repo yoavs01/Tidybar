@@ -379,7 +379,7 @@ private struct UnlabeledShapeEditor: View {
     /// The shape the border follows.
     ///
     /// There is no shape to trace on the menu bar when this is `noShape`, so
-    /// the menu bar side of the border row is disabled. The Thaw Bar draws its
+    /// the menu bar side of the border row is disabled. The Tidybar Bar draws its
     /// border around its own panel and is unaffected.
     let shapeKind: MenuBarShapeKind
 

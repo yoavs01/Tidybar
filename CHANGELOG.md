@@ -1,5 +1,21 @@
 # Changelog
 
+> **Tidybar fork.** Entries from `## [1.0.0]` downward are the fork's own; everything below the
+> fork marker is inherited Thaw history and kept verbatim.
+
+## [1.0.0] - 2026-09-07
+
+### Changed
+- Forked from Thaw 2.0.1 (https://github.com/thaw-app/Thaw) and renamed **Tidybar**.
+- Bundle identifier is now `com.yoavsror.tidybar`; URL scheme `tidybar://`.
+- Version restarted at 1.0.0.
+
+### Removed
+- Sparkle update feed. This build does not check for or install updates.
+- Upstream funding links.
+
+<!-- fork marker: everything below is inherited Thaw history -->
+
 All notable changes to Thaw are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 

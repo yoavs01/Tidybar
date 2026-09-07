@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Tests for the rule that turns raw `occlusionState` readings into a verdict
 /// on whether a control item is being rendered.

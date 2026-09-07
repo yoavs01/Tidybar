@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the ``ProfileManager`` surface that owns files and the manifest:
 /// rename, duplicate, import/export, display association, hooks, and the

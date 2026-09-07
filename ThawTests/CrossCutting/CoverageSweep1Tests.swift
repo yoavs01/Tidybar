@@ -10,7 +10,7 @@ import AppKit
 import Foundation
 import SwiftUI
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Coverage sweep, part 1: the menu bar *appearance* value types.
 ///

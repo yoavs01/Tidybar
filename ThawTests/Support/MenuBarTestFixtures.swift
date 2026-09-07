@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import CoreGraphics
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - MenuBarItemTag fixtures
 

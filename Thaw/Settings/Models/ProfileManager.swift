@@ -89,7 +89,7 @@ final class ProfileManager {
                 fatalError("Application Support directory not found")
             }
             self.profilesDirectory = appSupport
-                .appendingPathComponent("Thaw/Profiles", isDirectory: true)
+                .appendingPathComponent("Tidybar/Profiles", isDirectory: true)
         }
         manifestURL = self.profilesDirectory
             .appendingPathComponent("profiles.json")
@@ -133,7 +133,7 @@ final class ProfileManager {
         focusFilterActivatedTask?.cancel()
         focusFilterActivatedTask = debouncedNotificationTask(
             center: DistributedNotificationCenter.default(),
-            name: Notification.Name("com.stonerl.Thaw.focusFilterActivated"),
+            name: Notification.Name("com.yoavsror.tidybar.focusFilterActivated"),
             interval: .seconds(0.5)
         ) { [weak self] in
             await self?.applyFocusFilterProfile()
@@ -143,7 +143,7 @@ final class ProfileManager {
         focusFilterDeactivatedTask?.cancel()
         focusFilterDeactivatedTask = debouncedNotificationTask(
             center: DistributedNotificationCenter.default(),
-            name: Notification.Name("com.stonerl.Thaw.focusFilterDeactivated"),
+            name: Notification.Name("com.yoavsror.tidybar.focusFilterDeactivated"),
             interval: .seconds(0.5)
         ) { [weak self] in
             await self?.handleFocusFilterDeactivated()

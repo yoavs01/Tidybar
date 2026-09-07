@@ -17,7 +17,7 @@ final class IceBarPanel: NSPanel {
     /// The shared app state.
     private weak var appState: AppState?
 
-    /// Manager for the Thaw Bar's color.
+    /// Manager for the Tidybar Bar's color.
     private let colorManager = IceBarColorManager()
 
     /// The currently displayed section.
@@ -40,7 +40,7 @@ final class IceBarPanel: NSPanel {
     /// Background cache task started when the panel is shown.
     private var cacheTask: Task<Void, Never>?
 
-    /// Creates a new Thaw Bar panel with Liquid Glass support.
+    /// Creates a new Tidybar Bar panel with Liquid Glass support.
     init() {
         super.init(
             contentRect: .zero,

@@ -48,7 +48,7 @@ import Foundation
 /// resolving saved positions", which leaves the entry in the user's saved
 /// order and in their profile file, and lets one live match undo the verdict
 /// at any time. That matters because the verdict can be wrong: an item whose
-/// owner Thaw cannot yet attribute — Little Snitch's agent before its marker
+/// owner Tidybar cannot yet attribute — Little Snitch's agent before its marker
 /// window appears — is indistinguishable from a rename here. Retiring it
 /// costs nothing, because it is unplaceable either way, and the moment the
 /// marker resolves the identifier matches again and the count is cleared.

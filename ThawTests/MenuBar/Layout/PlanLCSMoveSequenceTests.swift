@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutSolver.planLCSMoveSequence.
 ///
@@ -227,9 +227,9 @@ struct PlanLCSMoveSequenceTests {
 
     // MARK: - Unanchorable anchors
 
-    /// Thaw's chevron stays in the sequence — its position within visible is
+    /// Tidybar's chevron stays in the sequence — its position within visible is
     /// part of the layout and is persisted — which also made it selectable
-    /// as a move anchor. Anchoring a failing move on one of Thaw's own
+    /// as a move anchor. Anchoring a failing move on one of Tidybar's own
     /// dividers is what walks it across the bar: the insertion lands on the
     /// wrong side, the ordinal check refuses it, and because the bar lays
     /// out right to left the divider is shoved further left on every attempt

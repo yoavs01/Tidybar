@@ -22,7 +22,7 @@ nonisolated enum ThawTourSlide: Int, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .welcome: String(localized: "Welcome to Thaw")
+        case .welcome: String(localized: "Welcome to Tidybar")
         case .menuBarManagement: String(localized: "Menu Bar Management")
         case .menuBarAppearance: String(localized: "Menu Bar Appearance")
         case .hotkeysAutomation: String(localized: "Hotkeys & Automation")
@@ -33,15 +33,15 @@ nonisolated enum ThawTourSlide: Int, CaseIterable, Identifiable {
     var description: String {
         switch self {
         case .welcome:
-            String(localized: "Thaw gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow.")
+            String(localized: "Tidybar gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow.")
         case .menuBarManagement:
             String(localized: "Hide or show menu bar items on demand. Drag items between sections, keep your favorites always visible, and tuck the rest away in the always-hidden section.")
         case .menuBarAppearance:
             String(localized: "Paint your menu bar your way. Choose solid colors, gradients, and custom shapes, then add shadows and borders for a polished finish.")
         case .hotkeysAutomation:
-            String(localized: "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Thaw adapts to whatever you're doing.")
+            String(localized: "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Tidybar adapts to whatever you're doing.")
         case .profiles:
-            String(localized: "Save your current configuration as a named profile. Switch between layouts instantly, or let Thaw switch automatically when you change your frontmost app.")
+            String(localized: "Save your current configuration as a named profile. Switch between layouts instantly, or let Tidybar switch automatically when you change your frontmost app.")
         }
     }
 

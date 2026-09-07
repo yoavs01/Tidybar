@@ -31,7 +31,7 @@ final class IceBarColorManager {
     @ObservationIgnored
     private var cancellables = Set<AnyCancellable>()
 
-    /// Cancellable for the periodic refresh timer, active only while the Thaw Bar is visible.
+    /// Cancellable for the periodic refresh timer, active only while the Tidybar Bar is visible.
     @ObservationIgnored
     private var periodicRefreshCancellable: AnyCancellable?
 

@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Tests for the pure error-classification seam introduced to support
 /// deferring menu bar item moves while an item's menu (Wi-Fi picker, input

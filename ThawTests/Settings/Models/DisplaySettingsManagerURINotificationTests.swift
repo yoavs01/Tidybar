@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// A display UUID no real display can hold. Seeding `configurations` with it
 /// satisfies the `hasConfig` half of the handler's validation guard, which is
@@ -726,7 +726,7 @@ struct DisplaySettingsManagerURINotificationTests {
     }
 
     /// The `allNonIceBar` broadcast of a `useThawBarForAlwaysHidden` value,
-    /// which walks the same non-Thaw-Bar filter as `alwaysShowHiddenItems`.
+    /// which walks the same non-Tidybar-Bar filter as `alwaysShowHiddenItems`.
     /// Vacuously true with no displays attached; the assertion about
     /// ``offscreenUUID`` holds either way.
     @Test("An allNonIceBar useThawBarForAlwaysHidden value reaches attached displays but not a stored one")

@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Check [Frequent Issues](https://github.com/thaw-app/Thaw/blob/development/FREQUENT_ISSUES.md) and search [open and closed issues](https://github.com/thaw-app/Thaw/issues?q=is%3Aissue) first.
+        Check [Frequent Issues](https://github.com/yoavs01/Tidybar/blob/development/FREQUENT_ISSUES.md) and search [open and closed issues](https://github.com/yoavs01/Tidybar/issues?q=is%3Aissue) first.
 
   - type: textarea
     id: description

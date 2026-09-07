@@ -9,7 +9,7 @@
 import CoreGraphics
 import SwiftUI
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - MenuBarSection.Name Tests
 
@@ -138,7 +138,7 @@ struct MenuBarSectionNameTests {
         #expect(mode == .inline)
     }
 
-    @Test("Items that do not fit fall back to the Thaw Bar when hiding menus is disabled")
+    @Test("Items that do not fit fall back to the Tidybar Bar when hiding menus is disabled")
     func presentationModeFallsBackToIceBarWhenItemsDoNotFitAndHidingMenusIsDisabled() {
         let mode = MenuBarSection.presentationMode(
             totalItemsWidth: 1000,
@@ -152,7 +152,7 @@ struct MenuBarSectionNameTests {
         #expect(mode == .iceBar)
     }
 
-    @Test("Application menus are hidden before falling back to the Thaw Bar")
+    @Test("Application menus are hidden before falling back to the Tidybar Bar")
     func presentationModeHidesApplicationMenusBeforeUsingIceBar() {
         let mode = MenuBarSection.presentationMode(
             totalItemsWidth: 1000,
@@ -166,7 +166,7 @@ struct MenuBarSectionNameTests {
         #expect(mode == .inlineHidingApplicationMenus)
     }
 
-    @Test("Items that cannot fit even without the application menus use the Thaw Bar")
+    @Test("Items that cannot fit even without the application menus use the Tidybar Bar")
     func presentationModeStillUsesIceBarWhenItemsCannotFitEvenAfterHidingMenus() {
         let mode = MenuBarSection.presentationMode(
             totalItemsWidth: 1400,

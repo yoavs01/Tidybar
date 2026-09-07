@@ -12,7 +12,7 @@ import CoreGraphics
 /// boundary move storm ran.
 ///
 /// Reporter: single notched MacBook Pro (`screen.maxX=2056`, notch
-/// `918…1138`, right boundary 1985), macOS 26.6.1 build 25G76, Thaw
+/// `918…1138`, right boundary 1985), macOS 26.6.1 build 25G76, Tidybar
 /// 2.0.0-rc.2.1 (49) commit `54345d40`, log `thaw_2026-08-09_18-14-12.log`.
 ///
 /// The log covers 22 seconds and never converges. `Profile re-sort` fires
@@ -92,7 +92,7 @@ enum ParkedDividerLog {
     static let anchorUID = "com.coconut-flavour.coconutBattery-Menu:Item-0"
 
     /// The divider being dragged.
-    static let hiddenDividerUID = "com.stonerl.Thaw:Thaw.ControlItem.Hidden"
+    static let hiddenDividerUID = "com.yoavsror.tidybar:Tidybar.ControlItem.Hidden"
 
     /// `hiddenBoundaryMismatch` per pass, in order. Never reaches zero.
     static let mismatchPerPass = [5, 9, 5, 9, 5, 9, 5]

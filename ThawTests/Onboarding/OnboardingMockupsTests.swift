@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Onboarding mockups")
 struct OnboardingMockupsTests {

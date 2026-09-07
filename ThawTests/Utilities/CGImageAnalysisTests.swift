@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the two `CGImage` analysis helpers in `Extensions.swift`:
 /// `averageColor(using:alphaThreshold:option:)` and

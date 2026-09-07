@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the repair pass over a persisted section order.
 ///
@@ -90,12 +90,12 @@ struct PrunedSectionOrderTests {
         #expect(pruned["visible"] == [genuine])
     }
 
-    /// `Control Centre:Thaw.ControlItem.Visible` is a mis-tagged chevron;
-    /// nothing live carries a control item title outside Thaw's namespace.
-    @Test("A localized ghost of a Thaw control item is dropped")
+    /// `Control Centre:Tidybar.ControlItem.Visible` is a mis-tagged chevron;
+    /// nothing live carries a control item title outside Tidybar's namespace.
+    @Test("A localized ghost of a Tidybar control item is dropped")
     func localizedGhostOfControlItemIsDropped() {
-        let ghost = "Control Centre:Thaw.ControlItem.Visible"
-        let genuine = "com.stonerl.Thaw:Thaw.ControlItem.Visible"
+        let ghost = "Control Centre:Tidybar.ControlItem.Visible"
+        let genuine = "com.yoavsror.tidybar:Tidybar.ControlItem.Visible"
 
         let pruned = LayoutSolver.prunedSectionOrder(["visible": [ghost, genuine]])
         #expect(pruned["visible"] == [genuine])
@@ -296,9 +296,9 @@ struct PrunedSectionOrderTests {
 
     // MARK: Misattributed own-namespace entries (#927)
 
-    /// Source-PID resolution handed Control Center's WiFi item Thaw's own PID,
+    /// Source-PID resolution handed Control Center's WiFi item Tidybar's own PID,
     /// and the layout kept the result. Nothing live will carry that name.
-    @Test("A foreign item saved under Thaw's namespace is dropped")
+    @Test("A foreign item saved under Tidybar's namespace is dropped")
     func dropsForeignEntryUnderOwnNamespace() {
         let own = Constants.bundleIdentifier
         let pruned = LayoutSolver.prunedSectionOrder([
@@ -321,15 +321,15 @@ struct PrunedSectionOrderTests {
         #expect(pruned["visible"] == ["com.apple.controlcenter:WiFi"])
     }
 
-    /// Thaw's own items are the point of the namespace and must survive.
-    @Test("Thaw's own control items and spacers survive")
+    /// Tidybar's own items are the point of the namespace and must survive.
+    @Test("Tidybar's own control items and spacers survive")
     func keepsOwnControlItemsAndSpacers() {
         let own = Constants.bundleIdentifier
         let entries = [
-            "\(own):Thaw.ControlItem.Visible",
-            "\(own):Thaw.ControlItem.Hidden",
-            "\(own):Thaw.ControlItem.AlwaysHidden",
-            "\(own):Thaw.ControlItem.Visible.Spacer.0",
+            "\(own):Tidybar.ControlItem.Visible",
+            "\(own):Tidybar.ControlItem.Hidden",
+            "\(own):Tidybar.ControlItem.AlwaysHidden",
+            "\(own):Tidybar.ControlItem.Visible.Spacer.0",
         ]
         let pruned = LayoutSolver.prunedSectionOrder(["visible": entries])
         #expect(pruned["visible"] == entries)
@@ -340,9 +340,9 @@ struct PrunedSectionOrderTests {
     func keepsIndexedControlItem() {
         let own = Constants.bundleIdentifier
         let pruned = LayoutSolver.prunedSectionOrder([
-            "visible": ["\(own):Thaw.ControlItem.Visible:1"],
+            "visible": ["\(own):Tidybar.ControlItem.Visible:1"],
         ])
-        #expect(pruned["visible"] == ["\(own):Thaw.ControlItem.Visible:1"])
+        #expect(pruned["visible"] == ["\(own):Tidybar.ControlItem.Visible:1"])
     }
 
     // MARK: System clones (#927)

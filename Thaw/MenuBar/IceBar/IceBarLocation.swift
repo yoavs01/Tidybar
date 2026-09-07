@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-/// Locations where the Thaw Bar can appear.
+/// Locations where the Tidybar Bar can appear.
 nonisolated enum IceBarLocation: Int, CaseIterable, Codable, Identifiable {
-    /// The Thaw Bar will appear in different locations based on context.
+    /// The Tidybar Bar will appear in different locations based on context.
     case dynamic = 0
 
-    /// The Thaw Bar will appear centered below the mouse pointer.
+    /// The Tidybar Bar will appear centered below the mouse pointer.
     case mousePointer = 1
 
-    /// The Thaw Bar will appear centered below the Ice icon.
+    /// The Tidybar Bar will appear centered below the Ice icon.
     case iceIcon = 2
 
-    /// The Thaw Bar will appear aligned to the left edge of the display.
+    /// The Tidybar Bar will appear aligned to the left edge of the display.
     case leftAligned = 3
 
-    /// The Thaw Bar will appear aligned to the right edge of the display.
+    /// The Tidybar Bar will appear aligned to the right edge of the display.
     case rightAligned = 4
 
     var id: Int {

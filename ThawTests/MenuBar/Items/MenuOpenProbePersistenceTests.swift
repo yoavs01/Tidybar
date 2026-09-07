@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Tests for the pure persistence classification behind
 /// `isAnyMenuBarItemMenuOpen()` (#879 regression): a candidate menu window

@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Log-replay lock for the #881 layout storm.
 ///
@@ -83,7 +83,7 @@ struct LayoutStormReplayTests {
 
     /// An unchanged row plans nothing at all. The storm fired on an app
     /// launch, and most cache cycles in the log are no-ops; if this ever
-    /// starts planning moves, Thaw churns the bar on every tick.
+    /// starts planning moves, Tidybar churns the bar on every tick.
     @Test("An already-correct row plans no moves")
     func steadyStatePlansNothing() {
         let moves = LayoutSolver.planLCSMoveSequence(

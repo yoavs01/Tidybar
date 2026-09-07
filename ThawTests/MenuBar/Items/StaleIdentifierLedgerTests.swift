@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``StaleIdentifierLedger``: when an identifier that no longer
 /// matches anything stops being counted as a position, and — more

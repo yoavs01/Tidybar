@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the windowID-change gate that decides whether a cache cycle
 /// should dispatch a saved-layout re-apply.

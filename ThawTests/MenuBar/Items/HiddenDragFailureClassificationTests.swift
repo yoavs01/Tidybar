@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes `MenuBarItemManager.classifyHiddenDragFailure`, the pure
 /// decision function that decides how the Layout settings drag handler

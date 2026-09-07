@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the ``ProfileManager`` failure paths that the existing suites step
 /// around: the two `do`/`catch` blocks that swallow an I/O error rather than

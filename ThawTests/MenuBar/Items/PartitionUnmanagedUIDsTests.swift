@@ -7,16 +7,16 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutSolver.partitionUnmanagedUIDs, the
 /// pure filter Phase 3 of applyProfileLayout uses to decide which UIDs
 /// flow into planUnmanagedPlacement.
 ///
-/// Pins down two invariants the field-reported "Thaw icon keeps moving"
+/// Pins down two invariants the field-reported "Tidybar icon keeps moving"
 /// regression turned out to depend on:
 ///
-/// 1. All three Thaw control items (hidden, alwaysHidden, visible) are
+/// 1. All three Tidybar control items (hidden, alwaysHidden, visible) are
 ///    excluded from the result. saveSectionOrder omits control items
 ///    from savedSectionOrder by design, so they would never appear in
 ///    desiredUIDs and would otherwise leak into planUnmanagedPlacement,
@@ -34,9 +34,9 @@ struct PartitionUnmanagedUIDsTests {
     /// was absent from the inline filter).
     @Test("All three control items are excluded")
     func allThreeControlItemsExcluded() {
-        let hidden = "com.stonerl.Thaw:Thaw.ControlItem.Hidden"
-        let ah = "com.stonerl.Thaw:Thaw.ControlItem.AlwaysHidden"
-        let visible = "com.stonerl.Thaw:Thaw.ControlItem.Visible"
+        let hidden = "com.yoavsror.tidybar:Tidybar.ControlItem.Hidden"
+        let ah = "com.yoavsror.tidybar:Tidybar.ControlItem.AlwaysHidden"
+        let visible = "com.yoavsror.tidybar:Tidybar.ControlItem.Visible"
         let app = "com.example.app:Item-0"
         let currentFlat = [hidden, visible, app, ah]
 
@@ -57,8 +57,8 @@ struct PartitionUnmanagedUIDsTests {
     /// section). Other exclusions still apply.
     @Test("Nil control UIDs are tolerated and other exclusions still hold")
     func nilControlUIDsToleratedAndOtherExclusionsHold() {
-        let hidden = "com.stonerl.Thaw:Thaw.ControlItem.Hidden"
-        let visible = "com.stonerl.Thaw:Thaw.ControlItem.Visible"
+        let hidden = "com.yoavsror.tidybar:Tidybar.ControlItem.Hidden"
+        let visible = "com.yoavsror.tidybar:Tidybar.ControlItem.Visible"
         let saved = "com.example.saved:Item-0"
         let unsaved = "com.example.fresh:Item-0"
         let currentFlat = [hidden, saved, visible, unsaved]

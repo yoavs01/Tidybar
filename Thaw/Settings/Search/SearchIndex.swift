@@ -558,9 +558,9 @@ nonisolated enum SearchIndex {
         ),
         SearchEntry(
             id: "advanced.useThawBarOnNotchOverflow",
-            titleKey: "Use the Thaw Bar while items are overflowed",
-            titleText: "Use the Thaw Bar while items are overflowed",
-            descriptionText: "Reveal hidden items through the Thaw Bar while notch overflow has items ejected, since the visible row has no room left to expand into.",
+            titleKey: "Use the Tidybar Bar while items are overflowed",
+            titleText: "Use the Tidybar Bar while items are overflowed",
+            descriptionText: "Reveal hidden items through the Tidybar Bar while notch overflow has items ejected, since the visible row has no room left to expand into.",
             pane: .menuBarLayout,
             sectionKey: "Advanced layout controls",
             sectionText: "Advanced layout controls",

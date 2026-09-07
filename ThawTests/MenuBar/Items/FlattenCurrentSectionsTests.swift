@@ -7,22 +7,22 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Tests for LayoutSolver.flattenCurrentSections, the pure helper that builds
 /// the ordered currentFlat sequence applyProfileLayout and the log-replay
 /// harness both consume.
 @Suite("Flatten current sections")
 struct FlattenCurrentSectionsTests {
-    private let hiddenCtrl = "com.stonerl.Thaw:Thaw.ControlItem.Hidden"
-    private let ahCtrl = "com.stonerl.Thaw:Thaw.ControlItem.AlwaysHidden"
+    private let hiddenCtrl = "com.yoavsror.tidybar:Tidybar.ControlItem.Hidden"
+    private let ahCtrl = "com.yoavsror.tidybar:Tidybar.ControlItem.AlwaysHidden"
 
     /// Items are laid out visible, hidden control, hidden, always-hidden
     /// control, always-hidden. The visible control item rides along in the
     /// visible array and is not reinserted.
     @Test("Sections flatten in menu bar order when the always-hidden control is present")
     func orderWithAlwaysHiddenPresent() {
-        let visibleCtrl = "com.stonerl.Thaw:Thaw.ControlItem.Visible"
+        let visibleCtrl = "com.yoavsror.tidybar:Tidybar.ControlItem.Visible"
         let result = LayoutSolver.flattenCurrentSections(
             visible: [visibleCtrl, "a:Item-0", "b:Item-0"],
             hidden: ["c:Item-0"],

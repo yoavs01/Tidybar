@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - MenuBarItemService Tests
 
@@ -18,7 +18,7 @@ struct MenuBarItemServiceTests {
 
     @Test("The service name is the reverse-DNS Mach service identifier")
     func serviceName() {
-        #expect(MenuBarItemService.name == "com.stonerl.Thaw.MenuBarItemService")
+        #expect(MenuBarItemService.name == "com.yoavsror.tidybar.MenuBarItemService")
     }
 
     // MARK: - Request Tests

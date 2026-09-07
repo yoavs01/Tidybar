@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``ProfileManager/repairPersistedLayouts()``, the pass that applies
 /// the saved-order pruning rules to the profile JSON on disk.
@@ -25,7 +25,7 @@ import Testing
 @Suite("Profile layout repair", .serialized)
 struct ProfileLayoutRepairTests {
     /// The shape #927's reporter carried: Control Center's WiFi item saved
-    /// under Thaw's own namespace, six WindowServer clones, and the genuine
+    /// under Tidybar's own namespace, six WindowServer clones, and the genuine
     /// items alongside them.
     @Test("A damaged profile is pruned on disk")
     func repairsDamagedProfileOnDisk() throws {

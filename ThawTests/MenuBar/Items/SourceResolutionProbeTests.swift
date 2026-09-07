@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``MenuBarItemManager/windowIDsNeedingSourceResolution(cachedItems:currentWindowIDs:)``,
 /// which decides whether a cache cycle that saw no window change still has a

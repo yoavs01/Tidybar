@@ -68,7 +68,7 @@ final class GeneralSettings {
         }
     }
 
-    /// A Boolean value that indicates whether to use the Thaw Bar
+    /// A Boolean value that indicates whether to use the Tidybar Bar
     /// only on displays with a notch.
     var useIceBarOnlyOnNotchedDisplay = Defaults.DefaultValue.useIceBarOnlyOnNotchedDisplay {
         didSet {
@@ -77,7 +77,7 @@ final class GeneralSettings {
         }
     }
 
-    /// The location where the Thaw Bar appears.
+    /// The location where the Tidybar Bar appears.
     var iceBarLocation = Defaults.DefaultValue.iceBarLocation {
         didSet {
             guard oldValue != iceBarLocation else { return }
@@ -85,7 +85,7 @@ final class GeneralSettings {
         }
     }
 
-    /// A Boolean value that indicates whether the Thaw Bar should
+    /// A Boolean value that indicates whether the Tidybar Bar should
     /// appear at the mouse pointer's location when shown by a hotkey.
     var iceBarLocationOnHotkey = Defaults.DefaultValue.iceBarLocationOnHotkey {
         didSet {

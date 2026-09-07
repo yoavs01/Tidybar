@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for MarkerPairResolver, the helper that
 /// pairs unresolved on-screen icons with bundle-ID-titled marker
@@ -22,9 +22,9 @@ import Testing
 struct MarkerPairResolverTests {
     // MARK: - Constants
 
-    private let thawBundleID = "com.stonerl.Thaw"
+    private let thawBundleID = "com.yoavsror.tidybar"
     private let ccBundleID = "com.apple.controlcenter"
-    private let thawControlItemPrefix = "Thaw.ControlItem."
+    private let thawControlItemPrefix = "Tidybar.ControlItem."
 
     // MARK: - Helpers
 
@@ -98,7 +98,7 @@ struct MarkerPairResolverTests {
         #expect(result.first?.markerTitle == "at.obdev.littlesnitch.agent")
     }
 
-    /// Marker's CG owner is the widget's real app (not CC, not Thaw):
+    /// Marker's CG owner is the widget's real app (not CC, not Tidybar):
     /// the owning-PID path resolves directly without falling through
     /// to the title lookup. The bundleIDToPID closure must NOT be
     /// invoked in this case.
@@ -154,10 +154,10 @@ struct MarkerPairResolverTests {
         #expect(result.first?.resolvedPID == 777)
     }
 
-    /// Marker's CG owner resolves to Thaw itself: rejected, falls
+    /// Marker's CG owner resolves to Tidybar itself: rejected, falls
     /// through to title lookup. The title-lookup result must also
-    /// be checked for Thaw self-attribution (see the next test).
-    @Test("A Thaw owner falls through to the title lookup")
+    /// be checked for Tidybar self-attribution (see the next test).
+    @Test("A Tidybar owner falls through to the title lookup")
     func thawOwnerFallsThroughToTitleLookup() {
         let icons = [icon(windowID: 1, title: "Item-0")]
         let markers = [marker(windowID: 2, title: "com.example.widget", owningPID: 100)]
@@ -183,11 +183,11 @@ struct MarkerPairResolverTests {
         #expect(result.first?.resolvedPID == 777)
     }
 
-    /// Both paths resolve to Thaw: no resolution emitted. Defensive
-    /// guarantee that Thaw's own PID is never attributed to a
+    /// Both paths resolve to Tidybar: no resolution emitted. Defensive
+    /// guarantee that Tidybar's own PID is never attributed to a
     /// third-party widget regardless of where the lookup happens to
     /// land.
-    @Test("Both paths resolving to Thaw produces no result")
+    @Test("Both paths resolving to Tidybar produces no result")
     func bothPathsResolveToThawProducesNoResult() {
         let icons = [icon(windowID: 1, title: "Item-0")]
         let markers = [marker(windowID: 2, title: "com.example.widget", owningPID: 100)]
@@ -444,13 +444,13 @@ struct MarkerPairResolverTests {
         #expect(markers.map(\.windowID) == [4])
     }
 
-    /// Thaw control items are excluded by the Thaw.ControlItem.
+    /// Tidybar control items are excluded by the Tidybar.ControlItem.
     /// prefix even though their titles contain dots.
-    @Test("extractMarkers excludes Thaw control items")
+    @Test("extractMarkers excludes Tidybar control items")
     func extractMarkersExcludesThawControlItems() {
         let windows: [(windowID: CGWindowID, title: String?, size: CGSize, owningPID: pid_t?)] = [
-            (1, "Thaw.ControlItem.Hidden", CGSize(width: 5016, height: 33), nil),
-            (2, "Thaw.ControlItem.AlwaysHidden", CGSize(width: 5016, height: 33), nil),
+            (1, "Tidybar.ControlItem.Hidden", CGSize(width: 5016, height: 33), nil),
+            (2, "Tidybar.ControlItem.AlwaysHidden", CGSize(width: 5016, height: 33), nil),
             (3, "com.example.widget", CGSize(width: 24, height: 24), nil),
         ]
         let markers = MarkerPairResolver.extractMarkers(
@@ -461,13 +461,13 @@ struct MarkerPairResolverTests {
         #expect(markers.map(\.windowID) == [3])
     }
 
-    /// The Thaw self-registration window (title equals the Thaw bundle
-    /// identifier) is excluded so Thaw's own PID can never be
+    /// The Tidybar self-registration window (title equals the Tidybar bundle
+    /// identifier) is excluded so Tidybar's own PID can never be
     /// attributed to a third-party widget via the title-lookup path.
-    @Test("extractMarkers excludes the Thaw self-registration window")
+    @Test("extractMarkers excludes the Tidybar self-registration window")
     func extractMarkersExcludesThawSelfRegistration() {
         let windows: [(windowID: CGWindowID, title: String?, size: CGSize, owningPID: pid_t?)] = [
-            (1, "com.stonerl.Thaw", CGSize(width: 33, height: 33), nil), // Thaw self
+            (1, "com.yoavsror.tidybar", CGSize(width: 33, height: 33), nil), // Tidybar self
             (2, "com.example.widget", CGSize(width: 24, height: 24), nil),
         ]
         let markers = MarkerPairResolver.extractMarkers(

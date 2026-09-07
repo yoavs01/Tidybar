@@ -8,7 +8,7 @@
 
 import AppKit
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``KeyCombination``, the key-plus-modifiers pair behind every hotkey.
 ///

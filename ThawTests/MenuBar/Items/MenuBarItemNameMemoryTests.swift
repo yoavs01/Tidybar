@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pins which items may carry a remembered name across launches.
 ///
@@ -90,7 +90,7 @@ struct MenuBarItemNameMemoryTests {
         #expect(!MenuBarItemNameMemory.isEligible(item))
     }
 
-    @Test("Thaw's own control items are refused")
+    @Test("Tidybar's own control items are refused")
     func controlItemsAreRefused() {
         // They already name themselves from Constants.displayName and never
         // reach the fallback this memory feeds.

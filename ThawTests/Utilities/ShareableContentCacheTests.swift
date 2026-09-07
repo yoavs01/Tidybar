@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `ShareableContentCache`'s coalescing: a hit inside `maxAge`, a miss
 /// once it has elapsed, concurrent callers joining one in-flight fetch, and

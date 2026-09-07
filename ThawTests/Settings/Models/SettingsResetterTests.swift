@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``AppSettings``' reset surface: every reset must return the
 /// properties it owns to `Defaults.DefaultValue`, and must not reach outside

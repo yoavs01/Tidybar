@@ -10,7 +10,7 @@ import AppKit
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - Fixtures
 

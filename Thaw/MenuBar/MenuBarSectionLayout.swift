@@ -60,11 +60,11 @@ nonisolated extension MenuBarSection {
         }
     }
 
-    /// Whether notch overflow forces the Thaw Bar even though the display's own
-    /// Thaw Bar setting is off.
+    /// Whether notch overflow forces the Tidybar Bar even though the display's own
+    /// Tidybar Bar setting is off.
     ///
     /// Split out as a pure function so the rule is testable without a live
-    /// menu bar. Requires overflow to be enabled, the "use the Thaw Bar while
+    /// menu bar. Requires overflow to be enabled, the "use the Tidybar Bar while
     /// items are overflowed" preference to be on, and items to actually be
     /// ejected right now.
     static func forcesIceBarForNotchOverflow(
@@ -75,7 +75,7 @@ nonisolated extension MenuBarSection {
         overflowEnabled && useThawBarOnOverflow && hasEjectedItems
     }
 
-    /// Whether the given section presents in the Thaw Bar.
+    /// Whether the given section presents in the Tidybar Bar.
     ///
     /// `displayUsesThawBar` sends every section there. `alwaysHiddenUsesThawBar`
     /// sends the always-hidden section alone, leaving the hidden section to
@@ -83,7 +83,7 @@ nonisolated extension MenuBarSection {
     /// always-hidden items inline means expanding the hidden section too,
     /// since always-hidden items sit to the left of the hidden control item.
     ///
-    /// Notch overflow can force the Thaw Bar on top of this; see
+    /// Notch overflow can force the Tidybar Bar on top of this; see
     /// ``forcesIceBarForNotchOverflow(overflowEnabled:useThawBarOnOverflow:hasEjectedItems:)``.
     static func usesThawBar(
         for name: Name,
@@ -105,7 +105,7 @@ nonisolated extension MenuBarSection {
         case inline
         /// Show the items inline, but only after hiding the application menus.
         case inlineHidingApplicationMenus
-        /// Fall back to the Thaw Bar.
+        /// Fall back to the Tidybar Bar.
         case iceBar
     }
 

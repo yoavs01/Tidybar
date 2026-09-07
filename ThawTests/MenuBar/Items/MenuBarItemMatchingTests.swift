@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the `Sequence<MenuBarItem>` matching helpers, which are
 /// the identity vocabulary for re-finding an item across window-list

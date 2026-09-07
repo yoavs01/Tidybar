@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the gate that decides whether updating a profile should
 /// re-arm MenuBarItemManager's in-memory active-profile layout cache.

@@ -11,7 +11,7 @@ import CoreGraphics
 import Foundation
 import os.lock
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Builds a tag for a fictional app's status item.
 private func fixtureTag(_ title: String, windowID: CGWindowID? = nil) -> MenuBarItemTag {
@@ -93,7 +93,7 @@ struct ExtensionsCoverageTests {
             #expect(bundle.displayName == "Named")
         }
 
-        @Test("displayName falls back to Thaw when neither name key is present")
+        @Test("displayName falls back to Tidybar when neither name key is present")
         func displayNameFallsBackToThaw() throws {
             let url = try makeBundleDirectory(info: ["NSHumanReadableCopyright": "Copyright © 2026"])
             defer { try? FileManager.default.removeItem(at: url.deletingLastPathComponent()) }
@@ -102,7 +102,7 @@ struct ExtensionsCoverageTests {
             // The copyright key proves the plist really was read, so the
             // fallback below is a fallback and not a failed lookup.
             #expect(bundle.copyrightString == "Copyright © 2026")
-            #expect(bundle.displayName == "Thaw")
+            #expect(bundle.displayName == "Tidybar")
         }
 
         @Test("The optional accessors are nil when their keys are missing")
@@ -127,7 +127,7 @@ struct ExtensionsCoverageTests {
             let bundle = try #require(Bundle(url: url), "Could not open the generated bundle")
 
             #expect(bundle.versionString == nil)
-            #expect(bundle.displayName == "Thaw")
+            #expect(bundle.displayName == "Tidybar")
         }
     }
 

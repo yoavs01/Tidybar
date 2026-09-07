@@ -124,7 +124,7 @@ final class MenuBarManager {
     /// by a manual toggle (URL/hotkey), rather than automatically by section state.
     private var isManuallyHidingApplicationMenus = false
 
-    /// The panel that contains the Thaw Bar interface.
+    /// The panel that contains the Tidybar Bar interface.
     let iceBarPanel = IceBarPanel()
 
     /// The panel that contains the menu bar search interface.
@@ -459,7 +459,7 @@ final class MenuBarManager {
 
                 // Don't continue if:
                 //   * The "HideApplicationMenus" setting isn't enabled.
-                //   * Using the Thaw Bar.
+                //   * Using the Tidybar Bar.
                 //   * The menu bar is hidden by the system.
                 //   * The active space is fullscreen.
                 //   * The settings window is visible.
@@ -478,7 +478,7 @@ final class MenuBarManager {
                 let alwaysHiddenSection = self.section(withName: .alwaysHidden)
 
                 // Use isHidden property - when section is shown, isHidden is false.
-                // A section presenting in the Thaw Bar expands nothing inline,
+                // A section presenting in the Tidybar Bar expands nothing inline,
                 // so the application menus have no items to make room for. The
                 // guard above already covers the display-wide setting; this
                 // covers useThawBarForAlwaysHidden, where the always-hidden
@@ -934,7 +934,7 @@ final class MenuBarManager {
         return max(focusSettleDelay, remainingGrace)
     }
 
-    /// Thaw temporarily activates itself when it must hide application menus.
+    /// Tidybar temporarily activates itself when it must hide application menus.
     /// That internal activation is not a user focus change and must not rehide
     /// the section that caused it.
     static nonisolated func shouldHandleAutoRehideActivation(
@@ -988,7 +988,7 @@ final class MenuBarManager {
         let dec = JSONDecoder()
         let enc = JSONEncoder()
 
-        // Only real, identifiable items are assignable: skip Thaw's own control
+        // Only real, identifiable items are assignable: skip Tidybar's own control
         // items and items whose source app could not be resolved (their
         // identifier is an unstable UUID).
         let presentIdentifiers = Set(

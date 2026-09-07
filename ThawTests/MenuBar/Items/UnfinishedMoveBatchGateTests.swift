@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the arm that withholds the live arrangement from the saved
 /// order after a bulk apply gave up partway.

@@ -9,7 +9,7 @@
 import Foundation
 import os
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes `HIDEventManager.shouldProcessMouseMoved`, the time-based
 /// gate that replaced a count-based "process every 5th event" throttle.

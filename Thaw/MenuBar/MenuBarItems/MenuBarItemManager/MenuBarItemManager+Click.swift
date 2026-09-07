@@ -146,7 +146,7 @@ extension MenuBarItemManager {
     ///     off-screen items.
     func activate(item: MenuBarItem, on displayID: CGDirectDisplayID?) async {
         if Bridging.isWindowOnScreen(item.windowID) {
-            // Electron/Chromium tray items (e.g. Claude) ignore Thaw's synthetic
+            // Electron/Chromium tray items (e.g. Claude) ignore Tidybar's synthetic
             // mouse click, so open those via an Accessibility press. Every other
             // app responds to the normal click, which also preserves its native
             // open/close toggle and works with popover-style menus (e.g. Cap,

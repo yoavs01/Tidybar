@@ -7,14 +7,14 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutSolver.relaxConcealedSectionOrder.
 ///
 /// The relaxation exists because a move costs the same whether or not its
 /// result can be seen: the cursor is hijacked, a drag is synthesised, the
 /// landing is polled. Reordering items parked thousands of points
-/// off-screen spends that cost on something the Thaw Bar renders from the
+/// off-screen spends that cost on something the Tidybar Bar renders from the
 /// cache anyway. Rewriting the *desired* sequence — rather than filtering
 /// the planned moves — is what makes the saving safe: the LCS then sees
 /// those items as already in place, so no surviving move is left anchored

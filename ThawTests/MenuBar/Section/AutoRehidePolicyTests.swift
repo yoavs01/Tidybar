@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Auto-rehide policy")
 struct AutoRehidePolicyTests {
@@ -50,7 +50,7 @@ struct AutoRehidePolicyTests {
         )
     }
 
-    @Test("Thaw's own activation does not rehide its reveal")
+    @Test("Tidybar's own activation does not rehide its reveal")
     func ownActivationDoesNotRehideReveal() {
         #expect(
             !MenuBarManager.shouldHandleAutoRehideActivation(

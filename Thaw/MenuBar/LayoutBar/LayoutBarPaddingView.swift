@@ -674,7 +674,7 @@ final class LayoutBarPaddingView: NSView {
         }
 
         // A cancelled drag must not leave the revealed sections showing: the
-        // reveal is a Thaw-internal detour, so every cancellation exit
+        // reveal is a Tidybar-internal detour, so every cancellation exit
         // restores the sections' persisted state, the same way the timeout
         // path below does.
         if Task.isCancelled {

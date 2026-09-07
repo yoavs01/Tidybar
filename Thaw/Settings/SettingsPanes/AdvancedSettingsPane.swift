@@ -94,7 +94,7 @@ struct AdvancedSettingsPane: View {
                 Text(
                     """
                     Writes detailed debug logs to a file for troubleshooting. \
-                    Log files are saved to ~/Library/Logs/Thaw/. \
+                    Log files are saved to ~/Library/Logs/Tidybar/. \
                     Disable when not needed to avoid unnecessary disk writes.
                     """
                 )

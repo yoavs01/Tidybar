@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for the savedPosition lookup helpers used by
 /// the position-aware restore and unmanaged-placement work.

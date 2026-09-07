@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``GeneralSettings``' setup surface: the `Defaults` load performed by
 /// `performSetup(with:)` and the Settings-URI notification it subscribes to.
@@ -18,7 +18,7 @@ import Testing
 /// a partially failed import — so an unrecognized enum raw value or undecodable
 /// icon payload has to leave the shipped default standing rather than crash or
 /// blank the icon. The notification arrives on behalf of a *third-party app*
-/// that sent a `thaw://` URL, so a key this model does not own, or a payload of
+/// that sent a `tidybar://` URL, so a key this model does not own, or a payload of
 /// the wrong type, must be dropped.
 ///
 /// `SettingsURIHandlerApplyTests` covers the sending side of the same

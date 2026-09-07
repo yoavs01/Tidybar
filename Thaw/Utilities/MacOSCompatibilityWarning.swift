@@ -69,7 +69,7 @@ enum MacOSCompatibilityWarning {
                 title: title,
                 message: String(
                     localized: """
-                    This version of Thaw is not yet compatible with macOS \(release). Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel.
+                    This version of Tidybar is not yet compatible with macOS \(release). Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel.
                     """
                 ),
                 confirmButtonTitle: String(localized: "View Preview Builds"),
@@ -81,7 +81,7 @@ enum MacOSCompatibilityWarning {
             title: title,
             message: String(
                 localized: """
-                This version of Thaw is not yet compatible with macOS \(release). Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub.
+                This version of Tidybar is not yet compatible with macOS \(release). Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub.
                 """
             ),
             confirmButtonTitle: String(localized: "Switch to Alpha Updates"),

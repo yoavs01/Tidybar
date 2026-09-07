@@ -10,8 +10,8 @@ import AppKit
 import Observation
 import SwiftUI
 
-/// The demo menu bar's background treatment — mirrors Thaw's real
-/// `MenuBarShapeKind` options. Real Thaw calls these "Full" and "Split" (a
+/// The demo menu bar's background treatment — mirrors Tidybar's real
+/// `MenuBarShapeKind` options. Real Tidybar calls these "Full" and "Split" (a
 /// single bar-wide shape vs. two independent leading/trailing shapes); this
 /// demo labels the split option "Pills" since that's what it looks like —
 /// two separate floating capsules with a gap between them.
@@ -29,13 +29,13 @@ private enum DemoBarStyle {
 }
 
 /// A stand-in macOS menu bar: app label on the left, a cluster of "hidden"
-/// items that can fade in/out, a tappable divider (Thaw's control item), and
+/// items that can fade in/out, a tappable divider (Tidybar's control item), and
 /// a trailing cluster of always-visible items plus a clock. Shared by the
 /// management, appearance, hotkeys, and profiles slides so they all read as
 /// the same bar changing behavior, rather than four unrelated mockups.
 ///
 /// `.pills` renders as two independent capsules (leading label, trailing
-/// controls) with a real gap between them — matching Thaw's actual "Split"
+/// controls) with a real gap between them — matching Tidybar's actual "Split"
 /// shape kind, where the leading and trailing sides are separate shapes
 /// rather than one bar-wide one.
 private struct DemoMenuBar: View {
@@ -144,7 +144,7 @@ private struct DemoMenuBar: View {
 }
 
 /// The floating glass capsule HUD used below each demo bar to label or drive
-/// its interaction — mirrors the "ControlHUD" floating labels in Thaw's real
+/// its interaction — mirrors the "ControlHUD" floating labels in Tidybar's real
 /// onboarding tour.
 private struct SlideHUD<Content: View>: View {
     @ViewBuilder let content: Content

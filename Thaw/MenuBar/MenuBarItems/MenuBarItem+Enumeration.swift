@@ -63,8 +63,8 @@ private nonisolated extension MenuBarItem {
 
 @MainActor
 extension MenuBarItem {
-    /// Builds a menu bar item for one of Thaw's own control item windows
-    /// from the window ID Thaw itself holds.
+    /// Builds a menu bar item for one of Tidybar's own control item windows
+    /// from the window ID Tidybar itself holds.
     ///
     /// Every other route to a control item goes through the enumerated item
     /// list and can lose it: the primary lookup needs the window to be
@@ -75,10 +75,10 @@ extension MenuBarItem {
     /// filtered off the active space. What is left is frame correlation,
     /// which guesses.
     ///
-    /// None of that is necessary. Thaw created these `NSStatusItem`s and
+    /// None of that is necessary. Tidybar created these `NSStatusItem`s and
     /// holds their windows, so their IDs are known first-hand. This asks the
     /// window server about one specific window rather than searching a list,
-    /// and stamps our own PID so the namespace resolves to Thaw even when
+    /// and stamps our own PID so the namespace resolves to Tidybar even when
     /// nothing else about the item's identity does.
     ///
     /// Returns `nil` when the window server no longer knows the ID, which is
@@ -191,7 +191,7 @@ nonisolated extension MenuBarItem {
         from windows: [WindowInfo]
     ) -> [MenuBarItem] {
         var items = windows.map { window in
-            if let title = window.title, title.hasPrefix("Thaw.ControlItem.") {
+            if let title = window.title, title.hasPrefix("Tidybar.ControlItem.") {
                 let ccBundleID = "com.apple.controlcenter"
                 if window.owningApplication?.bundleIdentifier == ccBundleID ||
                     window.ownerPID == ProcessInfo.processInfo.processIdentifier
@@ -234,7 +234,7 @@ nonisolated extension MenuBarItem {
         let ccBundleID = "com.apple.controlcenter"
 
         let controlItemIndices = Set(windows.indices.filter { i in
-            guard let title = windows[i].title, title.hasPrefix("Thaw.ControlItem.") else {
+            guard let title = windows[i].title, title.hasPrefix("Tidybar.ControlItem.") else {
                 return false
             }
             return windows[i].owningApplication?.bundleIdentifier == ccBundleID ||
@@ -453,7 +453,7 @@ nonisolated extension MenuBarItemTag.Namespace {
     init(uncheckedItemWindow itemWindow: WindowInfo, sourcePID: pid_t?) {
         // Check for our own control items by title and owner.
         // On macOS 26, these are owned by Control Center.
-        if let title = itemWindow.title, title.hasPrefix("Thaw.ControlItem.") {
+        if let title = itemWindow.title, title.hasPrefix("Tidybar.ControlItem.") {
             let ccBundleID = "com.apple.controlcenter"
             if itemWindow.owningApplication?.bundleIdentifier == ccBundleID ||
                 itemWindow.ownerPID == ProcessInfo.processInfo.processIdentifier

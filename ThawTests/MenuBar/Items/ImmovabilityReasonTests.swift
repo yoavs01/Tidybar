@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the gate that refuses to move an item, and its agreement
 /// with `isMovable`.

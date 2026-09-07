@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the windowID re-map `temporarilyShow` applies to the
 /// caller's item before looking up its return destination.

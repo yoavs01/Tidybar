@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Log-replay lock for the #899 boundary-move storm.
 ///
@@ -126,8 +126,8 @@ struct BoundaryMoveBackoffTests {
     private static func divider() -> MenuBarItem {
         MenuBarItem.fixture(
             tag: MenuBarItemTag(
-                namespace: .string("com.stonerl.Thaw"),
-                title: "Thaw.ControlItem.Hidden"
+                namespace: .string("com.yoavsror.tidybar"),
+                title: "Tidybar.ControlItem.Hidden"
             ),
             windowID: 27481,
             bounds: ParkedDividerLog.bounds(

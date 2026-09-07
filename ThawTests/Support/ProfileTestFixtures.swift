@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Foundation
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - Snapshot fixtures
 

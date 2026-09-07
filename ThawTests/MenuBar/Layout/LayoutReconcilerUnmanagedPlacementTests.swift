@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``LayoutReconciler/applyUnmanagedPlacementsToDesired(placements:unmanagedUIDs:desiredFiltered:sectionMap:savedSectionOrder:controlUIDs:)``,
 /// the three-pass insertion that splices unmanaged items into the abstract

@@ -68,7 +68,7 @@ struct AutomationSettingsPane: View {
     private var enableSection: some View {
         IceSection {
             Toggle("Enable Settings URI Scheme", isOn: $settings.isSettingsURIEnabled)
-                .annotation("Allow external applications to read and modify \(Constants.displayName) settings via thaw:// URLs.")
+                .annotation("Allow external applications to read and modify \(Constants.displayName) settings via tidybar:// URLs.")
 
             if !settings.isSettingsURIEnabled {
                 SettingsWarningPill(
@@ -198,7 +198,7 @@ struct AutomationSettingsPane: View {
     private var aboutSection: some View {
         IceSection("How It Works") {
             VStack(alignment: .leading, spacing: 8) {
-                numberedStep(1, "When an app sends a thaw:// URL to change settings, Thaw checks if that app is whitelisted.")
+                numberedStep(1, "When an app sends a tidybar:// URL to change settings, Tidybar checks if that app is whitelisted.")
                 numberedStep(2, "If not whitelisted, you'll see a confirmation dialog showing the app name and what it wants to do.")
                 numberedStep(3, "If you approve, the app is permanently whitelisted and can modify settings anytime without asking again.")
                 numberedStep(4, "You can remove apps from this list at any time to revoke their access.")
@@ -321,7 +321,7 @@ struct AutomationSettingsPane: View {
                 .textSelection(.enabled)
                 .fixedSize(horizontal: false, vertical: true)
 
-            Text("Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Thaw.")
+            Text("Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Tidybar.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .textSelection(.enabled)

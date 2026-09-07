@@ -954,7 +954,7 @@ extension MenuBarItemManager {
                 }
                 // Small steps that never trip the stale threshold still walk
                 // the anchor across the bar if they all go the same way, and
-                // when the anchor is one of Thaw's dividers that ends in a
+                // when the anchor is one of Tidybar's dividers that ends in a
                 // zero-width hidden section (#924, #927). Stop and let the
                 // next cache tick re-plan against a settled bar.
                 if Self.targetIsRetreating(recentTargetMinX: targetMinXHistory) {

@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutSolver.shouldPersistSavedOrder, the
 /// pure truth-table gate consumed by uncheckedCacheItems to decide

@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `MissionControlDetector.nextInterval(isActive:lastStepUpSignal:now:)`,
 /// the pure rate-selection function behind the detector's adaptive poll rate

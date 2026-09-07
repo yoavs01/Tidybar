@@ -8,7 +8,7 @@
 //
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Search ranker")
 struct SearchRankerTests {

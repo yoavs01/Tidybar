@@ -11,7 +11,7 @@ import Observation
 import SwiftUI
 
 /// Real macOS menu bar glyphs used to dress the welcome scene — the same
-/// kind of status items Thaw actually manages. Split across three rings so
+/// kind of status items Tidybar actually manages. Split across three rings so
 /// they orbit at different radii and speeds, like planets at different
 /// orbits.
 ///
@@ -29,9 +29,9 @@ private let ring1Symbols = ["wifi", "battery.100", "speaker.wave.2"]
 private let ring2Symbols = ["antenna.radiowaves.left.and.right", "moon.fill", "airpods", "mic.fill"]
 private let ring3Symbols = ["sun.max.fill", "lock.fill", "personalhotspot", "airplane", "keyboard"]
 
-/// Drives the welcome scene: the Thaw icon appears, menu bar glyphs orbit
+/// Drives the welcome scene: the Tidybar icon appears, menu bar glyphs orbit
 /// out around it like little planets, then collapse back in and hide behind
-/// the icon — a small preview of what Thaw actually does to the real menu
+/// the icon — a small preview of what Tidybar actually does to the real menu
 /// bar. Clicking the icon toggles the same show/hide at any time.
 @MainActor
 @Observable

@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers `SettingsSearchNavigation`, which exists to stop a disclosure
 /// request from one search result leaking into a later, unrelated

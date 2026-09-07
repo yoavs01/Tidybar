@@ -11,7 +11,7 @@ import Combine
 import Foundation
 import Security
 
-/// Handles settings manipulation via thaw:// URLs with whitelist-based security.
+/// Handles settings manipulation via tidybar:// URLs with whitelist-based security.
 @MainActor
 enum SettingsURIHandler {
     private static let diagLog = DiagLog(category: "SettingsURIHandler")
@@ -404,7 +404,7 @@ enum SettingsURIHandler {
 
     // MARK: - Execution
 
-    /// Handles thaw://set?key=X&value=Y&type=bool URL.
+    /// Handles tidybar://set?key=X&value=Y&type=bool URL.
     /// Returns true if setting was changed successfully.
     static func handleSet(key: String, value: String, sender: String?, displayUUID: String? = nil) -> Bool {
         diagLog.debug("Settings URI: set request - key=\(key), value=\(value), sender=\(sender ?? "unknown"), display=\(displayUUID ?? "none")")
@@ -544,7 +544,7 @@ enum SettingsURIHandler {
             }
             // Same scope as alwaysShowHiddenItems: the setting only means
             // anything on displays that are not already routing every section
-            // to the Thaw Bar.
+            // to the Tidybar Bar.
             postPerDisplaySettingsDidChangeNotification(key: key, value: boolValue, scope: .allNonIceBarDisplays)
             diagLog.info("Settings URI: Set useThawBarForAlwaysHidden = \(boolValue) on all non-IceBar displays")
             return true
@@ -687,7 +687,7 @@ enum SettingsURIHandler {
         }
     }
 
-    /// Handles thaw://toggle?key=X URL.
+    /// Handles tidybar://toggle?key=X URL.
     /// Returns true if setting was toggled successfully.
     static func handleToggle(key: String, sender: String?, displayUUID: String? = nil) -> Bool {
         diagLog.debug("Settings URI: toggle request - key=\(key), sender=\(sender ?? "unknown"), display=\(displayUUID ?? "none")")
@@ -901,7 +901,7 @@ enum SettingsURIHandler {
 
     // MARK: - Getters (Read Operations)
 
-    /// Handles thaw://get?key=X&callback=Y URLs.
+    /// Handles tidybar://get?key=X&callback=Y URLs.
     /// Returns settings values via callback URL or distributed notification.
     static func handleGet(
         key: String?,
@@ -995,7 +995,7 @@ enum SettingsURIHandler {
     /// Gets a single setting value with metadata.
     ///
     /// `internal` rather than `private` so the test suite can pin the
-    /// `validValues` maps a `thaw://get` advertises. The function is a read
+    /// `validValues` maps a `tidybar://get` advertises. The function is a read
     /// with no delivery side effects, so calling it directly never opens a
     /// callback URL or posts a distributed notification — the two actions the
     /// get suite otherwise avoids.
@@ -1349,16 +1349,16 @@ enum SettingsURIHandler {
 
 extension Notification.Name {
     /// Posted when a setting is changed externally via Settings URI scheme.
-    static let settingsDidChangeViaURI = Notification.Name("com.stonerl.Thaw.settingsDidChangeViaURI")
+    static let settingsDidChangeViaURI = Notification.Name("com.yoavsror.tidybar.settingsDidChangeViaURI")
 
     /// Posted when a per-display setting is changed externally via Settings URI scheme.
-    static let perDisplaySettingsDidChangeViaURI = Notification.Name("com.stonerl.Thaw.perDisplaySettingsDidChangeViaURI")
+    static let perDisplaySettingsDidChangeViaURI = Notification.Name("com.yoavsror.tidybar.perDisplaySettingsDidChangeViaURI")
 
     /// Posted when a get request response is broadcast via distributed notification.
-    static let settingsURIGetResponse = Notification.Name("com.stonerl.Thaw.settingsURIGetResponse")
+    static let settingsURIGetResponse = Notification.Name("com.yoavsror.tidybar.settingsURIGetResponse")
 
     /// Posted when the Settings URI whitelist changes.
-    static let settingsURIWhitelistDidChange = Notification.Name("com.stonerl.Thaw.settingsURIWhitelistDidChange")
+    static let settingsURIWhitelistDidChange = Notification.Name("com.yoavsror.tidybar.settingsURIWhitelistDidChange")
 }
 
 // MARK: - ExternalSettingsChange

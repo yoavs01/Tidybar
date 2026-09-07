@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterization tests for LayoutReconciler, the thin composition
 /// layer over the LayoutSolver planners.

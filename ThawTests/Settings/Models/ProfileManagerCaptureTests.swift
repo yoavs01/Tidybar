@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the capture half of ``ProfileManager``: saving the current
 /// configuration as a profile, overwriting an existing profile from current

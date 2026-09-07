@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers the ledger's contract along both of its dimensions: the
 /// session-scoped backoff that keeps bulk apply off a failing item, and

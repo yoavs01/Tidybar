@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 @Suite("Image cache display resolution")
 struct ImageCacheDisplayResolutionTests {

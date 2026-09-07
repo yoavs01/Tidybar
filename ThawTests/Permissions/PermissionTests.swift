@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``Permission``'s request/poll cycle through its injected closures,
 /// so nothing here touches the real TCC database.

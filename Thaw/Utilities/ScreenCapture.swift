@@ -275,7 +275,7 @@ nonisolated enum ScreenCapture {
 
 private final nonisolated class FrameCaptor: NSObject, SCStreamOutput, SCStreamDelegate, @unchecked Sendable {
     /// Shared serial queue for all SCStream sample buffer handlers.
-    static let sampleHandlerQueue = DispatchQueue(label: "com.stonerl.Thaw.screencapture")
+    static let sampleHandlerQueue = DispatchQueue(label: "com.yoavsror.tidybar.screencapture")
 
     /// Reused across frames to avoid repeated GPU/Metal setup costs.
     private let ciContext = CIContext()

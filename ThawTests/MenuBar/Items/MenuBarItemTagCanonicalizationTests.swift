@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 // MARK: - Volatile-Title Canonicalization Tests
 
@@ -135,7 +135,7 @@ struct MenuBarItemTagCanonicalizationTests {
 
     /// LyricsX titles its menu bar item with the lyric line on screen, so
     /// consecutive titles share nothing at all. Every song change minted a
-    /// fresh identifier, the item read as a brand-new arrival, and Thaw
+    /// fresh identifier, the item read as a brand-new arrival, and Tidybar
     /// filed it under the new-items section — moving the lyrics back into
     /// hidden however many times the user dragged them out (#815).
     @Test("Lyric titles collapse to a single identifier")

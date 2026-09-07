@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``Hotkey`` itself — construction, the enable/disable pair, the
 /// change announcement, and value equality — without an `AppState`.

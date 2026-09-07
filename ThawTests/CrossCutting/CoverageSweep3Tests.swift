@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Coverage sweep, part 3: the `Defaults` facade accessors that no other
 /// suite reaches.
@@ -23,7 +23,7 @@ import Testing
 /// dictionary.
 ///
 /// Every test routes through ``withScratchDefaults(sourceLocation:_:)``, so
-/// nothing here touches the developer's real `com.stonerl.Thaw` domain. The
+/// nothing here touches the developer's real `com.yoavsror.tidybar` domain. The
 /// suite is `.serialized` for the reason that helper documents:
 /// `Defaults.store` is process-wide.
 ///

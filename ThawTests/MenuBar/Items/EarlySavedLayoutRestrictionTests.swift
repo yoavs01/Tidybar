@@ -7,7 +7,7 @@
 //  Licensed under the GNU GPLv3
 
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Characterizes the narrowing applied to the saved order by the early,
 /// resolved-identities-only apply that runs during startup settling.

@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Covers ``AdvancedSettingsSnapshot``'s value semantics and its `Codable`
 /// conformance.

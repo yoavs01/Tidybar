@@ -8,7 +8,7 @@
 
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// End-to-end regression lock for the update-re-arms-cache wiring.
 ///

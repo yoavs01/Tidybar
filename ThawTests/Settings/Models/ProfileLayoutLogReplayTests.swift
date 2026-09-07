@@ -9,14 +9,14 @@
 import CoreGraphics
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Log-replay harness for the profile-layout decision path.
 ///
-/// Parses real Thaw log lines into per-cycle records and drives the actual
+/// Parses real Tidybar log lines into per-cycle records and drives the actual
 /// pure planner (LayoutSolver.partitionUnmanagedUIDs) with inputs
 /// reconstructed from those records. This characterizes "given the menu bar
-/// shape Thaw observed on this cycle, did the planner deem the right items
+/// shape Tidybar observed on this cycle, did the planner deem the right items
 /// unmanaged" without standing up the async orchestrator, AX, or the Window
 /// Server. New field logs become regression fixtures by adding another
 /// excerpt and another expectation.
@@ -208,7 +208,7 @@ struct ProfileLayoutLogReplayTests {
 
     /// The control identifiers the harness feeds the partitioner are derived
     /// from the live control-item tags, and they match what the field log
-    /// recorded. If a control item's namespace or title changes in the Thaw
+    /// recorded. If a control item's namespace or title changes in the Tidybar
     /// codebase, this fails rather than silently diverging from real logs.
     @Test("The live control item UIDs match the field log")
     func liveControlItemUIDsMatchTheFieldLog() throws {
@@ -237,11 +237,11 @@ struct ProfileLayoutLogReplayTests {
     @Test("The logged desiredVisible is used instead of inference")
     func loggedDesiredVisibleIsUsedInsteadOfInference() throws {
         let log = """
-        2026-05-30 09:00:00.000 [DEBUG] [MenuBarItemManager] applyProfileLayout: current visible section has 3 items: ["com.stonerl.Thaw:Thaw.ControlItem.Visible", "com.example.extra:Item-0", "com.rogueamoeba.soundsource:SSMainAppMenuIcon"]
+        2026-05-30 09:00:00.000 [DEBUG] [MenuBarItemManager] applyProfileLayout: current visible section has 3 items: ["com.yoavsror.tidybar:Tidybar.ControlItem.Visible", "com.example.extra:Item-0", "com.rogueamoeba.soundsource:SSMainAppMenuIcon"]
         2026-05-30 09:00:00.001 [DEBUG] [MenuBarItemManager] applyProfileLayout: current hidden section has 0 items: []
         2026-05-30 09:00:00.002 [DEBUG] [MenuBarItemManager] applyProfileLayout: current always-hidden section has 0 items: []
         2026-05-30 09:00:00.003 [DEBUG] [MenuBarItemManager] Profile layout: planUnmanagedPlacement com.example.extra:Item-0 -> newItemDefault(section=hidden section)
-        2026-05-30 09:00:00.004 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: ahCtrlUID=com.stonerl.Thaw:Thaw.ControlItem.AlwaysHidden, crossSectionMoves=0, totalSectionMismatch=0
+        2026-05-30 09:00:00.004 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: ahCtrlUID=com.yoavsror.tidybar:Tidybar.ControlItem.AlwaysHidden, crossSectionMoves=0, totalSectionMismatch=0
         2026-05-30 09:00:00.004 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: desiredHidden=[]
         2026-05-30 09:00:00.004 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: desiredAH=[]
         2026-05-30 09:00:00.004 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: desiredVisible=["com.rogueamoeba.soundsource:SSMainAppMenuIcon"]
@@ -280,7 +280,7 @@ struct ProfileLayoutLogReplayTests {
     @Test("A negative field budget from a display reconnect yields no overflow")
     func displayReconnectNegativeBudgetYieldsNoOverflow() throws {
         let log = """
-        2026-06-07 11:44:42.027 [DEBUG] [MenuBarItemManager] applyProfileLayout: current visible section has 4 items: ["leits.MeetingBar:Item-0", "eu.exelban.Stats:CPU_bar_chart", "com.stonerl.Thaw:Thaw.ControlItem.Visible", "com.apple.TextInputMenuAgent:Item-0"]
+        2026-06-07 11:44:42.027 [DEBUG] [MenuBarItemManager] applyProfileLayout: current visible section has 4 items: ["leits.MeetingBar:Item-0", "eu.exelban.Stats:CPU_bar_chart", "com.yoavsror.tidybar:Tidybar.ControlItem.Visible", "com.apple.TextInputMenuAgent:Item-0"]
         2026-06-07 11:44:42.027 [DEBUG] [MenuBarItemManager] applyProfileLayout: current hidden section has 3 items: ["com.electron.dockerdesktop:Item-0", "com.apple.controlcenter:WiFi", "com.kaspersky.kav_agent:Item-0"]
         2026-06-07 11:44:42.027 [DEBUG] [MenuBarItemManager] applyProfileLayout: current always-hidden section has 2 items: ["ru.keepcoder.Telegram:Item-0", "com.apple.controlcenter:Battery"]
         2026-06-07 11:44:42.028 [DEBUG] [MenuBarItemManager] Notch overflow budget: screen.maxX=1728.0 notch=[771.0…956.0] rightBoundary=-222.0 availableWidth=-1202.0 userSpacing=0.0 visibleUIDs.count=14 nonProfileCount=0 nonProfileFootprint=0.0 chevronFootprint=0.0 nonProfileBreakdown=[]
@@ -337,7 +337,7 @@ struct ProfileLayoutLogReplayTests {
     /// Control Center was reported at rightBoundary=672, left of the notch's
     /// right edge (956), giving a negative budget. The overflow guard correctly
     /// skipped the eject, but the pass still ran its control-item placement on
-    /// that stale geometry and moved the Thaw visible icon to the far left. The
+    /// that stale geometry and moved the Tidybar visible icon to the far left. The
     /// geometry-readiness gate must report this cycle as not ready so the whole
     /// pass is deferred. Red before the gate (the stub reports ready).
     @Test("An unsettled-geometry field cycle is not ready")
@@ -418,13 +418,13 @@ struct ProfileLayoutLogReplayTests {
     @Test("An overflow-ejected field cycle must not count the ejected item as a boundary offender")
     func overflowEjectedFieldCycleIsNotABoundaryOffender() throws {
         let log = """
-        2026-08-20 16:32:47.824 [DEBUG] [MenuBarItemManager] applyProfileLayout: current visible section has 12 items: ["com.steipete.codexbar:codexbar-codex", "com.steipete.codexbar:codexbar-claude", "com.tunabellysoftware.tgpro:Item-0", "eu.exelban.Stats:CPU_bar_chart", "eu.exelban.Stats:GPU_bar_chart", "eu.exelban.Stats:RAM_bar_chart", "com.rogueamoeba.soundsource:SSMainAppMenuIcon", "com.rogueamoeba.soundsource:Input", "com.apphousekitchen.aldente-pro:Item-0", "com.stonerl.Thaw:Thaw.ControlItem.Visible", "org.p0deje.Maccy:Item-0", "com.apple.TextInputMenuAgent:Item-0"]
+        2026-08-20 16:32:47.824 [DEBUG] [MenuBarItemManager] applyProfileLayout: current visible section has 12 items: ["com.steipete.codexbar:codexbar-codex", "com.steipete.codexbar:codexbar-claude", "com.tunabellysoftware.tgpro:Item-0", "eu.exelban.Stats:CPU_bar_chart", "eu.exelban.Stats:GPU_bar_chart", "eu.exelban.Stats:RAM_bar_chart", "com.rogueamoeba.soundsource:SSMainAppMenuIcon", "com.rogueamoeba.soundsource:Input", "com.apphousekitchen.aldente-pro:Item-0", "com.yoavsror.tidybar:Tidybar.ControlItem.Visible", "org.p0deje.Maccy:Item-0", "com.apple.TextInputMenuAgent:Item-0"]
         2026-08-20 16:32:47.825 [DEBUG] [MenuBarItemManager] applyProfileLayout: current hidden section has 9 items: ["leits.MeetingBar:Item-0", "com.electron.dockerdesktop:Item-0", "com.proxyman.NSProxy:Item-0", "com.techsmith.snagit.capturehelper:Item-0", "com.nektony.App-Cleaner-SIII-UIHelper:Item-0", "com.paloaltonetworks.GlobalProtect.client:Item-0", "com.apple.KerberosMenuExtra:Item-0", "com.apple.controlcenter:Battery", "com.kaspersky.kav_agent:Item-0"]
         2026-08-20 16:32:47.825 [DEBUG] [MenuBarItemManager] applyProfileLayout: current always-hidden section has 7 items: ["com.steipete.codexbar:codexbar-cursor", "com.nextcloud.desktopclient:Item-0", "ru.yandex.desktop.disk2:Item-0", "com.shortcutlabs.FlicMac:Item-0", "ru.keepcoder.Telegram:Item-0", "com.steipete.codexbar:codexbar-opencode", "com.apple.Spotlight:Item-0"]
         2026-08-20 16:32:47.826 [INFO] [MenuBarItemManager] Profile layout: notch overflow; 1 item(s) moved from visible to hidden
-        2026-08-20 16:32:47.828 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: ahCtrlUID=com.stonerl.Thaw:Thaw.ControlItem.AlwaysHidden, crossSectionMoves=0, totalSectionMismatch=0
+        2026-08-20 16:32:47.828 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: ahCtrlUID=com.yoavsror.tidybar:Tidybar.ControlItem.AlwaysHidden, crossSectionMoves=0, totalSectionMismatch=0
         2026-08-20 16:32:47.828 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: desiredHidden=["com.apple.KerberosMenuExtra:Item-0", "com.apple.controlcenter:Battery", "com.apple.controlcenter:NowPlaying", "com.apple.controlcenter:WiFi", "com.electron.dockerdesktop:Item-0", "com.kaspersky.kav_agent:Item-0", "com.nektony.App-Cleaner-SIII-UIHelper:Item-0", "com.paloaltonetworks.GlobalProtect.client:Item-0", "com.proxyman.NSProxy:Item-0", "com.techsmith.snagit.capturehelper:Item-0"]
-        2026-08-20 16:32:47.828 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: desiredVisible=["com.apphousekitchen.aldente-pro:Item-0", "com.apple.TextInputMenuAgent:Item-0", "com.apple.controlcenter:BentoBox-0", "com.apple.controlcenter:Clock", "com.rogueamoeba.soundsource:Input", "com.rogueamoeba.soundsource:SSMainAppMenuIcon", "com.steipete.codexbar:codexbar-claude", "com.steipete.codexbar:codexbar-codex", "com.stonerl.Thaw:Thaw.ControlItem.Visible", "com.tunabellysoftware.tgpro:Item-0", "eu.exelban.Stats:CPU_bar_chart", "eu.exelban.Stats:GPU_bar_chart", "eu.exelban.Stats:Network_speed", "eu.exelban.Stats:RAM_bar_chart", "leits.MeetingBar:Item-0", "org.p0deje.Maccy:Item-0"]
+        2026-08-20 16:32:47.828 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: desiredVisible=["com.apphousekitchen.aldente-pro:Item-0", "com.apple.TextInputMenuAgent:Item-0", "com.apple.controlcenter:BentoBox-0", "com.apple.controlcenter:Clock", "com.rogueamoeba.soundsource:Input", "com.rogueamoeba.soundsource:SSMainAppMenuIcon", "com.steipete.codexbar:codexbar-claude", "com.steipete.codexbar:codexbar-codex", "com.yoavsror.tidybar:Tidybar.ControlItem.Visible", "com.tunabellysoftware.tgpro:Item-0", "eu.exelban.Stats:CPU_bar_chart", "eu.exelban.Stats:GPU_bar_chart", "eu.exelban.Stats:Network_speed", "eu.exelban.Stats:RAM_bar_chart", "leits.MeetingBar:Item-0", "org.p0deje.Maccy:Item-0"]
         2026-08-20 16:32:47.828 [DEBUG] [MenuBarItemManager] Profile layout Phase 1: hiddenBoundaryMismatch=1
         """
         let parsed = ProfileLayoutLogReplay.parse(log)
@@ -475,15 +475,15 @@ struct ProfileLayoutLogReplayTests {
         // concealed, eleven visible after control items are dropped), so on
         // aa5b2850+ builds the repair route was per-item drags — exactly the
         // oscillation this exemption removes.
-        let liveControlUIDs: Set = ["com.stonerl.Thaw:Thaw.ControlItem.Visible",
-                                    "com.stonerl.Thaw:Thaw.ControlItem.AlwaysHidden"]
+        let liveControlUIDs: Set = ["com.yoavsror.tidybar:Tidybar.ControlItem.Visible",
+                                    "com.yoavsror.tidybar:Tidybar.ControlItem.AlwaysHidden"]
         let liveConcealed = currentHidden.union(currentAlwaysHidden).subtracting(liveControlUIDs).count
         let liveVisible = currentVisible.subtracting(liveControlUIDs).count
         #expect(!LayoutSolver.shouldMoveHiddenDivider(liveConcealedCount: liveConcealed, liveVisibleCount: liveVisible))
     }
 }
 
-/// Parses Thaw profile-layout log text into replayable cycles and drives the
+/// Parses Tidybar profile-layout log text into replayable cycles and drives the
 /// real partitioner. Kept test-only; it models just enough of one
 /// applyProfileLayout cycle to characterize the unmanaged-item decision.
 enum ProfileLayoutLogReplay {
@@ -538,8 +538,8 @@ enum ProfileLayoutLogReplay {
         let provisionalIdentityOrphans: Set<String>
     }
 
-    private static let visibleCtrlUID = "com.stonerl.Thaw:Thaw.ControlItem.Visible"
-    private static let hiddenCtrlUID = "com.stonerl.Thaw:Thaw.ControlItem.Hidden"
+    private static let visibleCtrlUID = "com.yoavsror.tidybar:Tidybar.ControlItem.Visible"
+    private static let hiddenCtrlUID = "com.yoavsror.tidybar:Tidybar.ControlItem.Hidden"
 
     /// Parses a captured diagnostic log into replayable cycles.
     ///
@@ -548,7 +548,7 @@ enum ProfileLayoutLogReplay {
     /// `// Format contract: parsed by ProfileLayoutLogReplayTests.parse(_:)`
     /// comment; find them with:
     ///
-    ///     grep -rn 'Format contract: parsed by ProfileLayoutLogReplayTests' Thaw/
+    ///     grep -rn 'Format contract: parsed by ProfileLayoutLogReplayTests' Tidybar/
     ///
     /// The checked-in fixtures are real captured field logs that cannot be
     /// regenerated, so the production messages must not be reworded.
@@ -660,7 +660,7 @@ enum ProfileLayoutLogReplay {
     /// membership and sourcePID resolution are observed state replayed from the
     /// log (an item is unresolved when its identifier appeared in a Missing
     /// sourcePID warning); everything derived from these items afterwards uses
-    /// live Thaw code.
+    /// live Tidybar code.
     static func makeCurrentItems(
         sectionOrderedUIDs: [String],
         unresolvedSourcePIDBaseUIDs: Set<String>,
@@ -703,7 +703,7 @@ extension ProfileLayoutLogReplay.Cycle {
         let ahCtrl = MenuBarItemTag.alwaysHiddenControlItem.tagIdentifier
 
         // Live items for the current bar, per section; everything below is
-        // derived from them through live Thaw code (uniqueIdentifier,
+        // derived from them through live Tidybar code (uniqueIdentifier,
         // hasProvisionalIdentity) rather than from string heuristics.
         let visibleItems = ProfileLayoutLogReplay.makeCurrentItems(
             sectionOrderedUIDs: currentVisible,
@@ -762,7 +762,7 @@ extension ProfileLayoutLogReplay.Cycle {
 
 /// Red→green guard for the relaunch-settling gate
 /// (MenuBarItemManager.tracksMenuBarItem). When a tracked app relaunches
-/// (e.g. an in-app update) Thaw must arm a settling period so the move pass
+/// (e.g. an in-app update) Tidybar must arm a settling period so the move pass
 /// waits out the churn; without it the bulk apply runs on the transient
 /// layout and sweeps hidden items into the visible section (the Free Download
 /// Manager update unhide). Equally it must NOT arm for ordinary launches, so

@@ -8,7 +8,7 @@
 
 import CoreGraphics
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Pins the #905 identity-preference fallback: when the catalog already holds
 /// an app-owned identity for a Control Center-hosted slot that the source-PID
@@ -26,7 +26,7 @@ struct UnresolvedPlaceholderAliasTests {
         "com.apple.controlcenter",
         "com.apple.systemuiserver",
     ]
-    private static let thawBundleID = "com.stonerl.Thaw"
+    private static let thawBundleID = "com.yoavsror.tidybar"
     private static let littleSnitchBundleID = "at.obdev.littlesnitch.agent"
 
     private static let placeholder = MenuBarItem.fixture(
@@ -71,7 +71,7 @@ struct UnresolvedPlaceholderAliasTests {
         ) == nil)
     }
 
-    @Test("appBundleID rejects Thaw's own bundle identifier")
+    @Test("appBundleID rejects Tidybar's own bundle identifier")
     func appBundleIDRejectsThaw() {
         let identity = AXIdentityCatalog.AXItemIdentity(
             identifier: Self.thawBundleID,

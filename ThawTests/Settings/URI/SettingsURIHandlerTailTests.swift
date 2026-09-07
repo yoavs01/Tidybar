@@ -9,7 +9,7 @@
 import AppKit
 import Foundation
 import Testing
-@testable import Thaw
+@testable import Tidybar
 
 /// Collects the notifications posted on `name` while `body` runs.
 ///
@@ -55,7 +55,7 @@ private final class NotificationBox: @unchecked Sendable {
 ///   `handlePerDisplayToggle` open with `if let uuid = displayUUID,
 ///   !uuid.isEmpty`. The sibling suites pass either `nil` or a real UUID, so
 ///   the `!uuid.isEmpty` half has never been the thing that decided the branch.
-///   It matters because a `thaw://` URL carrying `display=` with nothing after
+///   It matters because a `tidybar://` URL carrying `display=` with nothing after
 ///   it produces exactly that, and it must scope the change the same way as
 ///   omitting the parameter entirely rather than addressing a display named "".
 /// - **The `userInfo` a per-display change carries.** The posting helper builds
@@ -84,7 +84,7 @@ private final class NotificationBox: @unchecked Sendable {
 /// monitors attached to the machine running the suite.
 ///
 /// Every test that reads or writes a setting runs inside `withScratchDefaults`,
-/// so the suite never touches the developer's real `com.stonerl.Thaw` domain —
+/// so the suite never touches the developer's real `com.yoavsror.tidybar` domain —
 /// which also means it starts from a known-empty whitelist rather than from
 /// whatever the developer has authorized.
 @MainActor

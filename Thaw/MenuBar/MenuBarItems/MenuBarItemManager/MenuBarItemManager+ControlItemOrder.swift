@@ -63,11 +63,11 @@ extension MenuBarItemManager {
             knownItemIdentifiers.formUnion(identifiers)
             persistKnownItemIdentifiers()
 
-            // The Thaw icon is exempt from the deferral above. macOS can
+            // The Tidybar icon is exempt from the deferral above. macOS can
             // restore our two control items in the wrong relative order,
             // parking the visible one left of the hidden divider — i.e.
             // off screen. Waiting for the settling-end pass to correct that
-            // leaves the menu bar with no Thaw icon for as long as settling
+            // leaves the menu bar with no Tidybar icon for as long as settling
             // runs, which is ~8 s when Control Center is slow to hand out
             // source PIDs, and reads as the app having crashed (#881).
             //
@@ -185,7 +185,7 @@ extension MenuBarItemManager {
         }
     }
 
-    /// Moves the Thaw icon back to the right of the hidden divider, where it
+    /// Moves the Tidybar icon back to the right of the hidden divider, where it
     /// is on screen. Shared by the startup-settling path and the regular
     /// planner path, which reach the same decision from different inputs.
     private func relocateThawIcon(
@@ -204,11 +204,11 @@ extension MenuBarItemManager {
         let screenFrames = NSScreen.screens.map { CGDisplayBounds($0.displayID) }
         if !LayoutSolver.isOnScreen(bounds: bestBounds(for: controlItems.hidden), screenFrames: screenFrames) {
             MenuBarItemManager.diagLog.warning(
-                "Skipping Thaw icon relocation, the hidden divider is parked offscreen (minX=\(controlItems.hidden.bounds.minX)); moving the icon beside it would strand both"
+                "Skipping Tidybar icon relocation, the hidden divider is parked offscreen (minX=\(controlItems.hidden.bounds.minX)); moving the icon beside it would strand both"
             )
             return false
         }
-        MenuBarItemManager.diagLog.info("Relocating Thaw icon \(thawIcon.logString) to visible section")
+        MenuBarItemManager.diagLog.info("Relocating Tidybar icon \(thawIcon.logString) to visible section")
         do {
             try await move(
                 item: thawIcon,
@@ -216,7 +216,7 @@ extension MenuBarItemManager {
                 skipInputPause: true
             )
         } catch {
-            MenuBarItemManager.diagLog.error("Failed to relocate Thaw icon \(thawIcon.logString): \(error)")
+            MenuBarItemManager.diagLog.error("Failed to relocate Tidybar icon \(thawIcon.logString): \(error)")
             return false
         }
         return true

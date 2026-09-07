@@ -607,7 +607,7 @@
       }
     },
     "%@ Bar off" : {
-      "comment" : "Profile preview summary fragment: the Thaw Bar is disabled. %@ is the app name.",
+      "comment" : "Profile preview summary fragment: the Tidybar Bar is disabled. %@ is the app name.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -726,7 +726,7 @@
       }
     },
     "%@ Bar on" : {
-      "comment" : "Profile preview summary fragment: the Thaw Bar is enabled. %@ is the app name.",
+      "comment" : "Profile preview summary fragment: the Tidybar Bar is enabled. %@ is the app name.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -5286,7 +5286,7 @@
       }
     },
     "Allow" : {
-      "comment" : "Button title for allowing the app to control Thaw settings.",
+      "comment" : "Button title for allowing the app to control Tidybar settings.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -5529,49 +5529,49 @@
         }
       }
     },
-    "Allow external applications to read and modify %@ settings via thaw:// URLs." : {
-      "comment" : "A toggle that enables or disables the ability for external applications to read and modify \\(Constants.displayName) settings via thaw:// URLs.",
+    "Allow external applications to read and modify %@ settings via tidybar:// URLs." : {
+      "comment" : "A toggle that enables or disables the ability for external applications to read and modify \\(Constants.displayName) settings via tidybar:// URLs.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Povolit jiným aplikacím, aby četly a měnily nastavení %@ pomocí URL thaw://."
+            "value" : "Povolit jiným aplikacím, aby četly a měnily nastavení %@ pomocí URL tidybar://."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Externen Anwendungen erlauben %@ -Einstellungen über thaw:// URLs zu lesen und zu ändern."
+            "value" : "Externen Anwendungen erlauben %@ -Einstellungen über tidybar:// URLs zu lesen und zu ändern."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Permitir a las aplicaciones externas leer y modificar la configuración de %@ a través de thaw:// URLs."
+            "value" : "Permitir a las aplicaciones externas leer y modificar la configuración de %@ a través de tidybar:// URLs."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Autoriser les applications externes à lire et à modifier les paramètres %@ via des URL thaw://."
+            "value" : "Autoriser les applications externes à lire et à modifier les paramètres %@ via des URL tidybar://."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Külső alkalmazások engedélyezése %@ beállításainak olvasására és módosítására thaw:// URL-eken keresztül."
+            "value" : "Külső alkalmazások engedélyezése %@ beállításainak olvasására és módosítására tidybar:// URL-eken keresztül."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Izinkan aplikasi eksternal untuk membaca dan mengubah pengaturan %@ via thaw://URL."
+            "value" : "Izinkan aplikasi eksternal untuk membaca dan mengubah pengaturan %@ via tidybar://URL."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Permetti ad applicazioni esterne di leggere e modificare le impostazioni di %@ tramite thaw://URLs."
+            "value" : "Permetti ad applicazioni esterne di leggere e modificare le impostazioni di %@ tramite tidybar://URLs."
           }
         },
         "ja" : {
@@ -5583,67 +5583,67 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "외부 애플리케이션이 thaw:// URL을 통해 %@ 설정을 읽고 수정할 수 있도록 허용합니다."
+            "value" : "외부 애플리케이션이 tidybar:// URL을 통해 %@ 설정을 읽고 수정할 수 있도록 허용합니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sta externe applicaties toe om %@-instellingen te lezen en te wijzigen via thaw://-URL’s."
+            "value" : "Sta externe applicaties toe om %@-instellingen te lezen en te wijzigen via tidybar://-URL’s."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zezwalaj zewnętrznym aplikacjom na odczyt i modyfikację ustawień %@ za pomocą adresów URL thaw://."
+            "value" : "Zezwalaj zewnętrznym aplikacjom na odczyt i modyfikację ustawień %@ za pomocą adresów URL tidybar://."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Permitir que aplicativos externos leiam e modifiquem as configurações %@ por meio de URLs thaw://."
+            "value" : "Permitir que aplicativos externos leiam e modifiquem as configurações %@ por meio de URLs tidybar://."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Разрешить внешним приложениям считывать и изменять настройки %@ через thaw:// URL-адреса."
+            "value" : "Разрешить внешним приложениям считывать и изменять настройки %@ через tidybar:// URL-адреса."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "อนุญาตให้แอปภายนอกอ่านและแก้ไขการตั้งค่า %@ ผ่าน URL แบบ thaw://"
+            "value" : "อนุญาตให้แอปภายนอกอ่านและแก้ไขการตั้งค่า %@ ผ่าน URL แบบ tidybar://"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dış uygulamaların %@ ayarlarını thaw:// bağlantısı aracılığıyla okumasına ve düzenlemesine izin ver."
+            "value" : "Dış uygulamaların %@ ayarlarını tidybar:// bağlantısı aracılığıyla okumasına ve düzenlemesine izin ver."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Дозволити зовнішнім застосункам читати та змінювати налаштування %@ через URL-адреси thaw://."
+            "value" : "Дозволити зовнішнім застосункам читати та змінювати налаштування %@ через URL-адреси tidybar://."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cho phép các ứng dụng bên ngoài đọc và sửa đổi cài đặt %@ thông qua URL thaw://."
+            "value" : "Cho phép các ứng dụng bên ngoài đọc và sửa đổi cài đặt %@ thông qua URL tidybar://."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "允许外部应用程序通过 thaw:// URL 读取并修改 %@ 设置。"
+            "value" : "允许外部应用程序通过 tidybar:// URL 读取并修改 %@ 设置。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "允許外部應用程式透過 thaw:// URL 讀取並修改 %@ 的設定。"
+            "value" : "允許外部應用程式透過 tidybar:// URL 讀取並修改 %@ 的設定。"
           }
         }
       }
@@ -6600,7 +6600,7 @@
       }
     },
     "Always-hidden items only" : {
-      "comment" : "Toggle that opens only the always-hidden section in the Thaw Bar, leaving the hidden section to expand in the menu bar.",
+      "comment" : "Toggle that opens only the always-hidden section in the Tidybar Bar, leaving the hidden section to expand in the menu bar.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -6956,43 +6956,43 @@
         }
       }
     },
-    "Apply a Thaw menu bar profile when this Focus activates." : {
+    "Apply a Tidybar menu bar profile when this Focus activates." : {
       "comment" : "Description of the \"Set Menu Bar Profile\" focus filter intent, including the category name.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Po aktivaci tohoto režimu soustředění přepne Thaw svůj profil."
+            "value" : "Po aktivaci tohoto režimu soustředění přepne Tidybar svůj profil."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ein Thaw-Menüleisten-Profil anwenden, wenn dieser Fokus aktiviert wird."
+            "value" : "Ein Tidybar-Menüleisten-Profil anwenden, wenn dieser Fokus aktiviert wird."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aplicar un perfil de barra de menú de Thaw cuando este Enfoque se activa."
+            "value" : "Aplicar un perfil de barra de menú de Tidybar cuando este Enfoque se activa."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Appliquer un profil de la barre de menu de Thaw lorsque le focus est activé."
+            "value" : "Appliquer un profil de la barre de menu de Tidybar lorsque le focus est activé."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw menüsávprofil alkalmazása, amikor ez a Fókusz aktiválódik."
+            "value" : "Tidybar menüsávprofil alkalmazása, amikor ez a Fókusz aktiválódik."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terapkan profil bar menu Thaw saat Fokus ini aktif."
+            "value" : "Terapkan profil bar menu Tidybar saat Fokus ini aktif."
           }
         },
         "it" : {
@@ -7004,49 +7004,49 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "集中モード有効時に、指定した Thaw メニューバープロファイルを適用します。"
+            "value" : "集中モード有効時に、指定した Tidybar メニューバープロファイルを適用します。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이 집중 모드가 켜져 있을 때 Thaw 메뉴 바 프로필을 적용합니다."
+            "value" : "이 집중 모드가 켜져 있을 때 Tidybar 메뉴 바 프로필을 적용합니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pas een profiel uit de Thaw-menubalk toe wanneer deze focus wordt geactiveerd."
+            "value" : "Pas een profiel uit de Tidybar-menubalk toe wanneer deze focus wordt geactiveerd."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktywuj profil paska menu Thaw, gdy włączy się ten tryb skupienia."
+            "value" : "Aktywuj profil paska menu Tidybar, gdy włączy się ten tryb skupienia."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aplicar um perfil da barra de menus do Thaw quando este foco for ativado."
+            "value" : "Aplicar um perfil da barra de menus do Tidybar quando este foco for ativado."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Применять профиль строки меню Thaw, когда включается режим Фокусирования."
+            "value" : "Применять профиль строки меню Tidybar, когда включается режим Фокусирования."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ใช้โปรไฟล์แถบเมนู Thaw เมื่อ Focus นี้เปิดใช้งาน"
+            "value" : "ใช้โปรไฟล์แถบเมนู Tidybar เมื่อ Focus นี้เปิดใช้งาน"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bu Odak etkinleştiğinde bir Thaw menü çubuğu profili uygula."
+            "value" : "Bu Odak etkinleştiğinde bir Tidybar menü çubuğu profili uygula."
           }
         },
         "uk" : {
@@ -7058,19 +7058,19 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Áp dụng cấu hình thanh menu Thaw khi Focus này kích hoạt."
+            "value" : "Áp dụng cấu hình thanh menu Tidybar khi Focus này kích hoạt."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "启用专注模式时切换到指定的 Thaw 菜单栏配置。"
+            "value" : "启用专注模式时切换到指定的 Tidybar 菜单栏配置。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "當此專注模式啟動時，套用 Thaw 選單列設定檔。"
+            "value" : "當此專注模式啟動時，套用 Tidybar 選單列設定檔。"
           }
         }
       }
@@ -11014,121 +11014,121 @@
         }
       }
     },
-    "Before a display change or spacing edit relaunches your menu bar apps, Thaw asks you to confirm. Turn this off to apply spacing changes and relaunch apps without confirmation." : {
+    "Before a display change or spacing edit relaunches your menu bar apps, Tidybar asks you to confirm. Turn this off to apply spacing changes and relaunch apps without confirmation." : {
       "comment" : "Annotation for the Confirm before relaunching apps toggle in the Displays pane.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Předtím, než přepnutí monitorů nebo změna rozestupů restartuje aplikace ve vašem řádku nabídek, Thaw vás požádá o potvrzení. Vypněte tuto volbu, pokud chcete, aby se aplikace restartovaly bez vašeho potvrzení."
+            "value" : "Předtím, než přepnutí monitorů nebo změna rozestupů restartuje aplikace ve vašem řádku nabídek, Tidybar vás požádá o potvrzení. Vypněte tuto volbu, pokud chcete, aby se aplikace restartovaly bez vašeho potvrzení."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bevor eine Bildschirm- oder Abstandsänderung die Menüleisten-Anwendungen neustartet, fragt Thaw nach einer Bestätigung."
+            "value" : "Bevor eine Bildschirm- oder Abstandsänderung die Menüleisten-Anwendungen neustartet, fragt Tidybar nach einer Bestätigung."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Antes de que un cambio de presentación o espaciado reinicie sus apps de la barra de menús, Thaw te pedirá que confirmes. Desactiva esto para aplicar cambios de espaciado y reiniciar apps sin confirmar."
+            "value" : "Antes de que un cambio de presentación o espaciado reinicie sus apps de la barra de menús, Tidybar te pedirá que confirmes. Desactiva esto para aplicar cambios de espaciado y reiniciar apps sin confirmar."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Avant qu’un changement d’affichage ou une modification de l’espacement ne redémarre vos applications de la barre de menus, Thaw vous demande de confirmer. Désactivez cette option pour appliquer les modifications d’espacement et redémarrer les applications sans confirmation."
+            "value" : "Avant qu’un changement d’affichage ou une modification de l’espacement ne redémarre vos applications de la barre de menus, Tidybar vous demande de confirmer. Désactivez cette option pour appliquer les modifications d’espacement et redémarrer les applications sans confirmation."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A Thaw megerősítést kér mielőtt egy képernyő-módosítás vagy térközszerkesztés újraindítja a menüsávelemekkel rendelkező alkalmazásokat. Kapcsold ezt ki a térközváltozások alkalmazásához és az alkalmazások újraindításához megerősítés nélkül."
+            "value" : "A Tidybar megerősítést kér mielőtt egy képernyő-módosítás vagy térközszerkesztés újraindítja a menüsávelemekkel rendelkező alkalmazásokat. Kapcsold ezt ki a térközváltozások alkalmazásához és az alkalmazások újraindításához megerősítés nélkül."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw akan meminta konfirmasi sebelum perubahan layar atau pengaturan jarak memulai ulang aplikasi pada bar menu. Nonaktifkan opsi ini untuk menerapkan perubahan tanpa konfirmasi."
+            "value" : "Tidybar akan meminta konfirmasi sebelum perubahan layar atau pengaturan jarak memulai ulang aplikasi pada bar menu. Nonaktifkan opsi ini untuk menerapkan perubahan tanpa konfirmasi."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Prima che una modifica alla visualizzazione o alla spaziatura provochi il riavvio delle app nella barra dei menu, Thaw richiede una conferma. Disattiva questa opzione per applicare le modifiche alla spaziatura e riavviare le app senza conferma."
+            "value" : "Prima che una modifica alla visualizzazione o alla spaziatura provochi il riavvio delle app nella barra dei menu, Tidybar richiede una conferma. Disattiva questa opzione per applicare le modifiche alla spaziatura e riavviare le app senza conferma."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ディスプレイの変更や間隔の編集に伴うアプリの再起動前に、Thaw が確認メッセージを表示します。確認なしで間隔の変更を適用してアプリを再起動したい場合は、この設定をオフにしてください。"
+            "value" : "ディスプレイの変更や間隔の編集に伴うアプリの再起動前に、Tidybar が確認メッセージを表示します。確認なしで間隔の変更を適用してアプリを再起動したい場合は、この設定をオフにしてください。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Before a display change or spacing edit relaunches your menu bar apps, Thaw asks you to confirm. Turn this off to apply spacing changes and relaunch apps without confirmation."
+            "value" : "Before a display change or spacing edit relaunches your menu bar apps, Tidybar asks you to confirm. Turn this off to apply spacing changes and relaunch apps without confirmation."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Voordat een wijziging in de weergave of aanpassing van de spatiëring ervoor zorgt dat de apps in je menubalk opnieuw worden gestart, vraagt Thaw je om bevestiging. Schakel deze optie uit om wijzigingen in de spatiëring toe te passen en apps opnieuw te starten zonder bevestiging."
+            "value" : "Voordat een wijziging in de weergave of aanpassing van de spatiëring ervoor zorgt dat de apps in je menubalk opnieuw worden gestart, vraagt Tidybar je om bevestiging. Schakel deze optie uit om wijzigingen in de spatiëring toe te passen en apps opnieuw te starten zonder bevestiging."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Przed zrestartowaniem aplikacji paska menu w wyniku zmiany wyświetlacza lub odstępów, Thaw wymaga potwierdzenia. Odznacz tę opcję, by wprowadzać zmiany i restartować aplikacje bez dodatkowych komunikatów."
+            "value" : "Przed zrestartowaniem aplikacji paska menu w wyniku zmiany wyświetlacza lub odstępów, Tidybar wymaga potwierdzenia. Odznacz tę opcję, by wprowadzać zmiany i restartować aplikacje bez dodatkowych komunikatów."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Before a display change or spacing edit relaunches your menu bar apps, Thaw asks you to confirm. Turn this off to apply spacing changes and relaunch apps without confirmation."
+            "value" : "Before a display change or spacing edit relaunches your menu bar apps, Tidybar asks you to confirm. Turn this off to apply spacing changes and relaunch apps without confirmation."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Прежде чем изменение дисплея или правка интервалов перезапустит приложения в строке меню, Thaw запрашивает подтверждение. Отключите эту опцию, чтобы применять изменения интервалов, и перезапускать приложения без подтверждения."
+            "value" : "Прежде чем изменение дисплея или правка интервалов перезапустит приложения в строке меню, Tidybar запрашивает подтверждение. Отключите эту опцию, чтобы применять изменения интервалов, и перезапускать приложения без подтверждения."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ก่อนที่การเปลี่ยนแปลงจอแสดงผลหรือการแก้ไขระยะห่างจะรีสตาร์ทแอปในแถบเมนูของคุณ Thaw จะขอให้คุณยืนยันก่อน ปิดตัวเลือกนี้เพื่อนำการเปลี่ยนแปลงระยะห่างไปใช้และรีสตาร์ทแอปโดยไม่ต้องยืนยัน"
+            "value" : "ก่อนที่การเปลี่ยนแปลงจอแสดงผลหรือการแก้ไขระยะห่างจะรีสตาร์ทแอปในแถบเมนูของคุณ Tidybar จะขอให้คุณยืนยันก่อน ปิดตัวเลือกนี้เพื่อนำการเปลี่ยนแปลงระยะห่างไปใช้และรีสตาร์ทแอปโดยไม่ต้องยืนยัน"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bir ekran değişikliği veya aralık düzenlemesi menü çubuğu uygulamalarınızı yeniden başlatmadan önce Thaw sizden onay ister. Aralık değişikliklerini uygulamak ve uygulamaları onay istemeden yeniden başlatmak için bu seçeneği kapatın."
+            "value" : "Bir ekran değişikliği veya aralık düzenlemesi menü çubuğu uygulamalarınızı yeniden başlatmadan önce Tidybar sizden onay ister. Aralık değişikliklerini uygulamak ve uygulamaları onay istemeden yeniden başlatmak için bu seçeneği kapatın."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Перш ніж зміна вигляду або редагування інтервалів призведе до перезапуску програм у панелі меню, Thaw запропонує вам підтвердити ці дії. Вимкніть цю опцію, щоб зміни інтервалів застосовувалися та програми перезапускалися без підтвердження."
+            "value" : "Перш ніж зміна вигляду або редагування інтервалів призведе до перезапуску програм у панелі меню, Tidybar запропонує вам підтвердити ці дії. Вимкніть цю опцію, щоб зміни інтервалів застосовувалися та програми перезапускалися без підтвердження."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trước khi thay đổi hiển thị hoặc chỉnh sửa khoảng cách khởi chạy lại ứng dụng trên thanh menu của bạn, Thaw sẽ yêu cầu bạn xác nhận. Tắt tính năng này để áp dụng các thay đổi về khoảng cách và khởi chạy lại ứng dụng mà không cần xác nhận."
+            "value" : "Trước khi thay đổi hiển thị hoặc chỉnh sửa khoảng cách khởi chạy lại ứng dụng trên thanh menu của bạn, Tidybar sẽ yêu cầu bạn xác nhận. Tắt tính năng này để áp dụng các thay đổi về khoảng cách và khởi chạy lại ứng dụng mà không cần xác nhận."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在显示设置变更或调整间距导致菜单栏应用重新启动之前，Thaw 会先请求你的确认。关闭此选项后，调整间距时将直接应用更改并重新启动相关应用，无需再次确认。"
+            "value" : "在显示设置变更或调整间距导致菜单栏应用重新启动之前，Tidybar 会先请求你的确认。关闭此选项后，调整间距时将直接应用更改并重新启动相关应用，无需再次确认。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在 Thaw 因顯示器變更或間距變更而需要重新啟動選單列圖示對應的應用程式時，Thaw 會與您確認。若您希望套用新間距設定時直接重啟對應應用程式，請關閉此選項。"
+            "value" : "在 Tidybar 因顯示器變更或間距變更而需要重新啟動選單列圖示對應的應用程式時，Tidybar 會與您確認。若您希望套用新間距設定時直接重啟對應應用程式，請關閉此選項。"
           }
         }
       }
@@ -11967,7 +11967,7 @@
       }
     },
     "Can modify settings" : {
-      "comment" : "A description of the permission that allows an app to modify Thaw settings.",
+      "comment" : "A description of the permission that allows an app to modify Tidybar settings.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -13157,7 +13157,7 @@
       }
     },
     "Check System Settings > Menu Bar and enable %@" : {
-      "comment" : "A message displayed when Thaw is disabled in System Settings and how to solve it.",
+      "comment" : "A message displayed when Tidybar is disabled in System Settings and how to solve it.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -15534,7 +15534,7 @@
       }
     },
     "Continue Anyway" : {
-      "comment" : "Title of a button in an alert displayed when a conflicting menu bar management app is detected, allowing the user to continue using Thaw.",
+      "comment" : "Title of a button in an alert displayed when a conflicting menu bar management app is detected, allowing the user to continue using Tidybar.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -21360,7 +21360,7 @@
       }
     },
     "Enable Settings URI Scheme" : {
-      "comment" : "A toggle that enables or disables the ability for external apps to read and modify Thaw settings via thaw:// URLs.",
+      "comment" : "A toggle that enables or disables the ability for external apps to read and modify Tidybar settings via tidybar:// URLs.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -22310,55 +22310,55 @@
         }
       }
     },
-    "Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Thaw." : {
+    "Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Tidybar." : {
       "comment" : "A description of how to use environment variables in a pre-hook.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Příklad: bashový pre-hook může provést příkaz `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"`, aby se aplikace iStat Menus synchronizovala s Thaw."
+            "value" : "Příklad: bashový pre-hook může provést příkaz `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"`, aby se aplikace iStat Menus synchronizovala s Tidybar."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Beispiel: Ein Bash-Pre-Hook könnte mit `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` dafür sorgen, dass iStat Menus mit Thaw synchron bleibt."
+            "value" : "Beispiel: Ein Bash-Pre-Hook könnte mit `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` dafür sorgen, dass iStat Menus mit Tidybar synchron bleibt."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ejemplo: un pre-hook de Bash podría ejecutar `defaults write com.bjango.istatmenus5 ActiveProfile -string «$THAW_PROFILE_NAME»` para mantener iStat Menus sincronizado con Thaw."
+            "value" : "Ejemplo: un pre-hook de Bash podría ejecutar `defaults write com.bjango.istatmenus5 ActiveProfile -string «$THAW_PROFILE_NAME»` para mantener iStat Menus sincronizado con Tidybar."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exemple : un pre-hook bash pourrait exécuter \\defaults write com.bjango.istatmenus5 ActiveProfile -string “$THAW_PROFILE_NAME”` pour garder iStat Menus synchronisé avec Thaw."
+            "value" : "Exemple : un pre-hook bash pourrait exécuter \\defaults write com.bjango.istatmenus5 ActiveProfile -string “$THAW_PROFILE_NAME”` pour garder iStat Menus synchronisé avec Tidybar."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Példa: egy bash elő-hook használhatja ezt: \\defaults write com.bjango.istatmenus5 ActiveProfile -string “$THAW_PROFILE_NAME”`, hogy az iStat Menus szinkronban maradjon a Thaw alkalmazással.`"
+            "value" : "Példa: egy bash elő-hook használhatja ezt: \\defaults write com.bjango.istatmenus5 ActiveProfile -string “$THAW_PROFILE_NAME”`, hogy az iStat Menus szinkronban maradjon a Tidybar alkalmazással.`"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Contoh: pre-hook bash bisa menjalankan `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` supaya iStat Menus tetap sinkron dengan Thaw."
+            "value" : "Contoh: pre-hook bash bisa menjalankan `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` supaya iStat Menus tetap sinkron dengan Tidybar."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Thaw."
+            "value" : "Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Tidybar."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Thaw."
+            "value" : "Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Tidybar."
           }
         },
         "ko" : {
@@ -22370,61 +22370,61 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Voorbeeld: een bash pre-hook kan \\defaults write com.bjango.istatmenus5 ActiveProfile -string “$THAW_PROFILE_NAME”` uitvoeren om iStat Menus gesynchroniseerd te houden met Thaw."
+            "value" : "Voorbeeld: een bash pre-hook kan \\defaults write com.bjango.istatmenus5 ActiveProfile -string “$THAW_PROFILE_NAME”` uitvoeren om iStat Menus gesynchroniseerd te houden met Tidybar."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Przykład: pre-hook w bashu mógłby wykonać `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"`, aby utrzymać synchronizację iStat Menus z Thaw."
+            "value" : "Przykład: pre-hook w bashu mógłby wykonać `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"`, aby utrzymać synchronizację iStat Menus z Tidybar."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exemplo: um pré-hook do Bash poderia executar `defaults write com.bjango.istatmenus5 ActiveProfile -string “$THAW_PROFILE_NAME”` para manter o iStat Menus sincronizado com o Thaw."
+            "value" : "Exemplo: um pré-hook do Bash poderia executar `defaults write com.bjango.istatmenus5 ActiveProfile -string “$THAW_PROFILE_NAME”` para manter o iStat Menus sincronizado com o Tidybar."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пример: bash-скрипт pre-hook может выполнить defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\", чтобы синхронизировать iStat Menus с Thaw."
+            "value" : "Пример: bash-скрипт pre-hook может выполнить defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\", чтобы синхронизировать iStat Menus с Tidybar."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ตัวอย่าง: bash pre-hook สามารถใช้คำสั่ง `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` เพื่อให้ iStat Menus ซิงก์กับ Thaw อยู่เสมอ"
+            "value" : "ตัวอย่าง: bash pre-hook สามารถใช้คำสั่ง `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` เพื่อให้ iStat Menus ซิงก์กับ Tidybar อยู่เสมอ"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bash pre-hook mekanizması, iStat Menus hizmetinin Thaw ile senkronize kalmasını sağlamak için defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\" komutunu çalıştırabilir."
+            "value" : "Bash pre-hook mekanizması, iStat Menus hizmetinin Tidybar ile senkronize kalmasını sağlamak için defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\" komutunu çalıştırabilir."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Thaw."
+            "value" : "Example: a bash pre-hook could `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` to keep iStat Menus in sync with Tidybar."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ví dụ: một bash pre-hook có thể `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` để giữ cho các Menu iStat được đồng bộ hóa với Thaw."
+            "value" : "Ví dụ: một bash pre-hook có thể `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` để giữ cho các Menu iStat được đồng bộ hóa với Tidybar."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "例如：bash 前置 Hook 可通过 `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` 使 iStat Menus 与 Thaw 的配置保持同步。"
+            "value" : "例如：bash 前置 Hook 可通过 `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` 使 iStat Menus 与 Tidybar 的配置保持同步。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "範例：bash pre-hook 可使用 `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` 讓 iStat Menus 與 Thaw 同步。"
+            "value" : "範例：bash pre-hook 可使用 `defaults write com.bjango.istatmenus5 ActiveProfile -string \"$THAW_PROFILE_NAME\"` 讓 iStat Menus 與 Tidybar 同步。"
           }
         }
       }
@@ -27906,7 +27906,7 @@
       }
     },
     "If not whitelisted, you'll see a confirmation dialog showing the app name and what it wants to do." : {
-      "comment" : "A step in the process of using Thaw.",
+      "comment" : "A step in the process of using Tidybar.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -30756,7 +30756,7 @@
       }
     },
     "Left aligned" : {
-      "comment" : "Text displayed in a button to align the Thaw Bar to the left edge of the display.",
+      "comment" : "Text displayed in a button to align the Tidybar Bar to the left edge of the display.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -33846,7 +33846,7 @@
       }
     },
     "Menu Bar Profile" : {
-      "comment" : "Display name for the entity type representing a Thaw profile.",
+      "comment" : "Display name for the entity type representing a Tidybar profile.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -37290,7 +37290,7 @@
       }
     },
     "Not available because every section already opens in the %@ Bar." : {
-      "comment" : "Annotation shown when the Always-hidden-items-only toggle is disabled because Use Thaw Bar is already on. %@ is the Thaw display name.",
+      "comment" : "Annotation shown when the Always-hidden-items-only toggle is disabled because Use Tidybar Bar is already on. %@ is the Tidybar display name.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -37528,7 +37528,7 @@
       }
     },
     "Not available because the %@ Bar is enabled in the global template." : {
-      "comment" : "Annotation shown when the Always-show-hidden-items toggle in the Global section is disabled because Use Thaw Bar is enabled in the global template. %@ is the Thaw display name.",
+      "comment" : "Annotation shown when the Always-show-hidden-items toggle in the Global section is disabled because Use Tidybar Bar is enabled in the global template. %@ is the Tidybar display name.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -44956,126 +44956,126 @@
         }
       }
     },
-    "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting." : {
+    "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting." : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Položky, které byly vyřazeny kvůli přeplnění řádku, najdete v liště Thaw. V řádku nabídek již není vedle výřezu volné místo, takže jejich zobrazení není možné ani rozšířením skryté části přímo v řádku. Tuto funkci deaktivujte, chcete-li vždy dodržovat nastavení lišty Thaw pro daný displej."
+            "value" : "Položky, které byly vyřazeny kvůli přeplnění řádku, najdete v liště Tidybar. V řádku nabídek již není vedle výřezu volné místo, takže jejich zobrazení není možné ani rozšířením skryté části přímo v řádku. Tuto funkci deaktivujte, chcete-li vždy dodržovat nastavení lišty Tidybar pro daný displej."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maak verborgen items zichtbaar via de Thaw Bar, terwijl bij een overloop items worden verwijderd. De zichtbare rij biedt op dat moment geen ruimte meer naast de inkeping, waardoor het uitvouwen van het verborgen gedeelte in de rij deze items niet kan weergeven. Schakel deze optie uit om altijd de instelling van de Thaw Bar per scherm te volgen."
+            "value" : "Maak verborgen items zichtbaar via de Tidybar Bar, terwijl bij een overloop items worden verwijderd. De zichtbare rij biedt op dat moment geen ruimte meer naast de inkeping, waardoor het uitvouwen van het verborgen gedeelte in de rij deze items niet kan weergeven. Schakel deze optie uit om altijd de instelling van de Tidybar Bar per scherm te volgen."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Odsłoń ukryte elementy za pomocą paska Thaw, gdy przepełnienie powoduje ich wysunięcie. Widoczny wiersz nie ma już miejsca obok wycięcia, więc rozszerzenie ukrytej sekcji w linii nie może ich wyświetlić. Wyłącz, aby zawsze stosować ustawienie paska Thaw dla każdego wyświetlacza."
+            "value" : "Odsłoń ukryte elementy za pomocą paska Tidybar, gdy przepełnienie powoduje ich wysunięcie. Widoczny wiersz nie ma już miejsca obok wycięcia, więc rozszerzenie ukrytej sekcji w linii nie może ich wyświetlić. Wyłącz, aby zawsze stosować ustawienie paska Tidybar dla każdego wyświetlacza."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Taşma nedeniyle ögeler dışarı atıldığında gizli ögeleri Thaw Çubuğu üzerinden gösterin. Görünür satırda çentiğin yanında yer kalmadığı için gizli bölümü satır içinde genişletmek bu ögeleri gösteremez. Ekran başına Thaw Çubuğu ayarını her zaman takip etmek için bunu devre dışı bırakın."
+            "value" : "Taşma nedeniyle ögeler dışarı atıldığında gizli ögeleri Tidybar Çubuğu üzerinden gösterin. Görünür satırda çentiğin yanında yer kalmadığı için gizli bölümü satır içinde genişletmek bu ögeleri gösteremez. Ekran başına Tidybar Çubuğu ayarını her zaman takip etmek için bunu devre dışı bırakın."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Reveal hidden items through the Thaw Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Thaw Bar setting."
+            "value" : "Reveal hidden items through the Tidybar Bar while overflow has items ejected. The visible row has no room left beside the notch at that point, so expanding the hidden section inline cannot show them. Disable to always follow the per-display Tidybar Bar setting."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "当项目溢出时，使用 Thaw Bar 显示被隐藏的项目。此时刘海旁边的可见行已无多余空间，因此无法在行内展开隐藏区域以显示这些项目。停用此项将始终遵循每台显示器的 Thaw Bar 设置。"
+            "value" : "当项目溢出时，使用 Tidybar Bar 显示被隐藏的项目。此时刘海旁边的可见行已无多余空间，因此无法在行内展开隐藏区域以显示这些项目。停用此项将始终遵循每台显示器的 Tidybar Bar 设置。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "當項目溢出時，使用 Thaw Bar 顯示已隱藏的項目。此時瀏海旁的「顯示」列已無多餘空間，因此無法在列內展開隱藏區段來顯示這些項目。停用此選項將一律遵循每部監視器的 Thaw Bar 設定。"
+            "value" : "當項目溢出時，使用 Tidybar Bar 顯示已隱藏的項目。此時瀏海旁的「顯示」列已無多餘空間，因此無法在列內展開隱藏區段來顯示這些項目。停用此選項將一律遵循每部監視器的 Tidybar Bar 設定。"
           }
         }
       }
     },
     "Right aligned" : {
-      "comment" : "Localized string key for the right-aligned Thaw Bar location.",
+      "comment" : "Localized string key for the right-aligned Tidybar Bar location.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -46382,79 +46382,79 @@
         }
       }
     },
-    "Save your current configuration as a named profile. Switch between layouts instantly, or let Thaw switch automatically when you change your frontmost app." : {
+    "Save your current configuration as a named profile. Switch between layouts instantly, or let Tidybar switch automatically when you change your frontmost app." : {
       "comment" : "Description of the profiles onboarding slide.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ukládejte nastavení jako profily, které si pojmenujete. Okamžitě přepínejte mezi rozloženími nebo je nechte aplikaci Thaw přepínat automaticky, když přepnete aplikace."
+            "value" : "Ukládejte nastavení jako profily, které si pojmenujete. Okamžitě přepínejte mezi rozloženími nebo je nechte aplikaci Tidybar přepínat automaticky, když přepnete aplikace."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sichere Deine aktuelle Konfiguration in einem Profil. Wechsle blitzschnell zwischen Layouts oder überlasse Thaw den Wechsel automatisch, wenn sich die gerade genutzte Anwendung ändert."
+            "value" : "Sichere Deine aktuelle Konfiguration in einem Profil. Wechsle blitzschnell zwischen Layouts oder überlasse Tidybar den Wechsel automatisch, wenn sich die gerade genutzte Anwendung ändert."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Guardar tu configuración actual como perfil nombrado. Alterna entre diseños instantáneamente, o permite que Thaw escoja automáticamente cuando cambies el app enfocado."
+            "value" : "Guardar tu configuración actual como perfil nombrado. Alterna entre diseños instantáneamente, o permite que Tidybar escoja automáticamente cuando cambies el app enfocado."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enregistrez votre configuration actuelle en tant que profil nommé. Basculez instantanément entre les mises en page ou laissez Thaw basculer automatiquement lorsque vous modifiez votre application au premier plan."
+            "value" : "Enregistrez votre configuration actuelle en tant que profil nommé. Basculez instantanément entre les mises en page ou laissez Tidybar basculer automatiquement lorsque vous modifiez votre application au premier plan."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Thaw switch automatically when you change your frontmost app."
+            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Tidybar switch automatically when you change your frontmost app."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Simpan konfirmasi saat ini sebagai profil bernama. Beralih antar tata letak secara instan, atau biarkan Thaw beralih otomatis berdasarkan aplikasi yang sedang aktif."
+            "value" : "Simpan konfirmasi saat ini sebagai profil bernama. Beralih antar tata letak secara instan, atau biarkan Tidybar beralih otomatis berdasarkan aplikasi yang sedang aktif."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Thaw switch automatically when you change your frontmost app."
+            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Tidybar switch automatically when you change your frontmost app."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Thaw switch automatically when you change your frontmost app."
+            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Tidybar switch automatically when you change your frontmost app."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Thaw switch automatically when you change your frontmost app."
+            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Tidybar switch automatically when you change your frontmost app."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sla je huidige configuratie op als een profiel met een naam. Schakel direct tussen lay-outs, of laat Thaw automatisch schakelen wanneer je van app wisselt."
+            "value" : "Sla je huidige configuratie op als een profiel met een naam. Schakel direct tussen lay-outs, of laat Tidybar automatisch schakelen wanneer je van app wisselt."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zapisz swoją bieżącą konfigurację jako nazwany profil. Błyskawicznie przełączaj się między układami lub pozwól, aby Thaw przełączał je automatycznie, gdy zmienisz aktywną aplikację."
+            "value" : "Zapisz swoją bieżącą konfigurację jako nazwany profil. Błyskawicznie przełączaj się między układami lub pozwól, aby Tidybar przełączał je automatycznie, gdy zmienisz aktywną aplikację."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Thaw switch automatically when you change your frontmost app."
+            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Tidybar switch automatically when you change your frontmost app."
           }
         },
         "ru" : {
@@ -46466,37 +46466,37 @@
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "บันทึกการตั้งค่าปัจจุบันเป็นโปรไฟล์ที่มีชื่อ สลับระหว่างรูปแบบได้ทันที หรือให้ Thaw สลับโดยอัตโนมัติเมื่อคุณเปลี่ยนแอปที่ใช้งานอยู่\n"
+            "value" : "บันทึกการตั้งค่าปัจจุบันเป็นโปรไฟล์ที่มีชื่อ สลับระหว่างรูปแบบได้ทันที หรือให้ Tidybar สลับโดยอัตโนมัติเมื่อคุณเปลี่ยนแอปที่ใช้งานอยู่\n"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mevcut yapılandırmanızı adlandırılmış bir profil olarak kaydedin. Düzenleriniz arasında anında geçiş yapın veya en çok kullandığınız uygulamayı değiştirdiğinizde Thaw uygulamasının otomatik geçiş yapmasına izin verin."
+            "value" : "Mevcut yapılandırmanızı adlandırılmış bir profil olarak kaydedin. Düzenleriniz arasında anında geçiş yapın veya en çok kullandığınız uygulamayı değiştirdiğinizde Tidybar uygulamasının otomatik geçiş yapmasına izin verin."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Thaw switch automatically when you change your frontmost app."
+            "value" : "Save your current configuration as a named profile. Switch between layouts instantly, or let Tidybar switch automatically when you change your frontmost app."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lưu cấu hình hiện tại của bạn dưới dạng hồ sơ được đặt tên. Chuyển đổi giữa các bố cục ngay lập tức hoặc để Thaw tự động chuyển đổi khi bạn thay đổi ứng dụng trên cùng của mình."
+            "value" : "Lưu cấu hình hiện tại của bạn dưới dạng hồ sơ được đặt tên. Chuyển đổi giữa các bố cục ngay lập tức hoặc để Tidybar tự động chuyển đổi khi bạn thay đổi ứng dụng trên cùng của mình."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "将当前配置保存为一个命名配置文件。可随时切换不同布局，或让 Thaw 在前台应用发生变化时自动切换。"
+            "value" : "将当前配置保存为一个命名配置文件。可随时切换不同布局，或让 Tidybar 在前台应用发生变化时自动切换。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "將您的設定以名稱儲存，並且您可以即時切換佈局，或者當前景應用程式變動時，由 Thaw 幫您自動切換。"
+            "value" : "將您的設定以名稱儲存，並且您可以即時切換佈局，或者當前景應用程式變動時，由 Tidybar 幫您自動切換。"
           }
         }
       }
@@ -49240,7 +49240,7 @@
       }
     },
     "Show always-hidden menu bar items in the %@ Bar, while hidden items keep expanding in the menu bar." : {
-      "comment" : "Annotation for the Always-hidden-items-only toggle in the Displays pane. %@ is the Thaw display name.",
+      "comment" : "Annotation for the Always-hidden-items-only toggle in the Displays pane. %@ is the Tidybar display name.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -49717,7 +49717,7 @@
       }
     },
     "Show hidden menu bar items in a separate bar below the menu bar." : {
-      "comment" : "Annotation under the Use-Thaw-Bar toggle in the Global section of the Displays pane.",
+      "comment" : "Annotation under the Use-Tidybar-Bar toggle in the Global section of the Displays pane.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -52927,241 +52927,241 @@
         }
       }
     },
-    "Thaw gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow." : {
+    "Tidybar gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow." : {
       "comment" : "Description of the welcome onboarding slide.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aplikace Thaw vám dává plnou kontrolu nad řádkem nabídek — skryje nepotřebné ikony, přizpůsobí vzhled a automatizuje vaše postupy."
+            "value" : "Aplikace Tidybar vám dává plnou kontrolu nad řádkem nabídek — skryje nepotřebné ikony, přizpůsobí vzhled a automatizuje vaše postupy."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw gibt dir die vollständige Kontrolle über Deine Menüleiste. Vermeide Unordnung, personalisiere das Aussehen und automatisiere Deinen Workflow."
+            "value" : "Tidybar gibt dir die vollständige Kontrolle über Deine Menüleiste. Vermeide Unordnung, personalisiere das Aussehen und automatisiere Deinen Workflow."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw te da control completo sobre tu barra de menús — esconde desorden, personaliza el aspecto, y automatiza tu trabajo."
+            "value" : "Tidybar te da control completo sobre tu barra de menús — esconde desorden, personaliza el aspecto, y automatiza tu trabajo."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw vous offre un contrôle total sur votre barre de menus : masquez les éléments superflus, personnalisez son apparence et automatisez votre flux de travail."
+            "value" : "Tidybar vous offre un contrôle total sur votre barre de menus : masquez les éléments superflus, personnalisez son apparence et automatisez votre flux de travail."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
+            "value" : "Tidybar gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw memberi kendali penuh atas bar menu. Sembunyikan item yang tidak diperlukan, sesuaikan tampilannya, dan otomatitasi alur kerja."
+            "value" : "Tidybar memberi kendali penuh atas bar menu. Sembunyikan item yang tidak diperlukan, sesuaikan tampilannya, dan otomatitasi alur kerja."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
+            "value" : "Tidybar gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
+            "value" : "Tidybar gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
+            "value" : "Tidybar gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Met Thaw heb je volledige controle over je menubalk: verberg rommel, pas het uiterlijk aan en automatiseer je workflow."
+            "value" : "Met Tidybar heb je volledige controle over je menubalk: verberg rommel, pas het uiterlijk aan en automatiseer je workflow."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw daje ci pełną kontrolę nad paskiem menu — ukryj zbędne elementy, dostosuj wygląd i zautomatyzuj swoją pracę."
+            "value" : "Tidybar daje ci pełną kontrolę nad paskiem menu — ukryj zbędne elementy, dostosuj wygląd i zautomatyzuj swoją pracę."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
+            "value" : "Tidybar gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw дает вам полный контроль над строкой меню: скрывайте лишнее, настраивайте внешний вид и автоматизируйте свой рабочий процесс."
+            "value" : "Tidybar дает вам полный контроль над строкой меню: скрывайте лишнее, настраивайте внешний вид и автоматизируйте свой рабочий процесс."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw ให้คุณควบคุมแถบเมนูได้อย่างสมบูรณ์ ซ่อนสิ่งที่ไม่ต้องการ ปรับแต่งรูปลักษณ์ และทำให้การทำงานเป็นอัตโนมัติ\n"
+            "value" : "Tidybar ให้คุณควบคุมแถบเมนูได้อย่างสมบูรณ์ ซ่อนสิ่งที่ไม่ต้องการ ปรับแต่งรูปลักษณ์ และทำให้การทำงานเป็นอัตโนมัติ\n"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw, menü çubuğunuz üzerinde tam kontrol sağlar — karmaşayı gizleyin, görünümü özelleştirin ve iş akışınızı otomatikleştirin."
+            "value" : "Tidybar, menü çubuğunuz üzerinde tam kontrol sağlar — karmaşayı gizleyin, görünümü özelleştirin ve iş akışınızı otomatikleştirin."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
+            "value" : "Tidybar gives you complete control over your menu bar — hide clutter, customize the look, and automate your workflow."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw cung cấp cho bạn toàn quyền kiểm soát thanh menu — ẩn sự lộn xộn, tùy chỉnh giao diện và tự động hóa quy trình làm việc của bạn."
+            "value" : "Tidybar cung cấp cho bạn toàn quyền kiểm soát thanh menu — ẩn sự lộn xộn, tùy chỉnh giao diện và tự động hóa quy trình làm việc của bạn."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw 让你全面掌控菜单栏——隐藏杂乱项目、自定义外观，并让工作流程实现自动化。"
+            "value" : "Tidybar 让你全面掌控菜单栏——隐藏杂乱项目、自定义外观，并让工作流程实现自动化。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw 能給予您整個選單列的控制權。其能幫助你隱藏雜亂、自訂外觀並使您的作業流程更加自動化。"
+            "value" : "Tidybar 能給予您整個選單列的控制權。其能幫助你隱藏雜亂、自訂外觀並使您的作業流程更加自動化。"
           }
         }
       }
     },
-    "Thaw needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings." : {
+    "Tidybar needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings." : {
       "comment" : "Description of the permissions onboarding slide.",
       "extractionState" : "stale",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aby mohla aplikace Thaw spravovat váš řádek nabídek, potřebuje několik oprávnění. Můžete je udělit teď, nebo je prozatím přeskočit a udělit je později v nastavení."
+            "value" : "Aby mohla aplikace Tidybar spravovat váš řádek nabídek, potřebuje několik oprávnění. Můžete je udělit teď, nebo je prozatím přeskočit a udělit je později v nastavení."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw benötigt einige Berechtigungen um Deine Menüleiste zu verwalten. Du kannst diese jetzt geben oder den Schritt überspringen und sie später in den Systemeinstellungen nachträglich gewähren."
+            "value" : "Tidybar benötigt einige Berechtigungen um Deine Menüleiste zu verwalten. Du kannst diese jetzt geben oder den Schritt überspringen und sie später in den Systemeinstellungen nachträglich gewähren."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw necesita un par de permisos para gestionar tu barra de menús. Puedes asentirlos ahora, o saltar y asentirlos más tarde en Ajustes."
+            "value" : "Tidybar necesita un par de permisos para gestionar tu barra de menús. Puedes asentirlos ahora, o saltar y asentirlos más tarde en Ajustes."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw a besoin de quelques autorisations pour gérer votre barre de menus. Vous pouvez les accorder maintenant, ou ignorer cette étape et les accorder plus tard dans les Paramètres."
+            "value" : "Tidybar a besoin de quelques autorisations pour gérer votre barre de menus. Vous pouvez les accorder maintenant, ou ignorer cette étape et les accorder plus tard dans les Paramètres."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
+            "value" : "Tidybar needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw memerlukan beberapa izin untuk mengelola bar menu. Berikan izin sekarang, atau lewati dan berikan nanti melalui Pengaturan."
+            "value" : "Tidybar memerlukan beberapa izin untuk mengelola bar menu. Berikan izin sekarang, atau lewati dan berikan nanti melalui Pengaturan."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
+            "value" : "Tidybar needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
+            "value" : "Tidybar needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
+            "value" : "Tidybar needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw heeft een aantal machtigingen nodig om je menubalk te beheren. Je kunt deze nu toestaan, of dit overslaan en ze later toestaan via de instellingen."
+            "value" : "Tidybar heeft een aantal machtigingen nodig om je menubalk te beheren. Je kunt deze nu toestaan, of dit overslaan en ze later toestaan via de instellingen."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw wymaga kilku uprawnień do obsługi paska menu. Możesz je nadać w tej chwili lub pominąć i wrócić do tego później w Ustawieniach."
+            "value" : "Tidybar wymaga kilku uprawnień do obsługi paska menu. Możesz je nadać w tej chwili lub pominąć i wrócić do tego później w Ustawieniach."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
+            "value" : "Tidybar needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Приложению Thaw требуется несколько системных разрешений для работы. Вы можете предоставить их сейчас или позже из Системных настроек."
+            "value" : "Приложению Tidybar требуется несколько системных разрешений для работы. Вы можете предоставить их сейчас или позже из Системных настроек."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw ต้องการสิทธิ์สองอย่างเพื่อจัดการแถบเมนู คุณสามารถให้สิทธิ์เดี๋ยวนี้หรือข้ามและให้สิทธิ์ภายหลังจากการตั้งค่า\n"
+            "value" : "Tidybar ต้องการสิทธิ์สองอย่างเพื่อจัดการแถบเมนู คุณสามารถให้สิทธิ์เดี๋ยวนี้หรือข้ามและให้สิทธิ์ภายหลังจากการตั้งค่า\n"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw uygulamasının menü çubuğunuzu yönetebilmesi için birkaç izne ihtiyacı var. Bu izinleri şimdi verebilir veya daha sonra Ayarlar üzerinden tanımlayabilirsiniz."
+            "value" : "Tidybar uygulamasının menü çubuğunuzu yönetebilmesi için birkaç izne ihtiyacı var. Bu izinleri şimdi verebilir veya daha sonra Ayarlar üzerinden tanımlayabilirsiniz."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Thaw needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
+            "value" : "Tidybar needs a couple of permissions to manage your menu bar. You can grant them now, or skip and grant them later from Settings."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw cần một số quyền để quản lý thanh menu của bạn. Bạn có thể cấp chúng ngay bây giờ hoặc bỏ qua và cấp chúng sau từ Cài đặt."
+            "value" : "Tidybar cần một số quyền để quản lý thanh menu của bạn. Bạn có thể cấp chúng ngay bây giờ hoặc bỏ qua và cấp chúng sau từ Cài đặt."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw 需要几个权限才能管理你的菜单栏。你可以立即授予这些权限，也可以跳过，稍后再前往“设置”中授予。"
+            "value" : "Tidybar 需要几个权限才能管理你的菜单栏。你可以立即授予这些权限，也可以跳过，稍后再前往“设置”中授予。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw 需要一些權限才能開始管理您的選單列。您可以現在就開啟權限，或者之後在設定中開啟。"
+            "value" : "Tidybar 需要一些權限才能開始管理您的選單列。您可以現在就開啟權限，或者之後在設定中開啟。"
           }
         }
       }
@@ -54123,7 +54123,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Prodleva, než se nad ikonou v liště Thaw zobrazí popisek."
+            "value" : "Prodleva, než se nad ikonou v liště Tidybar zobrazí popisek."
           }
         },
         "de" : {
@@ -54711,243 +54711,243 @@
         }
       }
     },
-    "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel." : {
+    "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel." : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tato verze aplikace Thaw ještě není kompatibilní s macOS %lld. Předběžná vydání jsou k dispozici na GitHubu, podpora bude uvolněna skrze kanál aktualizací alfa."
+            "value" : "Tato verze aplikace Tidybar ještě není kompatibilní s macOS %lld. Předběžná vydání jsou k dispozici na GitHubu, podpora bude uvolněna skrze kanál aktualizací alfa."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Deze versie van Thaw is nog niet compatibel met macOS %lld. Voorlopige versies zijn beschikbaar op GitHub Releases, en ondersteuning wordt geboden via het alpha-updatekanaal."
+            "value" : "Deze versie van Tidybar is nog niet compatibel met macOS %lld. Voorlopige versies zijn beschikbaar op GitHub Releases, en ondersteuning wordt geboden via het alpha-updatekanaal."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ta wersja Thaw nie jest jeszcze kompatybilna z macOS %lld. Wersje zapoznawcze są dostępne w GitHub Releases, a wsparcie zostanie udostępnione za pośrednictwem kanału aktualizacji alfa."
+            "value" : "Ta wersja Tidybar nie jest jeszcze kompatybilna z macOS %lld. Wersje zapoznawcze są dostępne w GitHub Releases, a wsparcie zostanie udostępnione za pośrednictwem kanału aktualizacji alfa."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Preview builds are available on GitHub Releases, and support will be delivered through the alpha update channel."
           }
         }
       }
     },
-    "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub." : {
+    "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub." : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tato verze aplikace Thaw ještě není kompatibilní s macOS %lld. Podpora bude uvolněna skrze kanál aktualizací alfa, ve kterém je k dispozici přepracovaná aplikace. Thaw vás teď může přihlásit k odběru aktualizací a zkontrolovat, zda je nová verze k dispozici. Pokud zatím nebyla vydaná, otevře se seznam předběžných vydání na GitHubu."
+            "value" : "Tato verze aplikace Tidybar ještě není kompatibilní s macOS %lld. Podpora bude uvolněna skrze kanál aktualizací alfa, ve kterém je k dispozici přepracovaná aplikace. Tidybar vás teď může přihlásit k odběru aktualizací a zkontrolovat, zda je nová verze k dispozici. Pokud zatím nebyla vydaná, otevře se seznam předběžných vydání na GitHubu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Deze versie van Thaw is nog niet compatibel met macOS %lld. Ondersteuning wordt aangeboden via het alfa-kanaal, waar de herschreven app te vinden is. Thaw kan je hierop abonneren en nu controleren of er een build beschikbaar is. Als er nog geen is gepubliceerd, opent het de preview-builds op GitHub."
+            "value" : "Deze versie van Tidybar is nog niet compatibel met macOS %lld. Ondersteuning wordt aangeboden via het alfa-kanaal, waar de herschreven app te vinden is. Tidybar kan je hierop abonneren en nu controleren of er een build beschikbaar is. Als er nog geen is gepubliceerd, opent het de preview-builds op GitHub."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ta wersja Thaw nie jest jeszcze kompatybilna z macOS %lld. Wsparcie jest wprowadzane poprzez kanał alfa, który zawiera przepisaną aplikację. Thaw może zapisać Cię do subskrypcji i sprawdzić dostępność kompilacji już teraz. Jeśli żadna nie została jeszcze opublikowana, otworzy wersje zapoznawcze na GitHubie."
+            "value" : "Ta wersja Tidybar nie jest jeszcze kompatybilna z macOS %lld. Wsparcie jest wprowadzane poprzez kanał alfa, który zawiera przepisaną aplikację. Tidybar może zapisać Cię do subskrypcji i sprawdzić dostępność kompilacji już teraz. Jeśli żadna nie została jeszcze opublikowana, otworzy wersje zapoznawcze na GitHubie."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This version of Thaw is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Thaw can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
+            "value" : "This version of Tidybar is not yet compatible with macOS %lld. Support arrives through the alpha channel, which carries the rewritten app. Tidybar can subscribe you and check for a build now. If none has been published yet, it opens the preview builds on GitHub."
           }
         }
       }
     },
-    "This will overwrite the settings of %lld display with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost." : {
+    "This will overwrite the settings of %lld display with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost." : {
       "comment" : "A confirmation message that appears when the user is prompted to apply a global template. The argument is the number of displays that will be affected.",
       "extractionState" : "stale",
       "localizations" : {
@@ -55005,13 +55005,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "This will overwrite the settings of %lld display with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+                  "value" : "This will overwrite the settings of %lld display with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "This will overwrite the settings of %lld displays with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+                  "value" : "This will overwrite the settings of %lld displays with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
                 }
               }
             }
@@ -55131,13 +55131,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Hierdoor worden de instellingen van het %lld-scherm overschreven door de algemene sjabloon. Als de spatiëring van het actieve scherm verandert, start Thaw elke app met een menubalkitem opnieuw op. Door het opnieuw opstarten van apps kunnen niet-opgeslagen invoer, voortgang of tijdelijke app-statussen verloren gaan."
+                  "value" : "Hierdoor worden de instellingen van het %lld-scherm overschreven door de algemene sjabloon. Als de spatiëring van het actieve scherm verandert, start Tidybar elke app met een menubalkitem opnieuw op. Door het opnieuw opstarten van apps kunnen niet-opgeslagen invoer, voortgang of tijdelijke app-statussen verloren gaan."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Hierdoor worden de instellingen van %lld schermen overschreven door de algemene sjabloon. Als de spatiëring van het actieve scherm verandert, start Thaw elke app met een menubalkitem opnieuw op. Door het opnieuw opstarten van apps kunnen niet-opgeslagen invoer, voortgang of tijdelijke app-statussen verloren gaan."
+                  "value" : "Hierdoor worden de instellingen van %lld schermen overschreven door de algemene sjabloon. Als de spatiëring van het actieve scherm verandert, start Tidybar elke app met een menubalkitem opnieuw op. Door het opnieuw opstarten van apps kunnen niet-opgeslagen invoer, voortgang of tijdelijke app-statussen verloren gaan."
                 }
               }
             }
@@ -55311,7 +55311,7 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "這將以全域模板覆寫 %lld 個顯示器的設定。若作用中顯示器的間距改變，Thaw 將重新啟動每個具有選單列項目的應用程式。重新啟動應用程式可能導致尚未儲存的輸入、進度或暫存狀態遺失。"
+                  "value" : "這將以全域模板覆寫 %lld 個顯示器的設定。若作用中顯示器的間距改變，Tidybar 將重新啟動每個具有選單列項目的應用程式。重新啟動應用程式可能導致尚未儲存的輸入、進度或暫存狀態遺失。"
                 }
               }
             }
@@ -55319,120 +55319,120 @@
         }
       }
     },
-    "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost." : {
+    "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost." : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tímto přepíšete nastavení ^[%lld displejů](inflect: true) globální šablonou. Pokud se změní rozložení aktivního displeje, Thaw znovu spustí každou aplikaci s položkou v řádku nabídek. Při opětovném spuštění aplikací může dojít ke ztrátě neuložených dat, průběhu nebo dočasného stavu aplikace."
+            "value" : "Tímto přepíšete nastavení ^[%lld displejů](inflect: true) globální šablonou. Pokud se změní rozložení aktivního displeje, Tidybar znovu spustí každou aplikaci s položkou v řádku nabídek. Při opětovném spuštění aplikací může dojít ke ztrátě neuložených dat, průběhu nebo dočasného stavu aplikace."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hierdoor worden de instellingen van ^[%lld beeldschermen](verbuigen: waar) overschreven door de algemene sjabloon. Als de spatiëring van het actieve beeldscherm verandert, zal Thaw elke app met een menubalkitem opnieuw starten. Door het opnieuw starten van apps kunnen niet-opgeslagen invoer, voortgang of tijdelijke app-statussen verloren gaan."
+            "value" : "Hierdoor worden de instellingen van ^[%lld beeldschermen](verbuigen: waar) overschreven door de algemene sjabloon. Als de spatiëring van het actieve beeldscherm verandert, zal Tidybar elke app met een menubalkitem opnieuw starten. Door het opnieuw starten van apps kunnen niet-opgeslagen invoer, voortgang of tijdelijke app-statussen verloren gaan."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "To nadpisze ustawienia ^[%lld ekranów](inflect: true) globalnym szablonem. Jeśli zmienią się odstępy na aktywnym ekranie, Thaw ponownie uruchomi każdą aplikację posiadającą element na pasku menu. Ponowne uruchomienie aplikacji może spowodować utratę niezapisanych danych, postępów lub tymczasowego stanu aplikacji."
+            "value" : "To nadpisze ustawienia ^[%lld ekranów](inflect: true) globalnym szablonem. Jeśli zmienią się odstępy na aktywnym ekranie, Tidybar ponownie uruchomi każdą aplikację posiadającą element na pasku menu. Ponowne uruchomienie aplikacji może spowodować utratę niezapisanych danych, postępów lub tymczasowego stanu aplikacji."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bu işlem, ^[%lld ekranın](inflect: true) ayarlarının üzerine genel şablonu yazacaktır. Etkin ekranın aralık ayarları değişirse Thaw, menü çubuğu ögesine sahip her uygulamayı yeniden başlatacaktır. Uygulamaları yeniden başlatmak; kaydedilmemiş ayarların, ilerlemenin veya geçici uygulama tercihlerinin kaybolmasına neden olabilir."
+            "value" : "Bu işlem, ^[%lld ekranın](inflect: true) ayarlarının üzerine genel şablonu yazacaktır. Etkin ekranın aralık ayarları değişirse Tidybar, menü çubuğu ögesine sahip her uygulamayı yeniden başlatacaktır. Uygulamaları yeniden başlatmak; kaydedilmemiş ayarların, ilerlemenin veya geçici uygulama tercihlerinin kaybolmasına neden olabilir."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Thaw will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "This will overwrite the settings of ^[%lld displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "这会用全局模版覆盖 %lld 个显示器的设置. 如果活动显示器的间距改变, Thaw 会重启所有菜单栏里的应用. 重启应用可能导致未保存的输入，进度，或应用状态丢失。"
+            "value" : "这会用全局模版覆盖 %lld 个显示器的设置. 如果活动显示器的间距改变, Tidybar 会重启所有菜单栏里的应用. 重启应用可能导致未保存的输入，进度，或应用状态丢失。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "這將以全域模板覆寫 %lld 個顯示器的設定。若作用中顯示器的間距改變，Thaw 將重新啟動每個具有選單列項目的應用程式。重新啟動應用程式可能導致尚未儲存的輸入、進度或暫存狀態遺失。"
+            "value" : "這將以全域模板覆寫 %lld 個顯示器的設定。若作用中顯示器的間距改變，Tidybar 將重新啟動每個具有選單列項目的應用程式。重新啟動應用程式可能導致尚未儲存的輸入、進度或暫存狀態遺失。"
           }
         }
       }
@@ -56871,19 +56871,19 @@
         }
       }
     },
-    "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Thaw adapts to whatever you're doing." : {
+    "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Tidybar adapts to whatever you're doing." : {
       "comment" : "Description of the hotkeys and automation onboarding slide.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spouštějte akce klávesami. Kombinujte časovače automatického skrytí a integraci s filtry režimů soustředění, Thaw s vámi vždy drží krok."
+            "value" : "Spouštějte akce klávesami. Kombinujte časovače automatického skrytí a integraci s filtry režimů soustředění, Tidybar s vámi vždy drží krok."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Löse beliebige Aktionen mit einem Tastendruck aus. Verbinde automatisches Verstecken und mit der Fokusfilter-Integration, so dass sich Thaw anpasst, an was immer Du tust. "
+            "value" : "Löse beliebige Aktionen mit einem Tastendruck aus. Verbinde automatisches Verstecken und mit der Fokusfilter-Integration, so dass sich Tidybar anpasst, an was immer Du tust. "
           }
         },
         "es" : {
@@ -56895,13 +56895,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Déclenchez n'importe quelle action d'une simple pression sur une touche. Combinez les minuteurs de masquage automatique et l'intégration du filtre Focus pour que Thaw s'adapte à toutes vos activités."
+            "value" : "Déclenchez n'importe quelle action d'une simple pression sur une touche. Combinez les minuteurs de masquage automatique et l'intégration du filtre Focus pour que Tidybar s'adapte à toutes vos activités."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Thaw adapts to whatever you're doing."
+            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Tidybar adapts to whatever you're doing."
           }
         },
         "id" : {
@@ -56913,61 +56913,61 @@
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Thaw adapts to whatever you're doing."
+            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Tidybar adapts to whatever you're doing."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Thaw adapts to whatever you're doing."
+            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Tidybar adapts to whatever you're doing."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Thaw adapts to whatever you're doing."
+            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Tidybar adapts to whatever you're doing."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Voer elke gewenste actie uit met een toetsaanslag. Combineer timers voor automatisch verbergen met de integratie van Focus Filter, zodat Thaw zich aanpast aan wat je op dat moment aan het doen bent."
+            "value" : "Voer elke gewenste actie uit met een toetsaanslag. Combineer timers voor automatisch verbergen met de integratie van Focus Filter, zodat Tidybar zich aanpast aan wat je op dat moment aan het doen bent."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wywołaj dowolną akcję naciśnięciem klawisza. Połącz timery automatycznego ukrywania z integracją z filtrami skupienia, aby Thaw dostosowywał się do tego, co akurat robisz."
+            "value" : "Wywołaj dowolną akcję naciśnięciem klawisza. Połącz timery automatycznego ukrywania z integracją z filtrami skupienia, aby Tidybar dostosowywał się do tego, co akurat robisz."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Thaw adapts to whatever you're doing."
+            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Tidybar adapts to whatever you're doing."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Запускай действия с помощью сочетаний клавиш. Комбинируй таймеры скрытия элементов и фильтры, чтобы Thaw отображал именно то, что нужно сейчас."
+            "value" : "Запускай действия с помощью сочетаний клавиш. Комбинируй таймеры скрытия элементов и фильтры, чтобы Tidybar отображал именно то, что нужно сейчас."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "กดคีย์ลัดเพื่อเรียกใช้การกระทำใดก็ได้ ผสมตัวจับเวลาซ่อนอัตโนมัติและการเชื่อม Focus Filter เพื่อให้ Thaw ปรับตัวตามสิ่งที่คุณทำอยู่"
+            "value" : "กดคีย์ลัดเพื่อเรียกใช้การกระทำใดก็ได้ ผสมตัวจับเวลาซ่อนอัตโนมัติและการเชื่อม Focus Filter เพื่อให้ Tidybar ปรับตัวตามสิ่งที่คุณทำอยู่"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tek bir tuş vuruşuyla herhangi bir eylemi tetikleyin. Thaw uygulamasının yaptığınız her şeye uyum sağlaması için otomatik yeniden gizleme zamanlayıcılarını ve Odak Filtresi entegrasyonunu birleştirin."
+            "value" : "Tek bir tuş vuruşuyla herhangi bir eylemi tetikleyin. Tidybar uygulamasının yaptığınız her şeye uyum sağlaması için otomatik yeniden gizleme zamanlayıcılarını ve Odak Filtresi entegrasyonunu birleştirin."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Thaw adapts to whatever you're doing."
+            "value" : "Trigger any action with a keystroke. Combine auto-rehide timers and Focus Filter integration so Tidybar adapts to whatever you're doing."
           }
         },
         "vi" : {
@@ -56979,13 +56979,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "通过快捷键触发任意操作。结合自动重新隐藏计时器和专注模式过滤器集成，让 Thaw 能根据你的当前操作自动调整。"
+            "value" : "通过快捷键触发任意操作。结合自动重新隐藏计时器和专注模式过滤器集成，让 Tidybar 能根据你的当前操作自动调整。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "用快速鍵觸發任何動作。結合自動重新隱藏計時器與專注模式過濾器整合，讓 Thaw 適應您正在進行的工作。"
+            "value" : "用快速鍵觸發任何動作。結合自動重新隱藏計時器與專注模式過濾器整合，讓 Tidybar 適應您正在進行的工作。"
           }
         }
       }
@@ -59249,120 +59249,120 @@
         }
       }
     },
-    "Use the Thaw Bar while items are overflowed" : {
+    "Use the Tidybar Bar while items are overflowed" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Použít lištu Thaw při přeplnění řádku nabídek"
+            "value" : "Použít lištu Tidybar při přeplnění řádku nabídek"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw-Leiste verwenden, wenn Einträge überlaufen"
+            "value" : "Tidybar-Leiste verwenden, wenn Einträge überlaufen"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usar Thaw Bar cuando los elementos se desbordan"
+            "value" : "Usar Tidybar Bar cuando los elementos se desbordan"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Utiliser Thaw Bar lorsque les éléments débordent"
+            "value" : "Utiliser Tidybar Bar lorsque les éléments débordent"
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw Sáv használata, ha az elemek túlcsordulnak"
+            "value" : "Tidybar Sáv használata, ha az elemek túlcsordulnak"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gunakan Bar Thaw saat item meluap"
+            "value" : "Gunakan Bar Tidybar saat item meluap"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usa Thaw Barra quando gli elementi traboccano"
+            "value" : "Usa Tidybar Barra quando gli elementi traboccano"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "項目があふれたときに Thaw バーを使用"
+            "value" : "項目があふれたときに Tidybar バーを使用"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "항목이 넘칠 때 Thaw 바 사용"
+            "value" : "항목이 넘칠 때 Tidybar 바 사용"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw Balk gebruiken wanneer items overlopen"
+            "value" : "Tidybar Balk gebruiken wanneer items overlopen"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Używaj Paska Thaw, gdy pozycje się nie mieszczą"
+            "value" : "Używaj Paska Tidybar, gdy pozycje się nie mieszczą"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usar a Barra Thaw quando os itens transbordarem"
+            "value" : "Usar a Barra Tidybar quando os itens transbordarem"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Использовать панель Thaw при переполнении"
+            "value" : "Использовать панель Tidybar при переполнении"
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ใช้แถบ Thaw เมื่อรายการล้น"
+            "value" : "ใช้แถบ Tidybar เมื่อรายการล้น"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ögeler taştığında Thaw Çubuğunu kullanın"
+            "value" : "Ögeler taştığında Tidybar Çubuğunu kullanın"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Використовувати панель Thaw при переповненні"
+            "value" : "Використовувати панель Tidybar при переповненні"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dùng Thanh Thaw khi các mục bị tràn"
+            "value" : "Dùng Thanh Tidybar khi các mục bị tràn"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "当项目溢出时，使用 Thaw Bar"
+            "value" : "当项目溢出时，使用 Tidybar Bar"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "項目溢出時使用 Thaw Bar"
+            "value" : "項目溢出時使用 Tidybar Bar"
           }
         }
       }
@@ -60200,49 +60200,49 @@
         }
       }
     },
-    "Welcome to Thaw" : {
+    "Welcome to Tidybar" : {
       "comment" : "Title of the welcome onboarding slide.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vítejte v Thaw"
+            "value" : "Vítejte v Tidybar"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Willkommen bei Thaw"
+            "value" : "Willkommen bei Tidybar"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bienvenido a Thaw"
+            "value" : "Bienvenido a Tidybar"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bienvenu sur Thaw"
+            "value" : "Bienvenu sur Tidybar"
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Üdvözöljük a Thaw-ban"
+            "value" : "Üdvözöljük a Tidybar-ban"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selamat Datang di Thaw"
+            "value" : "Selamat Datang di Tidybar"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Benvenuti in Thaw"
+            "value" : "Benvenuti in Tidybar"
           }
         },
         "ja" : {
@@ -60260,186 +60260,186 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Welkom bij Thaw"
+            "value" : "Welkom bij Tidybar"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Witamy w Thaw"
+            "value" : "Witamy w Tidybar"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bem-vindo ao Thaw"
+            "value" : "Bem-vindo ao Tidybar"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Добро пожаловать в Thaw"
+            "value" : "Добро пожаловать в Tidybar"
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ยินดีต้อนรับสู่ Thaw"
+            "value" : "ยินดีต้อนรับสู่ Tidybar"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Thaw uygulamasına hoş geldiniz"
+            "value" : "Tidybar uygulamasına hoş geldiniz"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ласкаво просимо до Thaw"
+            "value" : "Ласкаво просимо до Tidybar"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chào mừng đến với Thaw"
+            "value" : "Chào mừng đến với Tidybar"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "欢迎使用 Thaw"
+            "value" : "欢迎使用 Tidybar"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "歡迎使用 Thaw"
+            "value" : "歡迎使用 Tidybar"
           }
         }
       }
     },
-    "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost." : {
+    "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost." : {
       "comment" : "A warning that a display transition requiring a different menu bar spacing relaunches menu bar apps, which can lose unsaved state.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Když změna monitorů zapříčiní aktivaci jiného nastavení rozestupů, Thaw restartuje aplikace s položkami v řádku nabídek. Restartování aplikací může zapříčinit ztrátu neuložených dat, postupu nebo dočasného stavu."
+            "value" : "Když změna monitorů zapříčiní aktivaci jiného nastavení rozestupů, Tidybar restartuje aplikace s položkami v řádku nabídek. Restartování aplikací může zapříčinit ztrátu neuložených dat, postupu nebo dočasného stavu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wenn eine Bildschirmänderung Thaw zur Anwendung anderer Menüleisten-Abstände zwingt, startet Thaw Anwendungen mit Menüleisten-Einträgen neu. Der Neustart von Anwendungen kann zu ungespeicherten Eingaben führen, der Fortschritt oder Zustand von Anwendungen kann verloren gehen."
+            "value" : "Wenn eine Bildschirmänderung Tidybar zur Anwendung anderer Menüleisten-Abstände zwingt, startet Tidybar Anwendungen mit Menüleisten-Einträgen neu. Der Neustart von Anwendungen kann zu ungespeicherten Eingaben führen, der Fortschritt oder Zustand von Anwendungen kann verloren gehen."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cuando una transición de presentación requiere que Thaw aplique un espaciado de barra de menús distinto, Thaw reinicia apps con iconos en la barra de menús. Reiniciar apps puede causar que se pierda información, progreso o estado no guardado."
+            "value" : "Cuando una transición de presentación requiere que Tidybar aplique un espaciado de barra de menús distinto, Tidybar reinicia apps con iconos en la barra de menús. Reiniciar apps puede causar que se pierda información, progreso o estado no guardado."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lorsqu'une transition d'affichage nécessite que Thaw applique un espacement différent pour la barre de menus, Thaw relance les applications comportant des éléments dans la barre de menus. Le redémarrage des applications peut entraîner la perte des données non enregistrées, de la progression ou de l'état temporaire de l'application."
+            "value" : "Lorsqu'une transition d'affichage nécessite que Tidybar applique un espacement différent pour la barre de menus, Tidybar relance les applications comportant des éléments dans la barre de menus. Le redémarrage des applications peut entraîner la perte des données non enregistrées, de la progression ou de l'état temporaire de l'application."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Saat perpindahan layar mengharuskan Thaw menerapkan jarak bar menu yang berbeda, Thaw akan memulai ulang aplikasi yang memiliki item di bar menu. Tindakan ini dapat menyebabkan input yang belum disimpan, progres yang sedang berjalan atau status sementara aplikasi hilang."
+            "value" : "Saat perpindahan layar mengharuskan Tidybar menerapkan jarak bar menu yang berbeda, Tidybar akan memulai ulang aplikasi yang memiliki item di bar menu. Tindakan ini dapat menyebabkan input yang belum disimpan, progres yang sedang berjalan atau status sementara aplikasi hilang."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wanneer een schermovergang vereist dat Thaw een andere spatiëring voor de menubalk toepast, start Thaw apps met menubalkitems opnieuw op. Door het opnieuw opstarten van apps kunnen niet-opgeslagen invoer, voortgang of tijdelijke app-statussen verloren gaan."
+            "value" : "Wanneer een schermovergang vereist dat Tidybar een andere spatiëring voor de menubalk toepast, start Tidybar apps met menubalkitems opnieuw op. Door het opnieuw opstarten van apps kunnen niet-opgeslagen invoer, voortgang of tijdelijke app-statussen verloren gaan."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Jeśli zmiana wyświetlacza wymusza na programie Thaw zmianę odstępów na pasku menu, Thaw restartuje aplikacje posiadające tam swoje ikony. Restart aplikacji grozi utratą niezapisanych danych, postępów pracy lub tymczasowego stanu programu."
+            "value" : "Jeśli zmiana wyświetlacza wymusza na programie Tidybar zmianę odstępów na pasku menu, Tidybar restartuje aplikacje posiadające tam swoje ikony. Restart aplikacji grozi utratą niezapisanych danych, postępów pracy lub tymczasowego stanu programu."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "При изменении настроек разделителя Thaw перезапустит приложения, размещающие иконки в строке меню, что может привести к потере не сохраненного результата."
+            "value" : "При изменении настроек разделителя Tidybar перезапустит приложения, размещающие иконки в строке меню, что может привести к потере не сохраненного результата."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "เมื่อการเปลี่ยนแปลงจอแสดงผลต้องให้ Thaw ใช้ระยะห่างแถบเมนูที่แตกต่างออกไป Thaw จะรีสตาร์ทแอปที่มีรายการในแถบเมนู การรีสตาร์ทแอปอาจทำให้ข้อมูลที่ยังไม่ได้บันทึก ความคืบหน้า หรือสถานะชั่วคราวของแอปสูญหายได้"
+            "value" : "เมื่อการเปลี่ยนแปลงจอแสดงผลต้องให้ Tidybar ใช้ระยะห่างแถบเมนูที่แตกต่างออกไป Tidybar จะรีสตาร์ทแอปที่มีรายการในแถบเมนู การรีสตาร์ทแอปอาจทำให้ข้อมูลที่ยังไม่ได้บันทึก ความคืบหน้า หรือสถานะชั่วคราวของแอปสูญหายได้"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bir ekran geçişi Thaw uygulamasının farklı bir menü çubuğu aralığı uygulamasını gerektirdiğinde, Thaw menü çubuğu ögesine sahip uygulamaları yeniden başlatır. Uygulamaları yeniden başlatmak; kaydedilmemiş ayarların, ilerlemenin veya geçici uygulama tercihlerinin kaybolmasına neden olabilir."
+            "value" : "Bir ekran geçişi Tidybar uygulamasının farklı bir menü çubuğu aralığı uygulamasını gerektirdiğinde, Tidybar menü çubuğu ögesine sahip uygulamaları yeniden başlatır. Uygulamaları yeniden başlatmak; kaydedilmemiş ayarların, ilerlemenin veya geçici uygulama tercihlerinin kaybolmasına neden olabilir."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
+            "value" : "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Khi quá trình chuyển đổi hiển thị yêu cầu Thaw áp dụng khoảng cách thanh menu khác, Thaw sẽ khởi chạy lại các ứng dụng có mục trên thanh menu. Việc khởi chạy lại ứng dụng có thể khiến dữ liệu đầu vào, tiến trình hoặc trạng thái ứng dụng tạm thời chưa được lưu bị mất."
+            "value" : "Khi quá trình chuyển đổi hiển thị yêu cầu Tidybar áp dụng khoảng cách thanh menu khác, Tidybar sẽ khởi chạy lại các ứng dụng có mục trên thanh menu. Việc khởi chạy lại ứng dụng có thể khiến dữ liệu đầu vào, tiến trình hoặc trạng thái ứng dụng tạm thời chưa được lưu bị mất."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "当显示状态切换需要 Thaw 应用不同的菜单栏间距时，Thaw 会重新启动带有菜单栏项目的应用。重新启动应用可能会导致尚未保存的输入、进行中的进度或应用的临时状态丢失。"
+            "value" : "当显示状态切换需要 Tidybar 应用不同的菜单栏间距时，Tidybar 会重新启动带有菜单栏项目的应用。重新启动应用可能会导致尚未保存的输入、进行中的进度或应用的临时状态丢失。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "當顯示器切換需要 Thaw 套用不同的選單列間距時,Thaw 會重新啟動具有選單列項目的應用程式。重新啟動應用程式可能導致尚未儲存的輸入、進度或暫存狀態遺失。"
+            "value" : "當顯示器切換需要 Tidybar 套用不同的選單列間距時,Tidybar 會重新啟動具有選單列項目的應用程式。重新啟動應用程式可能導致尚未儲存的輸入、進度或暫存狀態遺失。"
           }
         }
       }
@@ -60563,121 +60563,121 @@
         }
       }
     },
-    "When an app sends a thaw:// URL to change settings, Thaw checks if that app is whitelisted." : {
-      "comment" : "A step in the process of how to use Thaw.",
+    "When an app sends a tidybar:// URL to change settings, Tidybar checks if that app is whitelisted." : {
+      "comment" : "A step in the process of how to use Tidybar.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Když aplikace odešle URL thaw:// za účelem změny nastavení, Thaw zkontroluje, zda je aplikace na seznamu povolených."
+            "value" : "Když aplikace odešle URL tidybar:// za účelem změny nastavení, Tidybar zkontroluje, zda je aplikace na seznamu povolených."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wenn eine Anwendung eine Einstellungsänderung über eine thaw:// URL schickt, überprüft Thaw ob die Anwendung auf der Whitelist steht."
+            "value" : "Wenn eine Anwendung eine Einstellungsänderung über eine tidybar:// URL schickt, überprüft Tidybar ob die Anwendung auf der Whitelist steht."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cuando una aplicación envía una URL thaw:// para cambiar la configuración, Thaw comprueba si esa aplicación está en whitelist."
+            "value" : "Cuando una aplicación envía una URL tidybar:// para cambiar la configuración, Tidybar comprueba si esa aplicación está en whitelist."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lorsqu'une application envoie une URL de type thaw:// pour modifier les paramètres, Thaw vérifie si cette application figure sur la liste blanche."
+            "value" : "Lorsqu'une application envoie une URL de type tidybar:// pour modifier les paramètres, Tidybar vérifie si cette application figure sur la liste blanche."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Amikor egy alkalmazás thaw:// URL-t küld a beállítások módosításához, a Thaw ellenőrzi, hogy az alkalmazás szerepel-e az engedélyezőlistán."
+            "value" : "Amikor egy alkalmazás tidybar:// URL-t küld a beállítások módosításához, a Tidybar ellenőrzi, hogy az alkalmazás szerepel-e az engedélyezőlistán."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Saat apilkasi mengubah pengaturan melalui thaw://URL, Thaw akan memeriksa apakah aplikasi tersebut ada dalam daftar izin."
+            "value" : "Saat apilkasi mengubah pengaturan melalui tidybar://URL, Tidybar akan memeriksa apakah aplikasi tersebut ada dalam daftar izin."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quanto un'applicazione invia un URL thaw:// per modificare le impostazioni, Thaw verifica se tale applicazione è nella whitelist."
+            "value" : "Quanto un'applicazione invia un URL tidybar:// per modificare le impostazioni, Tidybar verifica se tale applicazione è nella whitelist."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "アプリが thaw:// URL を使用して設定変更をリクエストすると、Thaw はそのアプリがホワイトリストに登録されているかを確認します。"
+            "value" : "アプリが tidybar:// URL を使用して設定変更をリクエストすると、Tidybar はそのアプリがホワイトリストに登録されているかを確認します。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "앱이 설정을 변경하기 위해 thaw:// URL을 전송하면, Thaw는 해당 앱이 화이트리스트에 있는지 확인합니다."
+            "value" : "앱이 설정을 변경하기 위해 tidybar:// URL을 전송하면, Thaw는 해당 앱이 화이트리스트에 있는지 확인합니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wanneer een app een thaw://-URL verstuurt om instellingen te wijzigen, controleert Thaw of die app op de witte lijst staat."
+            "value" : "Wanneer een app een tidybar://-URL verstuurt om instellingen te wijzigen, controleert Tidybar of die app op de witte lijst staat."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gdy aplikacja wysyła adres URL typu thaw:// w celu zmiany ustawień, Thaw sprawdza, czy ta aplikacja znajduje się na białej liście."
+            "value" : "Gdy aplikacja wysyła adres URL typu tidybar:// w celu zmiany ustawień, Tidybar sprawdza, czy ta aplikacja znajduje się na białej liście."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quando um aplicativo envia uma URL thaw:// para alterar as configurações, o Thaw verifica se esse aplicativo está na lista de aplicativos autorizados."
+            "value" : "Quando um aplicativo envia uma URL tidybar:// para alterar as configurações, o Tidybar verifica se esse aplicativo está na lista de aplicativos autorizados."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Когда приложение отправляет URL-адрес thaw:// для изменения настроек, Thaw проверяет, включено ли это приложение в белый список."
+            "value" : "Когда приложение отправляет URL-адрес tidybar:// для изменения настроек, Tidybar проверяет, включено ли это приложение в белый список."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "เมื่อแอปส่ง thaw:// URL เพื่อเปลี่ยนการตั้งค่า Thaw จะตรวจสอบว่าแอปนั้นอยู่ในรายการที่อนุญาตหรือไม่"
+            "value" : "เมื่อแอปส่ง tidybar:// URL เพื่อเปลี่ยนการตั้งค่า Tidybar จะตรวจสอบว่าแอปนั้นอยู่ในรายการที่อนุญาตหรือไม่"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bir uygulama ayarları değiştirmek için thaw:// bağlantısı gönderdiğinde, Thaw o uygulamanın güvenli listede olup olmadığını kontrol eder."
+            "value" : "Bir uygulama ayarları değiştirmek için tidybar:// bağlantısı gönderdiğinde, Tidybar o uygulamanın güvenli listede olup olmadığını kontrol eder."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "When an app sends a thaw:// URL to change settings, Thaw checks if that app is whitelisted."
+            "value" : "When an app sends a tidybar:// URL to change settings, Tidybar checks if that app is whitelisted."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Khi một ứng dụng gửi URL thaw:// để thay đổi cài đặt, Thaw sẽ kiểm tra xem ứng dụng đó có nằm trong danh sách trắng hay không."
+            "value" : "Khi một ứng dụng gửi URL tidybar:// để thay đổi cài đặt, Tidybar sẽ kiểm tra xem ứng dụng đó có nằm trong danh sách trắng hay không."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "当应用发送 thaw:// URL 来更改设置时，Thaw 会检查该应用是否在白名单中。"
+            "value" : "当应用发送 tidybar:// URL 来更改设置时，Tidybar 会检查该应用是否在白名单中。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "當應用程式透過 thaw:// URL 變更設定時，Thaw 會檢查該程式是否在白名單中。"
+            "value" : "當應用程式透過 tidybar:// URL 變更設定時，Tidybar 會檢查該程式是否在白名單中。"
           }
         }
       }
@@ -61402,121 +61402,121 @@
         }
       }
     },
-    "Writes detailed debug logs to a file for troubleshooting. Log files are saved to ~/Library/Logs/Thaw/. Disable when not needed to avoid unnecessary disk writes." : {
+    "Writes detailed debug logs to a file for troubleshooting. Log files are saved to ~/Library/Logs/Tidybar/. Disable when not needed to avoid unnecessary disk writes." : {
       "comment" : "A description of the diagnostic logging feature.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zaznamenává podrobné ladicí protokoly pro účely řešení problémů. Protokolové soubory se ukládají do složky ~/Library/Logs/Thaw/. Pokud to není nutné, funkci vypněte, ušetříte místo na disku."
+            "value" : "Zaznamenává podrobné ladicí protokoly pro účely řešení problémů. Protokolové soubory se ukládají do složky ~/Library/Logs/Tidybar/. Pokud to není nutné, funkci vypněte, ušetříte místo na disku."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Erstellt und speichert detaillierte Protokolldateien zur Fehlersuche unter ~/Library/Logs/Thaw/. Wenn nicht benötigt, Funktion deaktivieren, um unnötige Schreibvorgänge zu vermeiden."
+            "value" : "Erstellt und speichert detaillierte Protokolldateien zur Fehlersuche unter ~/Library/Logs/Tidybar/. Wenn nicht benötigt, Funktion deaktivieren, um unnötige Schreibvorgänge zu vermeiden."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Escribe logs de depuración detallados en un archivo para solucionar problemas. Los archivos se guardan en ~/Library/Logs/Thaw/. Deshabilita esta opción cuando no sea necesaria para evitar escrituras innecesarias en el disco."
+            "value" : "Escribe logs de depuración detallados en un archivo para solucionar problemas. Los archivos se guardan en ~/Library/Logs/Tidybar/. Deshabilita esta opción cuando no sea necesaria para evitar escrituras innecesarias en el disco."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Crée un rapport de débogage détaillé pour faciliter le dépannage. Les rapports sont enregistrés dans ~/Library/Logs/Thaw/. Désactivez cette option lorsqu'elle n'est pas nécessaire afin d'éviter des écritures disque inutiles."
+            "value" : "Crée un rapport de débogage détaillé pour faciliter le dépannage. Les rapports sont enregistrés dans ~/Library/Logs/Tidybar/. Désactivez cette option lorsqu'elle n'est pas nécessaire afin d'éviter des écritures disque inutiles."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Részletes hibakeresési naplókat ír fájlba a hibaelhárításhoz. A naplófájlok a ~/Library/Logs/Thaw/ könyvtárba kerülnek mentésre. Kapcsolja ki, ha nincs rá szükség, a felesleges lemezírások elkerülése érdekében."
+            "value" : "Részletes hibakeresési naplókat ír fájlba a hibaelhárításhoz. A naplófájlok a ~/Library/Logs/Tidybar/ könyvtárba kerülnek mentésre. Kapcsolja ki, ha nincs rá szükség, a felesleges lemezírások elkerülése érdekében."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Menulis log debug terperinci ke berkas untuk membantu pemecahan masalah. Berkas log disimpan di ~/Library/Logs/Thaw/. Nonaktifkan saat tidak dibutuhkan untuk menghindari penulisan disk yang tidak perlu."
+            "value" : "Menulis log debug terperinci ke berkas untuk membantu pemecahan masalah. Berkas log disimpan di ~/Library/Logs/Tidybar/. Nonaktifkan saat tidak dibutuhkan untuk menghindari penulisan disk yang tidak perlu."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scrive log di debug dettagliati in un file per la risoluzione dei problemi. I file di log vengono salvati in ~/Library/Logs/Thaw/. Disattivare quando non necessario per evitare scritture su disco non necessarie."
+            "value" : "Scrive log di debug dettagliati in un file per la risoluzione dei problemi. I file di log vengono salvati in ~/Library/Logs/Tidybar/. Disattivare quando non necessario per evitare scritture su disco non necessarie."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "トラブルシューティング用に詳細なデバッグログをファイルに書き込みます。ログファイルは ~/Library/Logs/Thaw/ に保存されます。不要な場合は無効にして、余計なディスク書き込みを避けてください。"
+            "value" : "トラブルシューティング用に詳細なデバッグログをファイルに書き込みます。ログファイルは ~/Library/Logs/Tidybar/ に保存されます。不要な場合は無効にして、余計なディスク書き込みを避けてください。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "문제 해결을 위해 자세한 디버그 로그를 파일에 기록합니다. 로그 파일은 ~/Library/Logs/Thaw/에 저장됩니다. 불필요한 디스크 쓰기를 방지하려면 필요하지 않을 때 비활성화하세요."
+            "value" : "문제 해결을 위해 자세한 디버그 로그를 파일에 기록합니다. 로그 파일은 ~/Library/Logs/Tidybar/에 저장됩니다. 불필요한 디스크 쓰기를 방지하려면 필요하지 않을 때 비활성화하세요."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schrijft gedetailleerde foutopsporingslogboeken naar een bestand voor probleemoplossing. Logbestanden worden opgeslagen in ~/Library/Logs/Thaw/. Schakel deze functie uit wanneer deze niet nodig is om onnodige schrijfbewerkingen op de schijf te voorkomen."
+            "value" : "Schrijft gedetailleerde foutopsporingslogboeken naar een bestand voor probleemoplossing. Logbestanden worden opgeslagen in ~/Library/Logs/Tidybar/. Schakel deze functie uit wanneer deze niet nodig is om onnodige schrijfbewerkingen op de schijf te voorkomen."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tworzy szczegółowe dzienniki zdarzeń ułatwiające diagnostykę błędów. Pliki te znajdziesz w katalogu ~/Library/Logs/Thaw/. Wyłącz tę funkcję, jeśli z niej nie korzystasz, by ograniczyć zużycie dysku."
+            "value" : "Tworzy szczegółowe dzienniki zdarzeń ułatwiające diagnostykę błędów. Pliki te znajdziesz w katalogu ~/Library/Logs/Tidybar/. Wyłącz tę funkcję, jeśli z niej nie korzystasz, by ograniczyć zużycie dysku."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grava logs detalhados de depuração em um arquivo para ajudar na solução de problemas. Os arquivos de log são salvos em ~/Biblioteca/Logs/Thaw/. Desative quando não for necessário para evitar gravações desnecessárias no disco."
+            "value" : "Grava logs detalhados de depuração em um arquivo para ajudar na solução de problemas. Os arquivos de log são salvos em ~/Biblioteca/Logs/Tidybar/. Desative quando não for necessário para evitar gravações desnecessárias no disco."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Записывает подробные журналы отладки в файл для устранения неполадок. Файлы журналов сохраняются в ~/Library/Logs/Thaw/. Отключите, если не нужно, чтобы избежать лишних записей на диск."
+            "value" : "Записывает подробные журналы отладки в файл для устранения неполадок. Файлы журналов сохраняются в ~/Library/Logs/Tidybar/. Отключите, если не нужно, чтобы избежать лишних записей на диск."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "บันทึกข้อมูลการแก้ไขข้อผิดพลาดอย่างละเอียดลงในไฟล์เพื่อใช้ในการแก้ไขปัญหา ไฟล์บันทึกจะถูกบันทึกไว้ที่ ~/Library/Logs/Thaw/. ให้ปิดใช้งานในส่วนนี้เมื่อไม่จำเป็น เพื่อหลีกเลี่ยงการเขียนข้อมูลลงดิสก์โดยไม่จำเป็น"
+            "value" : "บันทึกข้อมูลการแก้ไขข้อผิดพลาดอย่างละเอียดลงในไฟล์เพื่อใช้ในการแก้ไขปัญหา ไฟล์บันทึกจะถูกบันทึกไว้ที่ ~/Library/Logs/Tidybar/. ให้ปิดใช้งานในส่วนนี้เมื่อไม่จำเป็น เพื่อหลีกเลี่ยงการเขียนข้อมูลลงดิสก์โดยไม่จำเป็น"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sorun giderme için ayrıntılı hata ayıklama günlüklerini bir dosyaya yazar. Günlük dosyaları ~/Library/Logs/Thaw/ konumuna kaydedilir. Gereksiz disk yazmalarından kaçınmak için kullanılmadığında devre dışı bırakın."
+            "value" : "Sorun giderme için ayrıntılı hata ayıklama günlüklerini bir dosyaya yazar. Günlük dosyaları ~/Library/Logs/Tidybar/ konumuna kaydedilir. Gereksiz disk yazmalarından kaçınmak için kullanılmadığında devre dışı bırakın."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Записує детальні журнали налагодження у файл для розв'язання проблем. Файли журналів зберігаються в ~/Library/Logs/Thaw/. Вимикайте, коли це не потрібно, щоб уникнути зайвого запису на диск."
+            "value" : "Записує детальні журнали налагодження у файл для розв'язання проблем. Файли журналів зберігаються в ~/Library/Logs/Tidybar/. Вимикайте, коли це не потрібно, щоб уникнути зайвого запису на диск."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ghi nhật ký gỡ lỗi chi tiết vào một tệp để khắc phục sự cố. Các tệp nhật ký được lưu vào ~/Library/Logs/Thaw/. Tắt khi không cần thiết để tránh việc ghi đĩa không cần thiết."
+            "value" : "Ghi nhật ký gỡ lỗi chi tiết vào một tệp để khắc phục sự cố. Các tệp nhật ký được lưu vào ~/Library/Logs/Tidybar/. Tắt khi không cần thiết để tránh việc ghi đĩa không cần thiết."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "将详细的调试日志写入文件以便进行故障排除。日志文件保存在 ~/Library/Logs/Thaw/ 目录下。如果不需要此功能，请禁用它以避免不必要的磁盘写入。"
+            "value" : "将详细的调试日志写入文件以便进行故障排除。日志文件保存在 ~/Library/Logs/Tidybar/ 目录下。如果不需要此功能，请禁用它以避免不必要的磁盘写入。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "將詳細的除錯記錄寫入檔案以進行疑難排解。記錄檔儲存於 ~/Library/Logs/Thaw/。不需要時請停用，以避免不必要的磁碟寫入。"
+            "value" : "將詳細的除錯記錄寫入檔案以進行疑難排解。記錄檔儲存於 ~/Library/Logs/Tidybar/。不需要時請停用，以避免不必要的磁碟寫入。"
           }
         }
       }

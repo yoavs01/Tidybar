@@ -293,7 +293,7 @@ final class MissionControlDetector {
         window.hidesOnDeactivate = false
         window.isExcludedFromWindowsMenu = true
         // Specifically NOT .stationary or .transient to allow movement.
-        // .ignoresCycle and .fullScreenAuxiliary help hide the 'Thaw' label.
+        // .ignoresCycle and .fullScreenAuxiliary help hide the 'Tidybar' label.
         window.collectionBehavior = [.ignoresCycle, .fullScreenAuxiliary]
         // Low enough for Mission Control to arrange (both axes move).
         // Positioned at screen center so MC grid displaces it in both x and y.

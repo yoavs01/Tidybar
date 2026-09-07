@@ -98,7 +98,7 @@ extension DisplaySettingsManager {
 
     /// Default baseline for NSStatusItemSpacing and NSStatusItemSelectionPadding,
     /// kept in sync with MenuBarItemSpacingManager.Key.defaultValue. Used to
-    /// translate on-disk system spacing into Thaw's relative offset model.
+    /// translate on-disk system spacing into Tidybar's relative offset model.
     private static let systemSpacingDefault = 16
 
     /// Reads the current system value for NSStatusItemSpacing from the byHost
@@ -114,7 +114,7 @@ extension DisplaySettingsManager {
         ) as? Int
     }
 
-    /// When the user has manually set NSStatusItemSpacing outside of Thaw
+    /// When the user has manually set NSStatusItemSpacing outside of Tidybar
     /// (e.g. via a defaults write in Terminal), seed an entry for each
     /// connected display whose itemSpacingOffset corresponds to that on-disk
     /// value. Without this, applyActiveDisplaySpacing on first launch reads
@@ -124,7 +124,7 @@ extension DisplaySettingsManager {
     /// persistence sink is not yet wired at loadInitialState time; without
     /// the explicit save, subsequent launches would re-seed on every start
     /// instead of remembering the adopted value. The padding key is not
-    /// consulted because Thaw drives both keys from a single offset; users
+    /// consulted because Tidybar drives both keys from a single offset; users
     /// whose padding diverges from spacing will see one normalising relaunch
     /// on first launch but no recurring waves thereafter.
     ///
@@ -314,7 +314,7 @@ extension DisplaySettingsManager {
         NSApp.activate(ignoringOtherApps: true)
         let alert = NSAlert()
         alert.messageText = String(localized: "Apply menu bar spacing change?")
-        alert.informativeText = String(localized: "When a display transition requires Thaw to apply a different menu bar spacing, Thaw relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost.")
+        alert.informativeText = String(localized: "When a display transition requires Tidybar to apply a different menu bar spacing, Tidybar relaunches apps with menu bar items. Relaunching apps may cause unsaved input, progress, or transient app state to be lost.")
         alert.addButton(withTitle: String(localized: "Apply"))
         alert.addButton(withTitle: String(localized: "Cancel"))
         alert.showsSuppressionButton = true
