@@ -348,7 +348,7 @@ final class MenuBarItemImageCache: @unchecked Sendable {
     /// Path to the cache file in Caches directory.
     private static var cacheFileURL: URL? {
         let cacheDir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
-        return cacheDir?.appendingPathComponent("com.stonerl.thaw/imageCache.json")
+        return cacheDir?.appendingPathComponent("com.yoavsror.tidybar/imageCache.json")
     }
 
     /// Maximum age of disk cache before it's considered stale (30 seconds).
