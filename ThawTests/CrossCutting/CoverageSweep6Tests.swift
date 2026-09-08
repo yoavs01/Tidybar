@@ -160,9 +160,14 @@ struct CoverageSweep6Tests {
 
     @Test("Every DiagLog level forwards without diagnostic logging enabled")
     func diagLogLevelsForwardWhenDisabled() {
-        // DiagnosticLogger.shared is disabled in tests, so these hit the
-        // os.Logger passthrough and the shared logger's disabled check —
-        // no files are opened or written.
+        // The test host shares the app's real preferences domain, so the
+        // shared logger may arrive enabled when the user has diagnostic
+        // logging on (2026-09-07). Force it off for the duration so these hit
+        // the os.Logger passthrough and the disabled check — no files are
+        // opened or written — and restore the user's state afterwards.
+        let wasEnabled = DiagnosticLogger.shared.isEnabled
+        DiagnosticLogger.shared.isEnabled = false
+        defer { DiagnosticLogger.shared.isEnabled = wasEnabled }
         let log = DiagLog(category: "CoverageSweep6")
         log.debug("debug \(42)")
         log.info("info")
