@@ -3,6 +3,13 @@
 > **Tidybar fork.** Entries from `## [1.0.0]` downward are the fork's own; everything below the
 > fork marker is inherited Thaw history and kept verbatim.
 
+## [1.1.3] - 2026-09-07
+
+### Fixed
+- The "start with every item visible" pass is now strictly one-shot (a flag set before the moves,
+  cleared only by `--reset-layout`), so relaunching before the first arrangement is saved cannot
+  un-stow icons.
+
 ## [1.1.2] - 2026-09-07
 
 ### Changed

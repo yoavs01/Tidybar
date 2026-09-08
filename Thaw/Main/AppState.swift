@@ -205,7 +205,12 @@ final class AppState {
     /// hidden. Runs once — the reset persists an arrangement, after which
     /// this is a no-op on every later launch.
     private func applyInitialVisibleLayoutIfNeeded() async {
-        guard itemManager.savedSectionOrder.isEmpty else { return }
+        guard itemManager.savedSectionOrder.isEmpty,
+              !Defaults.bool(forKey: .hasAppliedInitialVisibleLayout)
+        else { return }
+        // One shot per fresh bar: set before the moves so a relaunch during
+        // settling cannot re-run the reset over items the user just stowed.
+        Defaults.set(true, forKey: .hasAppliedInitialVisibleLayout)
         diagLog.info("No saved menu bar arrangement; starting with every item visible")
         // Let the freshly created control items land in the bar first.
         try? await Task.sleep(for: .milliseconds(750))

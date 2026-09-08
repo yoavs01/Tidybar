@@ -42,6 +42,7 @@ enum LayoutResetCommand {
     static let layoutDefaultsKeys = MenuBarItemManager.LayoutStateKey.all + [
         Defaults.Key.newItemsSection.rawValue,
         Defaults.Key.newItemsPlacementData.rawValue,
+        Defaults.Key.hasAppliedInitialVisibleLayout.rawValue,
         Defaults.Key.staleIdentifierMissCounts.rawValue,
         Defaults.Key.staleIdentifierMissCountsBuild.rawValue,
     ]

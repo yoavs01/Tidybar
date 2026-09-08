@@ -353,6 +353,8 @@ nonisolated extension Defaults {
         // MARK: First Launch
 
         case hasCompletedFirstLaunch
+        /// Tidybar: the one-shot "start with every item visible" pass has run for this bar.
+        case hasAppliedInitialVisibleLayout = "HasAppliedInitialVisibleLayout"
 
         // MARK: Updates Consent
 
