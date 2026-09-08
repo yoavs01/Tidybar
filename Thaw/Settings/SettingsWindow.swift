@@ -16,21 +16,6 @@ struct SettingsWindow: Scene {
     var body: some Scene {
         IceWindow(id: .settings) {
             SettingsView(appState: appState, navigationState: appState.navigationState)
-                .sheet(isPresented: $appState.isUpdateConsentPresented) {
-                    UpdateConsentSheet { autoDownload in
-                        appState.isUpdateConsentPresented = false
-                        Defaults.set(true, forKey: .hasSeenUpdateConsent)
-                        appState.updatesManager.automaticallyChecksForUpdates = true
-                        appState.updatesManager.automaticallyDownloadsUpdates = autoDownload
-                        appState.startUpdaterIfNeeded()
-                        appState.presentOnboardingIfNeeded()
-                    } onDisable: {
-                        appState.isUpdateConsentPresented = false
-                        Defaults.set(true, forKey: .hasSeenUpdateConsent)
-                        appState.updatesManager.automaticallyChecksForUpdates = false
-                        appState.presentOnboardingIfNeeded()
-                    }
-                }
                 .sheet(isPresented: $appState.isOnboardingPresented) {
                     ThawOnboardingView {
                         Defaults.set(true, forKey: .hasSeenOnboarding)

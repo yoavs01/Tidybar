@@ -186,7 +186,7 @@ nonisolated enum SearchIndex {
         ),
         SearchEntry(
             id: "pane.displays",
-            titleKey: "Displays",
+            titleKey: "Tray",
             titleText: "Displays",
             descriptionText: nil,
             pane: .displays,
@@ -314,7 +314,7 @@ nonisolated enum SearchIndex {
             id: "general.iceBarLocationOnHotkey",
             titleKey: "Show at mouse pointer on hotkey",
             titleText: "Show at mouse pointer on hotkey",
-            descriptionText: "Always show the \(Constants.displayName) Bar at the mouse pointer's location when it is shown using a hotkey.",
+            descriptionText: "Always show the Tray at the mouse pointer's location when it is shown using a hotkey.",
             pane: .displays,
             sectionKey: "Global",
             sectionText: "Global",
@@ -622,8 +622,8 @@ nonisolated enum SearchIndex {
     private static let displayEntries: [SearchEntry] = [
         SearchEntry(
             id: "displays.useIceBar",
-            titleKey: "Use \(Constants.displayName) Bar",
-            titleText: "Use \(Constants.displayName) Bar",
+            titleKey: "Use the Tray",
+            titleText: "Use the Tray",
             descriptionText: "Show hidden menu bar items in a separate bar below the menu bar.",
             pane: .displays,
             sectionKey: "Global",
@@ -635,7 +635,7 @@ nonisolated enum SearchIndex {
             id: "displays.useThawBarForAlwaysHidden",
             titleKey: "Always-hidden items only",
             titleText: "Always-hidden items only",
-            descriptionText: "Show always-hidden menu bar items in the \(Constants.displayName) Bar, while hidden items keep expanding in the menu bar.",
+            descriptionText: "Show always-hidden menu bar items in the Tray, while hidden items keep expanding in the menu bar.",
             pane: .displays,
             sectionKey: "Global",
             sectionText: "Global",
@@ -656,8 +656,8 @@ nonisolated enum SearchIndex {
         SearchEntry(
             id: "displays.iceBarLocation",
             titleKey: "Location",
-            titleText: "\(Constants.displayName) Bar location",
-            descriptionText: "The \(Constants.displayName) Bar's location changes based on context.",
+            titleText: "Tray location",
+            descriptionText: "The Tray's location changes based on context.",
             pane: .displays,
             sectionKey: "Global",
             sectionText: "Global",
@@ -667,7 +667,7 @@ nonisolated enum SearchIndex {
         SearchEntry(
             id: "displays.iceBarLayout",
             titleKey: "Arrangement",
-            titleText: "\(Constants.displayName) Bar arrangement",
+            titleText: "Tray arrangement",
             descriptionText: "Items are arranged in a single horizontal row, stacked vertically, or in a grid.",
             pane: .displays,
             sectionKey: "Global",
@@ -750,8 +750,8 @@ nonisolated enum SearchIndex {
         ),
         SearchEntry(
             id: "hotkeys.enableIceBar",
-            titleKey: "Enable the \(Constants.displayName) Bar",
-            titleText: "Enable the \(Constants.displayName) Bar",
+            titleKey: "Enable the Tray",
+            titleText: "Enable the Tray",
             descriptionText: nil,
             pane: .hotkeys,
             sectionKey: "Other",

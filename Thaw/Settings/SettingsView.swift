@@ -132,7 +132,7 @@ struct SettingsView: View {
         case .automation:
             AutomationSettingsPane()
         case .about:
-            AboutSettingsPane(updatesManager: appState.updatesManager)
+            AboutSettingsPane()
         }
     }
 

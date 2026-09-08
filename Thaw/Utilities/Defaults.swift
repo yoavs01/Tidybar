@@ -176,7 +176,7 @@ nonisolated extension Defaults {
 
         static let enableAlwaysHiddenSection = false
         static let showAllSectionsOnUserDrag = true
-        static let newItemsSection = "hidden"
+        static let newItemsSection = "visible"
         static let newItemsPlacementData: Data? = nil
         static let sectionDividerStyle: SectionDividerStyle = .noDivider
         static let hideApplicationMenus = true

@@ -48,7 +48,7 @@ final class IceBarPanel: NSPanel {
             backing: .buffered,
             defer: false
         )
-        self.title = String(localized: "\(Constants.displayName) Bar")
+        self.title = String(localized: "Tray")
         self.titlebarAppearsTransparent = true
         self.isMovableByWindowBackground = true
         self.allowsToolTipsWhenApplicationIsInactive = true
@@ -532,7 +532,7 @@ private struct IceBarContentView: View {
     private var content: some View {
         if !ScreenCapture.cachedCheckPermissions() {
             HStack {
-                Text("The \(Constants.displayName) Bar requires screen recording permissions.")
+                Text("The Tray requires screen recording permissions.")
 
                 Button {
                     openPermissionsSettings()

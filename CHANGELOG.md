@@ -3,6 +3,22 @@
 > **Tidybar fork.** Entries from `## [1.0.0]` downward are the fork's own; everything below the
 > fork marker is inherited Thaw history and kept verbatim.
 
+## [1.1.0] - 2026-09-07
+
+### Changed
+- New menu bar icons land in the **Visible** section (Thaw put them in Hidden).
+- **One configuration for every display.** Per-display settings, the global template and the
+  Apply-to-All broadcast are gone; the "Displays" settings pane is now "Tray" and carries the Tray
+  controls plus a single spacing row.
+- The overflow panel is called the **Tray** (was "Tidybar Bar").
+- Two sections by default stays the default: the Always-Hidden section is off unless turned on.
+
+### Removed
+- **Sparkle**, entirely: the framework, the Updates settings, the first-run update-consent sheet, the
+  "Check for Updates…" menu item, update-check notification routing, and the macOS-compatibility
+  alert's alpha-channel offer (it now just opens the repository).
+- The "Support…" menu item.
+
 ## [1.0.0] - 2026-09-07
 
 ### Changed

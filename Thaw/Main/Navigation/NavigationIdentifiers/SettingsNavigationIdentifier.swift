@@ -23,7 +23,7 @@ nonisolated enum SettingsNavigationIdentifier: String, NavigationIdentifier {
     var localized: LocalizedStringKey {
         switch self {
         case .general: "General"
-        case .displays: "Displays"
+        case .displays: "Tray"
         case .menuBarLayout: "Layout"
         case .menuBarAppearance: "Appearance"
         case .hotkeys: "Hotkeys"

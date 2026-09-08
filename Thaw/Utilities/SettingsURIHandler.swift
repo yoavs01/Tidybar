@@ -269,7 +269,7 @@ enum SettingsURIHandler {
             • Read current settings and configurations
             • Turn features and options on or off
             • Adjust timing values (delays, intervals, timers)
-            • Change how \(Constants.displayName) Bar behaves
+            • Change how Tray behaves
             • Customize settings for each display
 
             This permission stays active until removed in \(Constants.displayName)'s Automation settings.

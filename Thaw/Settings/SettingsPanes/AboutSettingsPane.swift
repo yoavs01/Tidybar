@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct AboutSettingsPane: View {
-    @Bindable var updatesManager: UpdatesManager
     @Environment(\.openURL) private var openURL
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var colorScheme
@@ -25,18 +24,12 @@ struct AboutSettingsPane: View {
 
     var body: some View {
         // Structured grouped form (macOS-26 organization, 27 design): the app
-        // identity sits in an unbordered header, followed by an Updates card.
+        // identity sits in an unbordered header.
         IceForm {
             IceSection(isBordered: false) {
                 appIconAndCopyrightContent
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical, 8)
-            }
-            IceSection("Updates") {
-                automaticallyCheckForUpdates
-                automaticallyDownloadUpdates
-                updateChannel
-                checkForUpdates
             }
         }
         .onChange(of: colorScheme, initial: true) {
@@ -171,55 +164,8 @@ struct AboutSettingsPane: View {
         NSWorkspace.shared.open(url)
     }
 
-    private var automaticallyCheckForUpdates: some View {
-        Toggle(
-            "Automatically check for updates",
-            isOn: $updatesManager.automaticallyChecksForUpdates
-        )
-    }
 
-    private var automaticallyDownloadUpdates: some View {
-        Toggle(
-            "Automatically download updates",
-            isOn: $updatesManager.automaticallyDownloadsUpdates
-        )
-    }
 
-    private var updateChannel: some View {
-        HStack {
-            Text("Update channel")
-            Spacer()
-            Picker("Update channel", selection: $updatesManager.updateChannel) {
-                ForEach(UpdateChannel.availableCases(on: ProcessInfo.processInfo.operatingSystemVersion)) { channel in
-                    Text(channel.localized).tag(channel)
-                }
-            }
-            .pickerStyle(.segmented)
-            .labelsHidden()
-            updateButton
-        }
-    }
 
-    private var updateButton: some View {
-        Button {
-            updatesManager.checkForUpdates()
-        } label: {
-            Label("Update", systemImage: "arrow.clockwise")
-        }
-        .buttonStyle(.settingsGlass)
-        .disabled(!updatesManager.canCheckForUpdates)
-        .accessibilityLabel("Check for Updates")
-    }
 
-    private var checkForUpdates: some View {
-        HStack {
-            Spacer()
-
-            Text("Last checked: \(updatesManager.lastUpdateCheckDate?.formatted(date: .abbreviated, time: .standard) ?? String(localized: "Never"))")
-                .font(.caption)
-                .monospacedDigit()
-                .foregroundStyle(.secondary)
-                .opacity(updatesManager.lastUpdateCheckDate == nil ? 0.75 : 1.0)
-        }
-    }
 }

@@ -92,7 +92,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             }
         #endif
 
-        MacOSCompatibilityWarning.showIfNeeded(updatesManager: appState.updatesManager)
+        MacOSCompatibilityWarning.showIfNeeded()
 
         // Warn if another menu bar manager is running.
         ConflictingAppDetector.showWarningIfNeeded()

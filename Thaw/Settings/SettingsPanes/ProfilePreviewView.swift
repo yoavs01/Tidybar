@@ -194,8 +194,8 @@ struct ProfilePreviewView: View {
         )
         parts.append(
             profile.generalSettings.useIceBar
-                ? String(localized: "\(Constants.displayName) Bar on")
-                : String(localized: "\(Constants.displayName) Bar off")
+                ? String(localized: "Tray on")
+                : String(localized: "Tray off")
         )
         if profile.generalSettings.showOnHover {
             parts.append(String(localized: "Show on hover"))

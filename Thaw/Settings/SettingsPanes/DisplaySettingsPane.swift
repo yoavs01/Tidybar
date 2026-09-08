@@ -9,11 +9,6 @@
 import SwiftUI
 
 struct DisplaySettingsPane: View {
-    /// Sentinel key for the Global section's draft spacing slider, kept
-    /// distinct from real display UUIDs so the Global section can share the
-    /// per-display draftSpacing dictionary without colliding.
-    private static let globalDraftKey = "__global__"
-
     @Environment(AppState.self) var appState: AppState
     @Bindable var displaySettings: DisplaySettingsManager
 
@@ -26,10 +21,6 @@ struct DisplaySettingsPane: View {
     /// Set by requestSpacingApply when a prompt is required; the alert binds
     /// to its non-nil state. Nil when no alert is showing.
     @State private var pendingSpacingApply: PendingSpacingApply?
-    /// Pending global broadcast held while the global confirmation alert
-    /// is shown. Set by requestGlobalApply; the alert binds to its
-    /// non-nil state. Nil when no alert is showing.
-    @State private var pendingGlobalApply: PendingGlobalApply?
     @State private var errorMessage: String?
     @State private var showingError = false
 
@@ -43,23 +34,18 @@ struct DisplaySettingsPane: View {
         let activeProfileName: String?
     }
 
-    /// A global-apply request awaiting user confirmation.
-    private struct PendingGlobalApply: Equatable {
-        let displayCount: Int
-        let activeProfileID: UUID?
-        let activeProfileName: String?
-    }
-
     var body: some View {
         IceForm {
-            IceSection("Global") {
+            IceSection("Tray") {
                 globalSection()
+            }
+            if let display = spacingDisplay {
+                IceSection("Menu bar item spacing") {
+                    spacingRow(for: display)
+                }
             }
             IceSection {
                 confirmSpacingRelaunchControls
-            }
-            ForEach(displaySettings.allDisplays()) { display in
-                displaySection(for: display)
             }
         }
         .alert(
@@ -76,20 +62,6 @@ struct DisplaySettingsPane: View {
             actions: { pending in spacingConfirmationButtons(for: pending) },
             message: { pending in Text(spacingConfirmationMessage(for: pending)) }
         )
-        .alert(
-            String(localized: "Apply global settings to all displays?"),
-            isPresented: Binding(
-                get: { pendingGlobalApply != nil },
-                set: {
-                    if !$0 {
-                        pendingGlobalApply = nil
-                    }
-                }
-            ),
-            presenting: pendingGlobalApply,
-            actions: { pending in globalConfirmationButtons(for: pending) },
-            message: { pending in Text(globalConfirmationMessage(for: pending)) }
-        )
         .alert("Error", isPresented: $showingError) {
             Button("OK") { errorMessage = nil }
         } message: {
@@ -97,6 +69,19 @@ struct DisplaySettingsPane: View {
                 Text(errorMessage)
             }
         }
+    }
+
+    /// The display whose row hosts the spacing slider. Tidybar keeps one
+    /// configuration for every display, so this only decides which display
+    /// name the confirmation mentions: the one with the active menu bar,
+    /// else the first connected one.
+    private var spacingDisplay: DisplaySettingsManager.DisplayInfo? {
+        let displays = displaySettings.connectedDisplays()
+        if let active = displaySettings.activeMenuBarDisplayUUID,
+           let match = displays.first(where: { $0.id == active }) {
+            return match
+        }
+        return displays.first ?? displaySettings.allDisplays().first
     }
 
     @ViewBuilder
@@ -123,103 +108,8 @@ struct DisplaySettingsPane: View {
         }
     }
 
-    private func displaySection(for display: DisplaySettingsManager.DisplayInfo) -> some View {
-        IceSection {
-            displayHeader(for: display)
-        } content: {
-            displayRow(for: display)
-        }
-    }
 
-    private func displayHeader(for display: DisplaySettingsManager.DisplayInfo) -> some View {
-        HStack(spacing: 6) {
-            Text(display.name)
-            if display.hasNotch {
-                Text("Notch")
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(.quaternary)
-                    .clipShape(Capsule())
-            }
-            if !display.isConnected {
-                Text("Disconnected")
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(.quaternary)
-                    .clipShape(Capsule())
-                    .foregroundStyle(.secondary)
-            }
-        }
-    }
 
-    @ViewBuilder
-    private func displayRow(for display: DisplaySettingsManager.DisplayInfo) -> some View {
-        let useIceBar = Binding<Bool>(
-            get: { displaySettings.configuration(forUUID: display.id).useIceBar },
-            set: { newValue in
-                displaySettings.updateConfiguration(forDisplayUUID: display.id) { config in
-                    config.withUseIceBar(newValue)
-                }
-            }
-        )
-
-        let useThawBarForAlwaysHidden = Binding<Bool>(
-            get: { displaySettings.configuration(forUUID: display.id).useThawBarForAlwaysHidden },
-            set: { newValue in
-                displaySettings.updateConfiguration(forDisplayUUID: display.id) { config in
-                    config.withUseThawBarForAlwaysHidden(newValue)
-                }
-            }
-        )
-
-        let location = Binding<IceBarLocation>(
-            get: { displaySettings.configuration(forUUID: display.id).iceBarLocation },
-            set: { newValue in
-                displaySettings.updateConfiguration(forDisplayUUID: display.id) { config in
-                    config.withIceBarLocation(newValue)
-                }
-            }
-        )
-
-        let alwaysShowHiddenItems = Binding<Bool>(
-            get: { displaySettings.configuration(forUUID: display.id).alwaysShowHiddenItems },
-            set: { newValue in
-                displaySettings.updateConfiguration(forDisplayUUID: display.id) { config in
-                    config.withAlwaysShowHiddenItems(newValue)
-                }
-            }
-        )
-
-        let layout = Binding<IceBarLayout>(
-            get: { displaySettings.configuration(forUUID: display.id).iceBarLayout },
-            set: { newValue in
-                displaySettings.updateConfiguration(forDisplayUUID: display.id) { config in
-                    config.withIceBarLayout(newValue)
-                }
-            }
-        )
-
-        let gridColumns = Binding<Int>(
-            get: { displaySettings.configuration(forUUID: display.id).gridColumns },
-            set: { newValue in
-                displaySettings.updateConfiguration(forDisplayUUID: display.id) { config in
-                    config.withGridColumns(newValue)
-                }
-            }
-        )
-
-        IceBarConfigurationControls(
-            alwaysShowHiddenItems: alwaysShowHiddenItems,
-            useIceBar: useIceBar,
-            useThawBarForAlwaysHidden: useThawBarForAlwaysHidden,
-            location: location,
-            layout: layout,
-            gridColumns: gridColumns,
-            context: .display
-        )
-
-        spacingRow(for: display)
-    }
 
     @ViewBuilder
     private func spacingRow(for display: DisplaySettingsManager.DisplayInfo) -> some View {
@@ -450,10 +340,8 @@ struct DisplaySettingsPane: View {
 
     // MARK: - Global Section
 
-    /// Renders the Global controls at the top of the Displays pane. Edits
-    /// here are staged on displaySettings.globalConfiguration only; the
-    /// Apply button broadcasts the template to every known display via
-    /// requestGlobalApply.
+    /// The Tray controls. Tidybar keeps one configuration for every display,
+    /// so edits here apply everywhere immediately.
     @ViewBuilder
     private func globalSection() -> some View {
         let useIceBar = Binding<Bool>(
@@ -500,204 +388,18 @@ struct DisplaySettingsPane: View {
                     set: { appState.settings.general.iceBarLocationOnHotkey = $0 }
                 )
             )
-            .annotation("Always show the \(Constants.displayName) Bar at the mouse pointer's location when it is shown using a hotkey.")
-        }
-
-        globalSpacingRow()
-
-        LabeledContent {
-            Button("Apply to All Displays") {
-                requestGlobalApply()
-            }
-            .disabled(!canApplyGlobal)
-        } label: {
-            Text("Broadcast")
-        }
-        .annotation("Apply the global template above to every connected and previously-seen display. Newly connected displays are also seeded from this template.")
-    }
-
-    /// Spacing slider for the Global template. Uses a sentinel draft key so
-    /// it can share the per-display draftSpacing dictionary.
-    @ViewBuilder
-    private func globalSpacingRow() -> some View {
-        let savedOffset = displaySettings.globalConfiguration.itemSpacingOffset
-        let draft = draftSpacing[Self.globalDraftKey] ?? CGFloat(savedOffset)
-
-        let sliderBinding = Binding<CGFloat>(
-            get: { draftSpacing[Self.globalDraftKey] ?? CGFloat(savedOffset) },
-            set: { newValue in
-                draftSpacing[Self.globalDraftKey] = newValue
-                // Stage the draft into the global template immediately so
-                // the Apply-to-All button broadcasts the spacing along with
-                // the other controls. The relaunch wave only fires when
-                // Apply-to-All writes to the per-display configurations,
-                // so this assignment is cheap.
-                displaySettings.globalConfiguration = displaySettings.globalConfiguration
-                    .withItemSpacingOffset(Double(newValue))
-            }
-        )
-
-        let labelKey: LocalizedStringKey = switch draft {
-        case -16: "none"
-        case 0: "default"
-        case 16: "max"
-        default: LocalizedStringKey(draft.formatted())
-        }
-
-        LabeledContent {
-            IceSlider(
-                labelKey,
-                value: sliderBinding,
-                in: -16 ... 16,
-                step: 2
-            )
-        } label: {
-            Text("Menu bar item spacing")
-        }
-        .annotation(
-            "Applying briefly relaunches apps with menu bar items so they pick up the new spacing."
-        )
-        .onChange(of: savedOffset) { _, newValue in
-            // Sync draft when the saved value changes externally
-            // (profile load, reset).
-            draftSpacing[Self.globalDraftKey] = CGFloat(newValue)
+            .annotation("Always show the Tray at the mouse pointer's location when it is shown using a hotkey.")
         }
     }
 
-    /// Returns true when the Apply-to-All button should be enabled. The
-    /// button activates when at least one known display has a configuration
-    /// that differs from the current global template; otherwise the
-    /// broadcast would be a no-op.
-    private var canApplyGlobal: Bool {
-        let target = displaySettings.globalConfiguration
-        let displays = displaySettings.allDisplays()
-        guard !displays.isEmpty else { return false }
-        return displays.contains { display in
-            displaySettings.configuration(forUUID: display.id) != target
-        }
-    }
 
-    // MARK: - Global Apply Confirmation
 
-    /// Routes the Apply-to-All button through the confirmation alert when a
-    /// profile is active. When no profile is active, the broadcast still
-    /// asks for confirmation because it overwrites every per-display entry,
-    /// which is destructive.
-    private func requestGlobalApply() {
-        let displayCount = displaySettings.allDisplays().count
-        let activeID = appState.profileManager.activeProfileID
 
-        // Confirmations disabled: broadcast directly, saving to the chosen
-        // profile target instead of staging the alert.
-        if !displaySettings.confirmSpacingRelaunch {
-            commitGlobalApplyWithoutConfirmation(activeProfileID: activeID)
-            return
-        }
 
-        let activeName = activeID.flatMap { id in
-            appState.profileManager.profiles.first(where: { $0.id == id })?.name
-        }
-        pendingGlobalApply = PendingGlobalApply(
-            displayCount: displayCount,
-            activeProfileID: activeID,
-            activeProfileName: activeName
-        )
-    }
 
-    /// Pushes the global template to every known display via the manager's
-    /// broadcast helper. The Combine sink in DisplaySettingsManager picks
-    /// the resulting configurations change up and drives the relaunch wave
-    /// for the active display on the next main-queue dispatch.
-    private func commitGlobalApply() {
-        displaySettings.applyGlobalToAllKnownDisplays()
-    }
 
-    /// Broadcasts the global template and, when a profile is active,
-    /// persists it to the profile target chosen by
-    /// unconfirmedSpacingProfileScope. Used when confirmations are disabled;
-    /// mirrors the globalConfirmationButtons actions including rollback.
-    private func commitGlobalApplyWithoutConfirmation(activeProfileID: UUID?) {
-        guard let id = activeProfileID else {
-            commitGlobalApply()
-            return
-        }
-        switch displaySettings.unconfirmedSpacingProfileScope {
-        case .activeProfile:
-            updateActiveProfile(id: id)
-        case .allProfiles:
-            updateAllProfiles()
-        }
-    }
 
-    /// Broadcasts the global template, then persists it to `id`'s profile.
-    /// Snapshots the previous configurations first so a save failure can
-    /// roll the live state back rather than leaving the broadcast applied
-    /// without a matching profile entry, which the next reapply would revert.
-    private func updateActiveProfile(id: UUID) {
-        let previousConfigurations = displaySettings.configurations
-        commitGlobalApply()
-        do {
-            try appState.profileManager.updateProfile(
-                id: id,
-                scope: .configurationOnly,
-                appState: appState
-            )
-        } catch {
-            displaySettings.configurations = previousConfigurations
-            errorMessage = error.localizedDescription
-            showingError = true
-        }
-    }
 
-    /// Broadcasts the global template, then persists it to every profile.
-    /// Mirrors ``updateActiveProfile(id:)``'s rollback-on-failure behavior.
-    private func updateAllProfiles() {
-        let previousConfigurations = displaySettings.configurations
-        commitGlobalApply()
-        do {
-            try appState.profileManager.updateAllProfilesGlobalConfiguration(
-                displaySettings.globalConfiguration,
-                propagateToDisplays: true
-            )
-        } catch {
-            displaySettings.configurations = previousConfigurations
-            errorMessage = error.localizedDescription
-            showingError = true
-        }
-    }
-
-    @ViewBuilder
-    private func globalConfirmationButtons(for pending: PendingGlobalApply) -> some View {
-        if let activeProfileID = pending.activeProfileID {
-            Button(String(localized: "Update Active Profile"), role: .destructive) {
-                updateActiveProfile(id: activeProfileID)
-            }
-            Button(String(localized: "Update All Profiles"), role: .destructive) {
-                updateAllProfiles()
-            }
-            Button(String(localized: "Cancel"), role: .cancel) {
-                // Intentionally empty: dismisses the alert, no other action needed.
-            }
-        } else {
-            Button(String(localized: "Apply"), role: .destructive) {
-                commitGlobalApply()
-            }
-            Button(String(localized: "Cancel"), role: .cancel) {
-                // Intentionally empty: dismisses the alert, no other action needed.
-            }
-        }
-    }
-
-    private func globalConfirmationMessage(for pending: PendingGlobalApply) -> String {
-        let profileName = pending.activeProfileName ?? ""
-        let displayMessage = String(localized: "This will overwrite the settings of ^[\(pending.displayCount) displays](inflect: true) with the global template. If the active display's spacing changes, Tidybar will relaunch each app with a menu bar item. Relaunching apps may cause unsaved input, progress, or transient app state to be lost.")
-        if pending.activeProfileID != nil {
-            let profileInstruction = String(localized: "Save the global template to the active profile \"\(profileName)\", or save it to every profile.")
-            return "\(displayMessage) \(profileInstruction)"
-        } else {
-            return displayMessage
-        }
-    }
 }
 
 private struct IceBarConfigurationControls<ExtraControls: View>: View {
@@ -750,31 +452,31 @@ private struct IceBarConfigurationControls<ExtraControls: View>: View {
                 if useIceBar {
                     switch context {
                     case .display:
-                        Text("Not available because the \(Constants.displayName) Bar is enabled for this display.")
+                        Text("Not available because the Tray is enabled.")
                     case .globalTemplate:
-                        Text("Not available because the \(Constants.displayName) Bar is enabled in the global template.")
+                        Text("Not available because the Tray is enabled.")
                     }
                 } else {
                     switch context {
                     case .display:
-                        Text("Always show hidden menu bar items in the menu bar on this display.")
+                        Text("Always show hidden menu bar items in the menu bar.")
                     case .globalTemplate:
                         Text("Always show hidden menu bar items in the menu bar.")
                     }
                 }
             }
 
-        Toggle("Use \(Constants.displayName) Bar", isOn: $useIceBar)
+        Toggle("Use the Tray", isOn: $useIceBar)
             .annotation("Show hidden menu bar items in a separate bar below the menu bar.")
 
         Toggle("Always-hidden items only", isOn: $useThawBarForAlwaysHidden)
             .disabled(useIceBar)
             .annotation {
                 if useIceBar {
-                    Text("Not available because every section already opens in the \(Constants.displayName) Bar.")
+                    Text("Not available because every section already opens in the Tray.")
                 } else {
                     Text("""
-                    Show always-hidden menu bar items in the \(Constants.displayName) Bar, \
+                    Show always-hidden menu bar items in the Tray, \
                     while hidden items keep expanding in the menu bar.
                     """)
                 }
@@ -827,15 +529,15 @@ private struct IceBarConfigurationControls<ExtraControls: View>: View {
     private var locationAnnotation: some View {
         switch location {
         case .dynamic:
-            Text("The \(Constants.displayName) Bar's location changes based on context.")
+            Text("The Tray's location changes based on context.")
         case .mousePointer:
-            Text("The \(Constants.displayName) Bar is centered below the mouse pointer.")
+            Text("The Tray is centered below the mouse pointer.")
         case .iceIcon:
-            Text("The \(Constants.displayName) Bar is centered below the \(Constants.displayName) icon.")
+            Text("The Tray is centered below the \(Constants.displayName) icon.")
         case .leftAligned:
-            Text("The \(Constants.displayName) Bar is aligned to the left edge of the display.")
+            Text("The Tray is aligned to the left edge of the display.")
         case .rightAligned:
-            Text("The \(Constants.displayName) Bar is aligned to the right edge of the display.")
+            Text("The Tray is aligned to the right edge of the display.")
         }
     }
 

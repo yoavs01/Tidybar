@@ -1302,7 +1302,7 @@ nonisolated enum LayoutSolver {
         currentUIDs: Set<String>
     ) -> [String: UnmanagedPlacement] {
         var result = [String: UnmanagedPlacement]()
-        let newItemsSection = sectionName(forPersistedKey: newItemsPlacement.sectionKey) ?? .hidden
+        let newItemsSection = sectionName(forPersistedKey: newItemsPlacement.sectionKey) ?? .visible
 
         for uid in unmanagedUIDs {
             // 1. Saved-position lookup (exact then baseID).

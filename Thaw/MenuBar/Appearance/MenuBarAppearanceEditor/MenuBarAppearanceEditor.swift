@@ -471,7 +471,7 @@ private struct UnlabeledShapeEditor: View {
                 Toggle("Menu Bar", isOn: $configuration.borderOnMenuBar)
                     .disabled(shapeKind == .noShape)
 
-                Toggle("\(Constants.displayName) Bar", isOn: $configuration.borderOnThawBar)
+                Toggle("Tray", isOn: $configuration.borderOnThawBar)
             }
             .toggleStyle(.checkbox)
             .frame(height: 24)

@@ -997,26 +997,6 @@ final class ControlItem {
 
         menu.addItem(.separator())
 
-        let checkForUpdatesItem = NSMenuItem(
-            title: String(localized: "Check for Updates…"),
-            action: #selector(checkForUpdates),
-            keyEquivalent: ""
-        )
-        checkForUpdatesItem.image = NSImage(systemSymbolName: "arrow.triangle.2.circlepath", accessibilityDescription: "Check for Updates")
-        checkForUpdatesItem.target = self
-        menu.addItem(checkForUpdatesItem)
-
-        let supportItem = NSMenuItem(
-            title: String(localized: "Support \(Constants.displayName)…"),
-            action: #selector(openDonateURL),
-            keyEquivalent: ""
-        )
-        supportItem.image = NSImage(systemSymbolName: "heart.circle.fill", accessibilityDescription: "Support")
-        supportItem.target = self
-        menu.addItem(supportItem)
-
-        menu.addItem(.separator())
-
         let quitItem = NSMenuItem(
             title: String(localized: "Quit \(Constants.displayName)"),
             action: #selector(NSApp.terminate),
@@ -1083,18 +1063,7 @@ final class ControlItem {
         }
     }
 
-    /// Opens the settings window and checks for app updates.
-    @objc private func checkForUpdates() {
-        guard let appState else {
-            return
-        }
-        appState.updatesManager.checkForUpdates()
-    }
 
-    /// Opens the donate URL.
-    @objc private func openDonateURL() {
-        NSWorkspace.shared.open(Constants.donateURL)
-    }
 }
 
 // MARK: - ControlItemDefaults

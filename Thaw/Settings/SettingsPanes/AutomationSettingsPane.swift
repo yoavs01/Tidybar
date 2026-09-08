@@ -206,7 +206,7 @@ struct AutomationSettingsPane: View {
             .font(.caption)
             .foregroundStyle(.secondary)
 
-            Text("Whitelisted apps can read settings, toggle boolean options, set numeric values (timers, delays), change enum settings (rehide strategy, \(Constants.displayName) Bar location), and modify per-display configurations. This includes auto-rehide, show on click/hover/scroll/double-click, \(Constants.displayName) Bar, hide application menus, enable always-hidden section, show tooltips, and diagnostic logging.")
+            Text("Whitelisted apps can read settings, toggle boolean options, set numeric values (timers, delays), change enum settings (rehide strategy, Tray location), and modify per-display configurations. This includes auto-rehide, show on click/hover/scroll/double-click, Tray, hide application menus, enable always-hidden section, show tooltips, and diagnostic logging.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

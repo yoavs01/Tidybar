@@ -11,6 +11,10 @@ This is a modified version of Thaw. Per GPLv3 section 5(a), the modifications ar
   URL scheme `tidybar://`; version restarted at 1.0.0; Sparkle update feed removed (this build never
   self-updates); repository and donation links point at this fork. No behaviour changes.
 
+- **2026-09-07 -- Phase 1 (behaviour):** new icons land Visible; one configuration for every display (no
+  per-display settings, no global template); the overflow panel is the Tray; Sparkle removed entirely.
+  Version 1.1.0.
+
 Subsequent changes are recorded in [CHANGELOG.md](CHANGELOG.md).
 
 ## Why a fork

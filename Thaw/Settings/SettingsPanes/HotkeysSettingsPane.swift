@@ -52,7 +52,7 @@ struct HotkeysSettingsPane: View {
                 case .searchMenuBarItems:
                     Text("Search menu bar items")
                 case .enableIceBar:
-                    Text("Enable the \(Constants.displayName) Bar")
+                    Text("Enable the Tray")
                 case .toggleApplicationMenus:
                     Text("Toggle application menus")
                 case .profileApply:

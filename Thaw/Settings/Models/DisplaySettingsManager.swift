@@ -54,6 +54,9 @@ final class DisplaySettingsManager {
             } catch {
                 diagLog.error("Failed to encode global display configuration: \(error)")
             }
+            // The global configuration is the only configuration, so a spacing
+            // change here has to drive the same apply the per-display map did.
+            applyActiveDisplaySpacing(reason: "globalConfigurationChanged")
         }
     }
 
@@ -581,10 +584,8 @@ final class DisplaySettingsManager {
     /// cannot be resolved, preventing transient display changes from resetting
     /// spacing to the system default.
     func configuration(for displayID: CGDirectDisplayID) -> DisplayIceBarConfiguration {
-        guard let uuid = Bridging.getDisplayUUIDString(for: displayID) else {
-            return globalConfiguration
-        }
-        return configurations[uuid] ?? globalConfiguration
+        // Tidybar keeps one configuration for every display.
+        globalConfiguration
     }
 
     /// Returns the configuration for the display with the active menu bar.
@@ -638,12 +639,12 @@ final class DisplaySettingsManager {
 
     /// Whether any connected display has the Tidybar Bar enabled.
     var isIceBarEnabledOnAnyDisplay: Bool {
-        configurations.values.contains { $0.useIceBar }
+        globalConfiguration.useIceBar
     }
 
     /// Whether any connected display has "Always show hidden items" enabled.
     var isAlwaysShowEnabledOnAnyDisplay: Bool {
-        configurations.values.contains { $0.alwaysShowHiddenItems }
+        globalConfiguration.alwaysShowHiddenItems
     }
 
     // MARK: - Mutation (Immutable Pattern)
@@ -654,11 +655,8 @@ final class DisplaySettingsManager {
         forDisplayUUID uuid: String,
         transform: (DisplayIceBarConfiguration) -> DisplayIceBarConfiguration
     ) {
-        let current = configuration(forUUID: uuid)
-        let updated = transform(current)
-        var newConfigurations = configurations
-        newConfigurations[uuid] = updated
-        configurations = newConfigurations
+        // One configuration for every display; the UUID only names the caller.
+        globalConfiguration = transform(globalConfiguration)
     }
 
     /// Overwrites the configuration of every known display (connected and
@@ -763,7 +761,8 @@ final class DisplaySettingsManager {
     /// Returns the configuration for a display UUID, inheriting the global
     /// template when no override exists.
     func configuration(forUUID uuid: String) -> DisplayIceBarConfiguration {
-        configurations[uuid] ?? globalConfiguration
+        // Tidybar keeps one configuration for every display.
+        globalConfiguration
     }
 }
 

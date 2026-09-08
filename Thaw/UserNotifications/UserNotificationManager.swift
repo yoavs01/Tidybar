@@ -70,18 +70,8 @@ extension UserNotificationManager: @MainActor UNUserNotificationCenterDelegate {
             completionHandler()
         }
 
-        guard let appState else {
-            return
-        }
-
-        switch UserNotificationIdentifier(rawValue: response.notification.request.identifier) {
-        case .updateCheck:
-            guard response.actionIdentifier == UNNotificationDefaultActionIdentifier else {
-                break
-            }
-            appState.updatesManager.checkForUpdates()
-        case nil:
-            break
-        }
+        // Update-check notifications went away with Sparkle. Nothing is routed
+        // here any more; the response is only acknowledged.
+        _ = response
     }
 }
