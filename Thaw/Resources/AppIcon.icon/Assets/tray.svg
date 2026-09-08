@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tidybar app icon, layer 2: the tray beneath the bar, holding one stowed item. -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <path fill="#ffffff" fill-rule="evenodd" d="M 528 556 H 776 A 56 56 0 0 1 832 612 A 56 56 0 0 1 776 668 H 528 A 56 56 0 0 1 472 612 A 56 56 0 0 1 528 556 Z M 704 580 A 32 32 0 1 0 704 644 A 32 32 0 1 0 704 580 Z"/>
+</svg>

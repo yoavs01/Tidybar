@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tidybar app icon, layer 1: the menu bar — a pill with two items at its right end. -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <path fill="#ffffff" fill-rule="evenodd" d="M 256 372 H 768 A 64 64 0 0 1 832 436 A 64 64 0 0 1 768 500 H 256 A 64 64 0 0 1 192 436 A 64 64 0 0 1 256 372 Z M 704 400 A 36 36 0 1 0 704 472 A 36 36 0 1 0 704 400 Z M 596 400 A 36 36 0 1 0 596 472 A 36 36 0 1 0 596 400 Z"/>
+</svg>

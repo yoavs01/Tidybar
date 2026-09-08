@@ -8,14 +8,8 @@
 					"display-p3:0.96863,0.69412,0.30196,1.00000"
 				],
 				"orientation": {
-					"start": {
-						"x": 0.5,
-						"y": 0
-					},
-					"stop": {
-						"x": 0.5,
-						"y": 0.7
-					}
+					"start": { "x": 0.5, "y": 0 },
+					"stop": { "x": 0.5, "y": 0.7 }
 				}
 			}
 		},
@@ -27,14 +21,8 @@
 					"display-p3:0.03137,0.05882,0.05882,1.00000"
 				],
 				"orientation": {
-					"start": {
-						"x": 0.5,
-						"y": 0
-					},
-					"stop": {
-						"x": 0.5,
-						"y": 0.7
-					}
+					"start": { "x": 0.5, "y": 0 },
+					"stop": { "x": 0.5, "y": 0.7 }
 				}
 			}
 		}
@@ -51,14 +39,8 @@
 									"srgb:0.94118,0.94118,0.94118,1.00000"
 								],
 								"orientation": {
-									"start": {
-										"x": 0.5,
-										"y": 0
-									},
-									"stop": {
-										"x": 0.5,
-										"y": 0.7
-									}
+									"start": { "x": 0.5, "y": 0 },
+									"stop": { "x": 0.5, "y": 0.7 }
 								}
 							}
 						},
@@ -70,36 +52,26 @@
 									"display-p3:0.96863,0.69412,0.30196,1.00000"
 								],
 								"orientation": {
-									"start": {
-										"x": 0.5,
-										"y": 0
-									},
-									"stop": {
-										"x": 0.5,
-										"y": 0.7
-									}
+									"start": { "x": 0.5, "y": 0 },
+									"stop": { "x": 0.5, "y": 0.7 }
 								}
 							}
 						}
 					],
 					"glass-specializations": [
-						{
-							"value": true
-						},
-						{
-							"appearance": "dark",
-							"value": true
-						}
+						{ "value": true },
+						{ "appearance": "dark", "value": true }
 					],
 					"hidden": false,
-					"image-name": "innards.svg",
-					"name": "innards",
+					"image-name": "tray.svg",
+					"name": "tray",
 					"position": {
-						"scale": 1.15,
-						"translation-in-points": [-1.2219968184767822, -14.5625]
+						"scale": 1.0,
+						"translation-in-points": [0, 0]
 					}
 				}
 			],
+			"name": "Tray",
 			"shadow": {
 				"kind": "neutral",
 				"opacity": 0.5
@@ -114,10 +86,7 @@
 			"layers": [
 				{
 					"blend-mode-specializations": [
-						{
-							"appearance": "dark",
-							"value": "normal"
-						}
+						{ "appearance": "dark", "value": "normal" }
 					],
 					"fill-specializations": [
 						{
@@ -127,14 +96,8 @@
 									"srgb:1.00000,1.00000,1.00000,1.00000"
 								],
 								"orientation": {
-									"start": {
-										"x": 0.5,
-										"y": 0
-									},
-									"stop": {
-										"x": 0.5,
-										"y": 0.7
-									}
+									"start": { "x": 0.5, "y": 0 },
+									"stop": { "x": 0.5, "y": 0.7 }
 								}
 							}
 						},
@@ -146,14 +109,8 @@
 									"display-p3:0.96863,0.69412,0.30196,1.00000"
 								],
 								"orientation": {
-									"start": {
-										"x": 0.5,
-										"y": 0
-									},
-									"stop": {
-										"x": 0.5,
-										"y": 0.7
-									}
+									"start": { "x": 0.5, "y": 0 },
+									"stop": { "x": 0.5, "y": 0.7 }
 								}
 							}
 						},
@@ -165,82 +122,43 @@
 									"display-p3:0.92549,0.92549,1.00000,1.00000"
 								],
 								"orientation": {
-									"start": {
-										"x": 0.5,
-										"y": 0
-									},
-									"stop": {
-										"x": 0.5,
-										"y": 0.7
-									}
+									"start": { "x": 0.5, "y": 0 },
+									"stop": { "x": 0.5, "y": 0.7 }
 								}
 							}
 						}
 					],
 					"glass-specializations": [
-						{
-							"value": true
-						},
-						{
-							"appearance": "dark",
-							"value": true
-						}
+						{ "value": true },
+						{ "appearance": "dark", "value": true }
 					],
-					"image-name": "cube.svg",
-					"name": "cube",
+					"image-name": "bar.svg",
+					"name": "bar",
 					"position": {
-						"scale": 1.2,
+						"scale": 1.0,
 						"translation-in-points": [0, 0]
 					}
 				}
 			],
 			"lighting": "individual",
-			"name": "Group",
+			"name": "Bar",
 			"shadow-specializations": [
 				{
-					"value": {
-						"kind": "layer-color",
-						"opacity": 0.5
-					}
+					"value": { "kind": "layer-color", "opacity": 0.5 }
 				},
 				{
 					"appearance": "dark",
-					"value": {
-						"kind": "layer-color",
-						"opacity": 0.5
-					}
+					"value": { "kind": "layer-color", "opacity": 0.5 }
 				}
 			],
 			"specular-specializations": [
-				{
-					"value": true
-				},
-				{
-					"appearance": "dark",
-					"value": true
-				}
+				{ "value": true },
+				{ "appearance": "dark", "value": true }
 			],
 			"translucency-specializations": [
-				{
-					"value": {
-						"enabled": true,
-						"value": 0.6
-					}
-				},
-				{
-					"appearance": "dark",
-					"value": {
-						"enabled": true,
-						"value": 0.5
-					}
-				},
-				{
-					"appearance": "tinted",
-					"value": {
-						"enabled": true,
-						"value": 0.3
-					}
-				}
+				{ "value": { "enabled": true, "value": 0.6 } },
+				{ "appearance": "dark", "value": { "enabled": true, "value": 0.5 } },
+				{ "appearance": "tinted", "value": { "enabled": true, "value": 0.3 } }
 			]
 		}
 	],

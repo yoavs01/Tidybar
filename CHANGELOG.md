@@ -3,6 +3,18 @@
 > **Tidybar fork.** Entries from `## [1.0.0]` downward are the fork's own; everything below the
 > fork marker is inherited Thaw history and kept verbatim.
 
+## [1.1.1] - 2026-09-07
+
+### Changed
+- New app icon: a menu-bar pill with two items and a tray beneath holding a stowed one, on the
+  same orange gradient (orange glyph on the dark appearance). Thaw's cube is gone.
+
+### Fixed
+- Install flow: the Debug/Release build products share the app's bundle id, so `open -a` and
+  Spotlight could launch a build product instead of `/Applications/Tidybar.app`; the Debug copy has
+  a cdhash-only code requirement, so an Accessibility grant made against it died on the next test
+  run. The install script now unregisters and deletes the build products and launches by path.
+
 ## [1.1.0] - 2026-09-07
 
 ### Changed
