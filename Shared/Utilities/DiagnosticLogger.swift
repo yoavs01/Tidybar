@@ -162,7 +162,7 @@ final nonisolated class DiagnosticLogger: @unchecked Sendable {
             return
         }
 
-        let fileName = "thaw_\(fileNameFormatter.string(from: Date())).log"
+        let fileName = "tidybar_\(fileNameFormatter.string(from: Date())).log"
         openLogFile(at: dir.appendingPathComponent(fileName))
     }
 
