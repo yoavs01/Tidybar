@@ -3,6 +3,13 @@
 > **Tidybar fork.** Entries from `## [1.0.0]` downward are the fork's own; everything below the
 > fork marker is inherited Thaw history and kept verbatim.
 
+## [1.1.4] - 2026-09-07
+
+### Added
+- Operator hooks for headless testing: `SIGUSR1` photographs the top 140 pt of the active menu bar
+  display to `~/Library/Logs/Tidybar/snapshot-<timestamp>.png` (and `snapshot-latest.png`) using the
+  app's own Screen Recording grant; `SIGUSR2` toggles the hidden section. Not reachable from the UI.
+
 ## [1.1.3] - 2026-09-07
 
 ### Fixed
