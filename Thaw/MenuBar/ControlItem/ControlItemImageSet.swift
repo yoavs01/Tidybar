@@ -19,7 +19,7 @@ nonisolated struct ControlItemImageSet: Codable, Hashable, Identifiable {
         case door = "Door"
         case dot = "Dot"
         case ellipsis = "Ellipsis"
-        case iceCube = "Ice Cube"
+        case tidybar = "Tidybar"
         case sunglasses = "Sunglasses"
         case custom = "Custom"
 
@@ -32,7 +32,7 @@ nonisolated struct ControlItemImageSet: Codable, Hashable, Identifiable {
             case .door: "Door"
             case .dot: "Dot"
             case .ellipsis: "Ellipsis"
-            case .iceCube: "Ice Cube"
+            case .tidybar: "Tidybar"
             case .sunglasses: "Sunglasses"
             case .custom: "Custom"
             }
@@ -61,9 +61,9 @@ nonisolated struct ControlItemImageSet: Codable, Hashable, Identifiable {
 nonisolated extension ControlItemImageSet {
     /// The default image set for the Ice icon.
     static let defaultIceIcon = ControlItemImageSet(
-        name: .iceCube,
-        hidden: .catalog("IceCubeStroke"),
-        visible: .catalog("IceCubeFill")
+        name: .tidybar,
+        hidden: .catalog("TidybarStroke"),
+        visible: .catalog("TidybarFill")
     )
 
     /// The image sets that the user can choose to display in the Ice icon.
@@ -99,9 +99,9 @@ nonisolated extension ControlItemImageSet {
             visible: .catalog("EllipsisStroke")
         ),
         ControlItemImageSet(
-            name: .iceCube,
-            hidden: .catalog("IceCubeStroke"),
-            visible: .catalog("IceCubeFill")
+            name: .tidybar,
+            hidden: .catalog("TidybarStroke"),
+            visible: .catalog("TidybarFill")
         ),
         ControlItemImageSet(
             name: .sunglasses,

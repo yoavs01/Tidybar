@@ -66,7 +66,7 @@ struct ControlItemImageConversionTests {
     @Test("A known catalog asset converts and is resized to menu bar scale")
     func knownCatalogAssetConvertsAndResizes() throws {
         // A real asset the default icon set ships (see ControlItemImageSet).
-        let name = "IceCubeStroke"
+        let name = "TidybarStroke"
         let original = try #require(NSImage(named: name))
 
         let image = try #require(

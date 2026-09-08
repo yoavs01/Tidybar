@@ -177,6 +177,7 @@ final class AppState {
             Task {
                 diagLog.debug("Setting up app state")
                 await setupTask.value
+                await applyInitialVisibleLayoutIfNeeded()
 
                 // Warm up the activation policy system.
                 NSApp.setActivationPolicy(.regular)
@@ -197,6 +198,25 @@ final class AppState {
     }
 
     /// Configures the internal observers for the app state.
+    /// Tidybar: a bar with no saved arrangement starts with every item
+    /// visible, and the user stows what they want from there. Thaw's fresh
+    /// state is the opposite: its dividers are seeded at the right edge, so
+    /// first launch (and `--reset-layout`) classify every existing item as
+    /// hidden. Runs once — the reset persists an arrangement, after which
+    /// this is a no-op on every later launch.
+    private func applyInitialVisibleLayoutIfNeeded() async {
+        guard itemManager.savedSectionOrder.isEmpty else { return }
+        diagLog.info("No saved menu bar arrangement; starting with every item visible")
+        // Let the freshly created control items land in the bar first.
+        try? await Task.sleep(for: .milliseconds(750))
+        do {
+            let failed = try await itemManager.resetLayoutToVisible()
+            diagLog.info("Initial visible layout applied; failed moves: \(failed)")
+        } catch {
+            diagLog.error("Initial visible layout failed: \(error)")
+        }
+    }
+
     private func configureCancellables() {
         var c = Set<AnyCancellable>()
 

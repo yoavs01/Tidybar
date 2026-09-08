@@ -3,6 +3,15 @@
 > **Tidybar fork.** Entries from `## [1.0.0]` downward are the fork's own; everything below the
 > fork marker is inherited Thaw history and kept verbatim.
 
+## [1.1.2] - 2026-09-07
+
+### Changed
+- **A fresh bar starts with every icon visible.** First launch (and `--reset-layout`) used Thaw's
+  "everything hidden" fresh state; Tidybar now applies "reset to visible" once whenever no
+  arrangement has been saved, so you stow icons rather than dig them out.
+- **New menu bar icon** matching the app icon (pill + tray glyph, filled while the hidden section
+  is shown, outlined while it is hidden). Thaw's ice-cube option is gone; other glyphs remain.
+
 ## [1.1.1] - 2026-09-07
 
 ### Changed
