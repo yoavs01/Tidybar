@@ -1426,7 +1426,7 @@ extension HIDEventManager {
 
         if hiddenSection.isHidden {
             guard
-                isMouseInsideEmptyMenuBarSpace(
+                isMouseInsideHoverTriggerRegion(
                     appState: appState,
                     screen: screen
                 ),
@@ -1461,7 +1461,7 @@ extension HIDEventManager {
                 // Make sure the manager is still enabled and the mouse is still inside.
                 guard
                     isEnabled,
-                    isMouseInsideEmptyMenuBarSpace(
+                    isMouseInsideHoverTriggerRegion(
                         appState: appState,
                         screen: screen
                     )
@@ -1826,6 +1826,37 @@ extension HIDEventManager {
         }
         frameOfNotch.size.height += 1
         return frameOfNotch.contains(mouseLocation)
+    }
+
+    /// A Boolean value that indicates whether the mouse pointer is inside
+    /// the region that triggers show-on-hover.
+    ///
+    /// Upstream triggers on empty menu bar space only. On a notched display
+    /// with a full menu bar there is no empty space left to aim at, so
+    /// Tidybar accepts the whole menu bar — over items, over the notch and
+    /// over Tidybar's own icon included. The application menu region is
+    /// still excluded, so reaching for File or Edit does not drop the Tray.
+    func isMouseInsideHoverTriggerRegion(appState: AppState, screen: NSScreen)
+        -> Bool
+    {
+        guard isMouseInsideMenuBar(appState: appState, screen: screen) else {
+            return false
+        }
+
+        // Same app-menu resolution as `isMouseInsideEmptyMenuBarSpace`: use
+        // the AX hit test when it is conclusive, fall back to the geometric
+        // check when it is not.
+        let appMenuResult = isMouseInsideApplicationMenuClickRegion(
+            appState: appState,
+            screen: screen
+        )
+        let isInAppMenu: Bool = if let result = appMenuResult {
+            result
+        } else {
+            isMouseInsideApplicationMenu(appState: appState, screen: screen)
+        }
+
+        return !isInAppMenu
     }
 
     /// A Boolean value that indicates whether the mouse pointer is within

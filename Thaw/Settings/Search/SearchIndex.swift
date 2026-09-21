@@ -352,7 +352,7 @@ nonisolated enum SearchIndex {
             id: "general.showOnHover",
             titleKey: "Show on hover",
             titleText: "Show on hover",
-            descriptionText: "Hover over an empty area of the menu bar to show hidden menu bar items.",
+            descriptionText: "Hover anywhere over the menu bar to show hidden menu bar items.",
             pane: .general,
             sectionKey: "Empty menu bar area",
             sectionText: "Empty menu bar area",

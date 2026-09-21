@@ -166,7 +166,7 @@ nonisolated extension Defaults {
         static let iceBarLocationOnHotkey = false
         static let showOnClick = true
         static let showOnDoubleClick = true
-        static let showOnHover = false
+        static let showOnHover = true
         static let showOnScroll = true
         static let autoRehide = true
         static let rehideStrategy: RehideStrategy = .smart

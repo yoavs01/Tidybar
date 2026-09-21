@@ -188,7 +188,7 @@ struct GeneralSettingsPane: View {
             }
         }
         Toggle("Show on hover", isOn: $settings.showOnHover)
-            .annotation("Hover over an empty area of the menu bar to show hidden menu bar items.")
+            .annotation("Hover anywhere over the menu bar to show hidden menu bar items. Turn this off to reveal them only by clicking.")
         if settings.showOnHover {
             showOnHoverDelay
         }

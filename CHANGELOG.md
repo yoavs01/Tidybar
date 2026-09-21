@@ -3,6 +3,18 @@
 > **Tidybar fork.** Entries from `## [1.0.0]` downward are the fork's own; everything below the
 > fork marker is inherited Thaw history and kept verbatim.
 
+## [1.2.0] - 2026-09-21
+
+### Changed
+- **Hover anywhere on the menu bar to drop the Tray.** "Show on hover" (General) now triggers
+  across the whole menu bar - over icons, over the notch and over Tidybar's own icon - instead of
+  only over empty space between items. A full menu bar beside a notch leaves no empty space to aim
+  at, which made the upstream trigger unreachable in practice. The application menu region is still
+  excluded, so reaching for File or Edit does not drop the Tray.
+- **"Show on hover" is on by default** (upstream ships it off). Turn it off in
+  Settings -> General -> Empty menu bar area to go back to click-only reveals; the hover delay
+  slider beneath it still applies (0.2 s default).
+
 ## [1.1.4] - 2026-09-07
 
 ### Added
